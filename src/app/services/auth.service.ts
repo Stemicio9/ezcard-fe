@@ -16,7 +16,7 @@ export class AuthService {
       "username": username,
       "password": password
     };
-    return this.httpClient.post(environment.base_url, body) ;
+    return this.httpClient.post(environment.base_url+'authenticate', body) ;
   }
 
 
