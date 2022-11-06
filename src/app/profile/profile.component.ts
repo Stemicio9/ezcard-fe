@@ -1,0 +1,37 @@
+import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+import {ProfileService} from "../services/profile.service";
+import {Profile} from "../entities/profile";
+
+@Component({
+  selector: 'app-profile',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.css']
+})
+export class ProfileComponent implements OnInit {
+
+  username: string | null = '';
+  profile?: Profile;
+
+  // this variable represents the state of the profile object, if false there is an error on retrieving the profile
+  dataState = true;
+
+  constructor(private activatedRoute: ActivatedRoute, private profileService: ProfileService) { }
+
+  ngOnInit(): void {
+    this.username = this.activatedRoute.snapshot.paramMap.get("id");
+    if(this.username != null) {
+      this.profileService.getProfile(this.username).subscribe(
+        (data: any) => {
+          this.profile = data.body;
+          this.dataState = true;
+        }, (error) => {
+          console.log(error);
+          this.dataState = false
+        });
+    } else {
+      this.dataState = false;
+    }
+  }
+
+}
