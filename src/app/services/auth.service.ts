@@ -12,7 +12,7 @@ export class AuthService {
 
   // Authenticate the user
   authenticateUser(username:string, password:string){
-    var body = {
+    const body = {
       "username": username,
       "password": password
     };
