@@ -25,4 +25,8 @@ export class ProfileService {
     };
     return this.httpClient.post(environment.base_url + 'profile/create', body);
   }
+
+  getProfile(username: string){
+    return this.httpClient.get(environment.base_url + 'profile/get/' + username);
+  }
 }
