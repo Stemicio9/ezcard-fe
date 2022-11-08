@@ -10,7 +10,7 @@ import { StorageService } from 'src/app/services/storage.service';
 })
 export class LoginComponent implements OnInit {
   form: any = {
-    username: null,
+    email: null,
     password: null,
   };
 
@@ -23,11 +23,11 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   login() {
-    const { username, password } = this.form;
-    console.log(username);
+    const { email, password } = this.form;
+    console.log(email);
     console.log(password);
 
-    this.authService.authenticateUser(username, password).subscribe(
+    this.authService.authenticateUser(email, password).subscribe(
       (body: any) => {
         this.storageService.saveTokenInStorage(body['token']);
         this.router.navigate(['home']);
