@@ -1,0 +1,25 @@
+.question-mark {
+  width: 20px;
+  height: 20px;
+}
+
+.camera {
+  width: 25px;
+  height: 25px;
+}
+.user {
+  width: 40px;
+  height: 40px;
+}
+span {
+  color: var(--black_ez);
+}
+
+h5 {
+  color: var(--black_ez);
+}
+
+.section-title{
+  font-size: 1rem;
+  font-weight: 700;
+}

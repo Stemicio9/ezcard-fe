@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
-        this.showHeader = !val.url.includes('login');
+        this.showHeader = val.url.includes('home');
       }
     });
   }
