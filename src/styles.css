@@ -2,3 +2,7 @@
   --black_ez: #030e2a;
   --green_ez: #00e89c;
 }
+
+html, body {
+  font-family: 'Montserrat', sans-serif;
+}

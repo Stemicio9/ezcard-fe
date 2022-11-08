@@ -23,9 +23,9 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   login() {
-    const { email, password } = this.form;
-    console.log(email);
-    console.log(password);
+    this.router.navigate(['home']);
+
+    /*const { email, password } = this.form;
 
     this.authService.authenticateUser(email, password).subscribe(
       (body: any) => {
@@ -35,6 +35,6 @@ export class LoginComponent implements OnInit {
       (error) => {
         console.log(error);
       }
-    );
+    );*/
   }
 }
