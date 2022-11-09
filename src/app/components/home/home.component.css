@@ -11,6 +11,12 @@
   width: 40px;
   height: 40px;
 }
+
+.cancel {
+  width: 18px;
+  height: 18px;
+}
+
 span {
   color: var(--black_ez);
 }
@@ -23,3 +29,9 @@ h5 {
   font-size: 1rem;
   font-weight: 700;
 }
+
+.box-shadow:hover {
+    box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2), 0 3px 5px 0 rgba(0,0,0,0.19);
+    border-radius: 0.35rem;
+}
+
