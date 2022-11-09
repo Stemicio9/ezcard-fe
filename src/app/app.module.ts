@@ -12,6 +12,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
 import { HomeRowComponent } from './components/home-row/home-row.component';
+import { ProvaEggComponent } from './components/prova-egg/prova-egg.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { HomeRowComponent } from './components/home-row/home-row.component';
     HomeComponent,
     ForgetPasswordComponent,
     HomeRowComponent,
+    ProvaEggComponent,
   ],
   imports: [
     AppRoutingModule,

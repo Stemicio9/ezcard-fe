@@ -1,0 +1,186 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="mb-3">
+        <label for="dateOfBirth">Date of birth</label>
+        <div class="input-group">
+          <input
+            id="dateOfBirth"
+            class="form-control"
+            placeholder="yyyy-mm-dd"
+            name="dp"
+            ngbDatepicker
+            #dp="ngbDatepicker"
+          />
+          <button
+            class="btn btn-outline-secondary bi bi-calendar3"
+            (click)="dp.toggle()"
+            type="button"
+          ></button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-outline-dark"
+      (click)="modal.close('Save click')"
+    >
+      Save
+    </button>
+  </div>
+</ng-template>
+
+
+
+
+
+
+<div class="split left">
+
+  <div class="row " [align]="'center'">
+      <div class="row">
+        <div class="col-md-12">
+          <img
+            style="padding-left: 1rem;"
+            class="rounded-circle"
+            src="assets/avatar-image.png"
+          />
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-md-12">
+          <span style="font-size: 0.9rem;"
+            >Clicca sull'immagine per modificarla</span
+          >
+        </div>
+      </div>
+
+
+
+
+</div>
+
+<div class="split right" style="padding-left: 3rem; padding-top: 3rem;">
+
+    <div class="row">
+      <h5>Gestione Account Pubblico</h5>
+    </div>
+
+
+      <div (click)="open(content)" class="row box-shadow" style="cursor: pointer; padding-bottom: 0.5rem; padding-top: 0.5rem;">
+        <div class="col-md-1 mt-1">
+          <img class="user" src="assets/user-icon.png" />
+        </div>
+        <div class="col-md-11">
+          <div class="row">
+            <span class="section-title">Profilo</span>
+          </div>
+          <div class="row">
+            <span style="font-size: 1rem">Nome, Compagnia, ecc.</span>
+          </div>
+        </div>
+      </div>
+
+
+
+
+    <div (click)="open(content)" class="row  box-shadow" style="cursor: pointer;padding-bottom: 0.5rem; padding-top: 0.5rem;">
+      <div class="col-md-1 mt-1">
+        <img class="user" src="assets/email-icon.png" />
+      </div>
+      <div class="col-md-11">
+        <div class="row">
+          <span class="section-title">Contatti</span>
+        </div>
+        <div class="row">
+          <span style="font-size: 1rem">Telefono, Mail, Sito web</span>
+        </div>
+      </div>
+    </div>
+
+    <div (click)="open(content)" class="row box-shadow" style="cursor: pointer;padding-bottom: 0.5rem; padding-top: 0.5rem;">
+      <div class="col-md-1 mt-1">
+        <img class="user" src="assets/share-icon.png" />
+      </div>
+      <div class="col-md-11">
+        <div class="row">
+          <span class="section-title">Social</span>
+        </div>
+        <div class="row">
+          <span style="font-size: 1rem">Linkedin, Facebook, Instagram</span>
+        </div>
+      </div>
+    </div>
+
+    <div (click)="open(content)" class="row  box-shadow" style="cursor: pointer;padding-bottom: 0.5rem; padding-top: 0.5rem;">
+      <div class="col-md-1 mt-1">
+        <img class="user" src="assets/azienda-icon.png" />
+      </div>
+      <div class="col-md-11">
+        <div class="row">
+          <span class="section-title">Azienda</span>
+        </div>
+        <div class="row">
+          <span style="font-size: 1rem">Sito web, Telefono, Indirizzo</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <h5>Gestione Account Privato</h5>
+    </div>
+
+    <div (click)="open(content)" class="row  box-shadow" style="cursor: pointer;padding-bottom: 0.5rem; padding-top: 0.5rem;">
+      <div class="col-md-1 mt-1">
+        <img class="user" src="assets/stats-icon.png" />
+      </div>
+      <div class="col-md-11">
+        <div class="row">
+          <span class="section-title">Statistiche</span>
+        </div>
+        <div class="row">
+          <span style="font-size: 1rem">Visite, Click, ecc.</span>
+        </div>
+      </div>
+    </div>
+
+    <div (click)="open(content)" class="row  box-shadow" style="cursor: pointer;padding-bottom: 0.5rem; padding-top: 0.5rem;">
+      <div class="col-md-1 mt-1">
+        <img class="user" src="assets/settings-icon.png" />
+      </div>
+      <div class="col-md-11">
+        <div class="row">
+          <span class="section-title">Impostazioni</span>
+        </div>
+        <div class="row">
+          <span style="font-size: 1rem">Email, Lingua, ecc.</span>
+        </div>
+      </div>
+    </div>
+
+    <div (click)="open(content)" class="row box-shadow" style="cursor: pointer;padding-bottom: 0.5rem; padding-top: 0.5rem;">
+      <div class="col-md-1 mt-1">
+        <img class="user" src="assets/password-icon.png" />
+      </div>
+      <div class="col-md-11">
+        <div class="row">
+          <span class="section-title">Password</span>
+        </div>
+        <div class="row">
+          <span style="font-size: 1rem">Impostazioni password</span>
+        </div>
+      </div>
+    </div>
+</div>
