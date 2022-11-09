@@ -5,7 +5,7 @@
       <img
         style="margin-left: 0.3rem"
         class="question-mark"
-        src="assets/question-mark.png"
+        src="/assets/question-mark.png"
       />
     </div>
   </div>
@@ -20,7 +20,7 @@
         <img
           style="padding-left: 1.1rem"
           class="rounded-circle"
-          src="assets/avatar-image.png"
+          src="/assets/avatar-image.png"
         />
       </div>
     </div>
@@ -43,106 +43,20 @@
       <h5>Gestione Account Pubblico</h5>
     </div>
 
-    <div class="row mt-3">
-      <div class="col-md-1 mt-1">
-        <img class="user" src="assets/user-icon.png" />
-      </div>
-      <div class="col-md-11">
-        <div class="row">
-          <span class="section-title">Profilo</span>
-        </div>
-        <div class="row">
-          <span style="font-size: 1rem">Nome, Compagnia, ecc.</span>
-        </div>
-      </div>
-    </div>
+    <div *ngFor="let titleFirst of titlesFirstSection; index as i">
+      <app-home-row [title]="titleFirst"
+                    [description]="descriptionsFirstSection[i]"
+                    [imageLink]="imageLinksFirstSection[i]"></app-home-row>
 
-    <div class="row mt-3">
-      <div class="col-md-1 mt-1">
-        <img class="user" src="assets/email-icon.png" />
-      </div>
-      <div class="col-md-11">
-        <div class="row">
-          <span class="section-title">Contatti</span>
-        </div>
-        <div class="row">
-          <span style="font-size: 1rem">Telefono, Mail, Sito web</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="row mt-3">
-      <div class="col-md-1 mt-1">
-        <img class="user" src="assets/share-icon.png" />
-      </div>
-      <div class="col-md-11">
-        <div class="row">
-          <span class="section-title">Social</span>
-        </div>
-        <div class="row">
-          <span style="font-size: 1rem">Linkedin, Facebook, Instagram</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="row mt-3">
-      <div class="col-md-1 mt-1">
-        <img class="user" src="assets/azienda-icon.png" />
-      </div>
-      <div class="col-md-11">
-        <div class="row">
-          <span class="section-title">Azienda</span>
-        </div>
-        <div class="row">
-          <span style="font-size: 1rem">Sito web, Telefono, Indirizzo</span>
-        </div>
-      </div>
     </div>
 
     <div class="row mt-5">
       <h5>Gestione Account Privato</h5>
     </div>
 
-    <div class="row mt-3">
-      <div class="col-md-1 mt-1">
-        <img class="user" src="assets/stats-icon.png" />
-      </div>
-      <div class="col-md-11">
-        <div class="row">
-          <span class="section-title">Statistiche</span>
-        </div>
-        <div class="row">
-          <span style="font-size: 1rem">Visite, Click, ecc.</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="row mt-3">
-      <div class="col-md-1 mt-1">
-        <img class="user" src="assets/settings-icon.png" />
-      </div>
-      <div class="col-md-11">
-        <div class="row">
-          <span class="section-title">Impostazioni</span>
-        </div>
-        <div class="row">
-          <span style="font-size: 1rem">Email, Lingua, ecc.</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="row mt-3">
-      <div class="col-md-1 mt-1">
-        <img class="user" src="assets/password-icon.png" />
-      </div>
-      <div class="col-md-11">
-        <div class="row">
-          <span class="section-title">Password</span>
-        </div>
-        <div class="row">
-          <span style="font-size: 1rem">Impostazioni password</span>
-        </div>
-      </div>
-    </div>
+    <div *ngFor="let titleSecond of titlesSecondSection; index as i">
+      <app-home-row [title]="titleSecond"
+                    [description]="descriptionsSecondSection[i]"
+                    [imageLink]="imageLinksSecondSection[i]"></app-home-row>
   </div>
 </div>

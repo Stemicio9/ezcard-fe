@@ -11,6 +11,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
+import { HomeRowComponent } from './components/home-row/home-row.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ForgetPasswordComponent } from './components/forget-password/forget-pas
     ProfileComponent,
     HomeComponent,
     ForgetPasswordComponent,
+    HomeRowComponent,
   ],
   imports: [
     AppRoutingModule,
