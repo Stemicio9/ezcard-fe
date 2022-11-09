@@ -2,18 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'app-prova-egg',
-  templateUrl: './prova-egg.component.html',
-  styleUrls: ['./prova-egg.component.css']
+  selector: 'app-profile-modal',
+  templateUrl: './profile-modal.component.html',
+  styleUrls: ['./profile-modal.component.css']
 })
-export class ProvaEggComponent implements OnInit {
+export class ProfileModalComponent implements OnInit {
+
 
   closeResult = '';
 
   constructor(private modalService: NgbModal) { }
 
-  open(content:any) {
-		this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then(
+  openProfile(profile:any) {
+		this.modalService.open(profile, { ariaLabelledBy: 'modal-basic-title' }).result.then(
 			(result) => {
 				this.closeResult = `Closed with: ${result}`;
 			},

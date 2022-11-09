@@ -12,7 +12,13 @@ import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
 import { HomeRowComponent } from './components/home-row/home-row.component';
-import { ProvaEggComponent } from './components/prova-egg/prova-egg.component';
+import { ProfileModalComponent } from './components/modal/profile-modal/profile-modal.component';
+import { SocialModalComponent } from './components/modal/social-modal/social-modal.component';
+import { ContactsModalComponent } from './components/modal/contacts-modal/contacts-modal.component';
+import { CompanyModalComponent } from './components/modal/company-modal/company-modal.component';
+import { StatsModalComponent } from './components/modal/stats-modal/stats-modal.component';
+import { SettingsModalComponent } from './components/modal/settings-modal/settings-modal.component';
+import { PasswordModalComponent } from './components/modal/password-modal/password-modal.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +29,13 @@ import { ProvaEggComponent } from './components/prova-egg/prova-egg.component';
     HomeComponent,
     ForgetPasswordComponent,
     HomeRowComponent,
-    ProvaEggComponent,
+    ProfileModalComponent,
+    ContactsModalComponent,
+    SocialModalComponent,
+    CompanyModalComponent,
+    StatsModalComponent,
+    SettingsModalComponent,
+    PasswordModalComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -31,7 +43,7 @@ import { ProvaEggComponent } from './components/prova-egg/prova-egg.component';
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

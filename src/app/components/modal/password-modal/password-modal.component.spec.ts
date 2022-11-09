@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProvaEggComponent } from './prova-egg.component';
+import { PasswordModalComponent } from './password-modal.component';
 
-describe('ProvaEggComponent', () => {
-  let component: ProvaEggComponent;
-  let fixture: ComponentFixture<ProvaEggComponent>;
+describe('PasswordModalComponent', () => {
+  let component: PasswordModalComponent;
+  let fixture: ComponentFixture<PasswordModalComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProvaEggComponent ]
+      declarations: [ PasswordModalComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ProvaEggComponent);
+    fixture = TestBed.createComponent(PasswordModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

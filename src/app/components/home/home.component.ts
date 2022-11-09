@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-home',
@@ -15,12 +15,13 @@ export class HomeComponent implements OnInit {
   imageLinksFirstSection: string[] = ["assets/user-icon.png","assets/email-icon.png","assets/share-icon.png","assets/azienda-icon.png"];
   imageLinksSecondSection: string[] = ["assets/stats-icon.png","assets/settings-icon.png","assets/password-icon.png"];
 
+
   closeResult = '';
 
   constructor(private modalService: NgbModal) { }
 
-  open(content:any) {
-		this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then(
+  openGenericModal(content:any){
+    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then(
 			(result) => {
 				this.closeResult = `Closed with: ${result}`;
 			},
@@ -28,7 +29,7 @@ export class HomeComponent implements OnInit {
 				this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
 			},
 		);
-	}
+  }
 
 	private getDismissReason(reason: any): string {
 		if (reason === ModalDismissReasons.ESC) {
@@ -41,7 +42,7 @@ export class HomeComponent implements OnInit {
 	}
 
   ngOnInit(): void {
-  }
 
+  }
 
 }

@@ -1,0 +1,71 @@
+<ng-template #content let-modal>
+  <div class="modal-header" style="background-color: var(--black_ez)">
+
+
+    <div>
+      <img class="user" src="assets/user-icon-white.png" />
+      <span  class="section-title text-light" style="padding-left: 1rem">Profilo</span>
+    </div>
+
+    <img  class="btn-close"  type="button"  class="cancel" src="assets/cancel-icon-white.png"  (click)="modal.dismiss('Cross click')"/>
+
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="mb-3">
+          <div>
+            <span >Nome</span>
+          </div>
+
+          <div class="input-group mb-3" >
+            <input
+              id="nome"
+              class="form-control"
+            />
+         </div>
+
+            <div>
+              <span>Cognome</span>
+            </div>
+            <div class="input-group mb-3">
+              <input
+                id="cognome"
+                class="form-control"
+                />
+              </div>
+
+              <div>
+                <span for="dateOfBirth">Data di nascita</span>
+              </div>
+              <div class="input-group mb-3">
+                <input
+                  id="dateOfBirth"
+                  class="form-control"
+                  placeholder="yyyy-mm-dd"
+                  name="dp"
+                  ngbDatepicker
+                  #dp="ngbDatepicker"
+                />
+                <button
+                  class="btn bi bi-calendar3 text-light"
+                  style="background-color: var(--black_ez);"
+                  (click)="dp.toggle()"
+                  type="button"
+                ></button>
+                </div>
+      </div>
+    </form>
+  </div>
+
+
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn text-light"
+      style="background-color: var(--black_ez);"
+      (click)="modal.close('Save click')"
+    >
+      Save
+    </button>
+  </div>
+</ng-template>
