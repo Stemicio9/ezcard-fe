@@ -30,16 +30,3 @@ h5 {
   font-weight: 700;
 }
 
-.box-shadow{
-  padding-left: 1rem;
-  padding-top: 0.5em;
-  padding-right: 0.5em;
-  padding-bottom: 0.5em;
-}
-.box-shadow:hover {
-    box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2), 0 3px 5px 0 rgba(0,0,0,0.19);
-    border-radius: 0.35rem;
-
-
-}
-

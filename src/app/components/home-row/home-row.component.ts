@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import { ProfileModalComponent } from '../modal/profile-modal/profile-modal.component';
 
 @Component({
   selector: 'app-home-row',
@@ -10,6 +11,7 @@ export class HomeRowComponent implements OnInit {
   @Input() title: string = '';
   @Input() description: string = '';
   @Input() imageLink: string = '';
+  @Input() modalType: any = '';
 
 
   constructor() { }
