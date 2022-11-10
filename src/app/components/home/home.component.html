@@ -266,7 +266,18 @@
   </div>
 </ng-template>
 
-<div class="row ">
+
+
+
+
+
+
+
+
+
+
+
+<div class="row">
   <div class="col-md-4 d-flex flex-column justify-content-between" style="margin-top: 3rem">
 
     <!-- photo, camera and description -->
@@ -274,14 +285,14 @@
       <div class="d-flex flex-row justify-content-center">
         <img class="rounded-circle" src="assets/avatar-image.png" />
         <img
-          style="margin-top: 12.6rem"
+          style="margin-top: 12.6rem; cursor: pointer;"
           class="camera"
           src="assets/camera-icon.png"
         />
       </div>
 
-      <div class="d-flex flex-row justify-content-center mt-3">
-        <span style="font-size: 0.9rem"
+      <div class="d-flex flex-row justify-content-center mt-3 mb-md-0 mb-2">
+        <span style="font-size: 0.9rem; text-align: center;"
           >Clicca sull'immagine per modificarla
         </span>
       </div>
@@ -299,8 +310,8 @@
 
   </div>
 
-  <div class="col-md-8" style="background-color: #f7f7f7;">
-    <div class="row" style="margin-top: 3rem; padding-left: 1rem">
+  <div class="col-md-8 main-section-style">
+    <div style="padding-left: 1rem">
       <h5>Gestione Account Pubblico</h5>
     </div>
 
@@ -376,7 +387,7 @@
       </div>
     </div>
 
-    <div class="row mt-5" style="padding-left: 1rem">
+    <div class=" mt-5" style="padding-left: 1rem">
       <h5>Gestione Account Privato</h5>
     </div>
 
@@ -434,6 +445,7 @@
       </div>
     </div>
   </div>
+
   <div class="d-inline d-md-none">
     <div class="row assistenza-footer" [align]="'center'">
       <div>
