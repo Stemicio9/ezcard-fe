@@ -15,6 +15,8 @@ export class HomeComponent implements OnInit {
   imageLinksFirstSection: string[] = ["assets/user-icon.png","assets/email-icon.png","assets/share-icon.png","assets/azienda-icon.png"];
   imageLinksSecondSection: string[] = ["assets/stats-icon.png","assets/settings-icon.png","assets/password-icon.png"];
 
+  socialIcons: string[] = ["assets/facebook-icon.png","assets/tik-tok-icon.png","assets/linkedin-icon.png", "assets/whatsapp-icon.png"];
+  socialStrings: string[] = ["Facebook", "Tik Tok", "Linkedin", "Whatsapp"];
 
   closeResult = '';
 

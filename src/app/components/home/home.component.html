@@ -122,7 +122,7 @@
 
     </form>
 
-    <div [align]="'right'">
+    <div  style="float: right;">
       <button
         type="button"
         class="btn text-light save-button"
@@ -192,7 +192,7 @@
 
     </form>
 
-    <div [align]="'right'" >
+    <div  style="float: right;" >
       <button
         type="button"
         class="btn text-light save-button"
@@ -241,17 +241,10 @@
             <input id="tiktok" class="form-control"  style="border-radius: 0.25rem;"/>
           </div>
         </div>
-
-
       </div>
 
 
-
-
-      <div class="row mb-5">
-
-
-
+      <div class="row mb-3">
 
         <div class="col-md-6">
           <div class="input-group">
@@ -269,9 +262,27 @@
         </div>
       </div>
 
+      <div class="row mt-5">
+      <div class="col-md-5">
+        <div ngbDropdown class="d-inline-block">
+          <button type="button" class="btn btn-outline-secondary" id="dropdownBasic1" ngbDropdownToggle>
+            Social
+          </button>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <div *ngFor="let icon of socialIcons; index as i">
+              <button ngbDropdownItem>
+                <img src="{{icon}}" width="20" height="20" style="margin-right: 1rem"/>
+                <span>{{socialStrings[i]}}</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
     </form>
 
-    <div [align]="'right'" >
+    <div style="float: right;" >
       <button
         type="button"
         class="btn text-light save-button"
@@ -381,7 +392,7 @@
 
     </form>
 
-    <div [align]="'right'" >
+    <div  style="float: right;" >
       <button
         type="button"
         class="btn text-light save-button"
