@@ -53,7 +53,7 @@
           </div>
 
           <div class="input-group">
-            <input id="nome" class="form-control" />
+            <input id="genere" class="form-control" />
           </div>
         </div>
 
@@ -91,7 +91,7 @@
           </div>
 
           <div class="input-group">
-            <input id="nome" class="form-control" />
+            <input id="compagnia" class="form-control" />
           </div>
         </div>
 
@@ -101,7 +101,7 @@
          <span>Città</span>
         </div>
          <div class="input-group">
-          <input id="cognome" class="form-control" />
+          <input id="citta" class="form-control" />
          </div>
         </div>
       </div>
@@ -116,7 +116,7 @@
           </div>
 
           <div class="input-group">
-            <input id="nome" class="form-control" />
+            <input id="indirizzo" class="form-control" />
           </div>
         </div>
 
@@ -162,19 +162,97 @@
       (click)="modal.dismiss('Cross click')"
     />
   </div>
-  <div class="modal-body">
-    <h1>MODAL CONTACTS</h1>
-  </div>
+  <div class="modal-body" style="background-color: #f7f7f7;">
+    <form>
 
-  <div class="modal-footer">
-    <button
-      type="button"
-      class="btn text-light"
-      style="background-color: var(--black_ez)"
-      (click)="modal.close('Save click')"
-    >
-      Save
-    </button>
+
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <div>
+            <span>Nome azienda</span>
+          </div>
+
+          <div class="input-group">
+            <input id="nomeAzienda" class="form-control" />
+          </div>
+        </div>
+
+
+       <div class="col-md-6">
+        <div>
+         <span>Ambito</span>
+        </div>
+         <div class="input-group">
+          <input id="ambito" class="form-control" />
+         </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <div>
+            <span>Sito web</span>
+          </div>
+
+          <div class="input-group">
+            <input id="sitoWeb" class="form-control" />
+          </div>
+        </div>
+
+
+       <div class="col-md-6">
+
+        <div>
+          <span>Numero di telefono</span>
+        </div>
+        <div class="input-group">
+          <input id="numeroDiTelefono" class="form-control" />
+
+        </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <div>
+            <span>Città</span>
+          </div>
+
+          <div class="input-group">
+            <input id="citta" class="form-control" />
+          </div>
+        </div>
+
+
+       <div class="col-md-6">
+        <div>
+         <span>Indirizzo</span>
+        </div>
+         <div class="input-group">
+          <input id="indirizzo" class="form-control" />
+         </div>
+        </div>
+      </div>
+
+
+    </form>
+
+    <div [align]="'right'" >
+      <button
+        type="button"
+        class="btn text-light save-button"
+        (click)="modal.close('Save click')"
+      >
+  <span class="text-light save-label section-title">SALVA</span>
+      </button>
+    </div>
+
   </div>
 </ng-template>
 
@@ -195,19 +273,114 @@
       (click)="modal.dismiss('Cross click')"
     />
   </div>
-  <div class="modal-body">
-    <h1>MODAL SOCIAL</h1>
-  </div>
+  <div class="modal-body" style="background-color: #f7f7f7;">
+    <form>
 
-  <div class="modal-footer">
-    <button
-      type="button"
-      class="btn text-light"
-      style="background-color: var(--black_ez)"
-      (click)="modal.close('Save click')"
-    >
-      Save
-    </button>
+
+      <div class="row mb-5 mt-3">
+
+
+        <div class="col-md-1">
+          <img  class="social-icon" src="assets/facebook-icon.png">
+        </div>
+        <div class="col-md-4">
+
+          <div class="input-group">
+            <input id="facebook" class="form-control" />
+          </div>
+        </div>
+
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-1">
+          <img  class="social-icon" src="assets/tik-tok-icon.png">
+        </div>
+
+        <div class="col-md-4">
+
+          <div class="input-group">
+            <input id="tiktok" class="form-control" />
+          </div>
+        </div>
+
+
+      </div>
+
+
+
+
+      <div class="row mb-5">
+
+
+        <div class="col-md-1">
+          <img  class="social-icon" src="assets/linkedin-icon.png">
+        </div>
+        <div class="col-md-4">
+
+          <div class="input-group">
+            <input id="linkedin" class="form-control" />
+          </div>
+        </div>
+
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-1">
+          <img  class="social-icon" src="assets/whatsapp-icon.png">
+        </div>
+        <div class="col-md-4">
+
+          <div class="input-group">
+            <input id="whatsapp" class="form-control" />
+          </div>
+        </div>
+
+      </div>
+
+
+
+      <div class="row mb-3">
+        <div class="col-md-5">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+              <button class="dropdown-item" type="button">Action</button>
+              <button class="dropdown-item" type="button">Another action</button>
+              <button class="dropdown-item" type="button">Something else here</button>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-1">
+
+          <div class="input-group">
+            <input id="linkedin" class="form-control" />
+          </div>
+        </div>
+
+
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-5">
+
+
+        </div>
+      </div>
+
+
+    </form>
+
+    <div [align]="'right'" >
+      <button
+        type="button"
+        class="btn text-light save-button"
+        (click)="modal.close('Save click')"
+      >
+  <span class="text-light save-label section-title">SALVA</span>
+      </button>
+    </div>
+
   </div>
 </ng-template>
 
@@ -379,6 +552,7 @@
         class="question-mark"
         src="assets/question-mark.png"
       />
+
     </div>
 
 
@@ -491,6 +665,7 @@
         </div>
         <div>
           <span style="font-size: 1rem">Email, Lingua, ecc.</span>
+
         </div>
       </div>
     </div>
@@ -517,6 +692,7 @@
     <div class="row assistenza-footer" [align]="'center'">
       <div>
         <span class="section-title text-light">Assistenza</span>
+
         <img
           style="margin-left: 0.5rem"
           class="question-mark"
