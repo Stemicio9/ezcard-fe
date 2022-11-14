@@ -233,70 +233,6 @@
   </div>
 </ng-template>
 
-<ng-template #stats let-modal>
-  <div class="modal-header" style="background-color: var(--black_ez)">
-    <div>
-      <img class="user" src="assets/stats-icon-white.png"/>
-      <span class="section-title text-light" style="padding-left: 1rem"
-      >Statistiche</span
-      >
-    </div>
-
-    <img
-      class="btn-close cancel"
-      type="button"
-      src="assets/cancel-icon-white.png"
-      (click)="modal.dismiss('Cross click')"
-    />
-  </div>
-  <div class="modal-body">
-    <h1>MODAL STATS</h1>
-  </div>
-
-  <div class="modal-footer">
-    <button
-      type="button"
-      class="btn text-light"
-      style="background-color: var(--black_ez)"
-      (click)="modal.close('Save click')"
-    >
-      Save
-    </button>
-  </div>
-</ng-template>
-
-<ng-template #settings let-modal>
-  <div class="modal-header" style="background-color: var(--black_ez)">
-    <div>
-      <img class="user" src="assets/settings-icon-white.png"/>
-      <span class="section-title text-light" style="padding-left: 1rem"
-      >Impostazioni</span
-      >
-    </div>
-
-    <img
-      class="btn-close cancel"
-      type="button"
-      src="assets/cancel-icon-white.png"
-      (click)="modal.dismiss('Cross click')"
-    />
-  </div>
-  <div class="modal-body">
-    <h1>MODAL SETTINGS</h1>
-  </div>
-
-  <div class="modal-footer">
-    <button
-      type="button"
-      class="btn text-light"
-      style="background-color: var(--black_ez)"
-      (click)="modal.close('Save click')"
-    >
-      Save
-    </button>
-  </div>
-</ng-template>
-
 <ng-template #password let-modal>
   <div class="modal-header" style="background-color: var(--black_ez)">
     <div>
@@ -438,8 +374,8 @@
     </div>
 
     <div
-      (click)="openGenericModal(stats)"
       class="row box-shadow"
+      routerLink="/stats"
     >
       <div class="col-2 col-md-1 mt-1">
         <img class="user" src="assets/stats-icon.png"/>
@@ -455,8 +391,8 @@
     </div>
 
     <div
-      (click)="openGenericModal(settings)"
       class="row box-shadow"
+      routerLink="/settings"
     >
       <div class="col-2 col-md-1 mt-1">
         <img class="user" src="assets/settings-icon.png"/>

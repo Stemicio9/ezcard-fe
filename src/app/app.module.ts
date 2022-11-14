@@ -16,10 +16,10 @@ import {ProfileModalComponent} from './components/modal/profile-modal/profile-mo
 import {SocialModalComponent} from './components/modal/social-modal/social-modal.component';
 import {ContactsModalComponent} from './components/modal/contacts-modal/contacts-modal.component';
 import {CompanyModalComponent} from './components/modal/company-modal/company-modal.component';
-import {StatsModalComponent} from './components/modal/stats-modal/stats-modal.component';
-import {SettingsModalComponent} from './components/modal/settings-modal/settings-modal.component';
 import {PasswordModalComponent} from './components/modal/password-modal/password-modal.component';
 import {NgbDateParserFormatterExtProvider} from "./components/date-picker";
+import { SettingsComponent } from './components/settings/settings.component';
+import { StatsComponent } from './components/stats/stats.component';
 
 @NgModule({
   declarations: [
@@ -34,9 +34,9 @@ import {NgbDateParserFormatterExtProvider} from "./components/date-picker";
     ContactsModalComponent,
     SocialModalComponent,
     CompanyModalComponent,
-    StatsModalComponent,
-    SettingsModalComponent,
     PasswordModalComponent,
+    SettingsComponent,
+    StatsComponent,
   ],
   imports: [
     AppRoutingModule,
