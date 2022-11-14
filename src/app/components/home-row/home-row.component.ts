@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import { ProfileModalComponent } from '../modal/profile-modal/profile-modal.component';
 
 @Component({
   selector: 'app-home-row',

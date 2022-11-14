@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Profile} from "../entities/profile";
 import {environment} from "../../environments/environment";
@@ -14,11 +14,10 @@ export class ProfileService {
 
 
   buildHeaders(){
-    const headers = {
+    return {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + this.storageService.getTokenFromStorage()
     };
-    return headers;
   }
 
   insertProfile(profile: Profile){
