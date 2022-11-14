@@ -45,4 +45,9 @@ export class HomeComponent implements OnInit {
 
   }
 
+  formatDate() {
+    let datePicker = document.getElementById("dateOfBirth");
+    console.log(datePicker);
+    datePicker?.setAttribute("format", "dd/MM/yyyy");
+  }
 }
