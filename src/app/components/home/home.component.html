@@ -329,7 +329,7 @@
 
 
       <div class="row mb-3">
-        <div class="col-md-5">
+        <div class="col-md-2">
           <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Dropdown
@@ -342,7 +342,7 @@
           </div>
 
         </div>
-        <div class="col-md-1">
+        <div class="col-md-4">
 
           <div class="input-group">
             <input id="linkedin" class="form-control" />
@@ -390,19 +390,97 @@
       (click)="modal.dismiss('Cross click')"
     />
   </div>
-  <div class="modal-body">
-    <h1>MODAL AZIENDA</h1>
-  </div>
+  <div class="modal-body" style="background-color: #f7f7f7;">
+    <form>
 
-  <div class="modal-footer">
-    <button
-      type="button"
-      class="btn text-light"
-      style="background-color: var(--black_ez)"
-      (click)="modal.close('Save click')"
-    >
-      Save
-    </button>
+
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <div>
+            <span>Nome azienda</span>
+          </div>
+
+          <div class="input-group">
+            <input id="nomeAzienda" class="form-control" />
+          </div>
+        </div>
+
+
+       <div class="col-md-6">
+        <div>
+         <span>Ambito</span>
+        </div>
+         <div class="input-group">
+          <input id="ambito" class="form-control" />
+         </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <div>
+            <span>Sito web</span>
+          </div>
+
+          <div class="input-group">
+            <input id="sitoWeb" class="form-control" />
+          </div>
+        </div>
+
+
+       <div class="col-md-6">
+
+        <div>
+          <span>Numero di telefono</span>
+        </div>
+        <div class="input-group">
+          <input id="numeroDiTelefono" class="form-control" />
+
+        </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <div>
+            <span>Città</span>
+          </div>
+
+          <div class="input-group">
+            <input id="citta" class="form-control" />
+          </div>
+        </div>
+
+
+       <div class="col-md-6">
+        <div>
+         <span>Indirizzo</span>
+        </div>
+         <div class="input-group">
+          <input id="indirizzo" class="form-control" />
+         </div>
+        </div>
+      </div>
+
+
+    </form>
+
+    <div [align]="'right'" >
+      <button
+        type="button"
+        class="btn text-light save-button"
+        (click)="modal.close('Save click')"
+      >
+  <span class="text-light save-label section-title">SALVA</span>
+      </button>
+    </div>
+
   </div>
 </ng-template>
 

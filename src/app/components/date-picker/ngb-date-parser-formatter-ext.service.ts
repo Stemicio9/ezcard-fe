@@ -7,7 +7,6 @@ export class NgbDateParserFormatterExtService extends NgbDateParserFormatter {
   private dateSeparatorChar: string = "-";
 
 // dateFormat should be "yyyy-MM-dd" or "dd-MM-yyyy" with the valid separator.
-  // private dateFormat = `yyyy${this.dateSeparatorChar}MM${this.dateSeparatorChar}dd`;
   private dateFormat = `dd${this.dateSeparatorChar}MM${this.dateSeparatorChar}yyyy`;
 
   parse(value: string) {
