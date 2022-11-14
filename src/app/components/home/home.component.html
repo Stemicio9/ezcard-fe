@@ -1,16 +1,15 @@
 <ng-template #profile let-modal>
   <div class="modal-header" style="background-color: var(--black_ez)">
     <div>
-      <img class="user" src="assets/user-icon-white.png" />
+      <img class="user" src="assets/user-icon-white.png"/>
       <span class="section-title text-light" style="padding-left: 1rem"
-        >Profilo</span
+      >Profilo</span
       >
     </div>
 
     <img
-      class="btn-close"
+      class="btn-close cancel"
       type="button"
-      class="cancel"
       src="assets/cancel-icon-white.png"
       (click)="modal.dismiss('Cross click')"
     />
@@ -28,22 +27,20 @@
           </div>
 
           <div class="input-group">
-            <input id="nome" class="form-control" />
+            <input id="firstName" class="form-control"/>
           </div>
         </div>
 
 
-       <div class="col-md-6">
-        <div>
-         <span>Cognome</span>
-        </div>
-         <div class="input-group">
-          <input id="cognome" class="form-control" />
-         </div>
+        <div class="col-md-6">
+          <div>
+            <span>Cognome</span>
+          </div>
+          <div class="input-group">
+            <input id="lastName" class="form-control"/>
+          </div>
         </div>
       </div>
-
-
 
 
       <div class="row mb-3">
@@ -53,35 +50,32 @@
           </div>
 
           <div class="input-group">
-            <input id="genere" class="form-control" />
+            <input id="genre" class="form-control"/>
           </div>
         </div>
 
 
-       <div class="col-md-6">
+        <div class="col-md-6">
 
-        <div>
-          <span for="dateOfBirth">Data di nascita</span>
-        </div>
-        <div class="input-group">
-          <input
-            id="dateOfBirth"
-            class="form-control"
-            name="dp"
-            ngbDatepicker
-            #dp="ngbDatepicker"
-          />
-          <button
-            class="btn bi bi-calendar3 text-light"
-            style="background-color: var(--black_ez)"
-            (click)="dp.toggle()"
-            type="button"
-          ></button>
-        </div>
+          <div>
+            <span for="dateOfBirth">Data di nascita</span>
+          </div>
+          <div class="input-group">
+            <input
+              #datepicker="ngbDatepicker"
+              class="form-control"
+              name="datepicker"
+              ngbDatepicker
+            />
+            <button
+              class="btn bi bi-calendar3 text-light"
+              style="background-color: var(--black_ez)"
+              (click)="datepicker.toggle()"
+              type="button"
+            ></button>
+          </div>
         </div>
       </div>
-
-
 
 
       <div class="row mb-3">
@@ -91,22 +85,20 @@
           </div>
 
           <div class="input-group">
-            <input id="compagnia" class="form-control" />
+            <input id="company" class="form-control"/>
           </div>
         </div>
 
 
-       <div class="col-md-6">
-        <div>
-         <span>Città</span>
-        </div>
-         <div class="input-group">
-          <input id="citta" class="form-control" />
-         </div>
+        <div class="col-md-6">
+          <div>
+            <span>Città</span>
+          </div>
+          <div class="input-group">
+            <input id="city" class="form-control"/>
+          </div>
         </div>
       </div>
-
-
 
 
       <div class="row mb-3">
@@ -116,12 +108,12 @@
           </div>
 
           <div class="input-group">
-            <input id="indirizzo" class="form-control" />
+            <input id="address" class="form-control"/>
           </div>
         </div>
 
 
-       <div class="col-md-6">
+        <div class="col-md-6">
 
 
         </div>
@@ -130,13 +122,13 @@
 
     </form>
 
-    <div [align]="'right'" >
+    <div [align]="'right'">
       <button
         type="button"
         class="btn text-light save-button"
         (click)="modal.close('Save click')"
       >
-  <span class="text-light save-label section-title">SALVA</span>
+        <span class="text-light save-label section-title">SALVA</span>
       </button>
     </div>
 
@@ -148,16 +140,15 @@
 <ng-template #contacts let-modal>
   <div class="modal-header" style="background-color: var(--black_ez)">
     <div>
-      <img class="user" src="assets/social-icon-white.png" />
+      <img class="user" src="assets/social-icon-white.png"/>
       <span class="section-title text-light" style="padding-left: 1rem"
-        >Contatti</span
+      >Contatti</span
       >
     </div>
 
     <img
-      class="btn-close"
+      class="btn-close cancel"
       type="button"
-      class="cancel"
       src="assets/cancel-icon-white.png"
       (click)="modal.dismiss('Cross click')"
     />
@@ -259,16 +250,15 @@
 <ng-template #social let-modal>
   <div class="modal-header" style="background-color: var(--black_ez)">
     <div>
-      <img class="user" src="assets/share-icon-white.png" />
+      <img class="user" src="assets/share-icon-white.png"/>
       <span class="section-title text-light" style="padding-left: 1rem"
-        >Social</span
+      >Social</span
       >
     </div>
 
     <img
-      class="btn-close"
+      class="btn-close cancel"
       type="button"
-      class="cancel"
       src="assets/cancel-icon-white.png"
       (click)="modal.dismiss('Cross click')"
     />
@@ -387,16 +377,15 @@
 <ng-template #company let-modal>
   <div class="modal-header" style="background-color: var(--black_ez)">
     <div>
-      <img class="user" src="assets/company-icon-white.png" />
+      <img class="user" src="assets/company-icon-white.png"/>
       <span class="section-title text-light" style="padding-left: 1rem"
-        >Azienda</span
+      >Azienda</span
       >
     </div>
 
     <img
-      class="btn-close"
+      class="btn-close cancel"
       type="button"
-      class="cancel"
       src="assets/cancel-icon-white.png"
       (click)="modal.dismiss('Cross click')"
     />
@@ -417,85 +406,18 @@
   </div>
 </ng-template>
 
-<ng-template #stats let-modal>
-  <div class="modal-header" style="background-color: var(--black_ez)">
-    <div>
-      <img class="user" src="assets/stats-icon-white.png" />
-      <span class="section-title text-light" style="padding-left: 1rem"
-        >Statistiche</span
-      >
-    </div>
-
-    <img
-      class="btn-close"
-      type="button"
-      class="cancel"
-      src="assets/cancel-icon-white.png"
-      (click)="modal.dismiss('Cross click')"
-    />
-  </div>
-  <div class="modal-body">
-    <h1>MODAL STATS</h1>
-  </div>
-
-  <div class="modal-footer">
-    <button
-      type="button"
-      class="btn text-light"
-      style="background-color: var(--black_ez)"
-      (click)="modal.close('Save click')"
-    >
-      Save
-    </button>
-  </div>
-</ng-template>
-
-<ng-template #settings let-modal>
-  <div class="modal-header" style="background-color: var(--black_ez)">
-    <div>
-      <img class="user" src="assets/settings-icon-white.png" />
-      <span class="section-title text-light" style="padding-left: 1rem"
-        >Impostazioni</span
-      >
-    </div>
-
-    <img
-      class="btn-close"
-      type="button"
-      class="cancel"
-      src="assets/cancel-icon-white.png"
-      (click)="modal.dismiss('Cross click')"
-    />
-  </div>
-  <div class="modal-body">
-    <h1>MODAL SETTINGS</h1>
-  </div>
-
-  <div class="modal-footer">
-    <button
-      type="button"
-      class="btn text-light"
-      style="background-color: var(--black_ez)"
-      (click)="modal.close('Save click')"
-    >
-      Save
-    </button>
-  </div>
-</ng-template>
-
 <ng-template #password let-modal>
   <div class="modal-header" style="background-color: var(--black_ez)">
     <div>
-      <img class="user" src="assets/password-icon-white.png" />
+      <img class="user" src="assets/password-icon-white.png"/>
       <span class="section-title text-light" style="padding-left: 1rem"
-        >Password</span
+      >Password</span
       >
     </div>
 
     <img
-      class="btn-close"
+      class="btn-close cancel"
       type="button"
-      class="cancel"
       src="assets/cancel-icon-white.png"
       (click)="modal.dismiss('Cross click')"
     />
@@ -517,30 +439,20 @@
 </ng-template>
 
 
-
-
-
-
-
-
-
-
-
-
 <div class="row">
   <div class="col-md-4 d-flex flex-column justify-content-between" style="margin-top: 3rem">
 
     <!-- photo, camera and description -->
     <div>
       <div class="d-flex flex-row justify-content-center">
-        <img class="rounded-circle" src="assets/avatar-image.png" />
+        <img class="rounded-circle" src="assets/avatar-image.png"/>
         <img class="camera" src="assets/camera-icon.png"
         />
       </div>
 
       <div class="d-flex flex-row justify-content-center mt-3 mb-md-0 mb-2">
         <span style="font-size: 0.9rem; text-align: center;"
-          >Clicca sull'immagine per modificarla
+        >Clicca sull'immagine per modificarla
         </span>
       </div>
     </div>
@@ -568,7 +480,7 @@
       class="row box-shadow"
     >
       <div class="col-2 col-md-1 mt-1">
-        <img class="user" src="assets/user-icon.png" />
+        <img class="user" src="assets/user-icon.png"/>
       </div>
       <div class="col-10 col-md-11">
         <div>
@@ -585,7 +497,7 @@
       class="row box-shadow"
     >
       <div class="col-2 col-md-1 mt-1">
-        <img class="user" src="assets/email-icon.png" />
+        <img class="user" src="assets/email-icon.png"/>
       </div>
       <div class="col-10 col-md-11">
         <div>
@@ -602,7 +514,7 @@
       class="row box-shadow"
     >
       <div class="col-2 col-md-1 mt-1">
-        <img class="user" src="assets/share-icon.png" />
+        <img class="user" src="assets/share-icon.png"/>
       </div>
       <div class="col-10 col-md-11">
         <div>
@@ -619,7 +531,7 @@
       class="row box-shadow"
     >
       <div class="col-2 col-md-1 mt-1">
-        <img class="user" src="assets/azienda-icon.png" />
+        <img class="user" src="assets/azienda-icon.png"/>
       </div>
       <div class="col-10 col-md-11">
         <div>
@@ -636,11 +548,11 @@
     </div>
 
     <div
-      (click)="openGenericModal(stats)"
       class="row box-shadow"
+      routerLink="/stats"
     >
       <div class="col-2 col-md-1 mt-1">
-        <img class="user" src="assets/stats-icon.png" />
+        <img class="user" src="assets/stats-icon.png"/>
       </div>
       <div class="col-10 col-md-11">
         <div>
@@ -653,11 +565,11 @@
     </div>
 
     <div
-      (click)="openGenericModal(settings)"
       class="row box-shadow"
+      routerLink="/settings"
     >
       <div class="col-2 col-md-1 mt-1">
-        <img class="user" src="assets/settings-icon.png" />
+        <img class="user" src="assets/settings-icon.png"/>
       </div>
       <div class="col-10 col-md-11">
         <div>
@@ -675,7 +587,7 @@
       class="row box-shadow"
     >
       <div class="col-2 col-md-1 mt-1">
-        <img class="user" src="assets/password-icon.png" />
+        <img class="user" src="assets/password-icon.png"/>
       </div>
       <div class="col-10 col-md-11">
         <div>
