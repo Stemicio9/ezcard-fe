@@ -16,7 +16,7 @@
   </div>
 
 
-  <div class="modal-body" style="background-color: #f7f7f7;">
+  <div class="modal-body border-radius-popup">
     <form>
 
 
@@ -153,7 +153,7 @@
       (click)="modal.dismiss('Cross click')"
     />
   </div>
-  <div class="modal-body" style="background-color: #f7f7f7;">
+  <div class="modal-body border-radius-popup">
     <form>
 
 
@@ -221,7 +221,7 @@
       (click)="modal.dismiss('Cross click')"
     />
   </div>
-  <div class="modal-body" style="background-color: #f7f7f7;">
+  <div class="modal-body border-radius-popup">
     <form>
 
 
@@ -265,13 +265,11 @@
       <div class="row mt-5">
       <div class="col-md-5">
         <div ngbDropdown class="d-inline-block">
-          <button type="button" class="btn btn-outline-secondary" id="dropdownBasic1" ngbDropdownToggle>
-            Social
-          </button>
+          <button type="button" class="btn btn-outline-secondary" ngbDropdownToggle>Social</button>
           <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
             <div *ngFor="let icon of socialIcons; index as i">
               <button ngbDropdownItem>
-                <img src="{{icon}}" width="20" height="20" style="margin-right: 1rem"/>
+                <img src="{{icon}}" width="20" height="20" style="margin-right: 0.5rem"/>
                 <span>{{socialStrings[i]}}</span>
               </button>
             </div>
@@ -311,7 +309,7 @@
       (click)="modal.dismiss('Cross click')"
     />
   </div>
-  <div class="modal-body" style="background-color: #f7f7f7;">
+  <div class="modal-body border-radius-popup">
     <form>
 
 
@@ -402,38 +400,6 @@
       </button>
     </div>
 
-  </div>
-</ng-template>
-
-<ng-template #password let-modal>
-  <div class="modal-header" style="background-color: var(--black_ez)">
-    <div>
-      <img class="user" src="assets/password-icon-white.png"/>
-      <span class="section-title text-light" style="padding-left: 1rem"
-      >Password</span
-      >
-    </div>
-
-    <img
-      class="btn-close cancel"
-      type="button"
-      src="assets/cancel-icon-white.png"
-      (click)="modal.dismiss('Cross click')"
-    />
-  </div>
-  <div class="modal-body">
-    <h1>MODAL PASSWORD</h1>
-  </div>
-
-  <div class="modal-footer">
-    <button
-      type="button"
-      class="btn text-light"
-      style="background-color: var(--black_ez)"
-      (click)="modal.close('Save click')"
-    >
-      Save
-    </button>
   </div>
 </ng-template>
 
@@ -577,23 +543,6 @@
         <div>
           <span style="font-size: 1rem">Email, Lingua, ecc.</span>
 
-        </div>
-      </div>
-    </div>
-
-    <div
-      (click)="openGenericModal(password)"
-      class="row box-shadow"
-    >
-      <div class="col-2 col-md-1 mt-1">
-        <img class="user" src="assets/password-icon.png"/>
-      </div>
-      <div class="col-10 col-md-11">
-        <div>
-          <span class="section-title">Password</span>
-        </div>
-        <div>
-          <span style="font-size: 1rem">Impostazioni password</span>
         </div>
       </div>
     </div>
