@@ -1,11 +1,14 @@
 .question-mark {
   width: 20px;
   height: 20px;
+  cursor: pointer;
 }
 
 .camera {
   width: 25px;
   height: 25px;
+  margin-top: 12.6rem;
+  cursor: pointer;
 }
 .user {
   width: 40px;
@@ -34,6 +37,7 @@ h5 {
   padding-top: 0.5em;
   padding-right: 0.5em;
   padding-bottom: 0.5em;
+  cursor: pointer;
 }
 
 .box-shadow:hover {
@@ -54,8 +58,18 @@ h5 {
   background: black;
 }
 
-.main-section-style{
+.main-section-style {
   background-color: #f7f7f7;
   padding-top: 3rem;
   padding-bottom: 3rem;
+}
+
+.save-label {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.save-button{
+  border-radius: 24px;
+  background-color: var(--black_ez)
 }
