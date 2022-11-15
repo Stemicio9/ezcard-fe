@@ -43,7 +43,5 @@ export class AppComponent implements OnInit {
       routeTitle = route!.snapshot.data['title'];
     }
     this.pageTitle = routeTitle;
-    console.log(this.pageTitle);
-
   }
 }
