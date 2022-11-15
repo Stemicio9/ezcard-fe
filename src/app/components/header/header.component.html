@@ -1,11 +1,24 @@
 <!-- Image and text -->
 <div *ngIf="this.showHeader">
-  <nav class="navbar p-2 navbar-dark" >
-    <div>
-    <a class="navbar-brand" href="/home">
-      <img src="/assets/white-logo.png" width="160" height="40" class="d-inline-block" style="margin-left:3.2rem">
-    </a>
-    <span class="d-none d-md-inline" style="color: white;"> | Gestione Account</span>
-  </div>
+  <nav class="navbar p-2 navbar-dark">
+    <div style="margin-left: 3.2rem">
+      <a class="navbar-brand" href="/home">
+        <img
+          src="/assets/white-logo.png"
+          width="160"
+          height="40"
+          class="d-inline-block"
+        />
+      </a>
+      <span class="d-none d-md-inline" style="color: white">
+        | Gestione Account</span
+      >
+    </div>
+
+    <div *ngIf="this.showHomeIcon" style="margin-right: 3.2rem">
+      <a class="navbar-brand" href="/home">
+        <img src="/assets/home-icon.png" width="25" height="25" />
+      </a>
+    </div>
   </nav>
 </div>

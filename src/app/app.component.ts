@@ -10,6 +10,7 @@ export class AppComponent implements OnInit {
   title = 'ezcard-fe';
 
   showHeader = false;
+  showHomeIcon = false;
 
   constructor(private router: Router) {}
 
@@ -17,6 +18,7 @@ export class AppComponent implements OnInit {
     this.router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
         this.showHeader = val.url.includes('home') || val.url.includes('settings') || val.url.includes('stats');
+        this.showHomeIcon = val.url.includes('settings') || val.url.includes('stats');
       }
     });
   }
