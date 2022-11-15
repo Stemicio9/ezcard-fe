@@ -6,4 +6,10 @@
 html, body {
   height: 100%;
   font-family: 'Montserrat', sans-serif;
+  scroll-behavior: smooth;
+
+}
+
+.gray-background {
+  background-color: #f7f7f7;
 }

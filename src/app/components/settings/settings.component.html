@@ -1,1 +1,127 @@
-<p>settings works!</p>
+<div class="row gray-background"style="padding-left: 2rem; padding-right: 2rem">
+  <div class="col-md-4 main-section-style">
+    <div class="g-col g-span2--wide u-showAboveWide">
+      <div data-js-category-sticky-bar="" class="c-categoryNav-container">
+        <nav
+          aria-labelledby="categories-title"
+          data-test-id="category-nav"
+          data-js-category-sticky-bar-inner-wrapper=""
+          class="scrollactive-nav c-categoryNav"
+        >
+          <ul class="c-menu menu-voice">
+            <li data-js-test="nav-list-item" class="c-menu-item">
+              <a
+                (click)="onClickScroll('profilo')"
+                data-test-id="category-nav-link"
+                data-js-test="nav-item-header"
+                class="c-menu-link scrollactive-item c-menu-link--active"
+                ><span data-test-id="nav-list-item-text" class="u-text-truncate"
+                  >Profilo</span
+                ></a
+              >
+              <!---->
+            </li>
+            <li data-js-test="nav-list-item" class="c-menu-item">
+              <a
+              (click)="onClickScroll('notifiche')"
+                data-test-id="category-nav-link"
+                data-js-test="nav-item-header"
+                class="c-menu-link scrollactive-item"
+                ><span data-test-id="nav-list-item-text" class="u-text-truncate"
+                  >Notifiche</span
+                ></a
+              >
+              <!---->
+            </li>
+            <li data-js-test="nav-list-item" class="c-menu-item">
+              <a
+              (click)="onClickScroll('aspetto')"
+                data-test-id="category-nav-link"
+                data-js-test="nav-item-header"
+                class="c-menu-link scrollactive-item"
+                ><span data-test-id="nav-list-item-text" class="u-text-truncate"
+                  >Aspetto</span
+                ></a
+              >
+              <!---->
+            </li>
+            <li data-js-test="nav-list-item" class="c-menu-item">
+              <a
+              (click)="onClickScroll('section4')"
+                data-test-id="category-nav-link"
+                data-js-test="nav-item-header"
+                class="c-menu-link scrollactive-item"
+                ><span data-test-id="nav-list-item-text" class="u-text-truncate"
+                  >Sezione4</span
+                ></a
+              >
+              <!---->
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-8 main-section-style" style="padding-left: 1rem">
+    <div id="profilo">
+      <h5>Profilo</h5>
+    </div>
+    <div>
+      <input class="input-top" placeholder="Nome utente" />
+    </div>
+    <div>
+      <input class="input-half" placeholder="Nickname" />
+    </div>
+    <div>
+      <input class="input-bottom" placeholder="Email" />
+    </div>
+
+    <div id="notifiche" class="mt-5">
+      <h5>Notifiche</h5>
+    </div>
+
+    <div>
+      <input class="input-top" placeholder="Attiva/Disattiva" />
+    </div>
+    <div>
+      <input class="input-bottom" placeholder="Silenzia" />
+    </div>
+
+    <div id="aspetto" class="mt-5">
+      <h5>Aspetto</h5>
+    </div>
+
+    <div>
+      <input class="input-top" placeholder="Modalità notturna" />
+    </div>
+    <div>
+      <input class="input-half" placeholder="Luminosità" />
+    </div>
+    <div>
+      <input class="input-bottom" placeholder="Tema" />
+    </div>
+
+    <div id="section4" class="mt-5">
+      <h5>Sezione 4</h5>
+    </div>
+
+    <div>
+      <input class="input-top" placeholder="Campo1" />
+    </div>
+    <div>
+      <input class="input-half" placeholder="Campo2" />
+    </div>
+    <div>
+      <input class="input-half" placeholder="Campo3" />
+    </div>
+    <div>
+      <input class="input-bottom" placeholder="Campo4" />
+    </div>
+  </div>
+</div>
+
+
+
+
+

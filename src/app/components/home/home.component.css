@@ -60,7 +60,6 @@ h5 {
 }
 
 .main-section-style {
-  background-color: #f7f7f7;
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
@@ -71,13 +70,14 @@ h5 {
 }
 
 .save-button{
-  margin-top: 2rem;
+  float: right;
   border-radius: 24px;
   background-color: var(--black_ez)
 }
 
 
 .border-radius-popup {
-  background-color: #f7f7f7;
   border-radius: 24px
 }
+
+

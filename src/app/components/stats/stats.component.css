@@ -1,0 +1,23 @@
+.elevated-card{
+
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+}
+
+.section-title {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+
+.section-subtitle {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.question-mark {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
