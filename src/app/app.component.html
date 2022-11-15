@@ -1,6 +1,9 @@
 <div style="height: 100vh">
   <div>
-      <app-header [showHeader]="this.showHeader" [showHomeIcon]="this.showHomeIcon"></app-header>
+      <app-header
+      [showHeader]="this.showHeader"
+      [showHomeIcon]="this.showHomeIcon"
+      [pageTitle]="this.pageTitle"></app-header>
   </div>
   <div class="container-fluid">
    <router-outlet></router-outlet>

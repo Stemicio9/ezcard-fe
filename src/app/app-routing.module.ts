@@ -12,11 +12,10 @@ const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'forget-password', component: ForgetPasswordComponent },
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent , data: {title: 'Gestione Account'}},
   { path: 'profile', component: ProfileModalComponent },
-  { path: 'settings', component:  SettingsComponent},
-
-  { path: 'stats', component:  StatsComponent},
+  { path: 'settings', component:  SettingsComponent, data: {title: 'Impostazioni'}},
+  { path: 'stats', component:  StatsComponent, data: {title: 'Statistiche'}},
   { path: 'profile/:id', component: ProfileComponent },
 
 ];
