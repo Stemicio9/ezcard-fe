@@ -15,9 +15,10 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'profile', component: ProfileModalComponent },
   { path: 'settings', component:  SettingsComponent},
-  { path: 'stats', component:  StatsComponent},
 
+  { path: 'stats', component:  StatsComponent},
   { path: 'profile/:id', component: ProfileComponent },
+
 ];
 
 @NgModule({

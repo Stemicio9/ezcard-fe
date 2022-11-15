@@ -77,10 +77,6 @@ h5 {
   border-bottom-color: lightgrey; border-width: 1px;
 }
 
-
-
-
-
 .c-menu-link.c-menu-link--active, .c-menu-link:active, .c-menu-link:focus, .c-menu-link:hover {
   border-left: 2px solid #575655;
   font-weight: 700;
@@ -103,3 +99,9 @@ h5 {
   list-style: none;
   cursor: pointer;
 }
+
+.content-padding{
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
