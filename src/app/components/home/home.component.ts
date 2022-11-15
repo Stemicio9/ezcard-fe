@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
   constructor(private modalService: NgbModal) { }
 
   openGenericModal(content:any){
-    this.modalService.open(content, {size: 'lg',centered:true, ariaLabelledBy: 'modal-basic-title' }).result.then(
+    this.modalService.open(content, {size: 'lg',centered:true, ariaLabelledBy: 'modal-basic-title'}).result.then(
 			(result) => {
 				this.closeResult = `Closed with: ${result}`;
 			},
