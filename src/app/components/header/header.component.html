@@ -1,7 +1,9 @@
 <!-- Image and text -->
 <div *ngIf="this.showHeader">
   <nav class="navbar p-2 navbar-dark">
-    <div style="margin-left: 3.2rem">
+
+
+    <div class="ms-xs-5 ms-sm-3 ms-md-4 ms-lg-5">
       <a class="navbar-brand" href="/home">
         <img
           src="/assets/white-logo.png"
@@ -13,7 +15,8 @@
       <span class="d-none d-md-inline" style="color: white">|&nbsp;&nbsp;{{this.pageTitle}}</span>
     </div>
 
-    <div *ngIf="this.showHomeIcon" style="margin-right: 3.2rem">
+
+    <div *ngIf="this.showHomeIcon" style="margin-right: 3rem" class="d-none d-md-inline">
       <a class="navbar-brand" href="/home">
         <img src="/assets/home-icon.png" width="25" height="25" />
       </a>
