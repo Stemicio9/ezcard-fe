@@ -20,6 +20,7 @@ import {PasswordModalComponent} from './components/modal/password-modal/password
 import {NgbDateParserFormatterExtProvider} from "./components/date-picker";
 import { SettingsComponent } from './components/settings/settings.component';
 import { StatsComponent } from './components/stats/stats.component';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { StatsComponent } from './components/stats/stats.component';
     PasswordModalComponent,
     SettingsComponent,
     StatsComponent,
+    ResetPasswordComponent,
   ],
   imports: [
     AppRoutingModule,

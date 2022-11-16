@@ -7,11 +7,13 @@ import { ProfileModalComponent } from './components/modal/profile-modal/profile-
 import { ProfileComponent } from './components/profile/profile.component';
 import {SettingsComponent} from "./components/settings/settings.component";
 import {StatsComponent} from "./components/stats/stats.component";
+import {ResetPasswordComponent} from "./components/reset-password/reset-password.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'forget-password', component: ForgetPasswordComponent },
+  { path: 'reset-password', component: ResetPasswordComponent },
   { path: 'home', component: HomeComponent , data: {title: 'Gestione Account'}},
   { path: 'profile', component: ProfileModalComponent },
   { path: 'settings', component:  SettingsComponent, data: {title: 'Impostazioni'}},
