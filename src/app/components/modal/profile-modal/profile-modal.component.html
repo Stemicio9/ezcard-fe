@@ -1,0 +1,116 @@
+<div class="modal-header" style="background-color: var(--black_ez)">
+  <div>
+    <img class="user" src="assets/user-icon-white.png"/>
+    <span class="section-title text-light" style="padding-left: 1rem">Profilo</span>
+  </div>
+
+  <img
+    class="btn-close cancel"
+    type="button"
+    src="assets/cancel-icon-white.png"
+    (click)="closeModal()"
+  />
+</div>
+<div class="modal-body border-radius-popup gray-background" >
+  <form>
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <div>
+          <span>Nome</span>
+        </div>
+
+        <div class="input-group">
+          <input id="firstName" class="form-control"/>
+        </div>
+      </div>
+
+
+      <div class="col-md-6">
+        <div>
+          <span>Cognome</span>
+        </div>
+        <div class="input-group">
+          <input id="lastName" class="form-control"/>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <div>
+          <span>Genere</span>
+        </div>
+
+        <div class="input-group">
+          <input id="genre" class="form-control"/>
+        </div>
+      </div>
+
+
+      <div class="col-md-6">
+
+        <div>
+          <span for="dateOfBirth">Data di nascita</span>
+        </div>
+        <div class="input-group">
+          <input
+            #datepicker="ngbDatepicker"
+            class="form-control"
+            name="datepicker"
+            ngbDatepicker
+          />
+          <button
+            class="btn bi bi-calendar3 text-light"
+            style="background-color: var(--black_ez)"
+            (click)="datepicker.toggle()"
+            type="button"
+          ></button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <div>
+          <span>Compagnia</span>
+        </div>
+
+        <div class="input-group">
+          <input id="company" class="form-control"/>
+        </div>
+      </div>
+
+
+      <div class="col-md-6">
+        <div>
+          <span>Città</span>
+        </div>
+        <div class="input-group">
+          <input id="city" class="form-control"/>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <div>
+          <span>Indirizzo</span>
+        </div>
+        <div class="input-group">
+          <input id="address" class="form-control"/>
+        </div>
+      </div>
+      <div class="col-md-6"></div>
+    </div>
+  </form>
+
+  <div class="mt-5">
+    <button type="button" class="btn text-light save-button">
+      <span class="text-light save-label section-title">SALVA</span>
+    </button>
+  </div>
+
+</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-social-modal',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SocialModalComponent implements OnInit {
 
-  constructor() { }
+  socialIcons: string[] = ["assets/facebook-icon.png","assets/tik-tok-icon.png","assets/linkedin-icon.png", "assets/whatsapp-icon.png"];
+  socialStrings: string[] = ["Facebook", "Tik Tok", "Linkedin", "Whatsapp"];
+
+  constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {
+  }
+
+  closeModal() {
+    this.modalService.dismissAll();
   }
 
 }

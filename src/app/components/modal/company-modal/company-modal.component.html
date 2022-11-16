@@ -1,1 +1,106 @@
-<p>company-modal works!</p>
+<div class="modal-header" style="background-color: var(--black_ez)">
+  <div>
+    <img class="user" src="assets/company-icon-white.png"/>
+    <span class="section-title text-light" style="padding-left: 1rem"
+    >Azienda</span
+    >
+  </div>
+
+  <img
+    class="btn-close cancel"
+    type="button"
+    src="assets/cancel-icon-white.png"
+    (click)="closeModal()"
+  />
+</div>
+<div class="modal-body border-radius-popup gray-background">
+  <form>
+
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <div>
+          <span>Nome azienda</span>
+        </div>
+
+        <div class="input-group">
+          <input id="nomeAzienda" class="form-control" />
+        </div>
+      </div>
+
+
+      <div class="col-md-6">
+        <div>
+          <span>Ambito</span>
+        </div>
+        <div class="input-group">
+          <input id="ambito" class="form-control" />
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <div>
+          <span>Sito web</span>
+        </div>
+
+        <div class="input-group">
+          <input id="sitoWeb" class="form-control" />
+        </div>
+      </div>
+
+
+      <div class="col-md-6">
+
+        <div>
+          <span>Numero di telefono</span>
+        </div>
+        <div class="input-group">
+          <input id="numeroDiTelefono" class="form-control" />
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <div>
+          <span>Città</span>
+        </div>
+
+        <div class="input-group">
+          <input id="citta" class="form-control" />
+        </div>
+      </div>
+
+
+      <div class="col-md-6">
+        <div>
+          <span>Indirizzo</span>
+        </div>
+        <div class="input-group">
+          <input id="indirizzo" class="form-control" />
+        </div>
+      </div>
+    </div>
+
+
+  </form>
+
+  <div class="mt-5" >
+    <button
+      type="button"
+      class="btn text-light save-button"
+    >
+      <span class="text-light save-label section-title">SALVA</span>
+    </button>
+  </div>
+
+</div>

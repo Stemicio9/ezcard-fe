@@ -1,1 +1,96 @@
-<p>social-modal works!</p>
+<div class="modal-header" style="background-color: var(--black_ez)">
+  <div>
+    <img class="user" src="assets/share-icon-white.png"/>
+    <span class="section-title text-light" style="padding-left: 1rem"
+    >Social</span
+    >
+  </div>
+
+  <img
+    class="btn-close cancel"
+    type="button"
+    src="assets/cancel-icon-white.png"
+    (click)="closeModal()"
+  />
+</div>
+<div class="modal-body border-radius-popup gray-background">
+  <form>
+
+
+    <div class="row mb-5 mt-3">
+
+      <div class="col-md-6">
+        <div class="input-group">
+          <img style="margin-right: 0.5rem" class="social-icon" src="assets/facebook-icon.png">
+          <input id="facebook" class="form-control" style="border-radius: 0.25rem;" />
+        </div>
+      </div>
+
+
+      <div class="col-md-6">
+        <div class="input-group">
+          <img style="margin-right: 0.5rem" class="social-icon" src="assets/tik-tok-icon.png">
+          <input id="tiktok" class="form-control"  style="border-radius: 0.25rem;"/>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row mb-3">
+
+      <div class="col-md-6">
+        <div class="input-group">
+          <img style="margin-right: 0.5rem" class="social-icon" src="assets/linkedin-icon.png">
+          <input id="linkedin" class="form-control" style="border-radius: 0.25rem;" />
+        </div>
+      </div>
+
+
+      <div class="col-md-6">
+        <div class="input-group">
+          <img style="margin-right: 0.5rem" class="social-icon" src="assets/whatsapp-icon.png">
+          <input id="whatsapp" class="form-control"  style="border-radius: 0.25rem;"/>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="mt-5 d-flex flex-row-reverse ">
+      <div class="p-2 ">
+        <div >
+          <button
+            type="button"
+            class="btn text-light save-button"
+          >
+            <span class="text-light save-label section-title">SALVA</span>
+          </button>
+        </div>
+      </div>
+      <div class="p-2 ">
+        <div ngbDropdown>
+          <button style="border-radius: 24px;" type="button" class="btn btn-outline-secondary" ngbDropdownToggle>Aggiungi social</button>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <div *ngFor="let icon of socialIcons; index as i">
+              <button ngbDropdownItem>
+                <img src="{{icon}}" width="20" height="20" style="margin-right: 0.5rem"/>
+                <span>{{socialStrings[i]}}</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </form>
+
+
+
+
+
+
+
+
+</div>
