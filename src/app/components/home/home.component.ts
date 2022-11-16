@@ -25,14 +25,9 @@ export class HomeComponent implements OnInit {
   constructor(private modalService: NgbModal) { }
 
   openGenericModal(content:any){
-    this.modalService.open(content, {size: 'lg',centered:true, ariaLabelledBy: 'modal-basic-title'}).result.then(
-			(result) => {
-				this.closeResult = `Closed with: ${result}`;
-			},
-			(reason) => {
-				this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-			},
-		);
+    const modalRef = this.modalService.open(content, {size: 'lg',centered:true, ariaLabelledBy: 'modal-basic-title'});
+    modalRef.componentInstance.data = ''; //TODO here we can pass data to the modal
+
   }
 
 	private getDismissReason(reason: any): string {

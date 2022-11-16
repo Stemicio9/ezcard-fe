@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
@@ -7,6 +7,8 @@ import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
   styleUrls: ['./social-modal.component.css']
 })
 export class SocialModalComponent implements OnInit {
+
+  @Input() public data: any;
 
   socialIcons: string[] = ["assets/facebook-icon.png","assets/tik-tok-icon.png","assets/linkedin-icon.png", "assets/whatsapp-icon.png"];
   socialStrings: string[] = ["Facebook", "Tik Tok", "Linkedin", "Whatsapp"];
