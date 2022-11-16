@@ -45,11 +45,7 @@ h5 {
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.1), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
   border-radius: 0.25rem;
 }
-.assistenza-footer {
-  background-color: var(--black_ez);
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
+
 
 .left {
   background: grey;

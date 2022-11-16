@@ -1,12 +1,14 @@
 <div class="row gray-background content-padding">
   <div
-    class="col-md-4 main-section-style d-flex flex-column justify-content-start"
+    class="col-md-4 main-section-style d-flex flex-column"
   >
+
     <nav
       aria-labelledby="categories-title"
       data-test-id="category-nav"
       data-js-category-sticky-bar-inner-wrapper=""
-      class="navbar scrollactive-nav c-categoryNav sticky-top"
+      class="navbar scrollactive-nav c-categoryNav" style="position:sticky; top:6vh;"
+
     >
       <ul class="c-menu menu-voice">
         <div *ngFor="let v of idVoiceList; index as i">
@@ -24,19 +26,21 @@
         </div>
 
         <div class="mt-5">
-          <span class="section-title">Assistenza</span>
+          <span class="section-title d-none d-md-inline-flex flex-row ">Assistenza</span>
           <img
             style="margin-left: 0.5rem"
-            class="question-mark"
+            class="question-mark d-none d-md-inline-flex flex-row "
             src="assets/question-mark.png"
           />
         </div>
       </ul>
     </nav>
+
+
   </div>
 
-  <div class="col-md-8 main-section-style" style="padding-left: 1rem">
-    <div id="profilo">
+  <div class="col-md-8 main-section-style" style="padding-left: 1rem" id="profilo">
+    <div >
       <h5>Profilo</h5>
     </div>
     <div>
@@ -75,6 +79,23 @@
       <input class="input-half" placeholder="Campo2" />
       <input class="input-half" placeholder="Campo3" />
       <input class="input-bottom" placeholder="Campo4" />
+    </div>
+
+
+  </div>
+</div>
+
+
+<div class="d-inline d-md-none">
+  <div class="row assistenza-footer" [align]="'center'">
+    <div>
+      <span class="section-subtitle text-light">Assistenza</span>
+
+      <img
+        style="margin-left: 0.5rem"
+        class="question-mark"
+        src="assets/question-mark-icon-white.png"
+      />
     </div>
   </div>
 </div>
