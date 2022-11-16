@@ -1,20 +1,3 @@
-<ng-template #profile>
-  <app-profile-modal></app-profile-modal>
-</ng-template>
-
-<ng-template #contacts>
-  <app-contacts-modal></app-contacts-modal>
-</ng-template>
-
-<ng-template #social>
-  <app-social-modal></app-social-modal>
-</ng-template>
-
-<ng-template #company>
-  <app-company-modal></app-company-modal>
-</ng-template>
-
-
 <div class="row">
   <div class="col-md-4 d-flex flex-column justify-content-between" style="margin-top: 3rem">
 
@@ -22,14 +5,11 @@
     <div>
       <div class="d-flex flex-row justify-content-center">
         <img class="rounded-circle" src="assets/avatar-image.png"/>
-        <img class="camera" src="assets/camera-icon.png"
-        />
+        <img class="camera" src="assets/camera-icon.png"/>
       </div>
 
       <div class="d-flex flex-row justify-content-center mt-3 mb-md-0 mb-2">
-        <span style="font-size: 0.9rem; text-align: center;"
-        >Clicca sull'immagine per modificarla
-        </span>
+        <span style="font-size: 0.9rem; text-align: center;">Clicca sull'immagine per modificarla</span>
       </div>
     </div>
 
@@ -51,71 +31,12 @@
       <h5>Gestione Account Pubblico</h5>
     </div>
 
-    <div
-      (click)="openGenericModal(profile)"
-      class="row box-shadow"
-    >
-      <div class="col-2 col-md-1 mt-1">
-        <img class="user" src="assets/user-icon.png"/>
-      </div>
-      <div class="col-10 col-md-11">
-        <div>
-          <span class="section-title">Profilo</span>
-        </div>
-        <div>
-          <span style="font-size: 1rem">Nome, Compagnia, ecc.</span>
-        </div>
-      </div>
-    </div>
-
-    <div
-      (click)="openGenericModal(contacts)"
-      class="row box-shadow"
-    >
-      <div class="col-2 col-md-1 mt-1">
-        <img class="user" src="assets/email-icon.png"/>
-      </div>
-      <div class="col-10 col-md-11">
-        <div>
-          <span class="section-title">Contatti</span>
-        </div>
-        <div>
-          <span style="font-size: 1rem">Telefono, Mail, Sito web</span>
-        </div>
-      </div>
-    </div>
-
-    <div
-      (click)="openGenericModal(social)"
-      class="row box-shadow"
-    >
-      <div class="col-2 col-md-1 mt-1">
-        <img class="user" src="assets/share-icon.png"/>
-      </div>
-      <div class="col-10 col-md-11">
-        <div>
-          <span class="section-title">Social</span>
-        </div>
-        <div>
-          <span style="font-size: 1rem">Linkedin, Facebook, Instagram</span>
-        </div>
-      </div>
-    </div>
-
-    <div
-      (click)="openGenericModal(company)"
-      class="row box-shadow"
-    >
-      <div class="col-2 col-md-1 mt-1">
-        <img class="user" src="assets/azienda-icon.png"/>
-      </div>
-      <div class="col-10 col-md-11">
-        <div>
-          <span class="section-title">Azienda</span>
-        </div>
-        <div>
-          <span style="font-size: 1rem">Sito web, Telefono, Indirizzo</span>
-        </div>
+    <div *ngFor="let voice of titlesFirstSection; index as i">
+      <div (click)="openGenericModal(idModalList[i])">
+          <app-home-row
+            [title]=voice
+            [description]="descriptionsFirstSection[i]"
+            [imageLink]="imageLinksFirstSection[i]"></app-home-row>
       </div>
     </div>
 
