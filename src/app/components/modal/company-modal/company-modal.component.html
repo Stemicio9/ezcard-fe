@@ -1,8 +1,8 @@
 <div class="modal-header" style="background-color: var(--black_ez)">
   <div>
-    <img class="icon-size" src="assets/company-icon-white.png"/>
+    <img class="icon-size" src="assets/company-icon-white.png" />
     <span class="section-title text-light" style="padding-left: 1rem"
-    >Azienda</span
+      >Azienda</span
     >
   </div>
 
@@ -13,91 +13,271 @@
     (click)="closeModal()"
   />
 </div>
-<div class="modal-body border-radius-popup gray-background">
-  <form>
 
-
-    <div class="row ">
-      <div class="col-md-6">
-        <div>
-          <span>Nome azienda</span>
-        </div>
-
-        <div class="input-group mb-3">
-          <input id="nomeAzienda" class="form-control" />
-        </div>
-      </div>
-
-
-      <div class="col-md-6">
-        <div>
-          <span>Ambito</span>
-        </div>
-        <div class="input-group mb-3">
-          <input id="ambito" class="form-control" />
-        </div>
-      </div>
-    </div>
+<div  class="modal-body border-radius-popup gray-background">
 
 
 
+  <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+    <li  [ngbNavItem]="1">
+      <a class="border-back-grey" ngbNavLink> Azienda 1</a>
+      <ng-template  ngbNavContent>
+        <form >
+          <div class="row">
+            <div class="col-md-6 mt-3">
+              <div>
+                <span>Nome azienda</span>
+              </div>
 
-    <div class="row">
-      <div class="col-md-6">
-        <div>
-          <span>Sito web</span>
-        </div>
+              <div class="input-group mb-3">
+                <input id="nomeAzienda" class="form-control" />
+              </div>
+            </div>
 
-        <div class="input-group mb-3">
-          <input id="sitoWeb" class="form-control" />
-        </div>
-      </div>
+            <div class="col-md-6 mt-3">
+              <div>
+                <span>P.Iva</span>
+              </div>
+              <div class="input-group mb-3">
+                <input id="pIva" class="form-control" />
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div>
+                <span>Indirizzo</span>
+              </div>
+
+              <div class="input-group mb-3">
+                <input id="address" class="form-control" />
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div>
+                <span>Telefono</span>
+              </div>
+              <div class="input-group mb-3">
+                <input id="phone" class="form-control" />
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div>
+                <span>Email</span>
+              </div>
+
+              <div class="input-group mb-3">
+                <input id="email" class="form-control" />
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div>
+                <span>Codice SDI</span>
+              </div>
+              <div class="input-group mb-3">
+                <input id="sdiCode" class="form-control" />
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div>
+                <span>Pec</span>
+              </div>
+              <div class="input-group mb-4 mb-md-5">
+                <input id="pec" class="form-control" />
+              </div>
+            </div>
+          </div>
+          <div class="d-flex flex-row-reverse">
+            <button type="button" class="btn text-light save-button">
+              <span class="text-light save-label section-title">SALVA</span>
+            </button>
+          </div>
+        </form>
+      </ng-template>
+    </li>
+    <li [ngbNavItem]="2">
+      <a class="border-back-grey" ngbNavLink>Azienda 2</a>
+      <ng-template ngbNavContent>
+        <form>
+          <div class="row">
+            <div class="col-md-6 mt-3">
+              <div>
+                <span>Nome azienda</span>
+              </div>
+
+              <div class="input-group mb-3">
+                <input id="nomeAzienda" class="form-control" />
+              </div>
+            </div>
+
+            <div class="col-md-6 mt-3">
+              <div>
+                <span>P.Iva</span>
+              </div>
+              <div class="input-group mb-3">
+                <input id="pIva" class="form-control" />
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div>
+                <span>Indirizzo</span>
+              </div>
+
+              <div class="input-group mb-3">
+                <input id="address" class="form-control" />
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div>
+                <span>Telefono</span>
+              </div>
+              <div class="input-group mb-3">
+                <input id="phone" class="form-control" />
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div>
+                <span>Email</span>
+              </div>
+
+              <div class="input-group mb-3">
+                <input id="email" class="form-control" />
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div>
+                <span>Codice SDI</span>
+              </div>
+              <div class="input-group mb-3">
+                <input id="sdiCode" class="form-control" />
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div>
+                <span>Pec</span>
+              </div>
+              <div class="input-group mb-4 mb-md-5">
+                <input id="pec" class="form-control" />
+              </div>
+            </div>
+          </div>
+          <div class="d-flex flex-row-reverse">
+            <button type="button" class="btn text-light save-button">
+              <span class="text-light save-label section-title">SALVA</span>
+            </button>
+          </div>
+        </form>
+      </ng-template>
+    </li>
+    <li [ngbNavItem]="3">
+      <a class="border-back-grey" ngbNavLink>Azienda 3</a>
+      <ng-template ngbNavContent>
+        <form>
+          <div class="row">
+            <div class="col-md-6 mt-3">
+              <div>
+                <span>Nome azienda</span>
+              </div>
+
+              <div class="input-group mb-3">
+                <input id="nomeAzienda" class="form-control" />
+              </div>
+            </div>
+
+            <div class="col-md-6 mt-3">
+              <div>
+                <span>P.Iva</span>
+              </div>
+              <div class="input-group mb-3">
+                <input id="pIva" class="form-control" />
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div>
+                <span>Indirizzo</span>
+              </div>
+
+              <div class="input-group mb-3">
+                <input id="address" class="form-control" />
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div>
+                <span>Telefono</span>
+              </div>
+              <div class="input-group mb-3">
+                <input id="phone" class="form-control" />
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div>
+                <span>Email</span>
+              </div>
+
+              <div class="input-group mb-3">
+                <input id="email" class="form-control" />
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div>
+                <span>Codice SDI</span>
+              </div>
+              <div class="input-group mb-3">
+                <input id="sdiCode" class="form-control" />
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div>
+                <span>Pec</span>
+              </div>
+              <div class="input-group mb-4 mb-md-5">
+                <input id="pec" class="form-control" />
+              </div>
+            </div>
+          </div>
+          <div class="d-flex flex-row-reverse">
+            <button type="button" class="btn text-light save-button">
+              <span class="text-light save-label section-title">SALVA</span>
+            </button>
+          </div>
+        </form>
+      </ng-template>
+    </li>
+  </ul>
+
+  <div [ngbNavOutlet]="nav" class="mt-2"></div>
 
 
-      <div class="col-md-6">
-
-        <div>
-          <span>Numero di telefono</span>
-        </div>
-        <div class="input-group mb-3">
-          <input id="numeroDiTelefono" class="form-control" />
-
-        </div>
-      </div>
-    </div>
-
-
-
-
-    <div class="row">
-      <div class="col-md-6">
-        <div>
-          <span>Città</span>
-        </div>
-
-        <div class="input-group mb-3">
-          <input id="citta" class="form-control" />
-        </div>
-      </div>
-
-
-      <div class="col-md-6">
-        <div>
-          <span>Indirizzo</span>
-        </div>
-        <div class="input-group mb-4 mb-md-5">
-          <input id="indirizzo" class="form-control" />
-        </div>
-      </div>
-    </div>
-
-
-  </form>
-
-  <div class="d-flex flex-row-reverse">
-    <button type="button" class="btn text-light save-button">
-      <span class="text-light save-label section-title">SALVA</span>
-    </button>
-  </div>
 
 </div>

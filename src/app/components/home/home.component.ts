@@ -4,6 +4,9 @@ import {ProfileModalComponent} from "../modal/profile-modal/profile-modal.compon
 import {ContactsModalComponent} from "../modal/contacts-modal/contacts-modal.component";
 import {SocialModalComponent} from "../modal/social-modal/social-modal.component";
 import {CompanyModalComponent} from "../modal/company-modal/company-modal.component";
+import { PresentationModalComponent } from '../modal/presentation-modal/presentation-modal.component';
+import { GalleryModalComponent } from '../modal/gallery-modal/gallery-modal.component';
+import { PartnerModalComponent } from '../modal/partner-modal/partner-modal.component';
 
 @Component({
   selector: 'app-home',
@@ -12,13 +15,13 @@ import {CompanyModalComponent} from "../modal/company-modal/company-modal.compon
 })
 export class HomeComponent implements OnInit {
 
-  titlesFirstSection: string[] = ['Profilo', 'Contatti', 'Social', 'Azienda'];
+  titlesFirstSection: string[] = ['Profilo', 'Social', 'Contatti', 'Azienda', 'Presentazione', 'Galleria', 'Partner'];
   titlesSecondSection: string[] = ['Statistiche', 'Impostazioni']
-  descriptionsFirstSection: string[] = ['Nome, Compagnia, ecc.', 'Telefono, Mail, Sito web', 'Linkedin, Facebook, Instagram', 'Sito web, Telefono, Indirizzo'];
+  descriptionsFirstSection: string[] = ['Nome, Compagnia, ecc.',  'Linkedin, Facebook, Instagram','Telefono, Mail, Sito web', 'Sito web, Telefono, Indirizzo', 'Carica i tuoi file', 'Carica i tuoi progetti', 'Carica i tuoi partner'];
   descriptionsSecondSection: string[] = ['Visite, Click, ecc.', 'Email, Lingua, ecc.'];
-  imageLinksFirstSection: string[] = ["assets/user-icon.png","assets/email-icon.png","assets/share-icon.png","assets/azienda-icon.png"];
+  imageLinksFirstSection: string[] = ["assets/user-icon.png","assets/share-icon.png","assets/email-icon.png","assets/azienda-icon.png", "assets/azienda-icon.png", "assets/azienda-icon.png", "assets/azienda-icon.png"];
   imageLinksSecondSection: string[] = ["assets/stats-icon.png","assets/settings-icon.png"];
-  idModalList: any[] = [ProfileModalComponent, ContactsModalComponent, SocialModalComponent, CompanyModalComponent];
+  idModalList: any[] = [ProfileModalComponent, SocialModalComponent, ContactsModalComponent, CompanyModalComponent, PresentationModalComponent, GalleryModalComponent, PartnerModalComponent];
   routerLinkList: string[] = ['/stats', '/settings'];
   closeResult = '';
 

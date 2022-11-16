@@ -9,7 +9,7 @@ import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 export class CompanyModalComponent implements OnInit {
 
   @Input() public data: any;
-
+  active = 1;
   constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {

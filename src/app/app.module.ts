@@ -20,6 +20,10 @@ import {NgbDateParserFormatterExtProvider} from "./components/date-picker";
 import { SettingsComponent } from './components/settings/settings.component';
 import { StatsComponent } from './components/stats/stats.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { PresentationModalComponent } from './components/modal/presentation-modal/presentation-modal.component';
+import { GalleryModalComponent } from './components/modal/gallery-modal/gallery-modal.component';
+import { PartnerModalComponent } from './components/modal/partner-modal/partner-modal.component';
+import { DropZoneDirective } from './directives/drop-zone.directive';
 
 @NgModule({
   declarations: [
@@ -37,6 +41,10 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
     SettingsComponent,
     StatsComponent,
     ResetPasswordComponent,
+    PresentationModalComponent,
+    GalleryModalComponent,
+    PartnerModalComponent,
+    DropZoneDirective,
   ],
   imports: [
     AppRoutingModule,

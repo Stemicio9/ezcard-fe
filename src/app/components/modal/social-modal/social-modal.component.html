@@ -1,8 +1,8 @@
 <div class="modal-header" style="background-color: var(--black_ez)">
   <div>
-    <img class="icon-size" src="assets/share-icon-white.png"/>
+    <img class="icon-size" src="assets/share-icon-white.png" />
     <span class="section-title text-light" style="padding-left: 1rem"
-    >Social</span
+      >Social</span
     >
   </div>
 
@@ -15,75 +15,111 @@
 </div>
 <div class="modal-body border-radius-popup gray-background">
   <form>
-
-
     <div class="row mt-3">
-
       <div class="col-md-6">
         <div class="input-group mb-md-5 mb-3">
-          <img style="margin-right: 0.5rem" class="icon-size" src="assets/facebook-icon.png">
-          <input id="facebook" class="form-control" style="border-radius: 0.25rem;"/>
+          <img
+            style="margin-right: 0.5rem"
+            class="icon-size"
+            src="assets/facebook-icon.png"
+          />
+          <input
+            placeholder="Facebook"
+            id="facebook"
+            class="form-control"
+            style="border-radius: 0.25rem"
+          />
         </div>
       </div>
 
-
       <div class="col-md-6">
         <div class="input-group mb-md-5 mb-3">
-          <img style="margin-right: 0.5rem" class="icon-size" src="assets/tik-tok-icon.png">
-          <input id="tiktok" class="form-control" style="border-radius: 0.25rem;"/>
+          <img
+            style="margin-right: 0.5rem"
+            class="icon-size"
+            src="assets/tik-tok-icon.png"
+          />
+          <input
+            placeholder="TikTok"
+            id="tiktok"
+            class="form-control"
+            style="border-radius: 0.25rem"
+          />
         </div>
       </div>
     </div>
-
 
     <div class="row">
-
       <div class="col-md-6">
         <div class="input-group mb-md-5 mb-3">
-          <img style="margin-right: 0.5rem" class="icon-size" src="assets/linkedin-icon.png">
-          <input id="linkedin" class="form-control" style="border-radius: 0.25rem;"/>
+          <img
+            style="margin-right: 0.5rem"
+            class="icon-size"
+            src="assets/linkedin-icon.png"
+          />
+          <input
+            placeholder="Linkedin"
+            id="linkedin"
+            class="form-control"
+            style="border-radius: 0.25rem"
+          />
         </div>
       </div>
 
-
       <div class="col-md-6">
         <div class="input-group mb-md-5 mb-3">
-          <img style="margin-right: 0.5rem" class="icon-size" src="assets/whatsapp-icon.png">
-          <input id="whatsapp" class="form-control" style="border-radius: 0.25rem;"/>
+          <img
+            style="margin-right: 0.5rem"
+            class="icon-size"
+            src="assets/whatsapp-icon.png"
+          />
+          <input
+            placeholder="Whatsapp"
+            id="whatsapp"
+            class="form-control"
+            style="border-radius: 0.25rem"
+          />
         </div>
       </div>
     </div>
 
+    <div class="showInputField"></div>
 
-    <div class="d-md-flex flex-md-row d-flex flex-column justify-content-md-end align-items-center">
-
+    <div
+      class="d-md-flex flex-md-row d-flex flex-column justify-content-md-end align-items-center"
+    >
       <div class="p-2">
         <div ngbDropdown>
-          <button style="border-radius: 24px;" type="button" class="btn btn-outline-secondary" ngbDropdownToggle>Aggiungi social</button>
-          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-            <div *ngFor="let icon of socialIcons; index as i">
-              <button ngbDropdownItem>
-                <img src="{{icon}}" width="20" height="20" style="margin-right: 0.5rem"/>
-                <span>{{socialStrings[i]}}</span>
+          <button
+            style="border-radius: 24px"
+            type="button"
+            class="btn btn-outline-secondary"
+            [disabled]="this.dropdownSocial.length == 0"
+            ngbDropdownToggle
+          >
+            Aggiungi social
+          </button>
+          <div ngbDropdownMenu>
+            <div *ngFor="let social of dropdownSocial; index as i">
+              <button ngbDropdownItem (click)="addInput(social)">
+                <img
+                  src="{{ social.iconPath }}"
+                  width="20"
+                  height="20"
+                  style="margin-right: 0.5rem"
+                />
+                <span>{{ social.name }}</span>
               </button>
             </div>
           </div>
         </div>
       </div>
 
-
       <div class="p-2">
-        <button
-          type="button"
-          class="btn text-light save-button"
-        >
+        <button type="button" class="btn text-light save-button">
           <span class="text-light save-label section-title">SALVA</span>
         </button>
-     </div>
+      </div>
     </div>
-
-
   </form>
-
-
 </div>

@@ -35,76 +35,23 @@
       </div>
     </div>
 
-
     <div class="row ">
       <div class="col-md-6 col-sm-12">
         <div>
-          <span>Genere</span>
-        </div>
-
-        <div class="input-group mb-3">
-          <input id="genre" class="form-control"/>
-        </div>
-      </div>
-
-
-      <div class="col-md-6 col-sm-12">
-
-        <div>
-          <span for="dateOfBirth">Data di nascita</span>
-        </div>
-        <div class="input-group mb-3">
-          <input
-            #datepicker="ngbDatepicker"
-            class="form-control"
-            name="datepicker"
-            ngbDatepicker
-          />
-          <button
-            class="btn bi bi-calendar3 text-light"
-            style="background-color: var(--black_ez)"
-            (click)="datepicker.toggle()"
-            type="button"
-          ></button>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="row ">
-      <div class="col-md-6 col-sm-12">
-        <div>
-          <span>Compagnia</span>
-        </div>
-
-        <div class="input-group mb-3">
-          <input id="company" class="form-control"/>
-        </div>
-      </div>
-
-
-      <div class="col-md-6 col-sm-12">
-        <div>
-          <span>Città</span>
-        </div>
-        <div class="input-group mb-3">
-          <input id="city" class="form-control"/>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="row ">
-      <div class="col-md-6 col-sm-12">
-        <div>
-          <span>Indirizzo</span>
+          <span>Ruolo</span>
         </div>
         <div class="input-group mb-4 mb-md-5">
-          <input id="address" class="form-control"/>
+          <input id="role" class="form-control"/>
         </div>
       </div>
-      <div class="col-md-6 col-sm-12"></div>
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group mb-4 mb-md-5">
+          <label for="exampleFormControlTextarea1">Descrizione</label>
+          <textarea maxlength="250" class="form-control" id="exampleFormControlTextarea1" rows="3" ></textarea>
+        </div>
+      </div>
     </div>
+
   </form>
 
   <div class="d-flex flex-row-reverse">

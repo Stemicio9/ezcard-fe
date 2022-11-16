@@ -1,8 +1,8 @@
 <div class="modal-header" style="background-color: var(--black_ez)">
   <div>
-    <img class="icon-size" src="assets/social-icon-white.png"/>
+    <img class="icon-size" src="assets/social-icon-white.png" />
     <span class="section-title text-light" style="padding-left: 1rem"
-    >Contatti</span
+      >Contatti</span
     >
   </div>
 
@@ -15,47 +15,94 @@
 </div>
 <div class="modal-body border-radius-popup gray-background">
   <form>
-
-
     <div class="row mt-3">
-
-
       <div class="col-md-6">
         <div class="input-group mb-md-5 mb-3">
-          <img style="margin-right: 0.5rem" class="icon-size" src="assets/phone-icon.png">
-          <input id="phone" class="form-control" style="border-radius: 0.25rem;" />
+          <img
+            style="margin-right: 0.5rem"
+            class="icon-size"
+            src="assets/phone-icon.png"
+          />
+          <input
+            placeholder="Telefono"
+            id="phone"
+            class="form-control"
+            style="border-radius: 0.25rem"
+          />
         </div>
       </div>
 
-
       <div class="col-md-6">
         <div class="input-group mb-md-5 mb-3">
-          <img style="margin-right: 0.5rem" class="icon-size" src="assets/email-message-icon.png">
-          <input id="email" class="form-control"  style="border-radius: 0.25rem;"/>
+          <img
+            style="margin-right: 0.5rem"
+            class="icon-size"
+            src="assets/email-message-icon.png"
+          />
+          <input
+            placeholder="Email"
+            id="email"
+            class="form-control"
+            style="border-radius: 0.25rem"
+          />
         </div>
       </div>
-
-
     </div>
-
 
     <div class="row">
       <div class="col-md-6">
         <div class="input-group mb-md-5 mb-4">
-          <img  style="margin-right: 0.5rem" class="icon-size" src="assets/internet-icon.png">
-          <input id="internet" class="form-control" style="border-radius: 0.25rem;" />
+          <img
+            style="margin-right: 0.5rem"
+            class="icon-size"
+            src="assets/internet-icon.png"
+          />
+          <input
+            placeholder="Sito web"
+            id="internet"
+            class="form-control"
+            style="border-radius: 0.25rem"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="showInputField"></div>
+
+    <div
+      class="d-md-flex flex-md-row d-flex flex-column justify-content-md-end align-items-center"
+    >
+      <div class="p-2">
+        <div ngbDropdown>
+          <button
+            style="border-radius: 24px"
+            type="button"
+            class="btn btn-outline-secondary"
+            ngbDropdownToggle
+          >
+            Aggiungi contatto
+          </button>
+          <div ngbDropdownMenu>
+            <div *ngFor="let c of dropdownContact; index as i">
+              <button ngbDropdownItem (click)="addContact(c)">
+                <img
+                  src="{{ c.iconPath }}"
+                  width="20"
+                  height="20"
+                  style="margin-right: 0.5rem"
+                />
+                <span>{{ c.name }}</span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
+      <div class="p-2">
+        <button type="button" class="btn text-light save-button">
+          <span class="text-light save-label section-title">SALVA</span>
+        </button>
+      </div>
     </div>
-
-
   </form>
-
-  <div class="d-flex flex-row-reverse">
-    <button type="button" class="btn text-light save-button">
-      <span class="text-light save-label section-title">SALVA</span>
-    </button>
-  </div>
-
 </div>
