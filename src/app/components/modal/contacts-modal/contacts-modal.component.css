@@ -1,23 +1,4 @@
-.question-mark {
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-}
 
-.camera {
-  width: 25px;
-  height: 25px;
-  margin-top: 12.6rem;
-  cursor: pointer;
-}
-.user {
-  width: 40px;
-  height: 40px;
-}
-.social-icon {
-  width: 40px;
-  height: 40px;
-}
 .cancel {
   width: 18px;
   height: 18px;
@@ -27,32 +8,9 @@ span {
   color: var(--black_ez);
 }
 
-h5 {
-  color: var(--black_ez);
-}
-
 .section-title {
   font-size: 1rem;
   font-weight: 700;
-}
-
-.assistenza-footer {
-  background-color: var(--black_ez);
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
-.left {
-  background: grey;
-}
-
-.right {
-  background: black;
-}
-
-.main-section-style {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
 }
 
 .save-label {

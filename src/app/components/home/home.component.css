@@ -10,18 +10,6 @@
   margin-top: 12.6rem;
   cursor: pointer;
 }
-.user {
-  width: 40px;
-  height: 40px;
-}
-.social-icon {
-  width: 40px;
-  height: 40px;
-}
-.cancel {
-  width: 18px;
-  height: 18px;
-}
 
 span {
   color: var(--black_ez);
@@ -36,44 +24,9 @@ h5 {
   font-weight: 700;
 }
 
-.box-shadow {
-  padding: 0.5em 0.5em 0.5em 1rem;
-  cursor: pointer;
-}
-
-.box-shadow:hover {
-  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.1), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 0.25rem;
-}
-
-
-.left {
-  background: grey;
-}
-
-.right {
-  background: black;
-}
-
 .main-section-style {
   padding-top: 3rem;
   padding-bottom: 3rem;
-}
-
-.save-label {
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
-.save-button{
-  float: right;
-  border-radius: 24px;
-  background-color: var(--black_ez)
-}
-
-
-.border-radius-popup {
-  border-radius: 24px
 }
 
 
