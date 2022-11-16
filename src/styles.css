@@ -11,3 +11,8 @@ html, body {
 .gray-background {
   background-color: #f7f7f7;
 }
+.assistenza-footer {
+  background-color: var(--black_ez);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}

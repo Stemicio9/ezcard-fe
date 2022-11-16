@@ -1,5 +1,6 @@
 import { ViewportScroller } from '@angular/common';
 import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { VirtualTimeScheduler } from 'rxjs';
 
 @Component({
   selector: 'app-settings',
@@ -23,7 +24,7 @@ export class SettingsComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-
+    this.viewportScroller.setOffset([0,window.innerHeight*0.06]);
   }
 
   ngAfterViewInit(): void {
