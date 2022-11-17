@@ -26,6 +26,8 @@ export class SocialModalComponent implements OnInit {
 
   userSocial: string[] = ['Whatsapp', 'Facebook', 'Linkedin', 'TikTok'];
 
+
+
   constructor(private modalService: NgbModal) {}
 
   ngOnInit(): void {
@@ -61,10 +63,14 @@ export class SocialModalComponent implements OnInit {
     `;
     document.querySelector('.showInputField')?.appendChild(row);
 
+
+
     this.userSocial = [...this.userSocial, social.name];
     this.dropdownSocial = [];
     this.dropdownSocial = this.removeSelectedSocial();
   }
+
+
 
   removeSelectedSocial(){
     let a = Array.from(this.totalSocial);

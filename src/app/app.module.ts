@@ -24,6 +24,7 @@ import { PresentationModalComponent } from './components/modal/presentation-moda
 import { GalleryModalComponent } from './components/modal/gallery-modal/gallery-modal.component';
 import { PartnerModalComponent } from './components/modal/partner-modal/partner-modal.component';
 import { DropZoneDirective } from './directives/drop-zone.directive';
+import { IgxLegendModule, IgxCategoryChartModule } from 'igniteui-angular-charts';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { DropZoneDirective } from './directives/drop-zone.directive';
     GalleryModalComponent,
     PartnerModalComponent,
     DropZoneDirective,
+
   ],
   imports: [
     AppRoutingModule,
@@ -52,7 +54,9 @@ import { DropZoneDirective } from './directives/drop-zone.directive';
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    IgxLegendModule,
+    IgxCategoryChartModule
   ],
   providers: [
     NgbDateParserFormatterExtProvider

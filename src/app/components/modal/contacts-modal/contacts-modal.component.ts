@@ -48,6 +48,7 @@ export class ContactsModalComponent implements OnInit {
     </div>
     `;
     document.querySelector('.showInputField')?.appendChild(row);
+    document.querySelector('.removeInputField')?.removeChild(row);
 
   }
 
