@@ -139,7 +139,7 @@ export class CompanyModalComponent implements OnInit {
     row.className = 'row';
     row.innerHTML = `
     <div class="col-md-12">
-      <div class="input-group mb-md-5 mb-3">
+      <div class="input-group mt-md-4 mt-3">
         <img style="margin-right: 0.5rem" class="icon-size" src="${social.iconPath}">
         <input placeholder="${social.placeholder}" id="whatsapp" class="form-control" style="border-radius: 0.25rem;"/>
       </div>
@@ -159,7 +159,7 @@ export class CompanyModalComponent implements OnInit {
     row.className = 'row';
     row.innerHTML = `
     <div class="col-md-12">
-      <div class="input-group mb-md-5 mb-3">
+      <div class="input-group mt-md-4 mt-3">
         <img style="margin-right: 0.5rem" class="icon-size" src="${social.iconPath}">
         <input placeholder="${social.placeholder}" id="whatsapp" class="form-control" style="border-radius: 0.25rem;"/>
       </div>

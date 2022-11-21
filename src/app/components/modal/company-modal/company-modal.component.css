@@ -2,7 +2,18 @@
   width: 18px;
   height: 18px;
 }
+.cancel-dark{
+  width: 10px;
+  height: 10px;
+  margin-left: 0.8rem;
+  cursor: pointer;
+}
+.add-dark{
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
 
+}
 span {
   color: var(--black_ez);
 }
@@ -11,15 +22,7 @@ span {
   font-size: 1rem;
   font-weight: 700;
 }
-.save-label {
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
 
-.save-button{
-  border-radius: 24px;
-  background-color: var(--black_ez)
-}
 
 
 .border-radius-popup {
@@ -31,7 +34,8 @@ span {
   background-color: var(--bs-nav-tabs-link-active-bg);
   border-color: var(--bs-nav-tabs-link-active-border-color);
   background-color: #f7f7f7;
-  color: red;
+  font-weight: bold;
+  color: var(--black_ez);
   outline: none;
 
 }
@@ -59,4 +63,5 @@ span {
 .section-title {
   font-size: 1rem;
   font-weight: 700;
+
 }

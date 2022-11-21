@@ -37,3 +37,12 @@ html, body {
   width: 40px;
   height: 40px;
 }
+.save-label {
+  padding-left: 2.6rem;
+  padding-right: 2.6rem;
+}
+
+.save-button{
+  border-radius: 24px;
+  background-color: var(--black_ez)
+}

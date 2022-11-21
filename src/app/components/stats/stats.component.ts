@@ -16,6 +16,8 @@ export class StatsComponent implements OnInit {
 
   @ViewChild("legend", { static: true } )
    legend?: IgxLegendComponent;
+   @ViewChild("legend", { static: true } )
+   legendMobile?: IgxLegendComponent;
   @ViewChild("chart", { static: true } )
    chart?: IgxCategoryChartComponent;
 

@@ -1,5 +1,5 @@
 import { Directive } from '@angular/core';
-import { Component, EventEmitter, HostBinding, HostListener, Input, OnInit, Output } from '@angular/core';
+import { EventEmitter, HostBinding, HostListener, Output } from '@angular/core';
 
 @Directive({
   selector: '[DropZone]'
@@ -35,6 +35,7 @@ export class DropZoneDirective {
     if (files.length > 0) {
       this.onFileDropped.emit(files);
     }
+
   }
 
 }
