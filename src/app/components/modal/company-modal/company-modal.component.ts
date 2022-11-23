@@ -1,251 +1,125 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import { Component, Input, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Social } from 'src/app/entities/social';
 
 @Component({
   selector: 'app-company-modal',
   templateUrl: './company-modal.component.html',
-  styleUrls: ['./company-modal.component.css']
+  styleUrls: ['./company-modal.component.css'],
 })
 export class CompanyModalComponent implements OnInit {
-
   @Input() public data: any;
 
- totalSocial1: Social[] = [
-    new Social('Whatsapp', 'assets/whatsapp-icon.png', 'Whatsapp'),
-    new Social('Facebook', 'assets/facebook-icon.png', 'Facebook'),
+  totalSocial: Social[] = [
     new Social('Instagram', 'assets/linkedin-icon.png', 'Instagram'),
-    new Social('TikTok', 'assets/tik-tok-icon.png', 'TikTok'),
-    new Social('Linkedin', 'assets/linkedin-icon.png', 'Linkedin'),
     new Social('YouTube', 'assets/linkedin-icon.png', 'YouTube'),
     new Social('Twitter', 'assets/linkedin-icon.png', 'Twitter'),
     new Social('Pinterest', 'assets/linkedin-icon.png', 'Pinterest'),
     new Social('Behance', 'assets/linkedin-icon.png', 'Behance'),
   ];
+
+  userSocial: Social[] = [
+    new Social('Whatsapp', 'assets/whatsapp-icon.png', 'Whatsapp'),
+    new Social('Facebook', 'assets/facebook-icon.png', 'Facebook'),
+    new Social('TikTok', 'assets/tik-tok-icon.png', 'TikTok'),
+    new Social('Linkedin', 'assets/linkedin-icon.png', 'Linkedin'),
+  ];
+
+
+
   totalSocial2: Social[] = [
-    new Social('Whatsapp', 'assets/whatsapp-icon.png', 'Whatsapp'),
-    new Social('Facebook', 'assets/facebook-icon.png', 'Facebook'),
     new Social('Instagram', 'assets/linkedin-icon.png', 'Instagram'),
-    new Social('TikTok', 'assets/tik-tok-icon.png', 'TikTok'),
-    new Social('Linkedin', 'assets/linkedin-icon.png', 'Linkedin'),
-    new Social('YouTube', 'assets/linkedin-icon.png', 'YouTube'),
-    new Social('Twitter', 'assets/linkedin-icon.png', 'Twitter'),
-    new Social('Pinterest', 'assets/linkedin-icon.png', 'Pinterest'),
-    new Social('Behance', 'assets/linkedin-icon.png', 'Behance'),
-  ];
-   totalSocial3: Social[] = [
-    new Social('Whatsapp', 'assets/whatsapp-icon.png', 'Whatsapp'),
-    new Social('Facebook', 'assets/facebook-icon.png', 'Facebook'),
-    new Social('Instagram', 'assets/linkedin-icon.png', 'Instagram'),
-    new Social('TikTok', 'assets/tik-tok-icon.png', 'TikTok'),
-    new Social('Linkedin', 'assets/linkedin-icon.png', 'Linkedin'),
     new Social('YouTube', 'assets/linkedin-icon.png', 'YouTube'),
     new Social('Twitter', 'assets/linkedin-icon.png', 'Twitter'),
     new Social('Pinterest', 'assets/linkedin-icon.png', 'Pinterest'),
     new Social('Behance', 'assets/linkedin-icon.png', 'Behance'),
   ];
 
-  dropdownSocial1: Social[] = [];
-  dropdownSocial2: Social[] = [];
-  dropdownSocial3: Social[] = [];
+  userSocial2: Social[] = [
+    new Social('Whatsapp', 'assets/whatsapp-icon.png', 'Whatsapp'),
+    new Social('Facebook', 'assets/facebook-icon.png', 'Facebook'),
+    new Social('TikTok', 'assets/tik-tok-icon.png', 'TikTok'),
+    new Social('Linkedin', 'assets/linkedin-icon.png', 'Linkedin'),
+  ];
 
 
-  userSocial1: string[] = ['Whatsapp', 'Facebook', 'Linkedin', 'TikTok'];
 
-  userSocial2: string[] = ['Whatsapp', 'Facebook', 'Linkedin', 'TikTok'];
 
-  userSocial3: string[] = ['Whatsapp', 'Facebook', 'Linkedin', 'TikTok'];
+  totalSocial3: Social[] = [
+    new Social('Instagram', 'assets/linkedin-icon.png', 'Instagram'),
+    new Social('YouTube', 'assets/linkedin-icon.png', 'YouTube'),
+    new Social('Twitter', 'assets/linkedin-icon.png', 'Twitter'),
+    new Social('Pinterest', 'assets/linkedin-icon.png', 'Pinterest'),
+    new Social('Behance', 'assets/linkedin-icon.png', 'Behance'),
+  ];
+
+  userSocial3: Social[] = [
+    new Social('Whatsapp', 'assets/whatsapp-icon.png', 'Whatsapp'),
+    new Social('Facebook', 'assets/facebook-icon.png', 'Facebook'),
+    new Social('TikTok', 'assets/tik-tok-icon.png', 'TikTok'),
+    new Social('Linkedin', 'assets/linkedin-icon.png', 'Linkedin'),
+  ];
 
   tabs = [1];
-	counter = this.tabs.length + 1;
+  counter = this.tabs.length + 1;
+  active: any;
 
-	active:any;
-
-	close(event: MouseEvent, toRemove: number) {
-		this.tabs = this.tabs.filter((id) => id !== toRemove, this.counter--);
-		event.preventDefault();
-		event.stopImmediatePropagation();
-
-	}
-
-	add(event: MouseEvent) {
-		this.tabs.push(this.counter++);
-		event.preventDefault();
-	}
-
-
-
-  constructor(private modalService: NgbModal) { }
-
-  ngOnInit(): void {
-    this.dropdownSocial1 = this.removeSelectedSocial1();
-    this.dropdownSocial2 = this.removeSelectedSocial2();
-    this.dropdownSocial3 = this.removeSelectedSocial3();
-
+  close(event: MouseEvent, toRemove: number) {
+    this.tabs = this.tabs.filter((id) => id !== toRemove, this.counter--);
+    event.preventDefault();
+    event.stopImmediatePropagation();
   }
 
-
-
-
-
-  checkName1(currentName: string | undefined): boolean {
-    if (currentName) {
-      for (const s of this.userSocial1) {
-        if (s === currentName) {
-          return true;
-        }
-      }
-      return false;
-    }
-    return false;
+  add(event: MouseEvent) {
+    this.tabs.push(this.counter++);
+    event.preventDefault();
   }
 
-  checkName2(currentName: string | undefined): boolean {
-    if (currentName) {
-      for (const s of this.userSocial2) {
-        if (s === currentName) {
-          return true;
-        }
-      }
-      return false;
-    }
-    return false;
-  }
-  checkName3(currentName: string | undefined): boolean {
-    if (currentName) {
-      for (const s of this.userSocial3) {
-        if (s === currentName) {
-          return true;
-        }
-      }
-      return false;
-    }
-    return false;
-  }
+  constructor(private modalService: NgbModal) {}
+
+  ngOnInit(): void {}
 
   closeModal() {
     this.modalService.dismissAll();
   }
 
-
-
-
-
-
-
-
-  addInput1(social: any) {
-    let row = document.createElement('div');
-    row.className = 'row';
-    row.innerHTML = `
-    <div class="col-md-12">
-      <div class="input-group mt-md-4 mt-3">
-        <img style="margin-right: 0.5rem" class="icon-size" src="${social.iconPath}">
-        <input placeholder="${social.placeholder}" id="whatsapp" class="form-control" style="border-radius: 0.25rem;"/>
-      </div>
-    </div>
-    `;
-    document.querySelector('.showInputField')?.appendChild(row);
-
-
-
-    this.userSocial1 = [...this.userSocial1, social.name];
-    this.dropdownSocial1 = [];
-    this.dropdownSocial1 = this.removeSelectedSocial1();
+  addSocial(contact: any) {
+    this.userSocial.push(contact);
+    var index = this.totalSocial.indexOf(contact);
+    this.totalSocial.splice(index, 1);
   }
 
-  addInput2(social: any) {
-    let row = document.createElement('div');
-    row.className = 'row';
-    row.innerHTML = `
-    <div class="col-md-12">
-      <div class="input-group mt-md-4 mt-3">
-        <img style="margin-right: 0.5rem" class="icon-size" src="${social.iconPath}">
-        <input placeholder="${social.placeholder}" id="whatsapp" class="form-control" style="border-radius: 0.25rem;"/>
-      </div>
-    </div>
-    `;
-    document.querySelector('.showInputField')?.appendChild(row);
-
-
-
-    this.userSocial2 = [...this.userSocial2, social.name];
-    this.dropdownSocial2 = [];
-    this.dropdownSocial2 = this.removeSelectedSocial2();
-  }
-
-  addInput3(social: any) {
-    let row = document.createElement('div');
-    row.className = 'row';
-    row.innerHTML = `
-    <div class="col-md-12">
-      <div class="input-group mb-md-5 mb-3">
-        <img style="margin-right: 0.5rem" class="icon-size" src="${social.iconPath}">
-        <input placeholder="${social.placeholder}" id="whatsapp" class="form-control" style="border-radius: 0.25rem;"/>
-      </div>
-    </div>
-    `;
-    document.querySelector('.showInputField')?.appendChild(row);
-
-
-
-    this.userSocial3 = [...this.userSocial3, social.name];
-    this.dropdownSocial3 = [];
-    this.dropdownSocial3= this.removeSelectedSocial3();
+  remove(element: any) {
+    var index = this.userSocial.indexOf(element);
+    this.userSocial.splice(index, 1);
+    this.totalSocial.push(element);
   }
 
 
 
-
-
-
-
-
-
-  removeSelectedSocial1(){
-    let a = Array.from(this.totalSocial1);
-    for (let i = 0; i < this.totalSocial1.length; i++) {
-      const currentName = this.totalSocial1[i].name;
-      const cond = this.checkName1(currentName);
-      if (cond) {
-        const shadowList = a.map(a =>{return a.name});
-        const index = shadowList.indexOf(currentName);
-        if(index > -1){
-          a.splice(index, 1);
-        }
-      }
-    }
-    return a;
-  }
-  removeSelectedSocial2(){
-    let a = Array.from(this.totalSocial2);
-    for (let i = 0; i < this.totalSocial2.length; i++) {
-      const currentName = this.totalSocial2[i].name;
-      const cond = this.checkName2(currentName);
-      if (cond) {
-        const shadowList = a.map(a =>{return a.name});
-        const index = shadowList.indexOf(currentName);
-        if(index > -1){
-          a.splice(index, 1);
-        }
-      }
-    }
-    return a;
-  }
-   removeSelectedSocial3(){
-    let a = Array.from(this.totalSocial3);
-    for (let i = 0; i < this.totalSocial3.length; i++) {
-      const currentName = this.totalSocial3[i].name;
-      const cond = this.checkName3(currentName);
-      if (cond) {
-        const shadowList = a.map(a =>{return a.name});
-        const index = shadowList.indexOf(currentName);
-        if(index > -1){
-          a.splice(index, 1);
-        }
-      }
-    }
-    return a;
+  addSocial2(contact: any) {
+    this.userSocial2.push(contact);
+    var index = this.totalSocial2.indexOf(contact);
+    this.totalSocial2.splice(index, 1);
   }
 
+  remove2(element: any) {
+    var index = this.userSocial2.indexOf(element);
+    this.userSocial2.splice(index, 1);
+    this.totalSocial2.push(element);
+  }
+
+
+
+  addSocial3(contact: any) {
+    this.userSocial3.push(contact);
+    var index = this.totalSocial3.indexOf(contact);
+    this.totalSocial3.splice(index, 1);
+  }
+
+  remove3(element: any) {
+    var index = this.userSocial3.indexOf(element);
+    this.userSocial3.splice(index, 1);
+    this.totalSocial3.push(element);
+  }
 }

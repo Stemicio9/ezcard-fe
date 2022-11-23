@@ -25,7 +25,6 @@ export class ContactsModalComponent implements OnInit {
   ];
 
 
-
   constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {
@@ -37,19 +36,12 @@ export class ContactsModalComponent implements OnInit {
 
 
   addContact(contact: any) {
-    let row = document.createElement('div');
-    row.className = 'row';
-    row.innerHTML = `
-    <div class="col-md-12">
-      <div class="input-group mb-md-5 mb-3">
-        <img style="margin-right: 0.5rem" class="icon-size" src="${contact.iconPath}">
-        <input placeholder="${contact.placeholder}" class="form-control" style="border-radius: 0.25rem;"/>
-      </div>
-    </div>
-    `;
-    document.querySelector('.showInputField')?.appendChild(row);
-    document.querySelector('.removeInputField')?.removeChild(row);
+    this.totalContact.push(contact);
+  }
 
+  remove(element: any){
+    var index = this.totalContact.indexOf(element);
+    this.totalContact.splice(index,1);
   }
 
 }

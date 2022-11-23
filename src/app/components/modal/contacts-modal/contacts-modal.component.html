@@ -16,55 +16,31 @@
 <div class="modal-body border-radius-popup gray-background">
   <form>
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-12" *ngFor="let element of totalContact">
         <div class="input-group mt-md-4 mt-3">
           <img
             style="margin-right: 0.5rem"
             class="icon-size"
-            src="assets/phone-icon.png"
+            [src]="element.iconPath"
           />
-          <input
-            placeholder="Telefono"
-            id="phone"
-            class="form-control"
-            style="border-radius: 0.25rem"
-          />
-        </div>
-      </div>
 
-      <div class="col-md-6">
-        <div class="input-group mt-md-4 mt-3">
-          <img
-            style="margin-right: 0.5rem"
-            class="icon-size"
-            src="assets/email-message-icon.png"
-          />
           <input
-            placeholder="Email"
-            id="email"
             class="form-control"
-            style="border-radius: 0.25rem"
-          />
-        </div>
-      </div>
-    </div>
 
-    <div class="row">
-      <div class="col-md-6">
-        <div class="input-group mt-md-4 mt-3">
-          <img
-            style="margin-right: 0.5rem"
-            class="icon-size"
-            src="assets/internet-icon.png"
+            style="border-radius: 0.4rem"
+
+            [placeholder]="element.placeholder"
           />
-          <input
-            placeholder="Sito web"
-            id="internet"
-            class="form-control"
-            style="border-radius: 0.25rem"
-          />
+
+          <div style="cursor: pointer;" (click)="remove(element)">
+            <img
+              style="margin-left: 0.5rem"
+              src="assets/trash-icon.png"
+              class="cancel-input"
+            />
+          </div>
         </div>
-      </div>
+        </div>
     </div>
 
     <div class="showInputField"></div>
@@ -78,21 +54,21 @@
           <button
             style="border-radius: 24px"
             type="button"
-            class="btn btn-outline-secondary"
+            class="btn add-social-button"
             ngbDropdownToggle
           >
             Aggiungi contatto
           </button>
           <div ngbDropdownMenu>
             <div *ngFor="let c of dropdownContact; index as i">
-              <button ngbDropdownItem (click)="addContact(c)">
+              <button class="dropdown-items dropdown-background" ngbDropdownItem (click)="addContact(c)">
                 <img
                   src="{{ c.iconPath }}"
                   width="20"
                   height="20"
                   style="margin-right: 0.5rem"
                 />
-                <span>{{ c.name }}</span>
+                {{ c.name }}
               </button>
             </div>
           </div>

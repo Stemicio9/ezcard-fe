@@ -32,9 +32,10 @@
           </div>
 
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6" >
               <div class="input-group mt-md-4 mt-3">
                 <input
+                style="border-radius: 0.4rem;"
                   placeholder="Nome Azienda"
                   id="nomeAzienda"
                   class="form-control"
@@ -44,7 +45,7 @@
 
             <div class="col-md-6">
               <div class="input-group mt-md-4 mt-3">
-                <input placeholder="P.Iva" id="pIva" class="form-control" />
+                <input style="border-radius: 0.4rem;" placeholder="P.Iva" id="pIva" class="form-control" />
               </div>
             </div>
           </div>
@@ -53,6 +54,7 @@
             <div class="col-md-6">
               <div class="input-group mt-md-4 mt-3">
                 <input
+                style="border-radius: 0.4rem;"
                   placeholder="Indirizzo"
                   id="address"
                   class="form-control"
@@ -62,7 +64,7 @@
 
             <div class="col-md-6">
               <div class="input-group mt-md-4 mt-3">
-                <input placeholder="Telefono" id="phone" class="form-control" />
+                <input style="border-radius: 0.4rem;" placeholder="Telefono" id="phone" class="form-control" />
               </div>
             </div>
           </div>
@@ -70,13 +72,14 @@
           <div class="row">
             <div class="col-md-6">
               <div class="input-group mt-md-4 mt-3">
-                <input placeholder="Email" id="email" class="form-control" />
+                <input style="border-radius: 0.4rem;" placeholder="Email" id="email" class="form-control" />
               </div>
             </div>
 
             <div class="col-md-6">
               <div class="input-group mt-md-4 mt-3">
                 <input
+                style="border-radius: 0.4rem;"
                   placeholder="Codice SDI"
                   id="sdiCode"
                   class="form-control"
@@ -88,81 +91,45 @@
           <div class="row">
             <div class="col-md-6">
               <div class="input-group mb-4 mt-md-4 mt-3">
-                <input placeholder="Pec" id="pec" class="form-control" />
+                <input style="border-radius: 0.4rem;" placeholder="Pec" id="pec" class="form-control" />
               </div>
             </div>
           </div>
+
+
           <span> Social azienda</span>
+            <div class="row">
+              <div class="col-md-12" *ngFor="let element of userSocial">
 
-          <div class="row">
-            <div class="col-md-6">
-              <div class="input-group mt-md-4 mt-3">
-                <img
-                  style="margin-right: 0.5rem"
-                  class="icon-size"
-                  src="assets/facebook-icon.png"
-                />
-                <input
-                  placeholder="Facebook"
-                  id="facebook"
-                  class="form-control"
-                  style="border-radius: 0.25rem"
-                />
+                <div class="input-group mt-md-4 mt-3">
+                  <img
+                    style="margin-right: 0.5rem"
+                    class="icon-size"
+                    [src]="element.iconPath"
+                    />
+
+                  <input
+                    class="form-control"
+                    style="border-radius: 0.4rem"
+                    [placeholder]="element.placeholder"
+
+                  />
+
+                  <div style="cursor: pointer;" (click)="remove(element)">
+                    <img
+                      style="margin-left: 0.5rem"
+                      src="assets/trash-icon.png"
+                      class="cancel-input"
+                    />
+                  </div>
+                </div>
               </div>
+
+
             </div>
 
-            <div class="col-md-6">
-              <div class="input-group mt-md-4 mt-3">
-                <img
-                  style="margin-right: 0.5rem"
-                  class="icon-size"
-                  src="assets/tik-tok-icon.png"
-                />
-                <input
-                  placeholder="TikTok"
-                  id="tiktok"
-                  class="form-control"
-                  style="border-radius: 0.25rem"
-                />
-              </div>
-            </div>
-          </div>
 
-          <div class="row">
-            <div class="col-md-6">
-              <div class="input-group mt-md-4 mt-3">
-                <img
-                  style="margin-right: 0.5rem"
-                  class="icon-size"
-                  src="assets/linkedin-icon.png"
-                />
-                <input
-                  placeholder="Linkedin"
-                  id="linkedin"
-                  class="form-control"
-                  style="border-radius: 0.25rem"
-                />
-              </div>
-            </div>
 
-            <div class="col-md-6">
-              <div class="input-group mt-md-4 mt-3">
-                <img
-                  style="margin-right: 0.5rem"
-                  class="icon-size"
-                  src="assets/whatsapp-icon.png"
-                />
-                <input
-                  placeholder="Whatsapp"
-                  id="whatsapp"
-                  class="form-control"
-                  style="border-radius: 0.25rem"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div class="showInputField"></div>
 
           <div
             class="d-md-flex flex-md-row d-flex flex-column justify-content-md-end align-items-center mt-3 mt-md-4"
@@ -172,22 +139,22 @@
                 <button
                   style="border-radius: 24px"
                   type="button"
-                  class="btn btn-outline-secondary"
-                  [disabled]="this.dropdownSocial1.length == 0"
+                  class="btn add-social-button"
+                  [disabled]="this.totalSocial.length == 0"
                   ngbDropdownToggle
                 >
                   Aggiungi social
                 </button>
                 <div ngbDropdownMenu>
-                  <div *ngFor="let social of dropdownSocial1; index as i">
-                    <button ngbDropdownItem (click)="addInput1(social)">
+                  <div *ngFor="let social of totalSocial; index as i">
+                    <button class="dropdown-background dropdown-items" ngbDropdownItem (click)="addSocial(social)">
                       <img
                         src="{{ social.iconPath }}"
                         width="20"
                         height="20"
                         style="margin-right: 0.5rem"
                       />
-                      <span>{{ social.name }}</span>
+                      {{ social.name }}
                     </button>
                   </div>
                 </div>

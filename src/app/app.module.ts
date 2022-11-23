@@ -25,6 +25,7 @@ import { GalleryModalComponent } from './components/modal/gallery-modal/gallery-
 import { PartnerModalComponent } from './components/modal/partner-modal/partner-modal.component';
 import { DropZoneDirective } from './directives/drop-zone.directive';
 import { IgxLegendModule, IgxCategoryChartModule } from 'igniteui-angular-charts';
+import { ProfileDarkComponent } from './components/profile-dark/profile-dark.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { IgxLegendModule, IgxCategoryChartModule } from 'igniteui-angular-charts
     GalleryModalComponent,
     PartnerModalComponent,
     DropZoneDirective,
+    ProfileDarkComponent,
 
   ],
   imports: [

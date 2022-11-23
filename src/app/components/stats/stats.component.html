@@ -26,35 +26,82 @@
   </div>
 </div>
 
+
+
 <div class="row d-md-none gray-background" style="padding-top: 1rem">
   <div class="col-12">
-    <div class="card elevated-card" style="height: 25rem">
-      <div class="row align-items-center" style="margin: 1rem">
-        <div class="col-10">
-          <div ngbDropdown>
-            <button
-              style="border-radius: 24px"
-              type="button"
-              class="btn btn-outline-secondary"
-              ngbDropdownToggle
-            >
-              Intervallo
-            </button>
-            <div ngbDropdownMenu>
-              <button ngbDropdownItem>
-                <span>Ultimi 30 giorni </span>
-              </button>
-              <button ngbDropdownItem>
-                <span>Ultimi 60 giorni </span>
-              </button>
-              <button ngbDropdownItem>
-                <span>Ultimi 365 giorni </span>
-              </button>
-            </div>
+    <form class="row mb-3">
+      <div class="col-6">
+        <div class="dp-hidden position-absolute">
+          <div class="input-group">
+            <input
+              name="datepickerMob"
+              class="form-control date-picker-left"
+              ngbDatepicker
+              #datepickerMob="ngbDatepicker"
+              [autoClose]="'outside'"
+              (dateSelect)="onDateSelection($event)"
+              [displayMonths]="2"
+              [dayTemplate]="t"
+              outsideDays="hidden"
+              [startDate]="fromDate!"
+              tabindex="-1"
+            />
+            <ng-template #t let-date let-focused="focused">
+              <span
+                class="custom-day"
+                [class.focused]="focused"
+                [class.range]="isRange(date)"
+                [class.faded]="isHovered(date) || isInside(date)"
+                (mouseenter)="hoveredDate = date"
+                (mouseleave)="hoveredDate = null"
+              >
+                {{ date.day }}
+              </span>
+            </ng-template>
           </div>
         </div>
+        <div class="input-group">
+          <input
+            #dpFromDateMob
+            class="form-control date-picker-left"
+            placeholder="yyyy-mm-dd"
+            name="dpFromDateMob"
+            [value]="formatter.format(fromDate)"
+            (input)="fromDate = validateInput(fromDate, dpFromDate.value)"
+          />
+          <button
+            class="btn bi bi-calendar3 text-light date-picker-right"
+            (click)="datepicker.toggle()"
+            type="button"
+          ></button>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="input-group">
+          <input
+            #dpToDateMob
+            class="form-control date-picker-left"
+            placeholder="yyyy-mm-dd"
+            name="dpToDateMob"
+            [value]="formatter.format(toDate)"
+            (input)="toDate = validateInput(toDate, dpToDate.value)"
+          />
+          <button
+            class="btn bi bi-calendar3 text-light date-picker-right"
+            (click)="datepicker.toggle()"
+            type="button"
+          ></button>
+        </div>
+      </div>
+    </form>
 
-        <div class="col-2">
+    <div class="card elevated-card" style="height: 25rem">
+      <div
+        class="row align-items-center"
+        style="margin-right: 0.5rem; text-align: end"
+      >
+        <div class="col-12">
           <img class="download-icon" src="assets/download-icon.png" />
         </div>
       </div>
@@ -93,6 +140,7 @@
 
 
 
+
 <!-- Content web-->
 <div
   class="row d-none d-md-flex justify-content-center gray-background"
@@ -104,27 +152,71 @@
       class="d-md-flex flex-md-row d-flex flex-column justify-content-md-between align-items-center"
     >
       <div class="p-2">
-        <div ngbDropdown>
-          <button
-            style="border-radius: 24px"
-            type="button"
-            class="btn btn-outline-secondary"
-            ngbDropdownToggle
-          >
-            Intervallo temporale
-          </button>
-          <div ngbDropdownMenu>
-            <button ngbDropdownItem>
-              <span>Ultimi 30 giorni </span>
-            </button>
-            <button ngbDropdownItem>
-              <span>Ultimi 60 giorni </span>
-            </button>
-            <button ngbDropdownItem>
-              <span>Ultimi 365 giorni </span>
-            </button>
+        <form class="row row-cols-sm-auto">
+          <div class="col-md-6">
+            <div class="dp-hidden position-absolute">
+              <div class="input-group">
+                <input
+                  name="datepicker"
+                  class="form-control date-picker-left"
+                  ngbDatepicker
+                  #datepicker="ngbDatepicker"
+                  [autoClose]="'outside'"
+                  (dateSelect)="onDateSelection($event)"
+                  [displayMonths]="2"
+                  [dayTemplate]="t"
+                  outsideDays="hidden"
+                  [startDate]="fromDate!"
+                  tabindex="-1"
+                />
+                <ng-template #t let-date let-focused="focused">
+                  <span
+                    class="custom-day"
+                    [class.focused]="focused"
+                    [class.range]="isRange(date)"
+                    [class.faded]="isHovered(date) || isInside(date)"
+                    (mouseenter)="hoveredDate = date"
+                    (mouseleave)="hoveredDate = null"
+                  >
+                    {{ date.day }}
+                  </span>
+                </ng-template>
+              </div>
+            </div>
+            <div class="input-group">
+              <input
+                #dpFromDate
+                class="form-control date-picker-left"
+                placeholder="yyyy-mm-dd"
+                name="dpFromDate"
+                [value]="formatter.format(fromDate)"
+                (input)="fromDate = validateInput(fromDate, dpFromDate.value)"
+              />
+              <button
+                class="btn bi bi-calendar3 text-light date-picker-right"
+                (click)="datepicker.toggle()"
+                type="button"
+              ></button>
+            </div>
           </div>
-        </div>
+          <div class="col-md-6">
+            <div class="input-group">
+              <input
+                #dpToDate
+                class="form-control date-picker-left"
+                placeholder="yyyy-mm-dd"
+                name="dpToDate"
+                [value]="formatter.format(toDate)"
+                (input)="toDate = validateInput(toDate, dpToDate.value)"
+              />
+              <button
+                class="btn bi bi-calendar3 text-light date-picker-right"
+                (click)="datepicker.toggle()"
+                type="button"
+              ></button>
+            </div>
+          </div>
+        </form>
       </div>
 
       <div class="p-2">
@@ -188,8 +280,6 @@
 
   <div class="col-md-2"></div>
 </div>
-
-
 
 <!-- Content in comune -->
 <div class="row d-flex gray-background" style="padding-top: 2rem">
