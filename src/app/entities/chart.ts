@@ -8,6 +8,9 @@ export class CountryRenewableElectricityItem {
 }
 
 export class CountryRenewableElectricity extends Array<CountryRenewableElectricityItem> {
+  static toBase64Image(): string {
+    throw new Error('Method not implemented.');
+  }
   public constructor() {
     super();
     this.push(

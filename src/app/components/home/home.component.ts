@@ -8,6 +8,7 @@ import { PresentationModalComponent } from '../modal/presentation-modal/presenta
 import { GalleryModalComponent } from '../modal/gallery-modal/gallery-modal.component';
 import { PartnerModalComponent } from '../modal/partner-modal/partner-modal.component';
 import { ProfileComponent } from '../profile/profile.component';
+import { ProfileDarkComponent } from '../profile-dark/profile-dark.component';
 
 @Component({
   selector: 'app-home',
@@ -17,13 +18,13 @@ import { ProfileComponent } from '../profile/profile.component';
 export class HomeComponent implements OnInit {
 
   titlesFirstSection: string[] = ['Profilo', 'Social', 'Contatti', 'Azienda', 'Presentazione', 'Galleria', 'Partner'];
-  titlesSecondSection: string[] = ['Statistiche', 'Impostazioni', 'Profilo uetnte' ]
+  titlesSecondSection: string[] = ['Statistiche', 'Impostazioni', 'Profilo utente', 'Profilo utente dark' ]
   descriptionsFirstSection: string[] = ['Nome, Compagnia, ecc.',  'Linkedin, Facebook, Instagram','Telefono, Mail, Sito web', 'Sito web, Telefono, Indirizzo', 'Carica i tuoi file', 'Carica i tuoi progetti', 'Carica i tuoi partner'];
   descriptionsSecondSection: string[] = ['Visite, Click, ecc.', 'Email, Lingua, ecc.'];
-  imageLinksFirstSection: string[] = ["assets/user-icon.png","assets/share-icon.png","assets/email-icon.png","assets/azienda-icon.png", "assets/azienda-icon.png", "assets/azienda-icon.png", "assets/azienda-icon.png"];
-  imageLinksSecondSection: string[] = ["assets/stats-icon.png","assets/settings-icon.png","assets/user-icon.png" ];
-  idModalList: any[] = [ProfileModalComponent, SocialModalComponent, ContactsModalComponent, CompanyModalComponent, PresentationModalComponent, GalleryModalComponent, PartnerModalComponent, ProfileComponent];
-  routerLinkList: string[] = ['/stats', '/settings', '/profile/:id'];
+  imageLinksFirstSection: string[] = ["assets/user-dark-rounded-icon.png","assets/social-dark-rounded-icon.png","assets/contacts-dark-rounded-icon.png","assets/company-dark-rounded-icon.png", "assets/presentation-dark-rounded-icon.png", "assets/gallery-dark-rounded-icon.png", "assets/partner-dark-rounded-icon.png"];
+  imageLinksSecondSection: string[] = ["assets/stats-dark-rounded-icon.png","assets/settings-dark-rounded-icon.png","assets/user-dark-rounded-icon.png", "assets/user-dark-rounded-icon.png" ];
+  idModalList: any[] = [ProfileModalComponent, SocialModalComponent, ContactsModalComponent, CompanyModalComponent, PresentationModalComponent, GalleryModalComponent, PartnerModalComponent, ProfileComponent, ProfileDarkComponent];
+  routerLinkList: string[] = ['/stats', '/settings', '/profile/:id','/profile-dark/:id'];
   closeResult = '';
 
   // true = light theme, false = dark theme

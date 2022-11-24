@@ -1,6 +1,5 @@
 import { ViewportScroller } from '@angular/common';
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { VirtualTimeScheduler } from 'rxjs';
 
 @Component({
   selector: 'app-settings',

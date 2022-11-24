@@ -82,10 +82,6 @@ export class StatsComponent implements OnInit {
 
 
 
-
-
-
-
   private _countryRenewableElectricity:  CountryRenewableElectricity | null = null;
   public get countryRenewableElectricity(): CountryRenewableElectricity {
       if (this._countryRenewableElectricity == null)
@@ -97,6 +93,5 @@ export class StatsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 
 }

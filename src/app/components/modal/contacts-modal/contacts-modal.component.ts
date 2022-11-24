@@ -13,15 +13,15 @@ export class ContactsModalComponent implements OnInit {
 
 
   totalContact: Contact[] = [
-    new Contact('Telefono', 'assets/phone-icon.png', 'Telefono'),
-    new Contact('Email', 'assets/email-message-icon.png', 'Email'),
-    new Contact('SitoWeb', 'assets/internet-icon.png', 'SitoWeb'),
+    new Contact('Telefono', 'assets/phone-dark-rounded-icon.png', 'Telefono'),
+    new Contact('Email', 'assets/email-dark-rounded-icon.png', 'Email'),
+    new Contact('SitoWeb', 'assets/internet-dark-rounded-icon.png', 'SitoWeb'),
   ];
 
   dropdownContact: Contact[] = [
-    new Contact('Telefono', 'assets/phone-icon.png', 'Telefono'),
-    new Contact('Email', 'assets/email-message-icon.png', 'Email'),
-    new Contact('SitoWeb', 'assets/internet-icon.png', 'SitoWeb'),
+    new Contact('Telefono', 'assets/phone-dark-rounded-icon.png', 'Telefono'),
+    new Contact('Email', 'assets/email-dark-rounded-icon.png', 'Email'),
+    new Contact('SitoWeb', 'assets/internet-dark-rounded-icon.png', 'SitoWeb'),
   ];
 
 

@@ -31,14 +31,15 @@
 <div class="row d-md-none gray-background" style="padding-top: 1rem">
   <div class="col-12">
     <form class="row mb-3">
+
       <div class="col-6">
         <div class="dp-hidden position-absolute">
           <div class="input-group">
             <input
-              name="datepickerMob"
+              name="datepicker"
               class="form-control date-picker-left"
               ngbDatepicker
-              #datepickerMob="ngbDatepicker"
+              #datepicke="ngbDatepicker"
               [autoClose]="'outside'"
               (dateSelect)="onDateSelection($event)"
               [displayMonths]="2"
@@ -63,10 +64,10 @@
         </div>
         <div class="input-group">
           <input
-            #dpFromDateMob
+            #dpFromDate
             class="form-control date-picker-left"
             placeholder="yyyy-mm-dd"
-            name="dpFromDateMob"
+            name="dpFromDate"
             [value]="formatter.format(fromDate)"
             (input)="fromDate = validateInput(fromDate, dpFromDate.value)"
           />
@@ -80,10 +81,10 @@
       <div class="col-6">
         <div class="input-group">
           <input
-            #dpToDateMob
+            #dpToDate
             class="form-control date-picker-left"
             placeholder="yyyy-mm-dd"
-            name="dpToDateMob"
+            name="dpToDate"
             [value]="formatter.format(toDate)"
             (input)="toDate = validateInput(toDate, dpToDate.value)"
           />
@@ -220,7 +221,7 @@
       </div>
 
       <div class="p-2">
-        <img class="download-icon" src="assets/download-icon.png" />
+        <img type="button" class="download-icon" src="assets/download-icon.png" />
       </div>
     </div>
 

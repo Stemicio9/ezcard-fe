@@ -8,6 +8,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import {SettingsComponent} from "./components/settings/settings.component";
 import {StatsComponent} from "./components/stats/stats.component";
 import {ResetPasswordComponent} from "./components/reset-password/reset-password.component";
+import { ProfileDarkComponent } from './components/profile-dark/profile-dark.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: 'profile', component: ProfileModalComponent },
   { path: 'settings', component:  SettingsComponent, data: {title: 'Impostazioni'}},
   { path: 'stats', component:  StatsComponent, data: {title: 'Statistiche'}},
-  { path: 'profile/:id', component: ProfileComponent },
+  { path: 'profile/:id', component: ProfileComponent, data: {title: 'Profilo Utente'} },
+  { path: 'profile-dark/:id', component: ProfileDarkComponent, data: {title: 'Profilo Utente Dark'} },
 
 ];
 

@@ -29,11 +29,13 @@ export class AppComponent implements OnInit {
       val.url.includes('home') ||
       val.url.includes('settings') ||
       val.url.includes('profile/:id') ||
+      val.url.includes('profile-dark/:id') ||
       val.url.includes('stats');
     this.showHomeIcon =
       val.url.includes('settings') ||
       val.url.includes('stats') ||
       val.url.includes('profile/:id');
+      val.url.includes('profile-dark/:id');
   }
 
   setupPageTitle(){

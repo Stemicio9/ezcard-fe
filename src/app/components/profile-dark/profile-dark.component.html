@@ -1,1 +1,428 @@
-<p>profile-dark works!</p>
+<!--Mobile content-->
+
+<section class="d-md-none d-flex" >
+  <div class="row">
+    <div class="card profile-card-2 card-style">
+      <div class="card-img-block">
+        <img
+          class="img-fluid"
+          src="assets/carousel-image3.jpeg"
+          alt="Card image cap"
+        />
+      </div>
+      <div class="card-body pt-5">
+        <div class="row">
+        <div class="col-6">
+          <img
+          src="https://randomuser.me/api/portraits/men/64.jpg"
+          alt="profile-image"
+          class="profile"
+        />
+        </div>
+        <div class="col-6 icon-position" [align]="'right'">
+          <img class="icon-size" src="assets/share-white-rounded-icon.png" style="margin-right: 0.7rem;">
+
+          <img class="icon-size" src="assets/qrcode-white-rounded-icon.png">
+        </div>
+      </div>
+        <h5 class="card-title mt-2 text-light" >Mario Rossinettini</h5>
+        <span class="card-subtitle text-light">CEO - EZcard </span>
+
+        <div class="mt-4 mb-4">
+          <button type="button" class="btn save-button">
+            <span class="text-light"
+              ><img
+                class="add-icon"
+                src="assets/add-contact-icon.png"
+                style="margin-right: 0.75rem"
+              />Aggiungi ai contatti</span
+            >
+          </button>
+        </div>
+
+        <p class="card-text text-light ">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisl
+          est, malesuada sed varius at, ullamcorper in enim. Etiam congue auctor
+          dolor, in
+        </p>
+        <div class="row mt-5 mb-5" style="text-align: center;">
+          <div class="col-1"></div>
+          <div class="col-2">
+            <img class="icon-size" src="assets/instagram-white-rounded-icon.png">
+          </div>
+          <div class="col-2">
+            <img class="icon-size" src="assets/facebook-white-rounded-icon.png">
+          </div>
+           <div class="col-2">
+            <img class="icon-size" src="assets/twitter-white-rounded-icon.png">
+          </div>
+          <div class="col-2">
+            <img class="icon-size" src="assets/linkedin-white-rounded-icon.png">
+          </div>
+          <div class="col-2">
+            <img class="icon-size" src="assets/pinterest-white-rounded-icon.png">
+          </div>
+          <div class="col-1"></div>
+        </div>
+
+        <span class="card-subtitle text-light ">CONTATTI</span>
+
+        <div class="card card-contact mt-3 mb-5" >
+
+          <span class="text-light"> <img class="icon-card " src="assets/phone-white-icon.png">+39123456789</span>
+          <hr>
+          <span class="text-light"><img class="icon-card" src="assets/email-white-icon.png">mariorossi@mail.com</span>
+          <hr>
+          <span class="text-light"><img class="icon-card" src="assets/internet-white-icon.png">www.mariorossi.com</span>
+        </div>
+
+
+        <span class="card-subtitle text-light">AZIENDA</span>
+
+        <div class="card card-contact mt-3 mb-5" >
+
+          <span class="text-light"> <img class="icon-card" src="assets/phone-white-icon.png">+39123456789</span>
+          <hr>
+          <span class="text-light"><img class="icon-card" src="assets/email-white-icon.png">mariorossi@mail.com</span>
+          <hr>
+          <span class="text-light"><img class="icon-card" src="assets/internet-white-icon.png">www.mariorossi.com</span>
+          <hr>
+          <div class="row" style="text-align: center;">
+            <div class="col-2"></div>
+            <div class="col-2">
+              <img class="social-icon-card" src="assets/instagram-white-rounded-icon.png">
+            </div>
+            <div class="col-2">
+              <img class="social-icon-card" src="assets/facebook-white-rounded-icon.png">
+            </div>
+             <div class="col-2">
+              <img class="social-icon-card" src="assets/twitter-white-rounded-icon.png">
+            </div>
+            <div class="col-2">
+              <img class="social-icon-card" src="assets/linkedin-white-rounded-icon.png">
+            </div>
+            <div class="col-2"></div>
+          </div>
+        </div>
+
+
+        <div class="card card-background mb-5">
+          <div class="row">
+            <div class="col-9">
+              <div>
+                <span class="card-subtitle text-light">Metra</span>
+              </div>
+              <div>
+                <span class="card-title text-light">PRESENTAZIONE</span>
+              </div>
+            </div>
+
+            <div class="col-3" style="text-align: right">
+              <img class="icon-size-button" src="assets/download-white-icon.png">
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-9">
+              <div>
+                <span class="card-subtitle text-light">Metra</span>
+              </div>
+              <div>
+                <span class="card-title text-light">PRESENTAZIONE</span>
+              </div>
+            </div>
+
+            <div class="col-3" style="text-align: right">
+              <img class="icon-size-button" src="assets/download-white-icon.png">
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-9">
+              <div>
+                <span class="card-subtitle text-light">Metra</span>
+              </div>
+              <div>
+                <span class="card-title text-light">PRESENTAZIONE</span>
+              </div>
+            </div>
+
+            <div class="col-3" style="text-align: right">
+              <img class="icon-size-button" src="assets/download-white-icon.png">
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <span class="card-subtitle text-light">GALLERIA</span>
+        </div>
+
+
+        <ngb-carousel #ngcarousel>
+          <ng-template ngbSlide id="one">
+            <div class="picsum-img-wrapper">
+              <img src="assets/carousel-image1.jpeg" alt="Slide 1">
+            </div>
+          </ng-template>
+          <ng-template ngbSlide id="two">
+            <div class="picsum-img-wrapper">
+              <img src="assets/carousel-image2.jpeg" alt="Slide 2">
+            </div>
+          </ng-template>
+          <ng-template ngbSlide id="three">
+            <div class="picsum-img-wrapper">
+              <img src="assets/carousel-image3.jpeg" alt="Slide 3">
+            </div>
+          </ng-template>
+        </ngb-carousel>
+
+
+        <div class="mt-5 mb-3">
+          <span class="card-subtitle mb-5 text-light">PARTNER</span>
+        </div>
+
+        <ngb-carousel #ngcarousel>
+          <ng-template ngbSlide id="one">
+            <div class="picsum-img-wrapper">
+              <img  class= "image-carousel" src="assets/white-logo.png" alt="Slide 1">
+            </div>
+          </ng-template>
+          <ng-template ngbSlide id="two">
+            <div class="picsum-img-wrapper">
+              <img class= "image-carousel" src="assets/white-logo.png" alt="Slide 2">
+            </div>
+          </ng-template>
+          <ng-template ngbSlide id="three">
+            <div class="picsum-img-wrapper">
+              <img  class= "image-carousel" src="assets/white-logo.png" alt="Slide 3">
+            </div>
+          </ng-template>
+        </ngb-carousel>
+
+        <hr class="mt-5">
+
+        <div class="mt-4" style="text-align: center;">
+          <img class="logo" src="assets/white-logo.png">
+        </div>
+        <div class="mt-2" style="text-align: center;">
+          <span class="text-light">POWERED BY EZCARD</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<!-- Web content -->
+<div class="row d-md-flex d-none">
+
+    <div class="col-md-3"></div>
+
+
+    <div class="col-md-6">
+      <div class="card profile-card-2 card-style ">
+        <div class="card-img-block">
+          <img
+            class="img-fluid"
+            src="assets/carousel-image3.jpeg"
+             alt="Card image cap"
+          />
+        </div>
+        <div class="card-body pt-5">
+          <img
+            src="https://randomuser.me/api/portraits/men/64.jpg"
+            alt="profile-image"
+            class="profile"
+          />
+          <h5 class="card-title mt-2 text-light">Mario Rossinettini</h5>
+          <span class="card-subtitle text-light">CEO - EZcard </span>
+
+          <div class="mt-4 mb-4">
+            <button type="button" class="btn save-button">
+              <span class="text-light"
+                ><img
+                  class="add-icon"
+                  src="assets/add-contact-icon.png"
+                  style="margin-right: 0.75rem"
+                />Aggiungi ai contatti</span
+              >
+            </button>
+          </div>
+
+          <p class="card-text text-light">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisl
+            est, malesuada sed varius at, ullamcorper in enim. Etiam congue auctor
+            dolor, in
+          </p>
+          <div class="row mt-5 mb-5" style="text-align:center">
+            <div class="col-1"></div>
+            <div class="col-2">
+              <img class="icon-size" src="assets/instagram-white-rounded-icon.png">
+            </div>
+            <div class="col-2">
+              <img class="icon-size" src="assets/facebook-white-rounded-icon.png">
+            </div>
+             <div class="col-2">
+              <img class="icon-size" src="assets/twitter-white-rounded-icon.png">
+            </div>
+            <div class="col-2">
+              <img class="icon-size" src="assets/linkedin-white-rounded-icon.png">
+            </div>
+            <div class="col-2">
+              <img class="icon-size" src="assets/pinterest-white-rounded-icon.png">
+            </div>
+            <div class="col-1"></div>
+          </div>
+
+          <span class="card-subtitle text-light">CONTATTI</span>
+
+          <div class="card card-contact mt-3 mb-5" >
+
+            <span class="text-light"> <img class="icon-card" src="assets/phone-white-icon.png">+39123456789</span>
+            <hr>
+            <span class="text-light"> <img class="icon-card " src="assets/email-white-icon.png">mariorossi@mail.com</span>
+            <hr>
+            <span class="text-light"><img class="icon-card " src="assets/internet-white-icon.png">www.mariorossi.com</span>
+          </div>
+
+
+          <span class="card-subtitle text-light">AZIENDA</span>
+
+          <div class="card card-contact mt-3 mb-5" >
+
+            <span class="text-light"> <img class="icon-card" src="assets/phone-white-icon.png">+39123456789</span>
+            <hr>
+            <span class="text-light"><img class="icon-card" src="assets/email-white-icon.png">mariorossi@mail.com</span>
+            <hr>
+            <span class="text-light"><img class="icon-card" src="assets/internet-white-icon.png">www.mariorossi.com</span>
+            <hr>
+            <div class="row" style="text-align:center">
+              <div class="col-2"></div>
+              <div class="col-2">
+                <img class="social-icon-card" src="assets/instagram-white-rounded-icon.png">
+              </div>
+              <div class="col-2">
+                <img class="social-icon-card" src="assets/facebook-white-rounded-icon.png">
+              </div>
+               <div class="col-2">
+                <img class="social-icon-card" src="assets/twitter-white-rounded-icon.png">
+              </div>
+              <div class="col-2">
+                <img class="social-icon-card" src="assets/linkedin-white-rounded-icon.png">
+              </div>
+              <div class="col-2"></div>
+            </div>
+          </div>
+
+
+          <div class="card card-background mb-5">
+            <div class="row">
+              <div class="col-6">
+                <div>
+                  <span class="card-subtitle text-light">Metra</span>
+                </div>
+                <div>
+                  <span class="card-title text-light">PRESENTAZIONE</span>
+                </div>
+              </div>
+
+              <div class="col-6" style="text-align: right">
+                <img class="icon-size-button" src="assets/download-white-icon.png">
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-6">
+                <div>
+                  <span class="card-subtitle text-light">Metra</span>
+                </div>
+                <div>
+                  <span class="card-title text-light">PRESENTAZIONE</span>
+                </div>
+              </div>
+
+              <div class="col-6" style="text-align: right">
+                <img class="icon-size-button" src="assets/download-white-icon.png">
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-6">
+                <div>
+                  <span class="card-subtitle text-light">Metra</span>
+                </div>
+                <div>
+                  <span class="card-title text-light">PRESENTAZIONE</span>
+                </div>
+              </div>
+
+              <div class="col-6" style="text-align: right">
+                <img class="icon-size-button" src="assets/download-white-icon.png">
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <span class="card-subtitle text-light">GALLERIA</span>
+          </div>
+
+
+          <ngb-carousel #ngcarousel>
+            <ng-template ngbSlide id="one">
+              <div class="picsum-img-wrapper">
+                <img src="assets/carousel-image1.jpeg" alt="Slide 1">
+              </div>
+            </ng-template>
+            <ng-template ngbSlide id="two">
+              <div class="picsum-img-wrapper">
+                <img src="assets/carousel-image2.jpeg" alt="Slide 2">
+              </div>
+            </ng-template>
+            <ng-template ngbSlide id="three">
+              <div class="picsum-img-wrapper">
+                <img src="assets/carousel-image3.jpeg" alt="Slide 3">
+              </div>
+            </ng-template>
+          </ngb-carousel>
+
+          <div class="mt-5 mb-3">
+            <span class="card-subtitle mb-5 text-light">PARTNER</span>
+          </div>
+
+          <ngb-carousel #ngcarousel>
+            <ng-template ngbSlide id="one">
+              <div class="picsum-img-wrapper">
+                <img src="assets/white-logo.png" alt="Slide 1">
+              </div>
+            </ng-template>
+            <ng-template ngbSlide id="two">
+              <div class="picsum-img-wrapper">
+                <img src="assets/white-logo.png" alt="Slide 2">
+              </div>
+            </ng-template>
+            <ng-template ngbSlide id="three">
+              <div class="picsum-img-wrapper">
+                <img src="assets/white-logo.png" alt="Slide 3">
+              </div>
+            </ng-template>
+          </ngb-carousel>
+
+
+          <hr class="mt-5">
+
+          <div class="mt-4" style="text-align: center;">
+            <img class="logo" src="assets/white-logo.png">
+          </div>
+          <div class="mt-2" style="text-align: center;">
+            <span class="text-light">POWERED BY EZCARD</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-3"></div>
+
+
+  </div>
+

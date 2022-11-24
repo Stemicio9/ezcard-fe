@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Social } from 'src/app/entities/social';
+import { StatoAzienda } from 'src/app/entities/stato-azienda';
 
 @Component({
   selector: 'app-company-modal',
@@ -10,55 +11,143 @@ import { Social } from 'src/app/entities/social';
 export class CompanyModalComponent implements OnInit {
   @Input() public data: any;
 
-  totalSocial: Social[] = [
-    new Social('Instagram', 'assets/linkedin-icon.png', 'Instagram'),
-    new Social('YouTube', 'assets/linkedin-icon.png', 'YouTube'),
-    new Social('Twitter', 'assets/linkedin-icon.png', 'Twitter'),
-    new Social('Pinterest', 'assets/linkedin-icon.png', 'Pinterest'),
-    new Social('Behance', 'assets/linkedin-icon.png', 'Behance'),
+
+
+   azienda1: StatoAzienda[] = [
+    new StatoAzienda(
+      [
+        new Social('Instagram', 'assets/instagram-dark-rounded-icon.png', 'Instagram'),
+        new Social('YouTube', 'assets/youtube-dark-rounded-icon.png', 'YouTube'),
+        new Social('Twitter', 'assets/twitter-dark-rounded-icon.png', 'Twitter'),
+        new Social('Pinterest', 'assets/pinterest-dark-rounded-icon.png', 'Pinterest'),
+        new Social('Behance', 'assets/behance-dark-rounded-icon.png', 'Behance'),
+      ],
+      [
+        new Social('Whatsapp', 'assets/whatsapp-dark-rounded-icon.png', 'Whatsapp'),
+        new Social('Facebook', 'assets/facebook-dark-rounded-icon.png', 'Facebook'),
+        new Social('TikTok', 'assets/tiktok-dark-rounded-icon.png', 'TikTok'),
+        new Social('Linkedin', 'assets/linkedin-dark-rounded-icon.png', 'Linkedin'),
+      ],
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "")
+   ]
+
+
+   azienda2: StatoAzienda[] = [
+    new StatoAzienda(
+      [
+        new Social('Instagram', 'assets/instagram-dark-rounded-icon.png', 'Instagram'),
+        new Social('YouTube', 'assets/youtube-dark-rounded-icon.png', 'YouTube'),
+        new Social('Twitter', 'assets/twitter-dark-rounded-icon.png', 'Twitter'),
+        new Social('Pinterest', 'assets/pinterest-dark-rounded-icon.png', 'Pinterest'),
+        new Social('Behance', 'assets/behance-dark-rounded-icon.png', 'Behance'),
+      ],
+      [
+        new Social('Whatsapp', 'assets/whatsapp-dark-rounded-icon.png', 'Whatsapp'),
+        new Social('Facebook', 'assets/facebook-dark-rounded-icon.png', 'Facebook'),
+        new Social('TikTok', 'assets/tiktok-dark-rounded-icon.png', 'TikTok'),
+        new Social('Linkedin', 'assets/linkedin-dark-rounded-icon.png', 'Linkedin'),
+      ],
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "")
+   ]
+
+
+   azienda3: StatoAzienda[] = [
+    new StatoAzienda(
+      [
+        new Social('Instagram', 'assets/instagram-dark-rounded-icon.png', 'Instagram'),
+        new Social('YouTube', 'assets/youtube-dark-rounded-icon.png', 'YouTube'),
+        new Social('Twitter', 'assets/twitter-dark-rounded-icon.png', 'Twitter'),
+        new Social('Pinterest', 'assets/pinterest-dark-rounded-icon.png', 'Pinterest'),
+        new Social('Behance', 'assets/behance-dark-rounded-icon.png', 'Behance'),
+      ],
+      [
+        new Social('Whatsapp', 'assets/whatsapp-dark-rounded-icon.png', 'Whatsapp'),
+        new Social('Facebook', 'assets/facebook-dark-rounded-icon.png', 'Facebook'),
+        new Social('TikTok', 'assets/tiktok-dark-rounded-icon.png', 'TikTok'),
+        new Social('Linkedin', 'assets/linkedin-dark-rounded-icon.png', 'Linkedin'),
+      ],
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "")
+   ]
+
+
+
+
+
+
+
+   totalSocial: Social[] = [
+    new Social('Instagram', 'assets/instagram-dark-rounded-icon.png', 'Instagram'),
+    new Social('YouTube', 'assets/youtube-dark-rounded-icon.png', 'YouTube'),
+    new Social('Twitter', 'assets/twitter-dark-rounded-icon.png', 'Twitter'),
+    new Social('Pinterest', 'assets/pinterest-dark-rounded-icon.png', 'Pinterest'),
+    new Social('Behance', 'assets/behance-dark-rounded-icon.png', 'Behance'),
   ];
 
+
   userSocial: Social[] = [
-    new Social('Whatsapp', 'assets/whatsapp-icon.png', 'Whatsapp'),
-    new Social('Facebook', 'assets/facebook-icon.png', 'Facebook'),
-    new Social('TikTok', 'assets/tik-tok-icon.png', 'TikTok'),
-    new Social('Linkedin', 'assets/linkedin-icon.png', 'Linkedin'),
+    new Social('Whatsapp', 'assets/whatsapp-dark-rounded-icon.png', 'Whatsapp'),
+    new Social('Facebook', 'assets/facebook-dark-rounded-icon.png', 'Facebook'),
+    new Social('TikTok', 'assets/tiktok-dark-rounded-icon.png', 'TikTok'),
+    new Social('Linkedin', 'assets/linkedin-dark-rounded-icon.png', 'Linkedin'),
   ];
 
 
 
   totalSocial2: Social[] = [
-    new Social('Instagram', 'assets/linkedin-icon.png', 'Instagram'),
-    new Social('YouTube', 'assets/linkedin-icon.png', 'YouTube'),
-    new Social('Twitter', 'assets/linkedin-icon.png', 'Twitter'),
-    new Social('Pinterest', 'assets/linkedin-icon.png', 'Pinterest'),
-    new Social('Behance', 'assets/linkedin-icon.png', 'Behance'),
+    new Social('Instagram', 'assets/instagram-dark-rounded-icon.png', 'Instagram'),
+    new Social('YouTube', 'assets/youtube-dark-rounded-icon.png', 'YouTube'),
+    new Social('Twitter', 'assets/twitter-dark-rounded-icon.png', 'Twitter'),
+    new Social('Pinterest', 'assets/pinterest-dark-rounded-icon.png', 'Pinterest'),
+    new Social('Behance', 'assets/behance-dark-rounded-icon.png', 'Behance'),
   ];
+
 
   userSocial2: Social[] = [
-    new Social('Whatsapp', 'assets/whatsapp-icon.png', 'Whatsapp'),
-    new Social('Facebook', 'assets/facebook-icon.png', 'Facebook'),
-    new Social('TikTok', 'assets/tik-tok-icon.png', 'TikTok'),
-    new Social('Linkedin', 'assets/linkedin-icon.png', 'Linkedin'),
+    new Social('Whatsapp', 'assets/whatsapp-dark-rounded-icon.png', 'Whatsapp'),
+    new Social('Facebook', 'assets/facebook-dark-rounded-icon.png', 'Facebook'),
+    new Social('TikTok', 'assets/tiktok-dark-rounded-icon.png', 'TikTok'),
+    new Social('Linkedin', 'assets/linkedin-dark-rounded-icon.png', 'Linkedin'),
   ];
-
 
 
 
   totalSocial3: Social[] = [
-    new Social('Instagram', 'assets/linkedin-icon.png', 'Instagram'),
-    new Social('YouTube', 'assets/linkedin-icon.png', 'YouTube'),
-    new Social('Twitter', 'assets/linkedin-icon.png', 'Twitter'),
-    new Social('Pinterest', 'assets/linkedin-icon.png', 'Pinterest'),
-    new Social('Behance', 'assets/linkedin-icon.png', 'Behance'),
+    new Social('Instagram', 'assets/instagram-dark-rounded-icon.png', 'Instagram'),
+    new Social('YouTube', 'assets/youtube-dark-rounded-icon.png', 'YouTube'),
+    new Social('Twitter', 'assets/twitter-dark-rounded-icon.png', 'Twitter'),
+    new Social('Pinterest', 'assets/pinterest-dark-rounded-icon.png', 'Pinterest'),
+    new Social('Behance', 'assets/behance-dark-rounded-icon.png', 'Behance'),
   ];
 
+
   userSocial3: Social[] = [
-    new Social('Whatsapp', 'assets/whatsapp-icon.png', 'Whatsapp'),
-    new Social('Facebook', 'assets/facebook-icon.png', 'Facebook'),
-    new Social('TikTok', 'assets/tik-tok-icon.png', 'TikTok'),
-    new Social('Linkedin', 'assets/linkedin-icon.png', 'Linkedin'),
+    new Social('Whatsapp', 'assets/whatsapp-dark-rounded-icon.png', 'Whatsapp'),
+    new Social('Facebook', 'assets/facebook-dark-rounded-icon.png', 'Facebook'),
+    new Social('TikTok', 'assets/tiktok-dark-rounded-icon.png', 'TikTok'),
+    new Social('Linkedin', 'assets/linkedin-dark-rounded-icon.png', 'Linkedin'),
   ];
+
+
+
+
 
   tabs = [1];
   counter = this.tabs.length + 1;
@@ -97,6 +186,10 @@ export class CompanyModalComponent implements OnInit {
 
 
 
+
+
+
+
   addSocial2(contact: any) {
     this.userSocial2.push(contact);
     var index = this.totalSocial2.indexOf(contact);
@@ -108,6 +201,9 @@ export class CompanyModalComponent implements OnInit {
     this.userSocial2.splice(index, 1);
     this.totalSocial2.push(element);
   }
+
+
+
 
 
 

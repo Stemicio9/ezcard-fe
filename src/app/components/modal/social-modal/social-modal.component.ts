@@ -11,19 +11,19 @@ export class SocialModalComponent implements OnInit {
   @Input() public data: any;
 
   totalSocial: Social[] = [
-    new Social('Instagram', 'assets/linkedin-icon.png', 'Instagram'),
-    new Social('YouTube', 'assets/linkedin-icon.png', 'YouTube'),
-    new Social('Twitter', 'assets/linkedin-icon.png', 'Twitter'),
-    new Social('Pinterest', 'assets/linkedin-icon.png', 'Pinterest'),
-    new Social('Behance', 'assets/linkedin-icon.png', 'Behance'),
+    new Social('Instagram', 'assets/instagram-dark-rounded-icon.png', 'Instagram'),
+    new Social('YouTube', 'assets/youtube-dark-rounded-icon.png', 'YouTube'),
+    new Social('Twitter', 'assets/twitter-dark-rounded-icon.png', 'Twitter'),
+    new Social('Pinterest', 'assets/pinterest-dark-rounded-icon.png', 'Pinterest'),
+    new Social('Behance', 'assets/behance-dark-rounded-icon.png', 'Behance'),
   ];
 
 
   userSocial: Social[] = [
-    new Social('Whatsapp', 'assets/whatsapp-icon.png', 'Whatsapp'),
-    new Social('Facebook', 'assets/facebook-icon.png', 'Facebook'),
-    new Social('TikTok', 'assets/tik-tok-icon.png', 'TikTok'),
-    new Social('Linkedin', 'assets/linkedin-icon.png', 'Linkedin'),
+    new Social('Whatsapp', 'assets/whatsapp-dark-rounded-icon.png', 'Whatsapp'),
+    new Social('Facebook', 'assets/facebook-dark-rounded-icon.png', 'Facebook'),
+    new Social('TikTok', 'assets/tiktok-dark-rounded-icon.png', 'TikTok'),
+    new Social('Linkedin', 'assets/linkedin-dark-rounded-icon.png', 'Linkedin'),
   ];
 
   constructor(private modalService: NgbModal) {}

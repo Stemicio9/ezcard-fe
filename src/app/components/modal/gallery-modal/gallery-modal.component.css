@@ -23,3 +23,17 @@ span {
   background-color: rgb(206, 206, 206);
   padding: 70px 50px;
 }
+.save-label {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.save-button{
+  border-radius: 24px;
+  background-color: var(--black_ez)
+}
+.save-button:active{
+  border-radius: 24px;
+  background-color: var(--black_ez)
+
+}

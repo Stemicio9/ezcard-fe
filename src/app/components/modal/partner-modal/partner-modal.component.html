@@ -1,6 +1,6 @@
 <div class="modal-header" style="background-color: var(--black_ez)">
   <div>
-    <img class="icon-size" src="assets/company-icon-white.png"/>
+    <img class="icon-size" src="assets/partner-white-rounded-icon.png"/>
     <span class="section-title text-light" style="padding-left: 1rem"
     >Partner</span
     >
@@ -20,7 +20,10 @@
     <!-- Apply DropZone Directive -->﻿
     <div class="dropzone" DropZone (onFileDropped)="droppedFiles($event)">
       <div class="text-center">
-        <span class="note needsclick">Trascina <strong>qui</strong> i tuoi file.</span>
+        <span class="note needsclick">Trascina qui i tuoi file.</span>
+      </div>
+      <div class="text-center">
+        <span class="note needsclick">Puoi caricare fino ad un massimo di 15 file.</span>
       </div>
     </div>
     <div class="file-table">
@@ -49,10 +52,9 @@
     </div>
   </div>
 
-
   <div class="d-flex flex-row-reverse">
     <button type="button" class="btn text-light save-button">
-      <span class="text-light save-label section-title">SALVA</span>
+      <span class="text-light save-label section-title">CARICA FILE</span>
     </button>
   </div>
 
