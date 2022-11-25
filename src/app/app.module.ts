@@ -26,6 +26,7 @@ import { PartnerModalComponent } from './components/modal/partner-modal/partner-
 import { DropZoneDirective } from './directives/drop-zone.directive';
 import { IgxLegendModule, IgxCategoryChartModule } from 'igniteui-angular-charts';
 import { ProfileDarkComponent } from './components/profile-dark/profile-dark.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { ProfileDarkComponent } from './components/profile-dark/profile-dark.com
   ],
   imports: [
     AppRoutingModule,
+    CarouselModule,
     BrowserModule,
     NgbModule,
     FormsModule,

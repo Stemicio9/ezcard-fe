@@ -1,3 +1,4 @@
+
 .profile-card-2 .card-img-block{
   float:left;
   width:100%;
@@ -18,10 +19,20 @@ border: 3px solid rgba(255, 255, 255, 1);
 -webkit-transform: translate(-50%, 0%);
 transform: translate(-50%, 0%);
 }
-.profile-card-2 h5{
-  font-weight:600;
-  color: black;
+
+.profile-card-2 .profile-web {
+  border-radius: 50%;
+  position: absolute;
+  top: -70px;
+  left: 133px;
+  max-width: 150px;
+  border: 3px solid rgba(255, 255, 255, 1);
+  -webkit-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
 }
+
+
+
 .profile-card-2 .card-text{
   font-weight:300;
   font-size:15px;
@@ -35,6 +46,7 @@ transform: translate(-50%, 0%);
 padding: 0;
 border: none;
 background-color: #252525;
+border-radius: 0%;
 }
 
 .save-button{
