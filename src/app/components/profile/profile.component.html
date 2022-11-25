@@ -310,14 +310,13 @@
           <img type="button" class="logo" src="assets/black-logo.png" />
         </div>
         <div
-          href="https://www.ezcard.it"
           class="mt-2"
           style="text-align: center"
         >
           <span style="font-size: 10px"
             >POWERED BY
             <b
-              ><a href="https://www.ezcard.it" style="color: black"
+              ><a href="{{ezCardWebsiteLink}}" style="color: black"
                 >EZCARD</a
               ></b
             ></span
@@ -584,7 +583,7 @@
           <owl-carousel-o [options]="customOptions">
 
             <ng-container *ngFor="let slide of slidesStore">
-              <ng-template carouselSlide [id]="slide.id">
+              <ng-template carouselSlide>
                 <img [src]="slide.src" [alt]="slide.alt" [title]="slide.title">
               </ng-template>
             </ng-container>
@@ -592,43 +591,19 @@
           </owl-carousel-o>
 
 
-
-
-
-
-
-          <ngb-carousel #ngcarousel>
-            <ng-template ngbSlide id="one">
-              <div class="picsum-img-wrapper">
-                <img src="assets/black-logo.png" alt="Slide 1" />
-              </div>
-            </ng-template>
-            <ng-template ngbSlide id="two">
-              <div class="picsum-img-wrapper">
-                <img src="assets/black-logo.png" alt="Slide 2" />
-              </div>
-            </ng-template>
-            <ng-template ngbSlide id="three">
-              <div class="picsum-img-wrapper">
-                <img src="assets/black-logo.png" alt="Slide 3" />
-              </div>
-            </ng-template>
-          </ngb-carousel>
-
           <hr class="mt-5" />
 
           <div class="mt-4" style="text-align: center">
             <img type="button" class="logo" src="assets/black-logo.png" />
           </div>
           <div
-            href="https://www.ezcard.it"
             class="row mt-2"
             style="text-align: center"
           >
             <span style="font-size: 10px"
               >POWERED BY
               <b
-                ><a href="https://www.ezcard.it" style="color: black"
+                ><a href="{{ezCardWebsiteLink}}" style="color: black"
                   >EZCARD</a
                 ></b
               ></span

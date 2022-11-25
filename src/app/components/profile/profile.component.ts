@@ -1,36 +1,8 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import { NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
 import { Profile } from 'src/app/entities/profile';
 import { ProfileService } from 'src/app/services/profile.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-
-export class CarouselHolderComponent {
-  customOptions: OwlOptions = {
-    loop: true,
-    mouseDrag: false,
-    touchDrag: false,
-    pullDrag: false,
-    dots: false,
-    navSpeed: 700,
-    navText: ['', ''],
-    responsive: {
-      0: {
-        items: 1
-      },
-      400: {
-        items: 2
-      },
-      740: {
-        items: 3
-      },
-      940: {
-        items: 4
-      }
-    },
-    nav: true
-  }
-}
 
 @Component({
   selector: 'app-profile',
@@ -47,44 +19,107 @@ export class ProfileComponent implements OnInit {
 
   slidesStore = [
     {
-      id: 'id',
-      src: '',
+      id: 'id1',
+      src: '/assets/black-logo.png',
       alt: 'alt',
       title: ''
     },
     {
-      id: 'id',
-      src: '',
+      id: 'id2',
+      src: '/assets/black-logo.png',
       alt: 'alt',
       title: ''
     },
     {
-      id: 'id',
-      src: '',
+      id: 'id3',
+      src: '/assets/black-logo.png',
       alt: 'alt',
       title: ''
     },
     {
-      id: 'id',
-      src: '',
+      id: 'id4',
+      src: '/assets/black-logo.png',
       alt: 'alt',
       title: ''
     },
     {
-      id: 'id',
-      src: '',
+      id: 'id5',
+      src: '/assets/black-logo.png',
       alt: 'alt',
       title: ''
     },
     {
-      id: 'id',
-      src: '',
+      id: 'id6',
+      src: '/assets/black-logo.png',
+      alt: 'alt',
+      title: ''
+    },
+    {
+      id: 'id6',
+      src: '/assets/black-logo.png',
+      alt: 'alt',
+      title: ''
+    },
+    {
+      id: 'id6',
+      src: '/assets/black-logo.png',
+      alt: 'alt',
+      title: ''
+    },{
+      id: 'id6',
+      src: '/assets/black-logo.png',
+      alt: 'alt',
+      title: ''
+    },
+    {
+      id: 'id6',
+      src: '/assets/black-logo.png',
+      alt: 'alt',
+      title: ''
+    },{
+      id: 'id6',
+      src: '/assets/black-logo.png',
+      alt: 'alt',
+      title: ''
+    },{
+      id: 'id6',
+      src: '/assets/black-logo.png',
       alt: 'alt',
       title: ''
     }
   ]
 
-  @ViewChild('ngcarousel', { static: true }) ngCarousel!: NgbCarousel;
+  customOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: false,
+    navSpeed: 700,
+    items: 3,
+    margin: 20,
+    responsive: { // responsive options
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 3
+      },
+      940: {
+        items: 4
+      }
+    },
+    nav: false,
+    rewind: false,
+    autoplay: true,
+    autoplayHoverPause: true,
+    autoplayTimeout:3000
+  }
+
+  ezCardWebsiteLink = "https://www.ezcard.it";
 
   constructor(private activatedRoute: ActivatedRoute, private profileService: ProfileService) { }
 
