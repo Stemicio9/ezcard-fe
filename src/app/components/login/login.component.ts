@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
   login() {
     this.router.navigate(['home']);
 
-    /*const { email, password } = this.form;
+    const { email, password } = this.form;
 
     this.authService.authenticateUser(email, password).subscribe(
       (body: any) => {
@@ -35,6 +35,6 @@ export class LoginComponent implements OnInit {
       (error) => {
         console.log(error);
       }
-    );*/
+    );
   }
 }
