@@ -74,6 +74,25 @@ border-radius: 0.75rem;
 background-color: #383838;
 }
 
+
+.social-icon-card-mob {
+  height: 25px;
+  width: 25px;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+
+
+.icon-size-mob {
+  height: 35px;
+  width: 35px;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+
+
 .icon-size{
 height: 35px;
 width: 35px;

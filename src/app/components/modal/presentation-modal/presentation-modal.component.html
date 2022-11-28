@@ -25,6 +25,9 @@
       <div class="text-center">
         <span class="note needsclick">Puoi caricare fino ad un massimo di 3 file.</span>
       </div>
+      <div *ngIf="filesNotInCharge.length > 0">
+        <span class="note needsclick" style="color: red;">Hai superato il limite di upload. Alcuni file non sono stati caricati.</span>
+      </div>
     </div>
     <div class="file-table">
       <h3 class="m-3">Lista dei file caricati</h3>

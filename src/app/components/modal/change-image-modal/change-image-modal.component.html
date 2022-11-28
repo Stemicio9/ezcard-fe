@@ -1,8 +1,12 @@
 <div class="modal-body border-radius-popup gray-background">
 
-  <span (click)="profileimage.click()"><img  class="size-icon" src="assets/user-dark-cube-icon.png">Immagine del profilo</span>
+  <div (click)="profileimage.click()">
+    <span ><img class="size-icon" src="assets/user-dark-cube-icon.png"><b>Immagine del profilo</b></span>
+  </div>
   <hr>
-  <span (click)="placeholderimage.click()" ><img  class="size-icon" src="assets/placeholder-dark-icon.png">Immagine di copertina</span>
+  <div (click)="placeholderimage.click()">
+    <span ><img  class="size-icon" src="assets/placeholder-dark-icon.png"><b>Immagine di copertina</b></span>
+  </div>
   <input type="file" hidden #profileimage />
   <input type="file" hidden #placeholderimage />
 </div>

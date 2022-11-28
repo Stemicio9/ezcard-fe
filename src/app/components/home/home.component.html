@@ -1,26 +1,31 @@
 <div class="row">
-
-
   <!-- Profilo Web -->
   <div class="d-md-flex d-none col-md-4 d-flex flex-column">
-    <img
-      class="card-img-top"
-      src="assets/placeholder-image.png"
-      alt="Card image cap"
-    />
+    <div class="box">
+      <img
+        class="card-img-top"
+        src="assets/placeholder-image.png"
+        alt="Card image cap"
+      />
 
-    <div class="card-body little-profile text-center">
-      <div class="pro-img">
-        <img src="assets/avatar-image.png" alt="user" />
-      </div>
-      <div class="pro-icon">
+      <img
+        type="button"
+        class="edit-icon"
+        (click)="placeholderimage.click()"
+        src="assets/edit-dark-rounded-icon.png"
+      />
+    </div>
+
+    <div class="card-body text-center">
+      <img class="rounded-image" src="assets/avatar-image.png" />
+      <div>
         <img
-          type="button"
-          (click)="profileimage.click()"
+          class="edit-icon-profile"
           src="assets/edit-dark-rounded-icon.png"
-          alt="user"
+          (click)="profileimage.click()"
         />
       </div>
+
       <input type="file" hidden #profileimage />
       <input type="file" hidden #placeholderimage />
     </div>
@@ -35,7 +40,6 @@
     </div>
   </div>
 
-
   <!-- Profilo Mobile -->
   <div class="d-md-none d-flex col-md-4 flex-column">
     <img
@@ -45,22 +49,18 @@
     />
     <div class="card-body little-profile text-center">
       <div class="pro-img">
-        <img src="assets/avatar-image.png" alt="user" (click)="openGenericModal(changeImage)"
+        <img
+          src="assets/avatar-image.png"
+          alt="user"
+          (click)="openGenericModal(changeImage)"
         />
       </div>
 
-
       <span>Clicca sull'immagine per modificarla</span>
-
-
     </div>
   </div>
 
-
-
-
-
-<!-- Content comune -->
+  <!-- Content comune -->
   <div class="col-md-8 main-section-style gray-background">
     <div style="padding-left: 2rem">
       <h5>Gestione Account Pubblico</h5>
@@ -90,8 +90,6 @@
       </div>
     </div>
   </div>
-
-
 
   <!-- Assistenza web -->
   <div class="d-inline d-md-none">

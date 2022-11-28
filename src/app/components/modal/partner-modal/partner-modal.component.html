@@ -18,12 +18,17 @@
 
   <div class="container text-center mt-2" style="margin-bottom: 3rem;">
     <!-- Apply DropZone Directive -->﻿
-    <div type="button" class="dropzone" DropZone (onFileDropped)="droppedFiles($event)">
+    <div type="button" class="dropzone" DropZone (onFileDropped)="droppedFiles($event)" (click)="fileInput.click()">
+      <input #fileInput type="file" hidden="true" multiple (change)="fileSelected($event)">
+
       <div class="text-center">
         <span class="note needsclick">Trascina qui i tuoi file.</span>
       </div>
       <div class="text-center">
         <span class="note needsclick">Puoi caricare fino ad un massimo di 15 file.</span>
+      </div>
+      <div *ngIf="filesNotInCharge.length > 0">
+        <span class="note needsclick" style="color: red;">Hai superato il limite di upload. Alcuni file non sono stati caricati.</span>
       </div>
     </div>
     <div class="file-table">
