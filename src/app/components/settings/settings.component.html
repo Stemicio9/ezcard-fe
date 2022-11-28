@@ -1,0 +1,99 @@
+<div class="row gray-background content-padding">
+  <div class="d-none d-md-inline-flex col-md-4 main-section-style d-flex flex-column" >
+
+    <nav
+      aria-labelledby="categories-title"
+      data-test-id="category-nav"
+      data-js-category-sticky-bar-inner-wrapper=""
+      class="navbar scrollactive-nav c-categoryNav" style="position:sticky; top:6vh;"
+
+    >
+      <ul class="c-menu menu-voice">
+        <div *ngFor="let v of idVoiceList; index as i">
+          <li data-js-test="nav-list-item" class="c-menu-item">
+            <a
+              (click)="onClickScroll(v,i)"
+              data-test-id="category-nav-link"
+              data-js-test="nav-item-header"
+              id={{idAnchorList[i]}}
+              class="c-menu-link scrollactive-item"
+              >
+              <span data-test-id="nav-list-item-text" class="u-text-truncate">{{voiceMenuList[i]}}</span>
+            </a>
+          </li>
+        </div>
+
+        <div class="mt-5">
+          <span class="section-title d-none d-md-inline-flex flex-row ">Assistenza</span>
+          <img
+            style="margin-left: 0.5rem"
+            class="question-mark d-none d-md-inline-flex flex-row "
+            src="assets/question-mark.png"
+          />
+        </div>
+      </ul>
+    </nav>
+
+
+  </div>
+
+  <div class="col-md-8 main-section-style" style="padding-left: 1rem" id="profilo">
+    <div >
+      <h5>Profilo</h5>
+    </div>
+    <div>
+      <input class="input-top" placeholder="Nome utente" />
+      <input class="input-half" placeholder="Nickname" />
+      <input class="input-bottom" placeholder="Email" />
+    </div>
+
+    <div id="notifiche" class="mt-5">
+      <h5>Notifiche</h5>
+    </div>
+
+    <div>
+      <input class="input-top" placeholder="Attiva/Disattiva" />
+      <input class="input-bottom" placeholder="Silenzia" />
+    </div>
+
+    <div id="aspetto" class="mt-5">
+      <h5>Aspetto</h5>
+    </div>
+
+    <div>
+      <input class="input-top" placeholder="Modalità notturna" />
+      <input class="input-half" placeholder="Luminosità" />
+      <input class="input-bottom" placeholder="Tema" />
+    </div>
+
+
+
+    <div id="section4" class="mt-5">
+      <h5>Sezione 4</h5>
+    </div>
+
+    <div>
+      <input class="input-top" placeholder="Campo1" />
+      <input class="input-half" placeholder="Campo2" />
+      <input class="input-half" placeholder="Campo3" />
+      <input class="input-bottom" placeholder="Campo4" />
+    </div>
+
+
+  </div>
+</div>
+
+
+<div class="d-inline d-md-none">
+  <div class="row assistenza-footer" [align]="'center'">
+    <div>
+      <span class="section-subtitle text-light">Assistenza</span>
+
+      <img
+        style="margin-left: 0.5rem"
+        class="question-mark"
+        src="assets/question-mark-icon-white.png"
+      />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,87 @@
+.elevated-card{
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+
+.section-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+.section-title-mobile {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.question-mark {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.save-label {
+  padding-left: 2.6rem;
+  padding-right: 2.6rem;
+}
+
+.save-button{
+  border-radius: 24px;
+  background-color: var(--black_ez)
+}
+.download-icon{
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+
+
+
+.dp-hidden {
+  width: 0;
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+.custom-day {
+  text-align: center;
+  padding: 0.185rem 0.25rem;
+  display: inline-block;
+  height: 2rem;
+  width: 2rem;
+}
+.custom-day.focused {
+  background-color: #e6e6e6;
+}
+.custom-day.range,
+.custom-day:hover {
+  background-color: rgb(2, 117, 216);
+  color: white;
+}
+.custom-day.faded {
+  background-color: rgba(2, 117, 216, 0.5);
+}
+
+.date-picker-left{
+ border-bottom-left-radius: 0.40rem;
+ border-top-left-radius: 0.40rem;
+}
+
+.date-picker-right{
+  background-color: var(--black_ez);
+  border-bottom-right-radius: 0.40rem;
+  border-top-right-radius: 0.40rem;
+}
+.date-picker-right:hover{
+  background-color: var(--black_ez);
+
+}

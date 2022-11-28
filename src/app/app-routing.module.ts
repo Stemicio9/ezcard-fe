@@ -2,17 +2,26 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
 import { HomeComponent } from './components/home/home.component';
-import { LoginV2Component } from './components/login-v2/login-v2.component';
 import { LoginComponent } from './components/login/login.component';
+import { ProfileModalComponent } from './components/modal/profile-modal/profile-modal.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import {SettingsComponent} from "./components/settings/settings.component";
+import {StatsComponent} from "./components/stats/stats.component";
+import {ResetPasswordComponent} from "./components/reset-password/reset-password.component";
+import { ProfileDarkComponent } from './components/profile-dark/profile-dark.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  //{ path: 'login', component: LoginV2Component },
   { path: 'forget-password', component: ForgetPasswordComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'profile/:id', component: ProfileComponent },
+  { path: 'reset-password', component: ResetPasswordComponent },
+  { path: 'home', component: HomeComponent , data: {title: 'Gestione Account'}},
+  { path: 'profile', component: ProfileModalComponent },
+  { path: 'settings', component:  SettingsComponent, data: {title: 'Impostazioni'}},
+  { path: 'stats', component:  StatsComponent, data: {title: 'Statistiche'}},
+  { path: 'profile/:id', component: ProfileComponent, data: {title: 'Profilo Utente'} },
+  { path: 'profile-dark/:id', component: ProfileDarkComponent, data: {title: 'Profilo Utente Dark'} },
+
 ];
 
 @NgModule({

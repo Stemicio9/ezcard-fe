@@ -1,1 +1,110 @@
-<p>home works!</p>
+<div class="row">
+
+
+  <!-- Profilo Web -->
+  <div class="d-md-flex d-none col-md-4 d-flex flex-column">
+    <img
+      class="card-img-top"
+      src="assets/placeholder-image.png"
+      alt="Card image cap"
+    />
+
+    <div class="card-body little-profile text-center">
+      <div class="pro-img">
+        <img src="assets/avatar-image.png" alt="user" />
+      </div>
+      <div class="pro-icon">
+        <img
+          type="button"
+          (click)="profileimage.click()"
+          src="assets/edit-dark-rounded-icon.png"
+          alt="user"
+        />
+      </div>
+      <input type="file" hidden #profileimage />
+      <input type="file" hidden #placeholderimage />
+    </div>
+
+    <div class="mb-3 d-none d-md-inline-flex flex-row justify-content-center">
+      <span class="section-title">Assistenza</span>
+      <img
+        style="margin-left: 0.5rem"
+        class="question-mark"
+        src="assets/question-mark.png"
+      />
+    </div>
+  </div>
+
+
+  <!-- Profilo Mobile -->
+  <div class="d-md-none d-flex col-md-4 flex-column">
+    <img
+      class="card-img-top"
+      src="assets/placeholder-image.png"
+      alt="Card image cap"
+    />
+    <div class="card-body little-profile text-center">
+      <div class="pro-img">
+        <img src="assets/avatar-image.png" alt="user" (click)="openGenericModal(changeImage)"
+        />
+      </div>
+
+
+      <span>Clicca sull'immagine per modificarla</span>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<!-- Content comune -->
+  <div class="col-md-8 main-section-style gray-background">
+    <div style="padding-left: 2rem">
+      <h5>Gestione Account Pubblico</h5>
+    </div>
+
+    <div *ngFor="let voice of titlesFirstSection; index as i">
+      <div (click)="openGenericModal(idModalList[i])">
+        <app-home-row
+          [title]="voice"
+          [description]="descriptionsFirstSection[i]"
+          [imageLink]="imageLinksFirstSection[i]"
+        ></app-home-row>
+      </div>
+    </div>
+
+    <div class="mt-5" style="padding-left: 2rem">
+      <h5>Gestione Account Privato</h5>
+    </div>
+
+    <div *ngFor="let voice of titlesSecondSection; index as i">
+      <div routerLink="{{ this.routerLinkList[i] }}">
+        <app-home-row
+          [title]="voice"
+          [description]="descriptionsSecondSection[i]"
+          [imageLink]="imageLinksSecondSection[i]"
+        ></app-home-row>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Assistenza web -->
+  <div class="d-inline d-md-none">
+    <div class="row assistenza-footer" [align]="'center'">
+      <div>
+        <span class="section-title text-light">Assistenza</span>
+
+        <img
+          style="margin-left: 0.5rem"
+          class="question-mark"
+          src="assets/question-mark-icon-white.png"
+        />
+      </div>
+    </div>
+  </div>
+</div>

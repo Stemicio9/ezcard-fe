@@ -1,7 +1,26 @@
 <!-- Image and text -->
-<nav class="navbar navbar-dark bg-dark p-2">
-  <a class="navbar-brand" href="#">
-    <img src="/assets/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" style="margin-right:1rem" alt="">
-    <span class="text-light">EZcards</span>
-  </a>
-</nav>
+<div *ngIf="this.showHeader">
+  <nav class="navbar p-2 navbar-dark">
+
+
+    <div class="ms-xs-5 ms-sm-3 ms-md-4 ms-lg-5">
+      <a class="navbar-brand" href="/home">
+        <img
+          src="/assets/white-logo.png"
+          width="160"
+          height="40"
+          class="d-inline-block"
+        />
+      </a>
+      <span class="d-none d-md-inline" style="color: white">|&nbsp;&nbsp;{{this.pageTitle}}</span>
+    </div>
+
+
+    <div *ngIf="this.showHomeIcon" style="margin-right: 3rem" class="d-none d-md-inline">
+      <a class="navbar-brand" href="/home">
+        <img src="/assets/home-icon.png" width="25" height="25" />
+      </a>
+    </div>
+  </nav>
+</div>
+

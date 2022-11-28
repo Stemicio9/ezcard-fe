@@ -1,0 +1,180 @@
+<div class="modal-header" style="background-color: var(--black_ez)">
+  <div>
+    <img class="icon-size" src="assets/company-white-rounded-icon.png" />
+    <span class="section-title text-light" style="padding-left: 1rem"
+      >Azienda</span
+    >
+  </div>
+
+  <img
+    class="btn-close cancel"
+    type="button"
+    src="assets/cancel-icon-white.png"
+    (click)="closeModal()"
+  />
+</div>
+
+<div class="modal-body border-radius-popup gray-background">
+  <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+    <li *ngFor="let id of tabs" [ngbNavItem]="id">
+      <a ngbNavLink>
+       {{ id.name }}
+        <img
+          src="assets/cancel-icon.png"
+          class="cancel-dark"
+          (click)="close($event, id)"
+        />
+      </a>
+      <ng-template ngbNavContent>
+        <form>
+          <div class="mt-4">
+            <span > Info Azienda</span>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6" >
+              <div class="input-group mt-md-4 mt-3">
+                <input
+                style="border-radius: 0.4rem;"
+                  placeholder="Nome Azienda"
+                  id="nomeAzienda"
+                  class="form-control"
+
+                />
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="input-group mt-md-4 mt-3">
+                <input style="border-radius: 0.4rem;" placeholder="P.Iva" id="pIva" class="form-control"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="input-group mt-md-4 mt-3">
+                <input
+                style="border-radius: 0.4rem;"
+                  placeholder="Indirizzo"
+                  id="address"
+                  class="form-control"
+                />
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="input-group mt-md-4 mt-3">
+                <input style="border-radius: 0.4rem;" placeholder="Telefono" id="phone" class="form-control" />
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="input-group mt-md-4 mt-3">
+                <input style="border-radius: 0.4rem;" placeholder="Email" id="email" class="form-control" />
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="input-group mt-md-4 mt-3">
+                <input
+                style="border-radius: 0.4rem;"
+                  placeholder="Codice SDI"
+                  id="sdiCode"
+                  class="form-control"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="input-group mb-4 mt-md-4 mt-3">
+                <input style="border-radius: 0.4rem;" placeholder="Pec" id="pec" class="form-control" />
+              </div>
+            </div>
+          </div>
+
+
+          <span> Social azienda</span>
+            <div class="row">
+              <div class="col-md-12" *ngFor="let element of id.userSocial">
+
+                <div class="input-group mt-md-4 mt-3">
+                  <img
+                    style="margin-right: 0.5rem"
+                    class="icon-size"
+                    [src]="element.iconPath"
+                    />
+
+                  <input
+                    class="form-control"
+                    style="border-radius: 0.4rem"
+                    [placeholder]="element.placeholder"
+
+                  />
+
+                  <div style="cursor: pointer;" (click)="remove(id,element)">
+                    <img
+                      style="margin-left: 0.5rem"
+                      src="assets/trash-icon.png"
+                      class="cancel-input"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+          <div class="d-md-flex flex-md-row d-flex flex-column justify-content-md-end align-items-center mt-3 mt-md-4" >
+            <div class="p-2">
+              <div ngbDropdown>
+                <button
+                  style="border-radius: 24px"
+                  type="button"
+                  class="btn add-social-button"
+                  [disabled]="id.dropdownSocial?.length == 0"
+                  ngbDropdownToggle
+                >
+                  Aggiungi social
+                </button>
+                <div ngbDropdownMenu>
+                  <div *ngFor="let social of id.dropdownSocial; index as i">
+                    <button class="dropdown-background dropdown-items" ngbDropdownItem (click)="addSocial(id,social)">
+                      <img
+                        src="{{ social.iconPath }}"
+                        width="20"
+                        height="20"
+                        style="margin-right: 0.5rem"
+                      />
+                      {{ social.name }}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="p-2">
+              <button type="button" class="btn text-light save-button">
+                <span class="text-light save-label section-title">SALVA</span>
+              </button>
+            </div>
+          </div>
+
+
+
+        </form>
+      </ng-template>
+    </li>
+    <div *ngIf="tabs.length < 3">
+      <li class="nav-item">
+        <a class="nav-link" (click)="add($event)"><img class="add-dark" src="assets/plus-icon.png"></a>
+      </li>
+    </div>
+  </ul>
+
+  <div [ngbNavOutlet]="nav" class="mt-2"></div>
+</div>

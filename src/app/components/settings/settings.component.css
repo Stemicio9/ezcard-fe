@@ -1,0 +1,98 @@
+.question-mark {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+
+span {
+  color: var(--black_ez);
+}
+
+h5 {
+  color: var(--black_ez);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+.main-section-style {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.input-top{
+  width: 100%;
+  outline: none;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom-color: lightgray;
+  border-width: 1px;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
+}
+.input-bottom{
+ width: 100%;
+ outline: none;
+ padding-left: 1rem;
+ padding-top: 1rem;
+ padding-bottom: 1rem;
+ border-top: none;
+ border-left: none;
+ border-right: none;
+ border-bottom: none;
+ border-width: 1px;
+ border-bottom-left-radius: 1rem;
+ border-bottom-right-radius: 1rem;
+ box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
+}
+
+.input-half{
+  width: 100%;
+  outline: none;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom-color: lightgrey; border-width: 1px;
+}
+
+.c-menu-link.c-menu-link--active, .c-menu-link:active, .c-menu-link:focus, .c-menu-link:hover {
+  border-left: 2px solid #575655;
+  font-weight: 700;
+  margin-left: -1px;
+}
+.c-menu-link, .c-menu-link:active, .c-menu-link:focus, .c-menu-link:hover {
+  color: #242e30;
+}
+.c-menu-link {
+  border-left: 1px solid #dbd9d7;
+  display: block;
+  overflow: hidden;
+  padding: 8px 16px;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.menu-voice{
+  list-style: none;
+  cursor: pointer;
+}
+
+.content-padding{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+

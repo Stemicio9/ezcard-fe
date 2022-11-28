@@ -1,0 +1,334 @@
+<!-- Content mobile -->
+<div class="row d-md-none gray-background" style="padding-top: 1.4rem">
+  <div class="col-6">
+    <div class="card elevated-card">
+      <div class="card-body">
+        <div style="text-align: center">
+          <span class="section-title-mobile">33</span>
+        </div>
+        <div style="text-align: center">
+          <span class="section-subtitle">Visite</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="card elevated-card">
+      <div class="card-body">
+        <div style="text-align: center">
+          <span class="section-title-mobile">54</span>
+        </div>
+        <div style="text-align: center">
+          <span class="section-subtitle">Click</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="row d-md-none gray-background" style="padding-top: 1rem">
+  <div class="col-12">
+    <form class="row mb-3">
+
+      <div class="col-6">
+        <div class="dp-hidden position-absolute">
+          <div class="input-group">
+            <input
+              name="datepicker"
+              class="form-control date-picker-left"
+              ngbDatepicker
+              #datepicke="ngbDatepicker"
+              [autoClose]="'outside'"
+              (dateSelect)="onDateSelection($event)"
+              [displayMonths]="2"
+              [dayTemplate]="t"
+              outsideDays="hidden"
+              [startDate]="fromDate!"
+              tabindex="-1"
+            />
+            <ng-template #t let-date let-focused="focused">
+              <span
+                class="custom-day"
+                [class.focused]="focused"
+                [class.range]="isRange(date)"
+                [class.faded]="isHovered(date) || isInside(date)"
+                (mouseenter)="hoveredDate = date"
+                (mouseleave)="hoveredDate = null"
+              >
+                {{ date.day }}
+              </span>
+            </ng-template>
+          </div>
+        </div>
+        <div class="input-group">
+          <input
+            #dpFromDate
+            class="form-control date-picker-left"
+            placeholder="yyyy-mm-dd"
+            name="dpFromDate"
+            [value]="formatter.format(fromDate)"
+            (input)="fromDate = validateInput(fromDate, dpFromDate.value)"
+          />
+          <button
+            class="btn bi bi-calendar3 text-light date-picker-right"
+            (click)="datepicker.toggle()"
+            type="button"
+          ></button>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="input-group">
+          <input
+            #dpToDate
+            class="form-control date-picker-left"
+            placeholder="yyyy-mm-dd"
+            name="dpToDate"
+            [value]="formatter.format(toDate)"
+            (input)="toDate = validateInput(toDate, dpToDate.value)"
+          />
+          <button
+            class="btn bi bi-calendar3 text-light date-picker-right"
+            (click)="datepicker.toggle()"
+            type="button"
+          ></button>
+        </div>
+      </div>
+    </form>
+
+    <div class="card elevated-card" style="height: 25rem">
+      <div
+        class="row align-items-center"
+        style="margin-right: 0.5rem; text-align: end"
+      >
+        <div class="col-12">
+          <img class="download-icon" src="assets/download-dark-icon.png" />
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="container vertical sample">
+          <div class="legend-title">Grafico andamento</div>
+          <div class="legend">
+            <igx-legend orientation="Horizontal" name="Legend" #legendMobile>
+            </igx-legend>
+          </div>
+          <div class="container fill">
+            <igx-category-chart
+              chartType="Line"
+              yAxisLabelLeftMargin="0"
+              yAxisTitleLeftMargin="10"
+              yAxisTitleRightMargin="5"
+              yAxisTitle="Numero"
+              xAxisTitle="Mese"
+              [dataSource]="countryRenewableElectricity"
+              includedProperties="month, views"
+              [legend]="legendMobile"
+              isHorizontalZoomEnabled="false"
+              isVerticalZoomEnabled="false"
+              computedPlotAreaMarginMode="Series"
+              name="chart"
+              #chart
+            >
+            </igx-category-chart>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Content web-->
+<div
+  class="row d-none d-md-flex justify-content-center gray-background"
+  style="padding-top: 2.5rem"
+>
+  <div class="col-md-2"></div>
+  <div class="card col-md-6 elevated-card">
+    <div
+      class="d-md-flex flex-md-row d-flex flex-column justify-content-md-between align-items-center"
+    >
+      <div class="p-2">
+        <form class="row row-cols-sm-auto">
+          <div class="col-md-6">
+            <div class="dp-hidden position-absolute">
+              <div class="input-group">
+                <input
+                  name="datepicker"
+                  class="form-control date-picker-left"
+                  ngbDatepicker
+                  #datepicker="ngbDatepicker"
+                  [autoClose]="'outside'"
+                  (dateSelect)="onDateSelection($event)"
+                  [displayMonths]="2"
+                  [dayTemplate]="t"
+                  outsideDays="hidden"
+                  [startDate]="fromDate!"
+                  tabindex="-1"
+                />
+                <ng-template #t let-date let-focused="focused">
+                  <span
+                    class="custom-day"
+                    [class.focused]="focused"
+                    [class.range]="isRange(date)"
+                    [class.faded]="isHovered(date) || isInside(date)"
+                    (mouseenter)="hoveredDate = date"
+                    (mouseleave)="hoveredDate = null"
+                  >
+                    {{ date.day }}
+                  </span>
+                </ng-template>
+              </div>
+            </div>
+            <div class="input-group">
+              <input
+                #dpFromDate
+                class="form-control date-picker-left"
+                placeholder="yyyy-mm-dd"
+                name="dpFromDate"
+                [value]="formatter.format(fromDate)"
+                (input)="fromDate = validateInput(fromDate, dpFromDate.value)"
+              />
+              <button
+                class="btn bi bi-calendar3 text-light date-picker-right"
+                (click)="datepicker.toggle()"
+                type="button"
+              ></button>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="input-group">
+              <input
+                #dpToDate
+                class="form-control date-picker-left"
+                placeholder="yyyy-mm-dd"
+                name="dpToDate"
+                [value]="formatter.format(toDate)"
+                (input)="toDate = validateInput(toDate, dpToDate.value)"
+              />
+              <button
+                class="btn bi bi-calendar3 text-light date-picker-right"
+                (click)="datepicker.toggle()"
+                type="button"
+              ></button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="p-2">
+        <img type="button" class="download-icon" src="assets/download-icon.png" />
+      </div>
+    </div>
+
+    <div class="card-body">
+      <div class="container vertical sample">
+        <div class="legend-title">Grafico andamento</div>
+        <div class="legend">
+          <igx-legend orientation="Horizontal" name="Legend" #legend>
+          </igx-legend>
+        </div>
+        <div class="container fill">
+          <igx-category-chart
+            chartType="Line"
+            yAxisLabelLeftMargin="0"
+            yAxisTitleLeftMargin="10"
+            yAxisTitleRightMargin="5"
+            yAxisTitle="Numero"
+            xAxisTitle="Mese"
+            [dataSource]="countryRenewableElectricity"
+            includedProperties="month, views"
+            [legend]="legend"
+            isHorizontalZoomEnabled="false"
+            isVerticalZoomEnabled="false"
+            computedPlotAreaMarginMode="Series"
+            name="chart"
+            #chart
+          >
+          </igx-category-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-none d-md-inline col-md-2">
+    <div class="card elevated-card">
+      <div class="card-body">
+        <div style="text-align: center">
+          <span class="section-title">33</span>
+        </div>
+        <div style="text-align: center">
+          <span class="section-subtitle">Visite al profilo</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card elevated-card mt-3">
+      <div class="card-body">
+        <div style="text-align: center">
+          <span class="section-title">54</span>
+        </div>
+        <div style="text-align: center">
+          <span class="section-subtitle">Click</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-2"></div>
+</div>
+
+<!-- Content in comune -->
+<div class="row d-flex gray-background" style="padding-top: 2rem">
+  <div class="col-md-2"></div>
+
+  <div class="col-md-8">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Visualizzazioni</th>
+          <th scope="col">Click</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let elem of views; index as i">
+          <td>
+            {{ elem.views }}
+          </td>
+          <td>{{ elem.click }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="col-md-2"></div>
+  </div>
+
+  <div class="gray-background row" style="padding: 1rem">
+    <div class="d-none d-md-inline-flex flex-row">
+      <span class="section-subtitle">Assistenza</span>
+      <img
+        style="margin-left: 0.5rem"
+        class="question-mark"
+        src="assets/question-mark.png"
+      />
+    </div>
+  </div>
+
+  <div class="d-inline d-md-none">
+    <div class="row assistenza-footer" [align]="'center'">
+      <div>
+        <span class="section-subtitle text-light">Assistenza</span>
+
+        <img
+          style="margin-left: 0.5rem"
+          class="question-mark"
+          src="assets/question-mark-icon-white.png"
+        />
+      </div>
+    </div>
+  </div>
+</div>

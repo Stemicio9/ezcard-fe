@@ -1,0 +1,129 @@
+.cancel {
+  width: 18px;
+  height: 18px;
+}
+.cancel-dark{
+  width: 10px;
+  height: 10px;
+  margin-left: 0.8rem;
+  cursor: pointer;
+}
+.add-dark{
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+
+}
+span {
+  color: var(--black_ez);
+}
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+
+
+.border-radius-popup {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+
+}
+
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+  color: var(--bs-nav-tabs-link-active-color);
+  background-color: var(--bs-nav-tabs-link-active-bg);
+  border-color: var(--bs-nav-tabs-link-active-border-color);
+  background-color: #f7f7f7;
+  font-weight: bold;
+  color: var(--black_ez);
+  outline: none;
+
+}
+
+.nav-tabs .nav-link {
+  margin-bottom: calc(-1 * var(--bs-nav-tabs-border-width));
+  background: none;
+  border: var(--bs-nav-tabs-border-width) solid transparent;
+  border-top-left-radius: var(--bs-nav-tabs-border-radius);
+  border-top-right-radius: var(--bs-nav-tabs-border-radius);
+  border-bottom:#f7f7f7;
+
+}
+.nav-link {
+  display: block;
+  padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+  font-size: var(--bs-nav-link-font-size);
+  font-weight: var(--bs-nav-link-font-weight);
+  color: var(--bs-nav-link-color);
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  color:var(--black_ez)
+}
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 700;
+
+}
+.save-label {
+  padding-left: 2.6rem;
+  padding-right: 2.6rem;
+}
+
+.save-button{
+  border-radius: 24px;
+  background-color: var(--black_ez)
+}
+.save-button:active{
+  border-radius: 24px;
+  background-color: var(--black_ez)
+
+}
+
+.add-social-button{
+  background-color: white;
+  color: var(--black_ez);
+  border-color: var(--black_ez);
+
+ }
+ .add-social-button:hover{
+   background-color: var(--black_ez);
+   color: white;
+   border-color: var(--black_ez);
+ }
+ .dropdown-background{
+  background-color: white;
+
+ }
+ .dropdown-background:hover{
+   background-color: #f3f3f3;
+
+ }
+ .dropdown-background:active{
+  background-color: #d3d3d3;
+}
+.dropdown-items{
+  color: var(--black_ez);
+
+}
+.dropdown-items:hover{
+  color:var(--black_ez);
+
+}
+.dropdown-items:active{
+  color: var(--black_ez);
+}
+.add-social-button{
+  background-color: white;
+  color: var(--black_ez);
+  border-color: var(--black_ez);
+
+ }
+ .add-social-button:hover{
+   background-color: var(--black_ez);
+   color: white;
+   border-color: var(--black_ez);
+ }
