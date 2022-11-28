@@ -9,6 +9,7 @@ import { GalleryModalComponent } from '../modal/gallery-modal/gallery-modal.comp
 import { PartnerModalComponent } from '../modal/partner-modal/partner-modal.component';
 import { ProfileComponent } from '../profile/profile.component';
 import { ProfileDarkComponent } from '../profile-dark/profile-dark.component';
+import { ChangeImageModalComponent } from '../modal/change-image-modal/change-image-modal.component';
 
 @Component({
   selector: 'app-home',
@@ -30,9 +31,6 @@ export class HomeComponent implements OnInit {
   // true = light theme, false = dark theme
   theme_style = true;
 
-  light_theme_background_class = "";
-  dark_theme_background_class = "col-md-8 main-section-style black-background";
-
   constructor(private modalService: NgbModal) { }
 
   openGenericModal(content:any){
@@ -40,6 +38,11 @@ export class HomeComponent implements OnInit {
     modalRef.componentInstance.data = ''; //TODO here we can pass data to the modal
 
   }
+
+
+
+  changeImage = ChangeImageModalComponent;
+
 
 	private getDismissReason(reason: any): string {
 		if (reason === ModalDismissReasons.ESC) {

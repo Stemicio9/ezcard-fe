@@ -27,6 +27,7 @@ import { DropZoneDirective } from './directives/drop-zone.directive';
 import { IgxLegendModule, IgxCategoryChartModule } from 'igniteui-angular-charts';
 import { ProfileDarkComponent } from './components/profile-dark/profile-dark.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { ChangeImageModalComponent } from './components/modal/change-image-modal/change-image-modal.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     PartnerModalComponent,
     DropZoneDirective,
     ProfileDarkComponent,
+    ChangeImageModalComponent,
 
   ],
   imports: [

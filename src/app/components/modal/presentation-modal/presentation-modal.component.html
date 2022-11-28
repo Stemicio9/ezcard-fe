@@ -17,7 +17,8 @@
 
   <div class="container text-center mt-2 " style="margin-bottom: 3rem;">
     <!-- Apply DropZone Directive -->﻿
-    <div class="dropzone" DropZone (onFileDropped)="droppedFiles($event)">
+    <div type="button" class="dropzone" DropZone (onFileDropped)="droppedFiles($event)" (click)="fileInput.click()">
+      <input #fileInput type="file" hidden="true" multiple (change)="fileSelected($event)">
       <div class="text-center">
         <span class="note needsclick">Trascina qui i tuoi file.</span>
       </div>

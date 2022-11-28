@@ -10,212 +10,76 @@ import { StatoAzienda } from 'src/app/entities/stato-azienda';
 })
 export class CompanyModalComponent implements OnInit {
   @Input() public data: any;
-
-
-
-   azienda1: StatoAzienda[] = [
-    new StatoAzienda(
-      [
-        new Social('Instagram', 'assets/instagram-dark-rounded-icon.png', 'Instagram'),
-        new Social('YouTube', 'assets/youtube-dark-rounded-icon.png', 'YouTube'),
-        new Social('Twitter', 'assets/twitter-dark-rounded-icon.png', 'Twitter'),
-        new Social('Pinterest', 'assets/pinterest-dark-rounded-icon.png', 'Pinterest'),
-        new Social('Behance', 'assets/behance-dark-rounded-icon.png', 'Behance'),
-      ],
-      [
-        new Social('Whatsapp', 'assets/whatsapp-dark-rounded-icon.png', 'Whatsapp'),
-        new Social('Facebook', 'assets/facebook-dark-rounded-icon.png', 'Facebook'),
-        new Social('TikTok', 'assets/tiktok-dark-rounded-icon.png', 'TikTok'),
-        new Social('Linkedin', 'assets/linkedin-dark-rounded-icon.png', 'Linkedin'),
-      ],
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "")
-   ]
-
-
-   azienda2: StatoAzienda[] = [
-    new StatoAzienda(
-      [
-        new Social('Instagram', 'assets/instagram-dark-rounded-icon.png', 'Instagram'),
-        new Social('YouTube', 'assets/youtube-dark-rounded-icon.png', 'YouTube'),
-        new Social('Twitter', 'assets/twitter-dark-rounded-icon.png', 'Twitter'),
-        new Social('Pinterest', 'assets/pinterest-dark-rounded-icon.png', 'Pinterest'),
-        new Social('Behance', 'assets/behance-dark-rounded-icon.png', 'Behance'),
-      ],
-      [
-        new Social('Whatsapp', 'assets/whatsapp-dark-rounded-icon.png', 'Whatsapp'),
-        new Social('Facebook', 'assets/facebook-dark-rounded-icon.png', 'Facebook'),
-        new Social('TikTok', 'assets/tiktok-dark-rounded-icon.png', 'TikTok'),
-        new Social('Linkedin', 'assets/linkedin-dark-rounded-icon.png', 'Linkedin'),
-      ],
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "")
-   ]
-
-
-   azienda3: StatoAzienda[] = [
-    new StatoAzienda(
-      [
-        new Social('Instagram', 'assets/instagram-dark-rounded-icon.png', 'Instagram'),
-        new Social('YouTube', 'assets/youtube-dark-rounded-icon.png', 'YouTube'),
-        new Social('Twitter', 'assets/twitter-dark-rounded-icon.png', 'Twitter'),
-        new Social('Pinterest', 'assets/pinterest-dark-rounded-icon.png', 'Pinterest'),
-        new Social('Behance', 'assets/behance-dark-rounded-icon.png', 'Behance'),
-      ],
-      [
-        new Social('Whatsapp', 'assets/whatsapp-dark-rounded-icon.png', 'Whatsapp'),
-        new Social('Facebook', 'assets/facebook-dark-rounded-icon.png', 'Facebook'),
-        new Social('TikTok', 'assets/tiktok-dark-rounded-icon.png', 'TikTok'),
-        new Social('Linkedin', 'assets/linkedin-dark-rounded-icon.png', 'Linkedin'),
-      ],
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "")
-   ]
-
-
-
-
-
-
-
-   totalSocial: Social[] = [
-    new Social('Instagram', 'assets/instagram-dark-rounded-icon.png', 'Instagram'),
-    new Social('YouTube', 'assets/youtube-dark-rounded-icon.png', 'YouTube'),
-    new Social('Twitter', 'assets/twitter-dark-rounded-icon.png', 'Twitter'),
-    new Social('Pinterest', 'assets/pinterest-dark-rounded-icon.png', 'Pinterest'),
-    new Social('Behance', 'assets/behance-dark-rounded-icon.png', 'Behance'),
-  ];
-
-
-  userSocial: Social[] = [
-    new Social('Whatsapp', 'assets/whatsapp-dark-rounded-icon.png', 'Whatsapp'),
-    new Social('Facebook', 'assets/facebook-dark-rounded-icon.png', 'Facebook'),
-    new Social('TikTok', 'assets/tiktok-dark-rounded-icon.png', 'TikTok'),
-    new Social('Linkedin', 'assets/linkedin-dark-rounded-icon.png', 'Linkedin'),
-  ];
-
-
-
-  totalSocial2: Social[] = [
-    new Social('Instagram', 'assets/instagram-dark-rounded-icon.png', 'Instagram'),
-    new Social('YouTube', 'assets/youtube-dark-rounded-icon.png', 'YouTube'),
-    new Social('Twitter', 'assets/twitter-dark-rounded-icon.png', 'Twitter'),
-    new Social('Pinterest', 'assets/pinterest-dark-rounded-icon.png', 'Pinterest'),
-    new Social('Behance', 'assets/behance-dark-rounded-icon.png', 'Behance'),
-  ];
-
-
-  userSocial2: Social[] = [
-    new Social('Whatsapp', 'assets/whatsapp-dark-rounded-icon.png', 'Whatsapp'),
-    new Social('Facebook', 'assets/facebook-dark-rounded-icon.png', 'Facebook'),
-    new Social('TikTok', 'assets/tiktok-dark-rounded-icon.png', 'TikTok'),
-    new Social('Linkedin', 'assets/linkedin-dark-rounded-icon.png', 'Linkedin'),
-  ];
-
-
-
-  totalSocial3: Social[] = [
-    new Social('Instagram', 'assets/instagram-dark-rounded-icon.png', 'Instagram'),
-    new Social('YouTube', 'assets/youtube-dark-rounded-icon.png', 'YouTube'),
-    new Social('Twitter', 'assets/twitter-dark-rounded-icon.png', 'Twitter'),
-    new Social('Pinterest', 'assets/pinterest-dark-rounded-icon.png', 'Pinterest'),
-    new Social('Behance', 'assets/behance-dark-rounded-icon.png', 'Behance'),
-  ];
-
-
-  userSocial3: Social[] = [
-    new Social('Whatsapp', 'assets/whatsapp-dark-rounded-icon.png', 'Whatsapp'),
-    new Social('Facebook', 'assets/facebook-dark-rounded-icon.png', 'Facebook'),
-    new Social('TikTok', 'assets/tiktok-dark-rounded-icon.png', 'TikTok'),
-    new Social('Linkedin', 'assets/linkedin-dark-rounded-icon.png', 'Linkedin'),
-  ];
-
-
-
-
-
-  tabs = [1];
-  counter = this.tabs.length + 1;
+  tabs: StatoAzienda[] = [];
   active: any;
 
-  close(event: MouseEvent, toRemove: number) {
-    this.tabs = this.tabs.filter((id) => id !== toRemove, this.counter--);
+
+  defaultSocialDropdown(){
+    return [
+      new Social('Instagram', 'assets/instagram-dark-rounded-icon.png', 'Instagram'),
+      new Social('YouTube', 'assets/youtube-dark-rounded-icon.png', 'YouTube'),
+      new Social('Twitter', 'assets/twitter-dark-rounded-icon.png', 'Twitter'),
+      new Social('Pinterest', 'assets/pinterest-dark-rounded-icon.png', 'Pinterest'),
+      new Social('Behance', 'assets/behance-dark-rounded-icon.png', 'Behance'),
+      new Social('Whatsapp', 'assets/whatsapp-dark-rounded-icon.png', 'Whatsapp'),
+      new Social('Facebook', 'assets/facebook-dark-rounded-icon.png', 'Facebook'),
+      new Social('TikTok', 'assets/tiktok-dark-rounded-icon.png', 'TikTok'),
+      new Social('Linkedin', 'assets/linkedin-dark-rounded-icon.png', 'Linkedin'),
+    ];
+   }
+
+
+  constructor(private modalService: NgbModal) {}
+
+  ngOnInit(): void {
+
+
+    // @TODO if azienda tabs is empty after rest call to backend
+    // Insert an empty default azienda
+    if(this.tabs.length == 0){
+      this.addAziendaDefault();
+    }
+  }
+
+
+
+  close(event: MouseEvent, toRemove: StatoAzienda) {
+    var number = this.tabs.indexOf(toRemove);
+    this.tabs.splice(number,1);
+    this.active = this.tabs[0];
+ //   this.tabs = this.tabs.filter((id) => id !== toRemove, this.counter--);
     event.preventDefault();
     event.stopImmediatePropagation();
   }
 
   add(event: MouseEvent) {
-    this.tabs.push(this.counter++);
+    this.addAziendaDefault();
     event.preventDefault();
   }
 
-  constructor(private modalService: NgbModal) {}
+  addAziendaDefault(){
+    this.tabs.push(new StatoAzienda(
+      this.defaultSocialDropdown(),[],"Azienda"
+    ));
+  }
 
-  ngOnInit(): void {}
+
 
   closeModal() {
     this.modalService.dismissAll();
   }
 
-  addSocial(contact: any) {
-    this.userSocial.push(contact);
-    var index = this.totalSocial.indexOf(contact);
-    this.totalSocial.splice(index, 1);
+  addSocial(azienda: StatoAzienda, contact: any) {
+    azienda.userSocial?.push(contact);
+    var index = azienda?.dropdownSocial?.indexOf(contact);
+    azienda.dropdownSocial?.splice(index!, 1);
   }
 
-  remove(element: any) {
-    var index = this.userSocial.indexOf(element);
-    this.userSocial.splice(index, 1);
-    this.totalSocial.push(element);
-  }
-
-
-
-
-
-
-
-  addSocial2(contact: any) {
-    this.userSocial2.push(contact);
-    var index = this.totalSocial2.indexOf(contact);
-    this.totalSocial2.splice(index, 1);
-  }
-
-  remove2(element: any) {
-    var index = this.userSocial2.indexOf(element);
-    this.userSocial2.splice(index, 1);
-    this.totalSocial2.push(element);
+  remove(azienda: StatoAzienda, element: any) {
+    var index = azienda.userSocial?.indexOf(element);
+    azienda.userSocial?.splice(index!, 1);
+    azienda.dropdownSocial?.push(element);
   }
 
 
-
-
-
-
-  addSocial3(contact: any) {
-    this.userSocial3.push(contact);
-    var index = this.totalSocial3.indexOf(contact);
-    this.totalSocial3.splice(index, 1);
-  }
-
-  remove3(element: any) {
-    var index = this.userSocial3.indexOf(element);
-    this.userSocial3.splice(index, 1);
-    this.totalSocial3.push(element);
-  }
 }

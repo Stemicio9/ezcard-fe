@@ -61,32 +61,22 @@ export class ProfileComponent implements OnInit {
       title: ''
     },
     {
-      id: 'id6',
+      id: 'id7',
       src: '/assets/black-logo.png',
       alt: 'alt',
       title: ''
     },{
-      id: 'id6',
+      id: 'id8',
       src: '/assets/black-logo.png',
       alt: 'alt',
       title: ''
     },
     {
-      id: 'id6',
+      id: 'id9',
       src: '/assets/black-logo.png',
       alt: 'alt',
       title: ''
-    },{
-      id: 'id6',
-      src: '/assets/black-logo.png',
-      alt: 'alt',
-      title: ''
-    },{
-      id: 'id6',
-      src: '/assets/black-logo.png',
-      alt: 'alt',
-      title: ''
-    }
+    },
   ]
 
   customOptions: OwlOptions = {
@@ -97,19 +87,19 @@ export class ProfileComponent implements OnInit {
     dots: false,
     navSpeed: 700,
     items: 3,
-    margin: 20,
+    margin: 50,
     responsive: { // responsive options
       0: {
-        items: 1
-      },
-      400: {
-        items: 2
-      },
-      740: {
         items: 3
       },
-      940: {
+      400: {
+        items: 3
+      },
+      740: {
         items: 4
+      },
+      940: {
+        items: 5
       }
     },
     nav: false,

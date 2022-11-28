@@ -16,15 +16,15 @@ export class StatoAzienda {
 
 
   constructor(
-    dropdownSocial: Social[],
-    userSocial: Social[],
-    name: string,
-    pIva: string,
-    address: string,
-    phone: string,
-    email: string,
-    sdiCode: string,
-    pec: string,
+    dropdownSocial?: Social[],
+    userSocial?: Social[],
+    name?: string,
+    pIva?: string,
+    address?: string,
+    phone?: string,
+    email?: string,
+    sdiCode?: string,
+    pec?: string,
     )
 
 
@@ -40,4 +40,8 @@ export class StatoAzienda {
     this.pec = pec;
 
   }
+
+
+
+
 }

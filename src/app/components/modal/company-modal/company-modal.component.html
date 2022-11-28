@@ -18,7 +18,7 @@
   <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
     <li *ngFor="let id of tabs" [ngbNavItem]="id">
       <a ngbNavLink>
-        Azienda {{ id }}
+       {{ id.name }}
         <img
           src="assets/cancel-icon.png"
           class="cancel-dark"
@@ -100,7 +100,7 @@
 
           <span> Social azienda</span>
             <div class="row">
-              <div class="col-md-12" *ngFor="let element of userSocial">
+              <div class="col-md-12" *ngFor="let element of id.userSocial">
 
                 <div class="input-group mt-md-4 mt-3">
                   <img
@@ -116,7 +116,7 @@
 
                   />
 
-                  <div style="cursor: pointer;" (click)="remove(element)">
+                  <div style="cursor: pointer;" (click)="remove(id,element)">
                     <img
                       style="margin-left: 0.5rem"
                       src="assets/trash-icon.png"
@@ -137,14 +137,14 @@
                   style="border-radius: 24px"
                   type="button"
                   class="btn add-social-button"
-                  [disabled]="this.totalSocial.length == 0"
+                  [disabled]="id.dropdownSocial?.length == 0"
                   ngbDropdownToggle
                 >
                   Aggiungi social
                 </button>
                 <div ngbDropdownMenu>
-                  <div *ngFor="let social of totalSocial; index as i">
-                    <button class="dropdown-background dropdown-items" ngbDropdownItem (click)="addSocial(social)">
+                  <div *ngFor="let social of id.dropdownSocial; index as i">
+                    <button class="dropdown-background dropdown-items" ngbDropdownItem (click)="addSocial(id,social)">
                       <img
                         src="{{ social.iconPath }}"
                         width="20"

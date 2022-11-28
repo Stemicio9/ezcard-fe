@@ -24,6 +24,11 @@ export class PartnerModalComponent implements OnInit {
     this.modalService.dismissAll();
   }
 
+  fileSelected(event: any){
+    this.droppedFiles(event.target.files);
+  }
+
+
   droppedFiles(allFiles: any): void {
     const filesAmount = allFiles.length;
 

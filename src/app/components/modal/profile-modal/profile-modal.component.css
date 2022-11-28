@@ -13,7 +13,8 @@ span {
 }
 
 .border-radius-popup {
-  border-radius: 8px;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 
 

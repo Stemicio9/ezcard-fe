@@ -26,8 +26,11 @@ span {
 
 
 .border-radius-popup {
-  border-radius: 24px
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+
 }
+
 
 .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
   color: var(--bs-nav-tabs-link-active-color);
