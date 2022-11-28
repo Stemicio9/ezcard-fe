@@ -4,6 +4,9 @@ import {Profile} from "../entities/profile";
 import {environment} from "../../environments/environment";
 import {StorageService} from "./storage.service";
 import {ProfileContainer} from "../entities/profile-container";
+import {ContactContainer} from "../entities/contact-container";
+import {SocialContainer} from "../entities/social-container";
+import {CompanyContainer} from "../entities/company-container";
 
 @Injectable({
   providedIn: 'root'
@@ -26,8 +29,6 @@ export class ProfileService {
     return this.httpClient.post(environment.base_url + 'profile/insert', profile, {headers: headers});
   }
 
-
-
   insertUser(username: string, password: string){
     const body = {
       "username": username,
@@ -36,37 +37,61 @@ export class ProfileService {
     return this.httpClient.post(environment.base_url + 'profile/create', body, {headers: this.buildHeaders()});
   }
 
-  getProfile(username: string){
-    return this.httpClient.get(environment.base_url + 'profile/get/' + username);
-  }
-
-
   updateProfile(profile: ProfileContainer){
-    return this.httpClient.put(environment.base_url + 'profile/update/profile', profile, {headers: this.buildHeaders()});
+    return this.httpClient.post(environment.base_url + 'profile/update/profile', profile, {headers: this.buildHeaders()});
   }
 
-  uodateSocial(social: any){
-    return this.httpClient.post(environment.base_url + 'profile/update/social', social);
+  updateSocial(social: SocialContainer[]){
+    return this.httpClient.post(environment.base_url + 'profile/update/social', social, {headers: this.buildHeaders()});
   }
 
-  updateContacts(contacts: any){
-    return this.httpClient.post(environment.base_url + 'profile/update/contacts', contacts);
+  updateContacts(contacts: ContactContainer[]){
+    return this.httpClient.post(environment.base_url + 'profile/update/contacts', contacts, {headers: this.buildHeaders()});
   }
 
-  updateAzienda(azienda: any){
-    return this.httpClient.post(environment.base_url + 'profile/update/company', azienda);
+  updateCompany(companies: CompanyContainer[]){
+    return this.httpClient.post(environment.base_url + 'profile/update/company', companies, {headers: this.buildHeaders()});
   }
 
-  uodatePresentation(presentation: any){
+  updatePresentation(presentation: any){
     return this.httpClient.post(environment.base_url + 'profile/update/presentation', presentation);
   }
 
-  uodateGallery(gallery: any){
+  updateGallery(gallery: any){
     return this.httpClient.post(environment.base_url + 'profile/update/gallery', gallery);
   }
 
-  uodatePartner(partner: any){
-    return this.httpClient.post(environment.base_url + 'profile/update/pertner', partner);
+  updatePartner(partner: any){
+    return this.httpClient.post(environment.base_url + 'profile/update/partner', partner);
+  }
+
+
+  getProfile(){
+    return this.httpClient.get(environment.base_url + 'profile/get/profile', {headers: this.buildHeaders()});
+  }
+
+  getSocial(){
+    return this.httpClient.get(environment.base_url + 'profile/get/social', {headers: this.buildHeaders()});
+  }
+
+  getContacts(){
+    return this.httpClient.get(environment.base_url + 'profile/get/contacts', {headers: this.buildHeaders()});
+  }
+
+  getCompany(){
+    return this.httpClient.get(environment.base_url + 'profile/get/company', {headers: this.buildHeaders()});
+  }
+
+  getPresentation(){
+    return this.httpClient.get(environment.base_url + 'profile/get/presentation', {headers: this.buildHeaders()});
+  }
+
+  geyGallery(){
+    return this.httpClient.get(environment.base_url + 'profile/get/gallery', {headers: this.buildHeaders()});
+  }
+
+  getPartner(){
+    return this.httpClient.get(environment.base_url + 'profile/get/pertner', {headers: this.buildHeaders()});
   }
 
 }
