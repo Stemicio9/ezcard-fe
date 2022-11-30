@@ -29,7 +29,7 @@
             <img class="icon-size" src="assets/qrcode-white-rounded-icon.png" />
           </div>
         </div>
-        <h5 class="card-title mt-2 text-light"><b>Mario Rossinettini</b></h5>
+        <h5 class="mt-2 text-light" style="font-size:27px"><b>Mario Rossinettini</b></h5>
         <span class="card-subtitle text-light">CEO - EZcard </span>
 
         <div class="mt-4 mb-4">
@@ -77,8 +77,43 @@
           </div>
         </div>
 
-        <span class="card-subtitle text-light">CONTATTI</span>
+        <div *ngIf="!editContacts" class="row">
+          <div class="col-8">
+            <span class="card-subtitle-web text-light">{{contacts}}</span>
+            <img
+              (click)="editContacts = !editContacts"
+              class="edit-icon"
+              src="assets/edit-white-icon.png"
+            />
+          </div>
+        </div>
 
+        <div *ngIf="editContacts" class="row">
+          <div class="col-10">
+            <div class="input-group">
+              <input
+              #contText
+              class="form-control"
+              style="border-radius: 0.4rem"
+              [ngModel]="contacts"
+            />
+
+            <img
+            (click)="editContacts = !editContacts; contacts = contText.value"
+            class="edit-text-icon"
+            src="assets/check-white-rounded-icon.png"
+            style="margin-left: 0.5rem"
+             />
+
+            <img
+            (click)="editContacts = !editContacts"
+            class="edit-text-icon"
+            src="assets/cancel-white-rounded-icon.png"
+            style="margin-left: 1rem"
+             />
+            </div>
+          </div>
+        </div>
         <div class="card card-contact mt-3 mb-5">
           <span class="text-light">
             <img
@@ -102,8 +137,43 @@
           >
         </div>
 
-        <span class="card-subtitle text-light">AZIENDA</span>
+        <div *ngIf="!editCompany" class="row">
+          <div class="col-8">
+            <span class="card-subtitle-web text-light">{{company}}</span>
+            <img
+              (click)="editCompany = !editCompany"
+              class="edit-icon"
+              src="assets/edit-white-icon.png"
+            />
+          </div>
+        </div>
 
+        <div *ngIf="editCompany" class="row ">
+          <div class="col-10">
+            <div class="input-group">
+              <input
+              #cText
+              class="form-control"
+              style="border-radius: 0.4rem"
+              [ngModel]="company"
+            />
+
+            <img
+            (click)="editCompany = !editCompany; company = cText.value"
+            class="edit-text-icon"
+            src="assets/check-white-rounded-icon.png"
+            style="margin-left: 0.5rem"
+             />
+
+            <img
+            (click)="editCompany = !editCompany"
+            class="edit-text-icon"
+            src="assets/cancel-white-rounded-icon.png"
+            style="margin-left: 1rem"
+             />
+            </div>
+          </div>
+        </div>
         <div class="card card-contact mt-3 mb-5">
           <span class="text-light"> <img class="icon-card" src="assets/company-white-icon.png">Azienda</span>
           <hr>
@@ -202,10 +272,43 @@
           </div>
         </div>
 
-        <div class="mb-3">
-          <span class="card-subtitle text-light">GALLERIA</span>
+        <div *ngIf="!editGallery" class="row mb-3">
+          <div class="col-8">
+            <span class="card-subtitle-web text-light">{{gallery}}</span>
+            <img
+              (click)="editGallery = !editGallery"
+              class="edit-icon"
+              src="assets/edit-white-icon.png"
+            />
+          </div>
         </div>
 
+        <div *ngIf="editGallery" class="row ">
+          <div class="col-10">
+            <div class="input-group mb-3">
+              <input
+              #gText
+              class="form-control"
+              style="border-radius: 0.4rem"
+              [ngModel]="gallery"
+            />
+
+            <img
+            (click)="editGallery = !editGallery; gallery = gText.value"
+            class="edit-text-icon"
+            src="assets/check-white-rounded-icon.png"
+            style="margin-left: 0.5rem"
+             />
+
+            <img
+            (click)="editGallery = !editGallery"
+            class="edit-text-icon"
+            src="assets/cancel-white-rounded-icon.png"
+            style="margin-left: 1rem"
+             />
+            </div>
+          </div>
+        </div>
         <ngb-carousel #ngcarousel>
           <ng-template ngbSlide id="one">
             <div class="picsum-img-wrapper">
@@ -224,8 +327,42 @@
           </ng-template>
         </ngb-carousel>
 
-        <div class="mt-5 mb-3">
-          <span class="card-subtitle mb-5 text-light">PARTNER</span>
+        <div *ngIf="!editPartner" class="row mt-5 mb-3">
+          <div class="col-8">
+            <span class="card-subtitle-web text-light">{{partner}}</span>
+            <img
+              (click)="editPartner = !editPartner"
+              class="edit-icon"
+              src="assets/edit-white-icon.png"
+            />
+          </div>
+        </div>
+
+        <div *ngIf="editPartner" class="row mt-5 mb-3">
+          <div class="col-10">
+            <div class="input-group ">
+              <input
+              #pText
+              class="form-control"
+              style="border-radius: 0.4rem"
+              [ngModel]="partner"
+            />
+
+            <img
+            (click)="editPartner = !editPartner; partner = pText.value"
+            class="edit-text-icon"
+            src="assets/check-white-rounded-icon.png"
+            style="margin-left: 0.5rem"
+             />
+
+            <img
+            (click)="editPartner = !editPartner"
+            class="edit-text-icon"
+            src="assets/cancel-white-rounded-icon.png"
+            style="margin-left: 1rem"
+             />
+            </div>
+          </div>
         </div>
 
         <ngb-carousel #ngcarousel>
@@ -298,8 +435,8 @@
         />
 
         <div style="margin: 3rem">
-          <h5 class="card-title mt-5 text-light"><b>Mario Rossinettini</b></h5>
-          <span class="card-subtitle text-light">CEO - EZcard </span>
+          <h5 class="card-title-web mt-5 text-light"><b>Mario Rossinettini</b></h5>
+          <span class="card-subtitle-web text-light">CEO - EZcard </span>
 
           <div class="mt-4 mb-4">
             <button type="button" class="btn save-button">
@@ -353,7 +490,6 @@
             <div class="col-1"></div>
           </div>
 
-          <span class="card-subtitle text-light">CONTATTI</span>
 
           <div class="card card-contact mt-3 mb-5">
             <span class="text-light">
@@ -378,7 +514,6 @@
             >
           </div>
 
-          <span class="card-subtitle text-light">AZIENDA</span>
 
           <div class="card card-contact mt-3 mb-5">
             <span class="text-light"> <img class="icon-card" src="assets/company-white-icon.png">Azienda</span>
@@ -481,9 +616,8 @@
             </div>
           </div>
 
-          <div class="mb-3">
-            <span class="card-subtitle text-light">GALLERIA</span>
-          </div>
+
+
 
           <ngb-carousel #ngcarousel>
             <ng-template ngbSlide id="one">
@@ -503,9 +637,8 @@
             </ng-template>
           </ngb-carousel>
 
-          <div class="mt-5 mb-3">
-            <span class="card-subtitle mb-5 text-light">PARTNER</span>
-          </div>
+
+
 
           <owl-carousel-o [options]="customOptions">
 

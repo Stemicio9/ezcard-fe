@@ -26,12 +26,9 @@
   </div>
 </div>
 
-
-
 <div class="row d-md-none gray-background" style="padding-top: 1rem">
   <div class="col-12">
     <form class="row mb-3">
-
       <div class="col-6">
         <div class="dp-hidden position-absolute">
           <div class="input-group">
@@ -39,7 +36,7 @@
               name="datepicker"
               class="form-control date-picker-left"
               ngbDatepicker
-              #datepicke="ngbDatepicker"
+              #datepicker="ngbDatepicker"
               [autoClose]="'outside'"
               (dateSelect)="onDateSelection($event)"
               [displayMonths]="2"
@@ -78,6 +75,7 @@
           ></button>
         </div>
       </div>
+
       <div class="col-6">
         <div class="input-group">
           <input
@@ -96,6 +94,8 @@
         </div>
       </div>
     </form>
+
+
 
     <div class="card elevated-card" style="height: 25rem">
       <div
@@ -138,9 +138,6 @@
     </div>
   </div>
 </div>
-
-
-
 
 <!-- Content web-->
 <div
@@ -221,7 +218,11 @@
       </div>
 
       <div class="p-2">
-        <img type="button" class="download-icon" src="assets/download-icon.png" />
+        <img
+          type="button"
+          class="download-icon"
+          src="assets/download-dark-icon.png"
+        />
       </div>
     </div>
 

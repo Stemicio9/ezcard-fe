@@ -46,6 +46,9 @@
 
 
 
+
+
+
 .dp-hidden {
   width: 0;
   margin: 0;
@@ -71,6 +74,9 @@
   background-color: rgba(2, 117, 216, 0.5);
 }
 
+
+
+
 .date-picker-left{
  border-bottom-left-radius: 0.40rem;
  border-top-left-radius: 0.40rem;
@@ -85,3 +91,6 @@
   background-color: var(--black_ez);
 
 }
+
+
+

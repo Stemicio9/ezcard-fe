@@ -14,6 +14,14 @@ export class ProfileDarkComponent implements OnInit {
 
   username: string | null = '';
   profile?: Profile;
+  editPartner = false;
+  editGallery = false;
+  editCompany = false;
+  editContacts = false;
+  partner="PARTNER";
+  gallery="GALLERIA";
+  company="AZIENDA";
+  contacts="CONTATTI";
 
   // this variable represents the state of the profile object, if false there is an error on retrieving the profile
   dataState = true;

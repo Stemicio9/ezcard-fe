@@ -1,4 +1,6 @@
 <div class="row">
+
+
   <!-- Profilo Web -->
   <div class="d-md-flex d-none col-md-4 d-flex flex-column">
     <div class="box">
@@ -40,8 +42,10 @@
     </div>
   </div>
 
+
+
   <!-- Profilo Mobile -->
-  <div class="d-md-none d-flex col-md-4 flex-column">
+  <div class="d-md-none d-flex flex-column">
     <img
       class="card-img-top"
       src="assets/placeholder-image.png"
@@ -52,11 +56,17 @@
         <img
           src="assets/avatar-image.png"
           alt="user"
-          (click)="openGenericModal(changeImage)"
         />
       </div>
 
-      <span>Clicca sull'immagine per modificarla</span>
+
+      <div>
+        <img
+          class="edit-icon-profile-mob"
+          src="assets/edit-dark-rounded-icon.png"
+          (click)="openGenericModal(changeImage)"
+        />
+      </div>
     </div>
   </div>
 

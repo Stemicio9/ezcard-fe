@@ -13,6 +13,15 @@ export class ProfileComponent implements OnInit {
 
   username: string | null = '';
   profile?: Profile;
+  editPartner = false;
+  editGallery = false;
+  editCompany = false;
+  editContacts = false;
+  partner="PARTNER";
+  gallery="GALLERIA";
+  company="AZIENDA";
+  contacts="CONTATTI";
+
 
   // this variable represents the state of the profile object, if false there is an error on retrieving the profile
   dataState = true;
@@ -55,29 +64,26 @@ export class ProfileComponent implements OnInit {
       title: ''
     },
     {
-      id: 'id6',
-      src: '/assets/black-logo.png',
-      alt: 'alt',
-      title: ''
-    },
-    {
       id: 'id7',
       src: '/assets/black-logo.png',
       alt: 'alt',
       title: ''
-    },{
+    },
+    {
       id: 'id8',
       src: '/assets/black-logo.png',
       alt: 'alt',
       title: ''
-    },
-    {
+    },{
       id: 'id9',
       src: '/assets/black-logo.png',
       alt: 'alt',
       title: ''
     },
+
   ]
+
+
 
   customOptions: OwlOptions = {
     loop: true,
@@ -92,10 +98,7 @@ export class ProfileComponent implements OnInit {
       0: {
         items: 3
       },
-      400: {
-        items: 3
-      },
-      740: {
+      500: {
         items: 4
       },
       940: {
@@ -114,6 +117,7 @@ export class ProfileComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private profileService: ProfileService) { }
 
   ngOnInit(): void {
+
     this.username = this.activatedRoute.snapshot.paramMap.get("id");
     if(this.username != null) {
       this.profileService.getProfile(this.username).subscribe(

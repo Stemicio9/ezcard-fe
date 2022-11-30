@@ -17,14 +17,18 @@ export class SettingsComponent implements OnInit, AfterViewInit {
 
   constructor(private viewportScroller: ViewportScroller) { }
 
+
+
+  ngOnInit(): void {
+    this.viewportScroller.setOffset([0,window.innerHeight*0.06]);
+  }
+
+
   onClickScroll(elementId: string, index: number): void{
     this.viewportScroller.scrollToAnchor(elementId);
     this.assignClass(index);
   }
 
-  ngOnInit(): void {
-    this.viewportScroller.setOffset([0,window.innerHeight*0.06]);
-  }
 
   ngAfterViewInit(): void {
     let defaultAnchor = document.getElementById(this.activeAnchor);

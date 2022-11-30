@@ -7,8 +7,6 @@
 .edit-icon {
   width: 5px;
   height: 5px;
-
-
 }
 
 span {
@@ -29,50 +27,50 @@ h5 {
   padding-bottom: 3rem;
 }
 
-
-.rounded-image{
+.rounded-image {
   border-radius: 50%;
-  border: 3px solid rgba(255, 255, 255, 1);
-  position: relative;
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);  position: relative;
   bottom: 135px;
-
-
 }
 
-
-.edit-button-style{
-  text-align:right;
+.edit-button-style {
+  text-align: right;
   cursor: pointer;
 }
 
-
 .box {
-  position:relative;
+  position: relative;
 }
 
-.edit-icon{
+.edit-icon {
   width: 35px;
   height: 35px;
-  position:absolute;
+  position: absolute;
   right: 15px;
-  bottom: 15px;
+  bottom: 12px;
 }
 
-
-.edit-icon-profile{
+.edit-icon-profile {
   width: 35px;
   height: 35px;
   position: relative;
   bottom: 170px;
   left: 70px;
   cursor: pointer;
-
 }
 
+.edit-icon-profile-mob {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  bottom: 50px;
+  left: 60px;
+}
 
 .pro-img {
   margin-top: -120px;
-  margin-bottom: 20px
+  margin-bottom: 20px;
 }
 
 .little-profile .pro-img img {
@@ -83,9 +81,8 @@ h5 {
   border-radius: 100%;
 }
 
-
-.card-img-top{
-  height:300px;
+.card-img-top {
+  height: 300px;
 }
 
 .card-body {
@@ -94,36 +91,27 @@ h5 {
   padding: 1.25rem;
 }
 
-
-
-.add-social-button{
-  background-color:var(--black_ez);
+.add-social-button {
+  background-color: var(--black_ez);
   color: white;
   border-color: var(--black_ez);
+}
 
- }
-
-
-
- .dropdown-background{
-   background-color: white;
-
-  }
-  .dropdown-background:hover{
-    background-color: #f3f3f3;
-
-  }
-  .dropdown-background:active{
-   background-color: #d3d3d3;
- }
- .dropdown-items{
-   color: var(--black_ez);
-
- }
- .dropdown-items:hover{
-   color:var(--black_ez);
-
- }
- .dropdown-items:active{
-   color: var(--black_ez);
- }
+.dropdown-background {
+  background-color: white;
+}
+.dropdown-background:hover {
+  background-color: #f3f3f3;
+}
+.dropdown-background:active {
+  background-color: #d3d3d3;
+}
+.dropdown-items {
+  color: var(--black_ez);
+}
+.dropdown-items:hover {
+  color: var(--black_ez);
+}
+.dropdown-items:active {
+  color: var(--black_ez);
+}

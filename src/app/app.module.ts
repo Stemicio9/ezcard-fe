@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {AppComponent} from './app.component';
 import {HttpClientModule} from '@angular/common/http';
@@ -28,6 +29,9 @@ import { IgxLegendModule, IgxCategoryChartModule } from 'igniteui-angular-charts
 import { ProfileDarkComponent } from './components/profile-dark/profile-dark.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { ChangeImageModalComponent } from './components/modal/change-image-modal/change-image-modal.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -62,7 +66,9 @@ import { ChangeImageModalComponent } from './components/modal/change-image-modal
     ReactiveFormsModule,
     HttpClientModule,
     IgxLegendModule,
-    IgxCategoryChartModule
+    IgxCategoryChartModule,
+    BrowserAnimationsModule,
+
   ],
   providers: [
     NgbDateParserFormatterExtProvider

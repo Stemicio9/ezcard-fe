@@ -44,6 +44,9 @@ export class StatsComponent implements OnInit {
 		this.toDate = calendar.getNext(calendar.getToday(), 'd', 30);
 	}
 
+  ngOnInit(): void {
+  }
+
 	onDateSelection(date: NgbDate) {
 		if (!this.fromDate && !this.toDate) {
 			this.fromDate = date;
@@ -91,7 +94,6 @@ export class StatsComponent implements OnInit {
       return this._countryRenewableElectricity;
   }
 
-  ngOnInit(): void {
-  }
+
 
 }

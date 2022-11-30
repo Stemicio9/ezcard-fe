@@ -15,8 +15,9 @@ span {
 
 
 .border-radius-popup {
-  border-bottom-left-radius: 1rem;
-  border-bottom-right-radius: 1rem;}
+  border-bottom-left-radius: 0.45rem;
+  border-bottom-right-radius: 0.45rem;
+}
 
 .save-label-contact {
   padding-left: 3.4rem;

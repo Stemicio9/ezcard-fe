@@ -4,11 +4,9 @@ hr {
 }
 
 .border-radius-popup {
-border-radius: 1rem;
+  border-radius: 0.45rem;
 
 }
-
-
 
 .size-icon{
   width: 30px;

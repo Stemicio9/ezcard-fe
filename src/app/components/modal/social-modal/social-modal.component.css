@@ -21,7 +21,8 @@ h5 {
 
 
 .border-radius-popup {
-  border-radius: 24px
+  border-bottom-left-radius: 0.45rem;
+  border-bottom-right-radius: 0.45rem;
 }
 
 
