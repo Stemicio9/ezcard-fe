@@ -3,6 +3,7 @@ import {ActivatedRoute} from "@angular/router";
 import { Profile } from 'src/app/entities/profile';
 import { ProfileService } from 'src/app/services/profile.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { NgbCarouselConfig, NgbConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-profile',
@@ -82,8 +83,6 @@ export class ProfileComponent implements OnInit {
     },
 
   ]
-
-
 
   customOptions: OwlOptions = {
     loop: true,

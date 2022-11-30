@@ -64,8 +64,8 @@ h5 {
   width: 40px;
   height: 40px;
   position: relative;
-  bottom: 50px;
-  left: 60px;
+  bottom: 60px;
+  left: 65px;
 }
 
 .pro-img {
@@ -115,3 +115,4 @@ h5 {
 .dropdown-items:active {
   color: var(--black_ez);
 }
+
