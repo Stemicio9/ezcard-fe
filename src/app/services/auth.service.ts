@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {environment} from "../../environments/environment";
+import {Observable} from "rxjs";
+import {Cookie} from "ng2-cookies";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private httpClient: HttpClient) { }
-
+  constructor(private _http: HttpClient){}
 
   // Authenticate the user
   authenticateUser(username:string, password:string){
@@ -16,8 +17,9 @@ export class AuthService {
       "username": username,
       "password": password
     };
-    return this.httpClient.post(environment.base_url+'authenticate', body) ;
+    return this._http.post(environment.base_url+'public/login', body, {observe: 'response'});
   }
+
 
 
 }

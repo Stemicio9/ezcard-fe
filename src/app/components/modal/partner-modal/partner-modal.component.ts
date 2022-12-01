@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import {ProfileService} from "../../../services/profile.service";
 
 @Component({
   selector: 'app-partner-modal',
@@ -14,7 +15,7 @@ export class PartnerModalComponent implements OnInit {
   filesNotInCharge: File[] = [];
 
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal, private profileService: ProfileService) { }
 
 
   ngOnInit(): void {
@@ -47,5 +48,18 @@ export class PartnerModalComponent implements OnInit {
       console.log(this.filesNotInCharge);
     }
 }
+
+  sendFiles(){
+    this.profileService.updatePartner(this.allFiles).subscribe(
+      (body: any) => {
+        this.closeModal();
+      },
+      (error: any) => {
+        //todo manage error
+        console.log(error);
+      }
+    );
+  }
+
 
 }

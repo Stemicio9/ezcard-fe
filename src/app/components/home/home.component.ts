@@ -10,6 +10,8 @@ import { PartnerModalComponent } from '../modal/partner-modal/partner-modal.comp
 import { ProfileComponent } from '../profile/profile.component';
 import { ProfileDarkComponent } from '../profile-dark/profile-dark.component';
 import { ChangeImageModalComponent } from '../modal/change-image-modal/change-image-modal.component';
+import {AuthService} from "../../services/auth.service";
+import {ProfileService} from "../../services/profile.service";
 
 @Component({
   selector: 'app-home',
@@ -31,7 +33,7 @@ export class HomeComponent implements OnInit {
   // true = light theme, false = dark theme
   theme_style = true;
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal, private profileService: ProfileService) { }
 
   openGenericModal(content:any){
     const modalRef = this.modalService.open(content, {size: 'lg',centered:true, ariaLabelledBy: 'modal-basic-title'});
@@ -55,7 +57,10 @@ export class HomeComponent implements OnInit {
 	}
 
   ngOnInit(): void {
-
+      this.profileService.listUser().subscribe(result => {
+        console.log("lista utenti");
+        console.log(result);
+      });
   }
 
   formatDate() {

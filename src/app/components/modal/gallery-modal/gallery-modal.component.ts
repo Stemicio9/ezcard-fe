@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import {ProfileService} from "../../../services/profile.service";
+import {MediaContainer} from "../../../entities/media-container";
+import {UtilityService} from "../../../services/utility.service";
 
 @Component({
   selector: 'app-gallery-modal',
@@ -12,13 +15,44 @@ export class GalleryModalComponent implements OnInit {
 
   allFiles: File[] = [];
   filesNotInCharge: File[] = [];
+  mediaContainerList: MediaContainer[] = [];
 
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal, private profileService: ProfileService, private utilityService: UtilityService) { }
 
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    this.profileService.getGallery().subscribe(
+       (body: any) => {
+        this.mediaContainerList = body;
+        console.log("ARRAY DA CERCARE");
+        console.log(this.mediaContainerList);
+        for (var element of this.mediaContainerList) {
+
+          console.log("FACCIO LA FETCH DI ");
+          console.log(element.fileName);
+          this.utilityService.downloadFileFromUrl(element.fileLink!).subscribe(result => {
+            var array = new Uint8Array(result);
+            var file = new File([array], element.fileName!, {type: element.fileType!});
+            console.log("INSERISCO FILE IN ALL FILES");
+            console.log(file.name);
+            this.allFiles.push(file);
+          });
+
+
+
+        }
+      },
+      (error: any) => {
+        //todo manage error
+        console.log(error);
+      }
+    );
   }
+
+
+
+
 
   closeModal() {
     this.modalService.dismissAll();
@@ -48,5 +82,17 @@ export class GalleryModalComponent implements OnInit {
       console.log(this.filesNotInCharge);
     }
 }
+
+  sendFiles(){
+    this.profileService.updateGallery(this.allFiles).subscribe(
+      (body: any) => {
+          this.closeModal();
+      },
+      (error: any) => {
+        //todo manage error
+        console.log(error);
+      }
+      );
+  }
 
 }

@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Profile} from "../entities/profile";
 import {environment} from "../../environments/environment";
 import {StorageService} from "./storage.service";
@@ -18,10 +18,14 @@ export class ProfileService {
 
 
   buildHeaders(){
-    return {
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + this.storageService.getTokenFromStorage()
-    };
+    const headers = new HttpHeaders().set('X-Auth', this.storageService.getTokenFromStorage() ?? "");
+    headers.set( 'Content-Type', 'application/json');
+    return headers;
+  }
+
+
+  listUser(){
+    return this.httpClient.get(environment.base_url + 'protected/list', {headers: this.buildHeaders()});
   }
 
   insertProfile(profile: Profile){
@@ -36,6 +40,44 @@ export class ProfileService {
     };
     return this.httpClient.post(environment.base_url + 'profile/create', body, {headers: this.buildHeaders()});
   }
+
+
+  updateGallery(fileList: File[]){
+    const formData = new FormData();
+    for (let i = 0; i < fileList.length; i++) {
+      formData.append('files', fileList[i]);
+    }
+    return this.httpClient.post(environment.base_url + 'protected/profile/update/gallery', formData, {headers: this.buildHeaders()});
+  }
+
+  updatePresentation(fileList: File[]){
+    const formData = new FormData();
+    for (let i = 0; i < fileList.length; i++) {
+      formData.append('files', fileList[i]);
+    }
+    return this.httpClient.post(environment.base_url + 'protected/profile/update/presentation', formData, {headers: this.buildHeaders()});
+  }
+
+  updatePartner(fileList: File[]){
+    const formData = new FormData();
+    for (let i = 0; i < fileList.length; i++) {
+      formData.append('files', fileList[i]);
+    }
+    return this.httpClient.post(environment.base_url + 'protected/profile/update/partner', formData, {headers: this.buildHeaders()});
+  }
+
+  getPresentation(){
+    return this.httpClient.get(environment.base_url + 'protected/profile/get/presentation', {headers: this.buildHeaders()});
+  }
+
+  getGallery(){
+    return this.httpClient.get(environment.base_url + 'protected/profile/get/gallery', {headers: this.buildHeaders()});
+  }
+
+  getPartner(){
+    return this.httpClient.get(environment.base_url + 'protected/profile/get/pertner', {headers: this.buildHeaders()});
+  }
+
 
   updateProfile(profile: ProfileContainer){
     return this.httpClient.post(environment.base_url + 'profile/update/profile', profile, {headers: this.buildHeaders()});
@@ -53,21 +95,17 @@ export class ProfileService {
     return this.httpClient.post(environment.base_url + 'profile/update/company', companies, {headers: this.buildHeaders()});
   }
 
-  updatePresentation(presentation: any){
-    return this.httpClient.post(environment.base_url + 'profile/update/presentation', presentation);
-  }
-
-  updateGallery(gallery: any){
-    return this.httpClient.post(environment.base_url + 'profile/update/gallery', gallery);
-  }
-
-  updatePartner(partner: any){
-    return this.httpClient.post(environment.base_url + 'profile/update/partner', partner);
-  }
 
 
-  getProfile(){
+
+
+
+  getCurrentProfile(){
     return this.httpClient.get(environment.base_url + 'profile/get/profile', {headers: this.buildHeaders()});
+  }
+
+  getProfile(username: string){
+    return this.httpClient.get(environment.base_url + 'profile/get/' + username, {headers: this.buildHeaders()});
   }
 
   getSocial(){
@@ -82,16 +120,6 @@ export class ProfileService {
     return this.httpClient.get(environment.base_url + 'profile/get/company', {headers: this.buildHeaders()});
   }
 
-  getPresentation(){
-    return this.httpClient.get(environment.base_url + 'profile/get/presentation', {headers: this.buildHeaders()});
-  }
 
-  geyGallery(){
-    return this.httpClient.get(environment.base_url + 'profile/get/gallery', {headers: this.buildHeaders()});
-  }
-
-  getPartner(){
-    return this.httpClient.get(environment.base_url + 'profile/get/pertner', {headers: this.buildHeaders()});
-  }
 
 }
