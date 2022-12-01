@@ -1,3 +1,4 @@
+import { HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
@@ -23,18 +24,18 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   login() {
-    this.router.navigate(['home']);
+    //this.router.navigate(['home']);
 
-    /*const { email, password } = this.form;
+    const { email, password } = this.form;
 
     this.authService.authenticateUser(email, password).subscribe(
-      (body: any) => {
-        this.storageService.saveTokenInStorage(body['token']);
+      (resp: any) => {
+        this.storageService.saveTokenInStorage(resp.headers.get('X-Auth'));
         this.router.navigate(['home']);
       },
       (error) => {
         console.log(error);
       }
-    );*/
+    );
   }
 }

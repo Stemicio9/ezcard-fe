@@ -10,6 +10,7 @@ import { PartnerModalComponent } from '../modal/partner-modal/partner-modal.comp
 import { ProfileComponent } from '../profile/profile.component';
 import { ProfileDarkComponent } from '../profile-dark/profile-dark.component';
 import { ChangeImageModalComponent } from '../modal/change-image-modal/change-image-modal.component';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -31,9 +32,13 @@ export class HomeComponent implements OnInit {
   // true = light theme, false = dark theme
   theme_style = true;
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal, private authService: AuthService) { }
 
   openGenericModal(content:any){
+    this.authService.listUser().subscribe((data)=>{
+      console.log(data);
+
+    })
     const modalRef = this.modalService.open(content, {size: 'lg',centered:true, ariaLabelledBy: 'modal-basic-title'});
     modalRef.componentInstance.data = ''; //TODO here we can pass data to the modal
 
