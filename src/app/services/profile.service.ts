@@ -17,20 +17,14 @@ export class ProfileService {
 
 
 
-  buildHeaders(){
-    const headers = new HttpHeaders().set('X-Auth', this.storageService.getTokenFromStorage() ?? "");
-    headers.set( 'Content-Type', 'application/json');
-    return headers;
-  }
 
 
   listUser(){
-    return this.httpClient.get(environment.base_url + 'protected/list', {headers: this.buildHeaders()});
+    return this.httpClient.get(environment.base_url + 'protected/list');
   }
 
   insertProfile(profile: Profile){
-    const headers = this.buildHeaders();
-    return this.httpClient.post(environment.base_url + 'profile/insert', profile, {headers: headers});
+    return this.httpClient.post(environment.base_url + 'profile/insert', profile);
   }
 
   insertUser(username: string, password: string){
@@ -38,7 +32,7 @@ export class ProfileService {
       "username": username,
       "password": password
     };
-    return this.httpClient.post(environment.base_url + 'profile/create', body, {headers: this.buildHeaders()});
+    return this.httpClient.post(environment.base_url + 'profile/create', body);
   }
 
 
@@ -47,7 +41,8 @@ export class ProfileService {
     for (let i = 0; i < fileList.length; i++) {
       formData.append('files', fileList[i]);
     }
-    return this.httpClient.post(environment.base_url + 'protected/profile/update/gallery', formData, {headers: this.buildHeaders()});
+
+    return this.httpClient.post(environment.base_url + 'protected/profile/update/gallery', formData);
   }
 
   updatePresentation(fileList: File[]){
@@ -55,7 +50,7 @@ export class ProfileService {
     for (let i = 0; i < fileList.length; i++) {
       formData.append('files', fileList[i]);
     }
-    return this.httpClient.post(environment.base_url + 'protected/profile/update/presentation', formData, {headers: this.buildHeaders()});
+    return this.httpClient.post(environment.base_url + 'protected/profile/update/presentation', formData);
   }
 
   updatePartner(fileList: File[]){
@@ -63,36 +58,36 @@ export class ProfileService {
     for (let i = 0; i < fileList.length; i++) {
       formData.append('files', fileList[i]);
     }
-    return this.httpClient.post(environment.base_url + 'protected/profile/update/partner', formData, {headers: this.buildHeaders()});
+    return this.httpClient.post(environment.base_url + 'protected/profile/update/partner', formData);
   }
 
   getPresentation(){
-    return this.httpClient.get(environment.base_url + 'protected/profile/get/presentation', {headers: this.buildHeaders()});
+    return this.httpClient.get(environment.base_url + 'protected/profile/get/presentation');
   }
 
   getGallery(){
-    return this.httpClient.get(environment.base_url + 'protected/profile/get/gallery', {headers: this.buildHeaders()});
+    return this.httpClient.get(environment.base_url + 'protected/profile/get/gallery');
   }
 
   getPartner(){
-    return this.httpClient.get(environment.base_url + 'protected/profile/get/pertner', {headers: this.buildHeaders()});
+    return this.httpClient.get(environment.base_url + 'protected/profile/get/pertner');
   }
 
 
   updateProfile(profile: ProfileContainer){
-    return this.httpClient.post(environment.base_url + 'profile/update/profile', profile, {headers: this.buildHeaders()});
+    return this.httpClient.post(environment.base_url + 'profile/update/profile', profile);
   }
 
   updateSocial(social: SocialContainer[]){
-    return this.httpClient.post(environment.base_url + 'profile/update/social', social, {headers: this.buildHeaders()});
+    return this.httpClient.post(environment.base_url + 'profile/update/social', social);
   }
 
   updateContacts(contacts: ContactContainer[]){
-    return this.httpClient.post(environment.base_url + 'profile/update/contacts', contacts, {headers: this.buildHeaders()});
+    return this.httpClient.post(environment.base_url + 'profile/update/contacts', contacts);
   }
 
   updateCompany(companies: CompanyContainer[]){
-    return this.httpClient.post(environment.base_url + 'profile/update/company', companies, {headers: this.buildHeaders()});
+    return this.httpClient.post(environment.base_url + 'profile/update/company', companies);
   }
 
 
@@ -101,23 +96,23 @@ export class ProfileService {
 
 
   getCurrentProfile(){
-    return this.httpClient.get(environment.base_url + 'profile/get/profile', {headers: this.buildHeaders()});
+    return this.httpClient.get(environment.base_url + 'profile/get/profile');
   }
 
   getProfile(username: string){
-    return this.httpClient.get(environment.base_url + 'profile/get/' + username, {headers: this.buildHeaders()});
+    return this.httpClient.get(environment.base_url + 'profile/get/' + username);
   }
 
   getSocial(){
-    return this.httpClient.get(environment.base_url + 'profile/get/social', {headers: this.buildHeaders()});
+    return this.httpClient.get(environment.base_url + 'profile/get/social');
   }
 
   getContacts(){
-    return this.httpClient.get(environment.base_url + 'profile/get/contacts', {headers: this.buildHeaders()});
+    return this.httpClient.get(environment.base_url + 'profile/get/contacts');
   }
 
   getCompany(){
-    return this.httpClient.get(environment.base_url + 'profile/get/company', {headers: this.buildHeaders()});
+    return this.httpClient.get(environment.base_url + 'profile/get/company');
   }
 
 

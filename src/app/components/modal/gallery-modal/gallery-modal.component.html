@@ -39,14 +39,20 @@
             <th scope="col">Nome del file</th>
             <th scope="col">Dimensione</th>
             <th scope="col">Tipo</th>
+            <th scope="col">Azioni</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let file of allFiles; let i = index">
-            <th scope="row">{{i+1}}</th>
-            <td>{{file.name}}</td>
-            <td>{{file.size}} Bytes</td>
-            <td>{{file.type}}</td>
+            <!--<th scope="row">{{i+1}}</th> -->
+            <th scope="row">
+              <img [src]="file.link" />
+            </th>
+            <td>{{file.file.name}}</td>
+            <td>{{file.file.size}} Bytes</td>
+            <td>{{file.file.type}}</td>
+
+            <td><button class="btn btn-danger" (click)="removeFile(i)">Rimuovi</button></td>
           </tr>
           <tr class="text-center" *ngIf="allFiles.length === 0">
             <td colspan="4"><strong>Nessun file caricato</strong></td>

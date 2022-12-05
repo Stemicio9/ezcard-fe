@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
 import {AppComponent} from './app.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {HeaderComponent} from './components/header/header.component';
 import {AppRoutingModule} from './app-routing.module';
@@ -28,6 +28,7 @@ import { IgxLegendModule, IgxCategoryChartModule } from 'igniteui-angular-charts
 import { ProfileDarkComponent } from './components/profile-dark/profile-dark.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { ChangeImageModalComponent } from './components/modal/change-image-modal/change-image-modal.component';
+import {TokenInterceptor} from "./interceptors/token.interceptor";
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { ChangeImageModalComponent } from './components/modal/change-image-modal
     IgxCategoryChartModule
   ],
   providers: [
-    NgbDateParserFormatterExtProvider
+    NgbDateParserFormatterExtProvider,
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
   ],
   bootstrap: [AppComponent],
 })

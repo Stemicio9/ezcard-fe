@@ -13,23 +13,10 @@ export class UtilityService {
 
 
 
-  buildHeaders(){
-    const headers = new HttpHeaders().set('X-Auth', this.storageService.getTokenFromStorage() ?? "");
-    headers.set( 'Content-Type', 'application/json');
-    return headers;
+
+  downloadFileFromUrl(url: string){
+    return this.httpClient.post(environment.base_url + "protected/profile/get/file" ,{"fileLink" : url}, {responseType: 'arraybuffer'});
   }
-
-
-  downloadFileFromUrl(url: string) : Observable<ArrayBuffer>{
-    console.log("URL ATTUALE");
-    console.log(url);
-    var options = {
-      headers: this.buildHeaders(),
-      responseType: 'arraybuffer'
-    }
-    return this.httpClient.post<ArrayBuffer>(environment.base_url + "protected/profile/get/file" ,{"fileLink" : url}, {headers: this.buildHeaders(), responseType: 'arraybuffer' as 'json'});
-  }
-
 
 
 }
