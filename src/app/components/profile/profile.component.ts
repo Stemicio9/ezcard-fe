@@ -115,7 +115,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.username = this.activatedRoute.snapshot.paramMap.get("id");
-    if(this.username != null) {
+    /*if(this.username != null) {
       this.profileService.getProfile(this.username).subscribe(
         (data: any) => {
           this.profile = data.body;
@@ -126,7 +126,7 @@ export class ProfileComponent implements OnInit {
         });
     } else {
       this.dataState = false;
-    }
+    }*/
   }
 
 

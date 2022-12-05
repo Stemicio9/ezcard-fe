@@ -15,30 +15,29 @@
   <form>
     <div class="row">
       <div class="col-md-6 col-sm-12">
-
-        <div class="input-group mt-3 mt-md-4">
+        <div class="form-group">
+          <label>Nome</label>
           <input [(ngModel)]="profile.firstName" name="firstName" placeholder="Nome" id="firstName" class="form-control" style="border-radius: 0.4rem;"/>
         </div>
       </div>
-
-
       <div class="col-md-6 col-sm-12">
-
-        <div class="input-group mt-3 mt-md-4">
+        <div class="form-group">
+          <label>Cognome</label>
           <input [(ngModel)]="profile.lastName" name="lastName" placeholder="Cognome" id="lastName" class="form-control" style="border-radius: 0.4rem;"/>
         </div>
       </div>
     </div>
 
-    <div class="row">
+    <div class="row mt-4">
       <div class="col-md-6 col-sm-12">
-
-        <div class="input-group mt-3 mt-md-4">
+        <div class="form-group">
+          <label>Ruolo</label>
           <input [(ngModel)]="profile.role" name="role" placeholder="Ruolo" id="role" class="form-control"/>
         </div>
       </div>
       <div class="col-md-6 col-sm-12">
-        <div class="form-group mt-3 mt-md-4">
+        <div class="form-group">
+          <label>Descrizione</label>
           <textarea [(ngModel)]="profile.description" name="description" placeholder="Descrizione" maxlength="250" class="form-control" style="border-radius: 0.4rem;" rows="3" ></textarea>
         </div>
       </div>

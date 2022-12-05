@@ -67,7 +67,7 @@
     </div>
 
     <div *ngFor="let voice of titlesFirstSection; index as i">
-      <div (click)="openGenericModal(idModalList[i])">
+      <div (click)="openGenericModal(modalList[i])">
         <app-home-row
           [title]="voice"
           [description]="descriptionsFirstSection[i]"

@@ -4,4 +4,12 @@ export class ProfileContainer {
   lastName?: string;
   role?: string;
   description?: string;
+
+  constructor() {
+    //initialize all fields
+    this.firstName = '';
+    this.lastName = '';
+    this.role = '';
+    this.description = '';
+  }
 }

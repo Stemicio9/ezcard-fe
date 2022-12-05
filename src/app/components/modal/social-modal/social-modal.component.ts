@@ -11,6 +11,10 @@ export class SocialModalComponent implements OnInit {
   @Input() public data: any;
 
   totalSocial: Social[] = [
+    new Social('Whatsapp', 'assets/whatsapp-dark-rounded-icon.png', 'Whatsapp'),
+    new Social('Facebook', 'assets/facebook-dark-rounded-icon.png', 'Facebook'),
+    new Social('TikTok', 'assets/tiktok-dark-rounded-icon.png', 'TikTok'),
+    new Social('Linkedin', 'assets/linkedin-dark-rounded-icon.png', 'Linkedin'),
     new Social('Instagram', 'assets/instagram-dark-rounded-icon.png', 'Instagram'),
     new Social('YouTube', 'assets/youtube-dark-rounded-icon.png', 'YouTube'),
     new Social('Twitter', 'assets/twitter-dark-rounded-icon.png', 'Twitter'),
@@ -18,13 +22,8 @@ export class SocialModalComponent implements OnInit {
     new Social('Behance', 'assets/behance-dark-rounded-icon.png', 'Behance'),
   ];
 
+  userSocial: Social[] = [];
 
-  userSocial: Social[] = [
-    new Social('Whatsapp', 'assets/whatsapp-dark-rounded-icon.png', 'Whatsapp'),
-    new Social('Facebook', 'assets/facebook-dark-rounded-icon.png', 'Facebook'),
-    new Social('TikTok', 'assets/tiktok-dark-rounded-icon.png', 'TikTok'),
-    new Social('Linkedin', 'assets/linkedin-dark-rounded-icon.png', 'Linkedin'),
-  ];
 
   constructor(private modalService: NgbModal) {}
 
@@ -40,17 +39,14 @@ export class SocialModalComponent implements OnInit {
 
   addSocial(contact: any) {
     this.userSocial.push(contact);
-    var index = this.totalSocial.indexOf(contact);
+    const index = this.totalSocial.indexOf(contact);
     this.totalSocial.splice(index,1);
-
-
   }
 
   remove(element: any){
-    var index = this.userSocial.indexOf(element);
+    const index = this.userSocial.indexOf(element);
     this.userSocial.splice(index,1);
     this.totalSocial.push(element);
-
   }
 
 

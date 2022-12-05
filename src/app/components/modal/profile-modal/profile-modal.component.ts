@@ -12,12 +12,16 @@ export class ProfileModalComponent implements OnInit {
 
   @Input() public data: any;
 
+
   profile: ProfileContainer = new ProfileContainer();
 
-  constructor(private modalService: NgbModal, private profileService: ProfileService) { }
+
+  constructor(private modalService: NgbModal, private profileService: ProfileService) {
+
+  }
 
   ngOnInit(): void {
-    this.profileService.getCurrentProfile().subscribe((body: any) => {
+    this.profileService.getProfile().subscribe((body: any) => {
       this.profile = body;
     });
   }
