@@ -34,6 +34,12 @@ export class HomeComponent implements OnInit {
 
   constructor(private modalService: NgbModal, private authService: AuthService) { }
 
+
+  ngOnInit(): void {
+    window.scroll(0,0);
+
+  }
+
   openGenericModal(content:any){
     this.authService.listUser().subscribe((data)=>{
       console.log(data);
@@ -59,10 +65,7 @@ export class HomeComponent implements OnInit {
 		}
 	}
 
-  ngOnInit(): void {
-    window.scroll(0,0);
 
-  }
 
   formatDate() {
     let datePicker = document.getElementById("dateOfBirth");
@@ -70,12 +73,5 @@ export class HomeComponent implements OnInit {
     datePicker?.setAttribute("format", "dd/MM/yyyy");
   }
 
-
-   getThemeClass(classe: string){
-    if(this.theme_style){
-      return classe;
-    }
-    return classe+ "-dark";
-   }
 
 }
