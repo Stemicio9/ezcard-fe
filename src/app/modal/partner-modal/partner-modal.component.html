@@ -1,20 +1,20 @@
 <div class="modal-header" style="background-color: var(--black_ez)">
   <div>
-    <img class="icon-size" src="assets/gallery-white-rounded-icon.png"/>
+    <img class="icon-size" src="../../../assets/partner-white-rounded-icon.png"/>
     <span class="section-title text-light" style="padding-left: 1rem"
-    >Galleria</span
+    >Partner</span
     >
   </div>
 
   <img
     class="btn-close cancel"
     type="button"
-    src="assets/cancel-icon-white.png"
+    src="../../../assets/cancel-icon-white.png"
     (click)="closeModal()"
   />
 </div>
-
 <div class="modal-body border-radius-popup gray-background">
+
 
   <div class="container text-center mt-2" style="margin-bottom: 3rem;">
     <!-- Apply DropZone Directive -->﻿
@@ -24,10 +24,6 @@
       </div>
       <div class="text-center">
         <span class="note needsclick">Puoi caricare fino ad un massimo di 15 file.</span>
-      </div>
-      <div *ngIf="allFiles.length==15">
-        <span class="note needsclick" style="color: red;">Hai superato il limite del super sayan che ha superato il limite</span>
-
       </div>
     </div>
     <div class="file-table">
@@ -39,20 +35,14 @@
             <th scope="col">Nome del file</th>
             <th scope="col">Dimensione</th>
             <th scope="col">Tipo</th>
-            <th scope="col">Azioni</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let file of allFiles; let i = index">
-            <!--<th scope="row">{{i+1}}</th> -->
-            <th scope="row">
-              <img [src]="file.link" />
-            </th>
-            <td>{{file.file.name}}</td>
-            <td>{{file.file.size}} Bytes</td>
-            <td>{{file.file.type}}</td>
-
-            <td><button class="btn btn-danger" (click)="removeFile(i)">Rimuovi</button></td>
+            <th scope="row">{{i+1}}</th>
+            <td>{{file.name}}</td>
+            <td>{{file.size}} Bytes</td>
+            <td>{{file.type}}</td>
           </tr>
           <tr class="text-center" *ngIf="allFiles.length === 0">
             <td colspan="4"><strong>Nessun file caricato</strong></td>
@@ -61,7 +51,6 @@
       </table>
     </div>
   </div>
-
 
   <div class="d-flex flex-row-reverse">
     <button type="button" class="btn text-light save-button" (click)="sendFiles()">

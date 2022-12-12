@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Social } from 'src/app/entities/social';
 import { StatoAzienda } from 'src/app/entities/stato-azienda';
-import {ProfileService} from "../../../services/profile.service";
+import {ProfileService} from "../../services/profile.service";
 
 @Component({
   selector: 'app-company-modal',

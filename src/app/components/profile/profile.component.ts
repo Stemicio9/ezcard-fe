@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import { Profile } from 'src/app/entities/profile';
-import { ProfileService } from 'src/app/services/profile.service';
-import { OwlOptions } from 'ngx-owl-carousel-o';
+import {Profile} from 'src/app/entities/profile';
+import {ProfileService} from 'src/app/services/profile.service';
+import {OwlOptions} from 'ngx-owl-carousel-o';
+import {socialMapLightTheme} from "../../social-map";
 
 @Component({
   selector: 'app-profile',
@@ -12,10 +13,8 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 export class ProfileComponent implements OnInit {
 
   username: string | null = '';
-  profile?: Profile;
-
-  // this variable represents the state of the profile object, if false there is an error on retrieving the profile
-  dataState = true;
+  profile: Profile = new Profile();
+  showProfile = false;
 
   slidesStore = [
     {
@@ -65,7 +64,7 @@ export class ProfileComponent implements OnInit {
       src: '/assets/black-logo.png',
       alt: 'alt',
       title: ''
-    },{
+    }, {
       id: 'id8',
       src: '/assets/black-logo.png',
       alt: 'alt',
@@ -106,30 +105,38 @@ export class ProfileComponent implements OnInit {
     rewind: false,
     autoplay: true,
     autoplayHoverPause: true,
-    autoplayTimeout:3000
+    autoplayTimeout: 3000
   }
 
   ezCardWebsiteLink = "https://www.ezcard.it";
 
-  constructor(private activatedRoute: ActivatedRoute, private profileService: ProfileService) { }
+  constructor(private activatedRoute: ActivatedRoute, private profileService: ProfileService) {
+  }
 
   ngOnInit(): void {
     this.username = this.activatedRoute.snapshot.paramMap.get("id");
-    /*if(this.username != null) {
-      this.profileService.getProfile(this.username).subscribe(
+    if (this.username != null) {
+      this.profileService.getProfileShown(this.username).subscribe(
         (data: any) => {
-          this.profile = data.body;
-          this.dataState = true;
+          this.profile = data;
+          this.showProfile = true;
         }, (error) => {
           console.log(error);
-          this.dataState = false
         });
-    } else {
-      this.dataState = false;
-    }*/
+    }
   }
 
 
+  goTo(value: string | undefined) {
+    if (value != undefined) {
+      window.open(value, "_blank");
+    }
+  }
 
-
+  formatSocial(value: string | undefined) {
+    if (value != undefined) {
+      return socialMapLightTheme[value];
+    }
+    return "";
+  }
 }

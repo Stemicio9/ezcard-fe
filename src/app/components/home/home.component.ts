@@ -1,15 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {ProfileModalComponent} from "../modal/profile-modal/profile-modal.component";
-import {ContactsModalComponent} from "../modal/contacts-modal/contacts-modal.component";
-import {SocialModalComponent} from "../modal/social-modal/social-modal.component";
-import {CompanyModalComponent} from "../modal/company-modal/company-modal.component";
-import {PresentationModalComponent} from '../modal/presentation-modal/presentation-modal.component';
-import {GalleryModalComponent} from '../modal/gallery-modal/gallery-modal.component';
-import {PartnerModalComponent} from '../modal/partner-modal/partner-modal.component';
+import {ProfileModalComponent} from "../../modal/profile-modal/profile-modal.component";
+import {ContactsModalComponent} from "../../modal/contacts-modal/contacts-modal.component";
+import {SocialModalComponent} from "../../modal/social-modal/social-modal.component";
+import {CompanyModalComponent} from "../../modal/company-modal/company-modal.component";
+import {PresentationModalComponent} from '../../modal/presentation-modal/presentation-modal.component';
+import {GalleryModalComponent} from '../../modal/gallery-modal/gallery-modal.component';
+import {PartnerModalComponent} from '../../modal/partner-modal/partner-modal.component';
 import {ProfileComponent} from '../profile/profile.component';
 import {ProfileDarkComponent} from '../profile-dark/profile-dark.component';
-import {ChangeImageModalComponent} from '../modal/change-image-modal/change-image-modal.component';
+import {ChangeImageModalComponent} from '../../modal/change-image-modal/change-image-modal.component';
 
 @Component({
   selector: 'app-home',

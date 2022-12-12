@@ -1,6 +1,6 @@
 <div class="modal-header" style="background-color: var(--black_ez)">
   <div>
-    <img class="icon-size" src="assets/company-white-rounded-icon.png" />
+    <img class="icon-size" src="../../../assets/company-white-rounded-icon.png" />
     <span class="section-title text-light" style="padding-left: 1rem"
       >Azienda</span
     >
@@ -9,7 +9,7 @@
   <img
     class="btn-close cancel"
     type="button"
-    src="assets/cancel-icon-white.png"
+    src="../../../assets/cancel-icon-white.png"
     (click)="closeModal()"
   />
 </div>
@@ -20,7 +20,7 @@
       <a ngbNavLink>
        {{ id.companyName }}
         <img
-          src="assets/cancel-icon.png"
+          src="../../../assets/cancel-icon.png"
           class="cancel-dark"
           (click)="close($event, id)"
         />
@@ -119,7 +119,7 @@
                   <div style="cursor: pointer;" (click)="remove(id,element)">
                     <img
                       style="margin-left: 0.5rem"
-                      src="assets/trash-icon.png"
+                      src="../../../assets/trash-icon.png"
                       class="cancel-input"
                     />
                   </div>
@@ -171,7 +171,7 @@
     </li>
     <div *ngIf="tabs.length < 3">
       <li class="nav-item">
-        <a class="nav-link" (click)="add($event)"><img class="add-dark" src="assets/plus-icon.png"></a>
+        <a class="nav-link" (click)="add($event)"><img class="add-dark" src="../../../assets/plus-icon.png"></a>
       </li>
     </div>
   </ul>

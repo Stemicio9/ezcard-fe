@@ -14,6 +14,7 @@ import {CompanyContainer} from "../entities/company-container";
 export class ProfileService {
 
   base_path = environment.base_url + 'protected/profile/';
+  public_base_path = environment.base_url + 'public/profile/';
 
   constructor(private httpClient: HttpClient, private storageService: StorageService) { }
 
@@ -50,7 +51,7 @@ export class ProfileService {
   }
 
   updateCompany(companies: CompanyContainer[]){
-    return this.httpClient.post(this.base_path + 'update/company', companies, {headers: this.buildHeaders()});
+    return this.httpClient.post(this.base_path + 'update/companies', companies, {headers: this.buildHeaders()});
   }
 
   updatePresentation(presentation: any){
@@ -78,7 +79,7 @@ export class ProfileService {
   }
 
   getCompany(){
-    return this.httpClient.get(this.base_path + 'get/company', {headers: this.buildHeaders()});
+    return this.httpClient.get(this.base_path + 'get/companies', {headers: this.buildHeaders()});
   }
 
   getPresentation(){
@@ -91,6 +92,10 @@ export class ProfileService {
 
   getPartner(){
     return this.httpClient.get(this.base_path + 'get/pertner', {headers: this.buildHeaders()});
+  }
+
+  getProfileShown(id: string){
+    return this.httpClient.get(this.public_base_path + 'get/profile-shown/'+ id, {headers: this.buildHeaders()});
   }
 
 }

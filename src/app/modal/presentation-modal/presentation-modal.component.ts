@@ -1,6 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import {ProfileService} from "../../../services/profile.service";
+import {ProfileService} from "../../services/profile.service";
 
 @Component({
   selector: 'app-presentation-modal',

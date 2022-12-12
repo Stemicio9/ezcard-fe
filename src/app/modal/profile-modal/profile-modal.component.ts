@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
-import {ProfileService} from "../../../services/profile.service";
-import {ProfileContainer} from "../../../entities/profile-container";
+import {ProfileService} from "../../services/profile.service";
+import {ProfileContainer} from "../../entities/profile-container";
 
 @Component({
   selector: 'app-profile-modal',

@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import {ProfileService} from "../../../services/profile.service";
-import {MediaContainer} from "../../../entities/media-container";
-import {UtilityService} from "../../../services/utility.service";
+import {ProfileService} from "../../services/profile.service";
+import {MediaContainer} from "../../entities/media-container";
+import {UtilityService} from "../../services/utility.service";
 import {DomSanitizer} from "@angular/platform-browser";
 
 @Component({
