@@ -1,4 +1,23 @@
-<div style="height: 100vh">
+<div  *ngIf="loading" class="loading-container justify-content-center align-items-center">
+  <div class="spinner-border spinner-style" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+
+<!-- the application -->
+<div class="site-container">
+  <div class="sticky-top">
+    <app-header
+      [showHeader]="this.showHeader"
+      [showHomeIcon]="this.showHomeIcon"
+      [pageTitle]="this.pageTitle"></app-header>
+  </div>
+  <div class="site-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<!--<div style="height: 100vh">
 
   <div class="sticky-top">
       <app-header
@@ -11,4 +30,4 @@
   </div>
 
 
-</div>
+</div>-->

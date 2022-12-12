@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import {LoadingService} from "./services/loading.service";
+import {delay} from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -12,16 +14,30 @@ export class AppComponent implements OnInit {
   showHeader = false;
   showHomeIcon = false;
   pageTitle = '';
+  loading: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private _loading: LoadingService) {}
 
   ngOnInit(): void {
+    this.listenToLoading();
     this.router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
         this.setupHeader(val);
         this.setupPageTitle();
       }
     });
+  }
+
+  /**
+   * Listen to the loadingSub property in the LoadingService class. This drives the
+   * display of the loading spinner.
+   */
+  listenToLoading(): void {
+    this._loading.loadingSub
+      .pipe(delay(0)) // This prevents a ExpressionChangedAfterItHasBeenCheckedError for subsequent requests
+      .subscribe((loading) => {
+        this.loading = loading;
+      });
   }
 
   setupHeader(val: any) {

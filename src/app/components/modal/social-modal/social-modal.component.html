@@ -28,10 +28,10 @@
 
           <input
             class="form-control"
-            id="linkedin"
-            name="linkedin"
+            [name]="calculateNameAttribute(element,i)"
             style="border-radius: 0.4rem"
             [placeholder]="element.placeholder"
+            [(ngModel)]="element.name"
           />
 
           <div style="cursor: pointer" (click)="remove(element)">
@@ -62,7 +62,7 @@
           Aggiungi social
         </button>
         <div ngbDropdownMenu>
-          <div *ngFor="let social of totalSocial; index as i">
+          <div *ngFor="let social of totalSocial">
             <button
               class="dropdown-background dropdown-items"
               ngbDropdownItem
@@ -74,7 +74,7 @@
                 height="20"
                 style="margin-right: 0.5rem"
               />
-              {{ social.name }}
+              {{ social.placeholder }}
             </button>
           </div>
         </div>
@@ -83,7 +83,7 @@
 
     <div class="p-2">
       <button type="button" class="btn text-light save-button">
-        <span class="text-light save-label section-title">SALVA</span>
+        <span class="text-light save-label section-title" (click)="closeModal()">SALVA</span>
       </button>
     </div>
   </div>

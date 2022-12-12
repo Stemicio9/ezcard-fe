@@ -29,6 +29,7 @@ import { ProfileDarkComponent } from './components/profile-dark/profile-dark.com
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { ChangeImageModalComponent } from './components/modal/change-image-modal/change-image-modal.component';
 import {TokenInterceptor} from "./interceptors/token.interceptor";
+import {HttpRequestInterceptor} from "./interceptors/http-request.interceptor";
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import {TokenInterceptor} from "./interceptors/token.interceptor";
   ],
   providers: [
     NgbDateParserFormatterExtProvider,
-    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptor, multi: true }
   ],
   bootstrap: [AppComponent],
 })

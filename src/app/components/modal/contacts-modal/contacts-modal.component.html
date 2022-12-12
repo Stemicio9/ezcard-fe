@@ -17,7 +17,7 @@
 <div class="modal-body border-radius-popup gray-background">
   <form>
     <div class="row">
-      <div class="col-md-12" *ngFor="let element of totalContact">
+      <div class="col-md-12" *ngFor="let element of totalContact; index as i">
         <div class="input-group mt-md-4 mt-3">
           <img
             style="margin-right: 0.5rem"
@@ -27,10 +27,10 @@
 
           <input
             class="form-control"
-
             style="border-radius: 0.4rem"
-
+            [name]="calculateNameAttribute(element,i)"
             [placeholder]="element.placeholder"
+            [(ngModel)]="element.name"
           />
 
           <div style="cursor: pointer;" (click)="remove(element)">
@@ -69,7 +69,7 @@
                   height="20"
                   style="margin-right: 0.5rem"
                 />
-                {{ c.name }}
+                {{ c.placeholder }}
               </button>
             </div>
           </div>
@@ -78,7 +78,7 @@
 
       <div class="p-2 ">
         <button type="button" class="btn text-light save-button-contact">
-          <span class="text-light save-label-contact section-title">SALVA</span>
+          <span class="text-light save-label-contact section-title" (click)="closeModal()">SALVA</span>
         </button>
       </div>
     </div>

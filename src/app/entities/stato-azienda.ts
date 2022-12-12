@@ -4,12 +4,12 @@ export class StatoAzienda {
 
   dropdownSocial?: Social[];
   userSocial?: Social[];
-  name?: string;
-  pIva?: string;
+  companyName?: string;
+  vatNumber?: string;
   address?: string;
-  phone?: string;
+  phoneNumber?: string;
   email?: string;
-  sdiCode?: string;
+  codeSDI?: string;
   pec?: string;
 
 
@@ -18,12 +18,12 @@ export class StatoAzienda {
   constructor(
     dropdownSocial?: Social[],
     userSocial?: Social[],
-    name?: string,
-    pIva?: string,
+    companyName?: string,
+    vatNumber?: string,
     address?: string,
-    phone?: string,
+    phoneNumber?: string,
     email?: string,
-    sdiCode?: string,
+    codeSDI?: string,
     pec?: string,
     )
 
@@ -31,12 +31,12 @@ export class StatoAzienda {
     {
     this.dropdownSocial = dropdownSocial;
     this.userSocial = userSocial;
-    this.name = name;
-    this.pIva = pIva;
+    this.companyName = companyName;
+    this.vatNumber = vatNumber;
     this.address = address;
-    this.phone = phone;
+    this.phoneNumber = phoneNumber;
     this.email = email;
-    this.sdiCode = sdiCode;
+    this.codeSDI = codeSDI;
     this.pec = pec;
 
   }

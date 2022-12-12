@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Social } from 'src/app/entities/social';
 import { StatoAzienda } from 'src/app/entities/stato-azienda';
+import {ProfileService} from "../../../services/profile.service";
 
 @Component({
   selector: 'app-company-modal',
@@ -29,10 +30,15 @@ export class CompanyModalComponent implements OnInit {
    }
 
 
-  constructor(private modalService: NgbModal) {}
+  constructor(private modalService: NgbModal, private profileService: ProfileService) {}
 
   ngOnInit(): void {
 
+    this.profileService.getCompany().subscribe((result: any) => {
+      // mi rifiuto di fare la trasformazione dei dati, sono troppo disallineati
+    }, error => {
+      console.log(error);
+    });
 
     // @TODO if azienda tabs is empty after rest call to backend
     // Insert an empty default azienda

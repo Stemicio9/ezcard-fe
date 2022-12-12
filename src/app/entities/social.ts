@@ -4,9 +4,9 @@ export class Social {
   iconPath?: string;
   placeholder?: string;
 
-  constructor(n: string, i: string, p: string){
-    this.name = n;
-    this.iconPath = i;
-    this.placeholder = p;
+  constructor(name: string, iconPath: string, placeHolder: string){
+    this.name = name;
+    this.iconPath = iconPath;
+    this.placeholder = placeHolder;
   }
 }

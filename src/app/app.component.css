@@ -1,0 +1,33 @@
+.loading-container {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 9999;
+}
+
+.site-container {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.site-header {
+  height: 64px;
+}
+
+.site-content {
+  height: calc(100vh - 65px);
+  padding: 0 15px;
+  overflow: auto;
+}
+
+.spinner-style {
+  width: 2em;
+  height: 2em;
+  font-size: 48px;
+  color: var(--green_ez);
+}
