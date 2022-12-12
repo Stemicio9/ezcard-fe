@@ -1,8 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Social } from 'src/app/entities/social';
-import { StatoAzienda } from 'src/app/entities/stato-azienda';
 import {ProfileService} from "../../services/profile.service";
+import {CompanyContainer} from "../../entities/company-container";
+import {socialMapLightTheme} from "../../utils/social-map";
 
 @Component({
   selector: 'app-company-modal',
@@ -11,9 +12,10 @@ import {ProfileService} from "../../services/profile.service";
 })
 export class CompanyModalComponent implements OnInit {
   @Input() public data: any;
-  tabs: StatoAzienda[] = [];
+  tabs: CompanyContainer[] = [];
   active: any;
 
+  socialDropdoun: Social[] = [];
 
   defaultSocialDropdown(){
     return [
@@ -33,23 +35,27 @@ export class CompanyModalComponent implements OnInit {
   constructor(private modalService: NgbModal, private profileService: ProfileService) {}
 
   ngOnInit(): void {
-
+    this.socialDropdoun = this.defaultSocialDropdown();
     this.profileService.getCompany().subscribe((result: any) => {
       // mi rifiuto di fare la trasformazione dei dati, sono troppo disallineati
+      this.tabs = result;
+      if(this.tabs == undefined || this.tabs.length == 0){
+        this.tabs = [];
+        this.addAziendaDefault();
+      }
+      this.active = this.tabs[0];
     }, error => {
       console.log(error);
+      if(this.tabs == undefined || this.tabs.length == 0){
+        this.tabs = [];
+        this.addAziendaDefault();
+      }
     });
-
-    // @TODO if azienda tabs is empty after rest call to backend
-    // Insert an empty default azienda
-    if(this.tabs.length == 0){
-      this.addAziendaDefault();
-    }
   }
 
 
 
-  close(event: MouseEvent, toRemove: StatoAzienda) {
+  close(event: MouseEvent, toRemove: CompanyContainer) {
     var number = this.tabs.indexOf(toRemove);
     this.tabs.splice(number,1);
     this.active = this.tabs[0];
@@ -64,9 +70,12 @@ export class CompanyModalComponent implements OnInit {
   }
 
   addAziendaDefault(){
-    this.tabs.push(new StatoAzienda(
-      this.defaultSocialDropdown(),[],"Azienda"
+
+    this.tabs.push(new CompanyContainer(
+     [], "Azienda"
     ));
+    this.active = this.tabs[0];
+    console.log(this.tabs);
   }
 
 
@@ -75,17 +84,36 @@ export class CompanyModalComponent implements OnInit {
     this.modalService.dismissAll();
   }
 
-  addSocial(azienda: StatoAzienda, contact: any) {
-    azienda.userSocial?.push(contact);
-    var index = azienda?.dropdownSocial?.indexOf(contact);
-    azienda.dropdownSocial?.splice(index!, 1);
+  addSocial(azienda: CompanyContainer, contact: any) {
+    azienda.socials.push(contact);
   }
 
-  remove(azienda: StatoAzienda, element: any) {
-    var index = azienda.userSocial?.indexOf(element);
-    azienda.userSocial?.splice(index!, 1);
-    azienda.dropdownSocial?.push(element);
+  remove(azienda: CompanyContainer, element: any) {
+    var index = azienda.socials?.indexOf(element);
+    azienda.socials?.splice(index!, 1);
   }
 
+  formatSocialIcon(value: string | undefined) {
+    if (value != undefined) {
+      return socialMapLightTheme[value];
+    }
+    return "";
+  }
+
+  computeInputName(value: string | undefined, index: number){
+    var result = "";
+    result += value ?? "";
+    result += index;
+    return result;
+  }
+
+  save(){
+     this.profileService.updateCompany(this.tabs).subscribe((body: any) => {
+        this.closeModal();
+      }, error => {
+        console.log(error);
+        console.log("errore nell'invio del profilo");
+      });
+  }
 
 }

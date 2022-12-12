@@ -16,7 +16,7 @@
 
 <div class="modal-body border-radius-popup gray-background">
   <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
-    <li *ngFor="let id of tabs" [ngbNavItem]="id">
+    <li *ngFor="let id of tabs; index as i" [ngbNavItem]="id">
       <a ngbNavLink>
        {{ id.companyName }}
         <img
@@ -37,16 +37,21 @@
                 <input
                 style="border-radius: 0.4rem;"
                   placeholder="Nome Azienda"
-                  id="nomeAzienda"
                   class="form-control"
-
+                  [name]="computeInputName(id.companyName, i)"
+                  [(ngModel)]="id.companyName"
                 />
               </div>
             </div>
 
             <div class="col-md-6">
               <div class="input-group mt-md-4 mt-3">
-                <input style="border-radius: 0.4rem;" placeholder="P.Iva" id="pIva" class="form-control"/>
+                <input style="border-radius: 0.4rem;"
+                       placeholder="P.Iva"
+                       class="form-control"
+                       [name]="computeInputName(id.vatNumber, i)"
+                       [(ngModel)]="id.vatNumber"
+                />
               </div>
             </div>
           </div>
@@ -57,15 +62,21 @@
                 <input
                 style="border-radius: 0.4rem;"
                   placeholder="Indirizzo"
-                  id="address"
                   class="form-control"
+                  [name]="computeInputName(id.address, i)"
+                  [(ngModel)]="id.address"
                 />
               </div>
             </div>
 
             <div class="col-md-6">
               <div class="input-group mt-md-4 mt-3">
-                <input style="border-radius: 0.4rem;" placeholder="Telefono" id="phone" class="form-control" />
+                <input style="border-radius: 0.4rem;"
+                       placeholder="Telefono"
+                       class="form-control"
+                       [name]="computeInputName(id.phoneNumber, i)"
+                       [(ngModel)]="id.phoneNumber"
+                />
               </div>
             </div>
           </div>
@@ -73,7 +84,12 @@
           <div class="row">
             <div class="col-md-6">
               <div class="input-group mt-md-4 mt-3">
-                <input style="border-radius: 0.4rem;" placeholder="Email" id="email" class="form-control" />
+                <input style="border-radius: 0.4rem;"
+                       placeholder="Email"
+                       class="form-control"
+                       [name]="computeInputName(id.email, i)"
+                       [(ngModel)]="id.email"
+                />
               </div>
             </div>
 
@@ -82,8 +98,9 @@
                 <input
                 style="border-radius: 0.4rem;"
                   placeholder="Codice SDI"
-                  id="sdiCode"
                   class="form-control"
+                  [name]="computeInputName(id.codeSDI, i)"
+                  [(ngModel)]="id.codeSDI"
                 />
               </div>
             </div>
@@ -92,7 +109,12 @@
           <div class="row">
             <div class="col-md-6">
               <div class="input-group mb-4 mt-md-4 mt-3">
-                <input style="border-radius: 0.4rem;" placeholder="Pec" id="pec" class="form-control" />
+                <input style="border-radius: 0.4rem;"
+                       placeholder="Pec"
+                       class="form-control"
+                       [name]="computeInputName(id.pec, i)"
+                       [(ngModel)]="id.pec"
+                />
               </div>
             </div>
           </div>
@@ -100,20 +122,21 @@
 
           <span> Social azienda</span>
             <div class="row">
-              <div class="col-md-12" *ngFor="let element of id.userSocial">
+              <div class="col-md-12" *ngFor="let element of id.socials; index as i">
 
                 <div class="input-group mt-md-4 mt-3">
                   <img
                     style="margin-right: 0.5rem"
                     class="icon-size"
-                    [src]="element.iconPath"
+                    [src]="formatSocialIcon(element.name)"
                     />
 
                   <input
                     class="form-control"
                     style="border-radius: 0.4rem"
-                    [placeholder]="element.placeholder"
-
+                    [name]="computeInputName(element.value, i)"
+                    [placeholder]="element.name"
+                    [(ngModel)]="element.value"
                   />
 
                   <div style="cursor: pointer;" (click)="remove(id,element)">
@@ -137,16 +160,16 @@
                   style="border-radius: 24px"
                   type="button"
                   class="btn add-social-button"
-                  [disabled]="id.dropdownSocial?.length == 0"
+                  [disabled]="socialDropdoun.length == 0"
                   ngbDropdownToggle
                 >
                   Aggiungi social
                 </button>
                 <div ngbDropdownMenu>
-                  <div *ngFor="let social of id.dropdownSocial; index as i">
+                  <div *ngFor="let social of socialDropdoun; index as i">
                     <button class="dropdown-background dropdown-items" ngbDropdownItem (click)="addSocial(id,social)">
                       <img
-                        src="{{ social.iconPath }}"
+                        src="{{ formatSocialIcon(social.name) }}"
                         width="20"
                         height="20"
                         style="margin-right: 0.5rem"
@@ -158,7 +181,7 @@
               </div>
             </div>
             <div class="p-2">
-              <button type="button" class="btn text-light save-button">
+              <button type="button" class="btn text-light save-button" (click)="save()">
                 <span class="text-light save-label section-title">SALVA</span>
               </button>
             </div>
