@@ -52,7 +52,7 @@
             <a [href]=s.value target="_blank">
               <img
                 class="icon-size"
-                [src]=formatSocial(s.name)
+                [src]=formatSocialIcon(s.name)
               />
             </a>
           </div>
@@ -61,26 +61,17 @@
         <span class="card-subtitle">CONTATTI</span>
 
         <div class="card card-contact mt-3 mb-5">
-          <span>
-            <img
-              class="icon-card"
-              src="assets/phone-dark-icon.png"
-            />+39123456789</span
-          >
-          <hr/>
-          <span
-          ><img
-            class="icon-card"
-            src="assets/email-dark-icon.png"
-          />mariorossi@mail.com</span
-          >
-          <hr/>
-          <span
-          ><img
-            class="icon-card"
-            src="assets/internet-dark-icon.png"
-          />www.mariorossi.com</span
-          >
+          <div class="no-divider" *ngFor="let c of profile.contacts; index as j">
+            <a [href]="formatHref(c)">
+                <span>
+                  <img
+                    class="icon-card"
+                    [src]="formatContactIcon(c.name)"
+                  />{{c.value}}
+                </span>
+            </a>
+            <hr/>
+          </div>
         </div>
 
         <span class="card-subtitle">AZIENDA</span>
@@ -343,7 +334,7 @@
               <a [href]=s.value target="_blank">
                 <img
                   class="icon-size"
-                  [src]=formatSocial(s.name)
+                  [src]=formatSocialIcon(s.name)
                 />
               </a>
             </div>
@@ -352,26 +343,17 @@
           <span class="card-subtitle">CONTATTI</span>
 
           <div class="card card-contact mt-3 mb-5">
-            <span>
-              <img
-                class="icon-card"
-                src="assets/phone-dark-icon.png"
-              />+39123456789</span
-            >
-            <hr/>
-            <span
-            ><img
-              class="icon-card"
-              src="assets/email-dark-icon.png"
-            />mariorossi@mail.com</span
-            >
-            <hr/>
-            <span
-            ><img
-              class="icon-card"
-              src="assets/internet-dark-icon.png"
-            />www.mariorossi.com</span
-            >
+            <div class="no-divider" *ngFor="let c of profile.contacts; index as j">
+              <a [href]="formatHref(c)">
+                <span>
+                  <img
+                    class="icon-card"
+                    [src]="formatContactIcon(c.name)"
+                  />{{c.value}}
+                </span>
+              </a>
+              <hr/>
+            </div>
           </div>
 
           <span class="card-subtitle">AZIENDA</span>

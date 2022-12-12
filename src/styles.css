@@ -48,3 +48,8 @@ html, body {
   background-color: #252525;
 }
 
+a {
+  color: #212529;
+  text-decoration: none;
+}
+

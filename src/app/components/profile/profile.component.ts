@@ -3,7 +3,9 @@ import {ActivatedRoute} from "@angular/router";
 import {Profile} from 'src/app/entities/profile';
 import {ProfileService} from 'src/app/services/profile.service';
 import {OwlOptions} from 'ngx-owl-carousel-o';
-import {socialMapLightTheme} from "../../social-map";
+import {socialMapLightTheme} from "../../utils/social-map";
+import {contactMapLightTheme} from "../../utils/contact-map";
+import {ContactContainer} from "../../entities/contact-container";
 
 @Component({
   selector: 'app-profile',
@@ -127,16 +129,31 @@ export class ProfileComponent implements OnInit {
   }
 
 
-  goTo(value: string | undefined) {
-    if (value != undefined) {
-      window.open(value, "_blank");
-    }
-  }
-
-  formatSocial(value: string | undefined) {
+  formatSocialIcon(value: string | undefined) {
     if (value != undefined) {
       return socialMapLightTheme[value];
     }
     return "";
+  }
+
+  formatContactIcon(value: string | undefined) {
+    if (value != undefined) {
+      return contactMapLightTheme[value];
+    }
+    return "";
+  }
+
+  formatHref(c: ContactContainer) {
+    switch (c.name) {
+      case "Telefono":
+        return "tel:" + c.value;
+      case "Email":
+        return "mailto:" + c.value;
+      case "Sito web":
+        return c.value;
+      default:
+        return "";
+    }
+
   }
 }
