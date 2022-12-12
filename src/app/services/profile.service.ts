@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpRequest} from "@angular/common/http";
 import {Profile} from "../entities/profile";
 import {environment} from "../../environments/environment";
 import {StorageService} from "./storage.service";
@@ -58,8 +58,18 @@ export class ProfileService {
     return this.httpClient.post(this.base_path + 'update/presentation', presentation);
   }
 
-  updateGallery(gallery: any){
-    return this.httpClient.post(this.base_path + 'update/gallery', gallery);
+  updateGallery(fileList: File[]){
+    const formData = new FormData();
+    for (let i = 0; i < fileList.length; i++) {
+      formData.append('files', fileList[i]);
+    }
+
+    const req = new HttpRequest('POST', environment.base_url + 'protected/profile/update/gallery', formData, {
+      reportProgress: true,
+      responseType: 'json'
+    });
+
+    return this.httpClient.request(req);
   }
 
   updatePartner(partner: any){
@@ -91,7 +101,7 @@ export class ProfileService {
   }
 
   getPartner(){
-    return this.httpClient.get(this.base_path + 'get/pertner', {headers: this.buildHeaders()});
+    return this.httpClient.get(this.base_path + 'get/partner', {headers: this.buildHeaders()});
   }
 
   getProfileShown(id: string){

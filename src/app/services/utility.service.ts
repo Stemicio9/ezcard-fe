@@ -11,12 +11,8 @@ export class UtilityService {
 
   constructor(private httpClient: HttpClient, private storageService: StorageService) { }
 
-
-
-
-  downloadFileFromUrl(url: string){
-    return this.httpClient.post(environment.base_url + "protected/profile/get/file" ,{"fileLink" : url}, {responseType: 'arraybuffer'});
+  downloadFileFromUrl(url: string) {
+    return this.httpClient.post(environment.base_url + "protected/profile/get/file", {"link": url}, {responseType: 'arraybuffer'});
   }
-
 
 }

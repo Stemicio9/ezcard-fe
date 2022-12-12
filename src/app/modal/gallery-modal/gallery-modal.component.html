@@ -17,7 +17,7 @@
 <div class="modal-body border-radius-popup gray-background">
 
   <div class="container text-center mt-2" style="margin-bottom: 3rem;">
-    <!-- Apply DropZone Directive -->﻿
+    <!-- Apply DropZone Directive -->
     <div type="button" class="dropzone" DropZone (onFileDropped)="droppedFiles($event)">
       <div class="text-center">
         <span class="note needsclick">Trascina qui i tuoi file.</span>
@@ -43,14 +43,14 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let file of allFiles; let i = index">
+          <tr *ngFor="let f of allFiles; let i = index">
             <!--<th scope="row">{{i+1}}</th> -->
             <th scope="row">
-              <img [src]="file.link" />
+              <img [src]="f.link" width="20" height="20"/>
             </th>
-            <td>{{file.file.name}}</td>
-            <td>{{file.file.size}} Bytes</td>
-            <td>{{file.file.type}}</td>
+            <td>{{f.name}}</td>
+            <td>{{f.size}} Bytes</td>
+            <td>{{f.type}}</td>
 
             <td><button class="btn btn-danger" (click)="removeFile(i)">Rimuovi</button></td>
           </tr>

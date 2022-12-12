@@ -19,7 +19,6 @@ export class GalleryModalComponent implements OnInit {
   mediaContainerList: MediaContainer[] = [];
 
 
-
   constructor(private modalService: NgbModal,
               private profileService: ProfileService,
               private utilityService: UtilityService,
@@ -30,8 +29,8 @@ export class GalleryModalComponent implements OnInit {
     this.profileService.getGallery().subscribe(
        (body: any) => {
         this.mediaContainerList = body;
-        for (var element of this.mediaContainerList) {
-          this.downloadAndInsert(element.fileLink!, element.fileName!, element.fileType!);
+        for (const element of this.mediaContainerList) {
+          this.downloadAndInsert(element);
         }
       },
       (error: any) => {
@@ -41,41 +40,28 @@ export class GalleryModalComponent implements OnInit {
     );
   }
 
-  downloadAndInsert(fileLink: string, fileName: string, fileType: string){
-    this.utilityService.downloadFileFromUrl(fileLink).subscribe(result => {
-      console.log("DIMENSIONE DEL FILE " + fileName);
-      console.log(result.byteLength);
-      var file = new File([result], fileName, {type: fileType});
+  downloadAndInsert(element: any){
+    this.utilityService.downloadFileFromUrl(element.link).subscribe(result => {
+      console.log("DIMENSIONE DEL FILE " + element.name, result.byteLength);
+      const file = new File([result], element.name, {type: element.type});
       this.createImageFromBlob(result, file);
     });
   }
 
   createImageFromBlob(image: ArrayBuffer, file: File) {
     var imageType = file.name.includes("png") ? "png" : "jpeg";
-    var link = this.sanitize('data:image/' + imageType + ';charset=utf-8;base64, ' + this._arrayBufferToBase64(image));
-    this.allFiles.push({file: file, link: link});
+    var link = this.sanitize('data:image/' + imageType + ';base64, ' + this._arrayBufferToBase64(image));
+    this.allFiles.push({name:file.name, type:file.type, size:file.size, link:link});
+    console.log(this.allFiles);
   }
 
   _arrayBufferToBase64(data:ArrayBuffer){
     return btoa(String.fromCharCode(...new Uint8Array(data)))
   }
 
-
-  // old version
-  /*_arrayBufferToBase64( buffer : ArrayBuffer ) {
-    var binary = '';
-    var bytes = new Uint8Array( buffer );
-    var len = bytes.byteLength;
-    for (var i = 0; i < len; i++) {
-      binary += String.fromCharCode( bytes[ i ] );
-    }
-    return window.btoa( binary );
-  } */
-
   sanitize( url:string ) {
     return this.sanitizer.bypassSecurityTrustUrl(url);
   }
-
 
   removeFile(i: number){
     this.allFiles.splice(i, 1);
@@ -104,6 +90,7 @@ export class GalleryModalComponent implements OnInit {
       this.allFiles.push(file);
       }
     }
+    console.log(this.allFiles);
 
     if(this.filesNotInCharge.length > 0){
       // Dobbiamo mostrare errore con messaggio e files non caricati

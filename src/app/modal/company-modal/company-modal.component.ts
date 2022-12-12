@@ -70,15 +70,11 @@ export class CompanyModalComponent implements OnInit {
   }
 
   addAziendaDefault(){
-
     this.tabs.push(new CompanyContainer(
      [], "Azienda"
     ));
     this.active = this.tabs[0];
-    console.log(this.tabs);
   }
-
-
 
   closeModal() {
     this.modalService.dismissAll();
