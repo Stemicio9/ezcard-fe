@@ -54,10 +54,6 @@ export class ProfileService {
     return this.httpClient.post(this.base_path + 'update/companies', companies, {headers: this.buildHeaders()});
   }
 
-  updatePresentation(presentation: any){
-    return this.httpClient.post(this.base_path + 'update/presentation', presentation);
-  }
-
   updateGallery(fileList: any[]){
     const formData = new FormData();
     for (let i = 0; i < fileList.length; i++) {
@@ -72,9 +68,34 @@ export class ProfileService {
     return this.httpClient.request(req);
   }
 
-  updatePartner(partner: any){
-    return this.httpClient.post(this.base_path + 'update/partner', partner);
+  updatePartner(fileList: any[]){
+    const formData = new FormData();
+    for (let i = 0; i < fileList.length; i++) {
+      formData.append('files', fileList[i].file);
+    }
+
+    const req = new HttpRequest('POST', environment.base_url + 'protected/profile/update/partner', formData, {
+      reportProgress: true,
+      responseType: 'json'
+    });
+
+    return this.httpClient.request(req);
   }
+
+  updatePresentation(fileList: any[]){
+    const formData = new FormData();
+    for (let i = 0; i < fileList.length; i++) {
+      formData.append('files', fileList[i].file);
+    }
+
+    const req = new HttpRequest('POST', environment.base_url + 'protected/profile/update/presentation', formData, {
+      reportProgress: true,
+      responseType: 'json'
+    });
+
+    return this.httpClient.request(req);
+  }
+
 
   getProfile(){
     return this.httpClient.get(this.base_path + 'get/profile', {headers: this.buildHeaders()});

@@ -17,6 +17,7 @@ export class GalleryModalComponent implements OnInit {
   allFiles: any[] = [];
   filesNotInCharge: File[] = [];
   mediaContainerList: MediaContainer[] = [];
+  threshold = 14;
 
 
   constructor(private modalService: NgbModal,
@@ -42,6 +43,7 @@ export class GalleryModalComponent implements OnInit {
   }
 
   downloadAndInsert(element: any) {
+    console.log(element.link);
     this.utilityService.downloadFileFromUrl(element.link).subscribe(result => {
       console.log("DIMENSIONE DEL FILE " + element.name, result.byteLength);
       const file = new File([result], element.name, {type: element.type});
@@ -89,7 +91,7 @@ export class GalleryModalComponent implements OnInit {
 
     for (let i = 0; i < filesAmount; i++) {
       const file = droppedFiles[i];
-      if (this.allFiles.length > 14) {
+      if (this.allFiles.length > this.threshold) {
         this.filesNotInCharge.push(file);
       } else {
         file.arrayBuffer().then((buffer: ArrayBuffer) => {

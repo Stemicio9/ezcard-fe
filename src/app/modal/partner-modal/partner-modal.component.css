@@ -1,29 +1,29 @@
 .cancel {
-    width: 18px;
-    height: 18px;
-  }
+  width: 18px;
+  height: 18px;
+}
 
-  span {
-    color: var(--black_ez);
-  }
+span {
+  color: var(--black_ez);
+}
 
-  .section-title {
-    font-size: 1rem;
-    font-weight: 700;
-  }
-
-
-
-  .border-radius-popup {
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-  }
+.section-title {
+  font-size: 1rem;
+  font-weight: 700;
+}
 
 
-  .dropzone{
-    background-color: rgb(206, 206, 206);
-    padding: 70px 50px;
-  }
+
+.border-radius-popup {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+
+.dropzone{
+  background-color: rgb(206, 206, 206);
+  padding: 70px 50px;
+}
 .save-label {
   padding-left: 1rem;
   padding-right: 1rem;
