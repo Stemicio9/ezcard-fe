@@ -58,10 +58,10 @@ export class ProfileService {
     return this.httpClient.post(this.base_path + 'update/presentation', presentation);
   }
 
-  updateGallery(fileList: File[]){
+  updateGallery(fileList: any[]){
     const formData = new FormData();
     for (let i = 0; i < fileList.length; i++) {
-      formData.append('files', fileList[i]);
+      formData.append('files', fileList[i].file);
     }
 
     const req = new HttpRequest('POST', environment.base_url + 'protected/profile/update/gallery', formData, {
