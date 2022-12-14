@@ -1,0 +1,11 @@
+<div class="mb-3">
+  <span class="card-subtitle">GALLERIA</span>
+</div>
+
+<ngb-carousel #ngcarousel>
+  <ng-template *ngFor="let g of allFiles; index as i" ngbSlide id={{i}}>
+    <div>
+      <img [src]="g.link" alt={{i}} style="max-height: 15em; object-fit: cover"/>
+    </div>
+  </ng-template>
+</ngb-carousel>

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 import {LoadingService} from "./services/loading.service";
 import {delay} from "rxjs";
 

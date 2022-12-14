@@ -1,5 +1,5 @@
-import { ViewportScroller } from '@angular/common';
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import {ViewportScroller} from '@angular/common';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-settings',

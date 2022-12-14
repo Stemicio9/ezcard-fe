@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { GalleryModalComponent } from './gallery-modal.component';
+import {GalleryModalComponent} from './gallery-modal.component';
 
 describe('GalleryModalComponent', () => {
   let component: GalleryModalComponent;

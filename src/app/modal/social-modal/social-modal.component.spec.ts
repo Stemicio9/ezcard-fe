@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { SocialModalComponent } from './social-modal.component';
+import {SocialModalComponent} from './social-modal.component';
 
 describe('SocialModalComponent', () => {
   let component: SocialModalComponent;

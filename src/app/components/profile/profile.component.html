@@ -27,7 +27,7 @@
             <img class="icon-size" src="assets/qrcode-dark-rounded-icon.png"/>
           </div>
         </div>
-        <h5 class="card-title mt-2"><b>{{profile.profileContainer.firstName + profile.profileContainer.lastName}}</b>
+        <h5 class="card-title mt-2"><b>{{profile.profileContainer.firstName + " " + profile.profileContainer.lastName}}</b>
         </h5>
         <span class="card-subtitle">{{profile.profileContainer.role}}</span>
 
@@ -58,185 +58,35 @@
           </div>
         </div>
 
-        <span class="card-subtitle">CONTATTI</span>
+        <div *ngIf="this.profile.contacts.length > 0">
+          <span class="card-subtitle">CONTATTI</span>
 
-        <div class="card card-contact mt-3 mb-5">
-          <div class="no-divider" *ngFor="let c of profile.contacts; index as j">
-            <a [href]="formatHref(c)">
+          <div class="card card-contact mt-3 mb-5">
+            <div class="no-divider" *ngFor="let c of profile.contacts; index as j">
+              <a [href]="formatHref(c)">
                 <span>
                   <img
                     class="icon-card"
                     [src]="formatContactIcon(c.name)"
                   />{{c.value}}
                 </span>
-            </a>
-            <hr/>
-          </div>
-        </div>
-
-        <span class="card-subtitle">AZIENDA</span>
-
-        <div class="card card-contact mt-3 mb-5">
-          <span>
-            <img
-              class="icon-card"
-              src="assets/company-dark-icon.png"
-            />Azienda</span
-          >
-          <hr/>
-          <span
-          ><img
-            class="icon-card"
-            src="assets/piva-dark-icon.png"
-          />123456789</span
-          >
-          <hr/>
-          <span
-          ><img class="icon-card" src="assets/position-dark-icon.png"/>Via
-            Roma, 15</span
-          >
-          <hr/>
-          <span
-          ><img class="icon-card" src="assets/phone-dark-icon.png"/>+39 123
-            456 7891</span
-          >
-          <hr/>
-          <span
-          ><img
-            class="icon-card"
-            src="assets/email-dark-icon.png"
-          />email@email.com</span
-          >
-          <hr/>
-          <span
-          ><img
-            class="icon-card"
-            src="assets/internet-dark-icon.png"
-          />www.ezcard.it</span
-          >
-          <hr/>
-          <span
-          ><img
-            class="icon-card"
-            src="assets/sdicode-dark-icon.png"
-          />XXXXX</span
-          >
-          <hr/>
-          <span
-          ><img
-            class="icon-card"
-            src="assets/pec-dark-icon.png"
-          />pec@pec.it</span
-          >
-          <hr/>
-
-          <div class="row" style="text-align: center">
-            <div class="col-2"></div>
-            <div class="col-2">
-              <img
-                class="social-icon-card"
-                src="assets/facebook-dark-rounded-icon.png"
-              />
-            </div>
-            <div class="col-2">
-              <img
-                class="social-icon-card"
-                src="assets/instagram-dark-rounded-icon.png"
-              />
-            </div>
-            <div class="col-2">
-              <img
-                class="social-icon-card"
-                src="assets/whatsapp-dark-rounded-icon.png"
-              />
-            </div>
-            <div class="col-2">
-              <img
-                class="social-icon-card"
-                src="assets/linkedin-dark-rounded-icon.png"
-              />
-            </div>
-            <div class="col-2"></div>
-          </div>
-        </div>
-
-        <div class="card card-background mb-5">
-          <div class="row">
-            <div class="col-9">
-              <div>
-                <span class="card-subtitle text-light">Presentazione</span>
-              </div>
-              <div>
-                <span class="card-title text-light"><b>AZIENDA</b></span>
-              </div>
-            </div>
-
-            <div class="col-3" style="text-align: right">
-              <img
-                class="icon-size-button"
-                src="assets/download-white-icon.png"
-              />
-            </div>
-          </div>
-
-          <div class="row mt-3">
-            <div class="col-9">
-              <div>
-                <span class="card-subtitle text-light">Presentazione</span>
-              </div>
-              <div>
-                <span class="card-title text-light"><b>PRODOTTO 1</b></span>
-              </div>
-            </div>
-
-            <div class="col-3" style="text-align: right">
-              <img
-                class="icon-size-button"
-                src="assets/download-white-icon.png"
-              />
-            </div>
-          </div>
-
-          <div class="row mt-3">
-            <div class="col-9">
-              <div>
-                <span class="card-subtitle text-light">Presentazione</span>
-              </div>
-              <div>
-                <span class="card-title text-light"><b>SERVIZIO 1</b></span>
-              </div>
-            </div>
-
-            <div class="col-3" style="text-align: right">
-              <img
-                class="icon-size-button"
-                src="assets/download-white-icon.png"
-              />
+              </a>
+              <hr/>
             </div>
           </div>
         </div>
 
-        <div class="mb-3">
-          <span class="card-subtitle">GALLERIA</span>
+        <div *ngIf="profile.companies.length > 0">
+          <app-profile-container-company [companyArray]="profile.companies"></app-profile-container-company>
         </div>
 
-        <ngb-carousel #ngcarousel>
-          <ng-template ngbSlide id="one-gallery">
-            <div class="picsum-img-wrapper">
-              <img src="assets/carousel-image1.jpeg" alt="Slide 1"/>
-            </div>
-          </ng-template>
-          <ng-template ngbSlide id="two-gallery">
-            <div class="picsum-img-wrapper">
-              <img src="assets/carousel-image2.jpeg" alt="Slide 2"/>
-            </div>
-          </ng-template>
-          <ng-template ngbSlide id="three-gallery">
-            <div class="picsum-img-wrapper">
-              <img src="assets/carousel-image3.jpeg" alt="Slide 3"/>
-            </div>
-          </ng-template>
-        </ngb-carousel>
+        <div *ngIf="profile.presentation.length > 0">
+          <app-profile-container-presentation [presentationArray]="profile.presentation"></app-profile-container-presentation>
+        </div>
+
+        <div *ngIf="profile.gallery.length > 0">
+          <app-profile-container-gallery [galleryArray]="profile.gallery"></app-profile-container-gallery>
+        </div>
 
         <div class="mt-5 mb-3">
           <span class="card-subtitle mb-5">PARTNER</span>
@@ -340,189 +190,40 @@
             </div>
           </div>
 
-          <span class="card-subtitle">CONTATTI</span>
+          <div *ngIf="this.profile.contacts.length > 0">
+            <span class="card-subtitle">CONTATTI</span>
 
-          <div class="card card-contact mt-3 mb-5">
-            <div class="no-divider" *ngFor="let c of profile.contacts; index as j">
-              <a [href]="formatHref(c)">
+            <div class="card card-contact mt-3 mb-5">
+              <div class="no-divider" *ngFor="let c of profile.contacts; index as j">
+                <a [href]="formatHref(c)">
                 <span>
                   <img
                     class="icon-card"
                     [src]="formatContactIcon(c.name)"
                   />{{c.value}}
                 </span>
-              </a>
-              <hr/>
-            </div>
-          </div>
-
-          <span class="card-subtitle">AZIENDA</span>
-
-          <div class="card card-contact mt-3 mb-5">
-            <span
-            ><img
-              class="icon-card"
-              src="assets/piva-dark-icon.png"
-            />123456789</span
-            >
-            <hr/>
-            <span
-            ><img class="icon-card" src="assets/position-dark-icon.png"/>Via
-              Roma, 15</span
-            >
-            <hr/>
-            <span
-            ><img class="icon-card" src="assets/phone-dark-icon.png"/>+39 123
-              456 7891</span
-            >
-            <hr/>
-            <span
-            ><img
-              class="icon-card"
-              src="assets/email-dark-icon.png"
-            />email@email.com</span
-            >
-            <hr/>
-            <span
-            ><img
-              class="icon-card"
-              src="assets/internet-dark-icon.png"
-            />www.ezcard.it</span
-            >
-            <hr/>
-            <span
-            ><img
-              class="icon-card"
-              src="assets/sdicode-dark-icon.png"
-            />XXXXX</span
-            >
-            <hr/>
-            <span
-            ><img
-              class="icon-card"
-              src="assets/pec-dark-icon.png"
-            />pec@pec.it</span
-            >
-            <hr/>
-            <div class="row" style="text-align: center">
-              <div class="col-2"></div>
-              <div class="col-2">
-                <img
-                  class="social-icon-card"
-                  src="assets/instagram-dark-rounded-icon.png"
-                />
-              </div>
-              <div class="col-2">
-                <img
-                  class="social-icon-card"
-                  src="assets/facebook-dark-rounded-icon.png"
-                />
-              </div>
-              <div class="col-2">
-                <img
-                  class="social-icon-card"
-                  src="assets/twitter-dark-rounded-icon.png"
-                />
-              </div>
-              <div class="col-2">
-                <img
-                  class="social-icon-card"
-                  src="assets/linkedin-dark-rounded-icon.png"
-                />
-              </div>
-              <div class="col-2"></div>
-            </div>
-          </div>
-
-          <div class="card card-background mb-5">
-            <div class="row mt-3">
-              <div class="col-6">
-                <div>
-                  <span class="card-subtitle text-light">Presentazione</span>
-                </div>
-                <div>
-                  <span class="card-title text-light"><b>AZIENDA</b></span>
-                </div>
-              </div>
-
-              <div class="col-6" style="text-align: right">
-                <img
-                  class="icon-size-button"
-                  src="assets/download-white-icon.png"
-                />
-              </div>
-            </div>
-            <div class="row mt-3">
-              <div class="col-6">
-                <div>
-                  <span class="card-subtitle text-light">Presentazione</span>
-                </div>
-                <div>
-                  <span class="card-title text-light"><b>PRODOTTO 1</b></span>
-                </div>
-              </div>
-
-              <div class="col-6" style="text-align: right">
-                <img
-                  class="icon-size-button"
-                  src="assets/download-white-icon.png"
-                />
-              </div>
-            </div>
-            <div class="row mt-3">
-              <div class="col-6">
-                <div>
-                  <span class="card-subtitle text-light">Presentazione</span>
-                </div>
-                <div>
-                  <span class="card-title text-light"><b>SERVIZIO 1</b></span>
-                </div>
-              </div>
-
-              <div class="col-6" style="text-align: right">
-                <img
-                  class="icon-size-button"
-                  src="assets/download-white-icon.png"
-                />
+                </a>
+                <hr/>
               </div>
             </div>
           </div>
 
-          <div class="mb-3">
-            <span class="card-subtitle">GALLERIA</span>
+          <div *ngIf="profile.companies.length > 0">
+            <app-profile-container-company [companyArray]="profile.companies"></app-profile-container-company>
           </div>
 
-          <ngb-carousel #ngcarousel>
-            <ng-template ngbSlide id="one">
-              <div class="picsum-img-wrapper">
-                <img src="assets/carousel-image1.jpeg" alt="Slide 1"/>
-              </div>
-            </ng-template>
-            <ng-template ngbSlide id="two">
-              <div class="picsum-img-wrapper">
-                <img src="assets/carousel-image2.jpeg" alt="Slide 2"/>
-              </div>
-            </ng-template>
-            <ng-template ngbSlide id="three">
-              <div class="picsum-img-wrapper">
-                <img src="assets/carousel-image3.jpeg" alt="Slide 3"/>
-              </div>
-            </ng-template>
-          </ngb-carousel>
-
-          <div class="mt-5 mb-3">
-            <span class="card-subtitle mb-5">PARTNER</span>
+          <div *ngIf="profile.presentation.length > 0">
+            <app-profile-container-presentation
+              [presentationArray]="profile.presentation"></app-profile-container-presentation>
           </div>
 
-          <owl-carousel-o [options]="customOptions">
+          <div *ngIf="profile.gallery.length > 0">
+            <app-profile-container-gallery [galleryArray]="profile.gallery"></app-profile-container-gallery>
+          </div>
 
-            <ng-container *ngFor="let slide of slidesStore">
-              <ng-template carouselSlide>
-                <img [src]="slide.src" [alt]="slide.alt" [title]="slide.title">
-              </ng-template>
-            </ng-container>
-
-          </owl-carousel-o>
+          <div *ngIf="profile.partner.length > 0">
+            <app-profile-container-partner [partnerArray]="profile.partner"></app-profile-container-partner>
+          </div>
 
 
           <hr class="mt-5"/>

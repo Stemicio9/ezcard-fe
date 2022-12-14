@@ -1,9 +1,8 @@
-import { Views } from 'src/app/entities/views_table';
-import { AfterViewInit, Component, ViewChild, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
-import { IgxLegendComponent, IgxCategoryChartComponent } from 'igniteui-angular-charts';
-import { CountryRenewableElectricity } from 'src/app/entities/chart';
-import { NgbCalendar, NgbDate, NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
-
+import {Views} from 'src/app/entities/views_table';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, ViewChild} from '@angular/core';
+import {IgxCategoryChartComponent, IgxLegendComponent} from 'igniteui-angular-charts';
+import {CountryRenewableElectricity} from 'src/app/entities/chart';
+import {NgbCalendar, NgbDate, NgbDateParserFormatter} from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({

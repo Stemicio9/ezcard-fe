@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { PartnerModalComponent } from './partner-modal.component';
+import {PartnerModalComponent} from './partner-modal.component';
 
 describe('PartnerModalComponent', () => {
   let component: PartnerModalComponent;

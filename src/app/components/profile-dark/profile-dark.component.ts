@@ -1,9 +1,9 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
-import { OwlOptions } from 'ngx-owl-carousel-o';
-import { Profile } from 'src/app/entities/profile';
-import { ProfileService } from 'src/app/services/profile.service';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {NgbCarousel} from '@ng-bootstrap/ng-bootstrap';
+import {OwlOptions} from 'ngx-owl-carousel-o';
+import {Profile} from 'src/app/entities/profile';
+import {ProfileService} from 'src/app/services/profile.service';
 
 @Component({
   selector: 'app-profile-dark',

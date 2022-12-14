@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Social } from 'src/app/entities/social';
+import {Component, OnInit} from '@angular/core';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {Social} from 'src/app/entities/social';
 import {ProfileService} from "../../services/profile.service";
 
 @Component({

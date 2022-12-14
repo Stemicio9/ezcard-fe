@@ -1,14 +1,14 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
-import { HomeComponent } from './components/home/home.component';
-import { LoginComponent } from './components/login/login.component';
-import { ProfileModalComponent } from './modal/profile-modal/profile-modal.component';
-import { ProfileComponent } from './components/profile/profile.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {ForgetPasswordComponent} from './components/forget-password/forget-password.component';
+import {HomeComponent} from './components/home/home.component';
+import {LoginComponent} from './components/login/login.component';
+import {ProfileModalComponent} from './modal/profile-modal/profile-modal.component';
+import {ProfileComponent} from './components/profile/profile.component';
 import {SettingsComponent} from "./components/settings/settings.component";
 import {StatsComponent} from "./components/stats/stats.component";
 import {ResetPasswordComponent} from "./components/reset-password/reset-password.component";
-import { ProfileDarkComponent } from './components/profile-dark/profile-dark.component';
+import {ProfileDarkComponent} from './components/profile-dark/profile-dark.component';
 import {AuthGuard} from "./guards/auth.guard";
 
 const routes: Routes = [

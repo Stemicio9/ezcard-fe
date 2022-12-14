@@ -1,0 +1,39 @@
+<div *ngFor="let company of companyArray">
+  <span class="card-subtitle">{{company.companyName}}</span>
+
+  <div class="card card-contact mt-3 mb-5">
+  <span>
+    <img class="icon-card" src="assets/piva-dark-icon.png"/>{{company.vatNumber}}</span>
+    <hr/>
+    <span>
+    <img class="icon-card" src="assets/position-dark-icon.png"/>{{company.address}}</span>
+    <hr/>
+    <span>
+    <img class="icon-card" src="assets/phone-dark-icon.png"/>{{company.phoneNumber}}</span>
+    <hr/>
+    <span>
+    <img class="icon-card" src="assets/email-dark-icon.png"/>{{company.email}}</span>
+    <hr/>
+    <span>
+    <img class="icon-card" src="assets/internet-dark-icon.png"/>{{company.website}}</span>
+    <hr/>
+    <span>
+    <img class="icon-card" src="assets/sdicode-dark-icon.png"/>{{company.codeSDI}}</span>
+    <hr/>
+    <span>
+    <img class="icon-card" src="assets/pec-dark-icon.png"/>{{company.pec}}</span>
+    <div *ngIf="company.socials.length > 0">
+      <hr/>
+      <div class="row" style="text-align: center">
+        <div class="col-2" *ngFor="let s of company.socials; index as i">
+          <a [href]=s.value target="_blank">
+            <img
+              class="social-icon-card"
+              [src]=formatSocialIcon(s.name)
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

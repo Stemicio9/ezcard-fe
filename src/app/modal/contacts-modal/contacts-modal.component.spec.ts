@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ContactsModalComponent } from './contacts-modal.component';
+import {ContactsModalComponent} from './contacts-modal.component';
 
 describe('ContactsModalComponent', () => {
   let component: ContactsModalComponent;

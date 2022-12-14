@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Social } from 'src/app/entities/social';
+import {Component, Input, OnInit} from '@angular/core';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {Social} from 'src/app/entities/social';
 import {ProfileService} from "../../services/profile.service";
 import {CompanyContainer} from "../../entities/company-container";
 import {socialMapLightTheme} from "../../utils/social-map";

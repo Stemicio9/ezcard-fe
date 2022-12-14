@@ -3,7 +3,6 @@ import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {ProfileService} from "../../services/profile.service";
 import {MediaContainer} from "../../entities/media-container";
 import {UtilityService} from "../../services/utility.service";
-import {DomSanitizer} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-presentation-modal',
@@ -19,11 +18,7 @@ export class PresentationModalComponent implements OnInit {
   mediaContainerList: MediaContainer[] = [];
   threshold = 14;
 
-
-  constructor(private modalService: NgbModal,
-              private profileService: ProfileService,
-              private utilityService: UtilityService,
-              private sanitizer: DomSanitizer) {
+  constructor(private modalService: NgbModal, private profileService: ProfileService, private utilityService: UtilityService) {
   }
 
 
@@ -32,7 +27,9 @@ export class PresentationModalComponent implements OnInit {
       (body: any) => {
         this.mediaContainerList = body;
         for (const element of this.mediaContainerList) {
-          this.downloadAndInsert(element);
+          this.utilityService.downloadAndInsert(element).subscribe((value: any) => {
+            this.allFiles.push(value);
+          });
         }
       },
       (error: any) => {
@@ -40,35 +37,6 @@ export class PresentationModalComponent implements OnInit {
         console.log(error);
       }
     );
-  }
-
-  downloadAndInsert(element: any) {
-    console.log(element.link);
-    this.utilityService.downloadFileFromUrl(element.link).subscribe(result => {
-      console.log("DIMENSIONE DEL FILE " + element.name, result.byteLength);
-      const file = new File([result], element.name, {type: element.type});
-      this.createImageFromBlob(result, file);
-    });
-  }
-
-  createImageFromBlob(image: ArrayBuffer, file: File) {
-    var imageType = file.name.includes("png") ? "png" : "jpeg";
-    var link = this.sanitize('data:image/' + imageType + ';base64, ' + this._arrayBufferToBase64(image));
-    this.allFiles.push({name: file.name, type: file.type, size: file.size, link: link, file:file});
-  }
-
-  _arrayBufferToBase64(data: ArrayBuffer) {
-    let binary = '';
-    const bytes = new Uint8Array(data);
-    const len = bytes.byteLength;
-    for (let i = 0; i < len; i++) {
-      binary += String.fromCharCode(bytes[i]);
-    }
-    return window.btoa(binary);
-  }
-
-  sanitize(url: string) {
-    return this.sanitizer.bypassSecurityTrustUrl(url);
   }
 
   removeFile(i: number) {
@@ -80,12 +48,6 @@ export class PresentationModalComponent implements OnInit {
     this.modalService.dismissAll();
   }
 
-
-  fileSelected(event: any) {
-    this.droppedFiles(event.target.files);
-  }
-
-
   droppedFiles(droppedFiles: any): void {
     const filesAmount = droppedFiles.length;
 
@@ -95,7 +57,7 @@ export class PresentationModalComponent implements OnInit {
         this.filesNotInCharge.push(file);
       } else {
         file.arrayBuffer().then((buffer: ArrayBuffer) => {
-          this.createImageFromBlob(buffer, file);
+          this.allFiles.push(this.utilityService.createImageFromBlob(buffer, file));
         });
       }
     }

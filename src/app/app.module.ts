@@ -17,21 +17,31 @@ import {SocialModalComponent} from './modal/social-modal/social-modal.component'
 import {ContactsModalComponent} from './modal/contacts-modal/contacts-modal.component';
 import {CompanyModalComponent} from './modal/company-modal/company-modal.component';
 import {NgbDateParserFormatterExtProvider} from "./components/date-picker";
-import { SettingsComponent } from './components/settings/settings.component';
-import { StatsComponent } from './components/stats/stats.component';
-import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
-import { PresentationModalComponent } from './modal/presentation-modal/presentation-modal.component';
-import { GalleryModalComponent } from './modal/gallery-modal/gallery-modal.component';
-import { PartnerModalComponent } from './modal/partner-modal/partner-modal.component';
-import { DropZoneDirective } from './directives/drop-zone.directive';
-import { IgxLegendModule, IgxCategoryChartModule } from 'igniteui-angular-charts';
-import { ProfileDarkComponent } from './components/profile-dark/profile-dark.component';
-import { CarouselModule } from 'ngx-owl-carousel-o';
-import { ChangeImageModalComponent } from './modal/change-image-modal/change-image-modal.component';
+import {SettingsComponent} from './components/settings/settings.component';
+import {StatsComponent} from './components/stats/stats.component';
+import {ResetPasswordComponent} from './components/reset-password/reset-password.component';
+import {PresentationModalComponent} from './modal/presentation-modal/presentation-modal.component';
+import {GalleryModalComponent} from './modal/gallery-modal/gallery-modal.component';
+import {PartnerModalComponent} from './modal/partner-modal/partner-modal.component';
+import {DropZoneDirective} from './directives/drop-zone.directive';
+import {IgxCategoryChartModule, IgxLegendModule} from 'igniteui-angular-charts';
+import {ProfileDarkComponent} from './components/profile-dark/profile-dark.component';
+import {CarouselModule} from 'ngx-owl-carousel-o';
+import {ChangeImageModalComponent} from './modal/change-image-modal/change-image-modal.component';
 import {TokenInterceptor} from "./interceptors/token.interceptor";
 import {HttpRequestInterceptor} from "./interceptors/http-request.interceptor";
 
-import{BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {
+  ProfileContainerCompanyComponent
+} from './components/profile-container-company/profile-container-company.component';
+import {
+  ProfileContainerPresentationComponent
+} from './components/profile-container-presentation/profile-container-presentation.component';
+import {
+  ProfileContainerGalleryComponent
+} from './components/profile-container-gallery/profile-container-gallery.component';
+import { ProfileContainerPartnerComponent } from './components/profile-container-partner/profile-container-partner.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +65,10 @@ import{BrowserAnimationsModule} from "@angular/platform-browser/animations";
     DropZoneDirective,
     ProfileDarkComponent,
     ChangeImageModalComponent,
+    ProfileContainerCompanyComponent,
+    ProfileContainerPresentationComponent,
+    ProfileContainerGalleryComponent,
+    ProfileContainerPartnerComponent,
   ],
   imports: [
     BrowserAnimationsModule,

@@ -9,6 +9,8 @@ export class CompanyContainer {
    email: string;
    codeSDI: string;
    pec: string;
+
+   website: string;
    socials : SocialContainer[];
 
 
@@ -21,6 +23,7 @@ export class CompanyContainer {
     email?: string,
     codeSDI?: string,
     pec?: string,
+    website?: string,
   )
 
 
@@ -34,6 +37,7 @@ export class CompanyContainer {
     this.email = email ?? '';
     this.codeSDI = codeSDI ?? '';
     this.pec = pec ?? '';
+    this.website = website ?? '';
 
   }
 

@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ProfileDarkComponent } from './profile-dark.component';
+import {ProfileDarkComponent} from './profile-dark.component';
 
 describe('ProfileDarkComponent', () => {
   let component: ProfileDarkComponent;

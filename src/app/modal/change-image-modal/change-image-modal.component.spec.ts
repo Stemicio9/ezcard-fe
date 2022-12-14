@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ChangeImageModalComponent } from './change-image-modal.component';
+import {ChangeImageModalComponent} from './change-image-modal.component';
 
 describe('ChangeImageModalComponent', () => {
   let component: ChangeImageModalComponent;

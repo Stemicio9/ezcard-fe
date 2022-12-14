@@ -1,0 +1,16 @@
+<div class="card card-background mb-5">
+  <div *ngFor="let p of presentationArray" class="row mt-3">
+    <div class="col-9">
+      <div>
+        <span class="card-subtitle text-light">Presentazione</span>
+      </div>
+      <div>
+        <span class="card-title text-light"><b>{{p.name}}</b></span>
+      </div>
+    </div>
+
+    <div class="col-3" style="text-align: right">
+      <img class="icon-size-button" src="assets/download-white-icon.png"/>
+    </div>
+  </div>
+</div>

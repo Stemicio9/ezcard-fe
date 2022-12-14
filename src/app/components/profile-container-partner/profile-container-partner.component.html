@@ -1,0 +1,13 @@
+<div class="mt-5 mb-3">
+  <span class="card-subtitle mb-5">PARTNER</span>
+</div>
+
+<owl-carousel-o [options]="customOptions">
+
+  <ng-container *ngFor="let slide of allFiles">
+    <ng-template carouselSlide>
+      <img [src]="slide.link">
+    </ng-template>
+  </ng-container>
+
+</owl-carousel-o>
