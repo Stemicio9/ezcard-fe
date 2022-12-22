@@ -24,7 +24,7 @@ export class PartnerModalComponent implements OnInit {
 
 
   ngOnInit() {
-    this.profileService.getPartner().subscribe(
+    this.profileService.getMedia('partner').subscribe(
       (body: any) => {
         this.mediaContainerList = body;
         for (const element of this.mediaContainerList) {
@@ -70,7 +70,7 @@ export class PartnerModalComponent implements OnInit {
   }
 
   sendFiles() {
-    this.profileService.updatePartner(this.allFiles).subscribe(
+    this.profileService.updateMedia(this.allFiles, 'partner').subscribe(
       (body: any) => {
         this.closeModal();
       },

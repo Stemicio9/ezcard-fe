@@ -21,7 +21,7 @@ export class GalleryModalComponent implements OnInit {
   constructor(private modalService: NgbModal, private profileService: ProfileService, private utilityService: UtilityService) {}
 
   ngOnInit() {
-    this.profileService.getGallery().subscribe(
+    this.profileService.getMedia('gallery').subscribe(
       (body: any) => {
         this.mediaContainerList = body;
         for (const element of this.mediaContainerList) {
@@ -68,7 +68,7 @@ export class GalleryModalComponent implements OnInit {
 
   sendFiles() {
     console.log(this.allFiles)
-    this.profileService.updateGallery(this.allFiles).subscribe(
+    this.profileService.updateMedia(this.allFiles, 'gallery').subscribe(
       (body: any) => {
         this.closeModal();
       },

@@ -23,7 +23,7 @@ export class PresentationModalComponent implements OnInit {
 
 
   ngOnInit() {
-    this.profileService.getPresentation().subscribe(
+    this.profileService.getMedia('presentation').subscribe(
       (body: any) => {
         this.mediaContainerList = body;
         for (const element of this.mediaContainerList) {
@@ -70,7 +70,7 @@ export class PresentationModalComponent implements OnInit {
   }
 
   sendFiles() {
-    this.profileService.updatePresentation(this.allFiles).subscribe(
+    this.profileService.updateMedia(this.allFiles, 'presentation').subscribe(
       (body: any) => {
         this.closeModal();
       },

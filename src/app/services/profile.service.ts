@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpRequest} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 import {Profile} from "../entities/profile";
 import {environment} from "../../environments/environment";
 import {StorageService} from "./storage.service";
@@ -54,46 +54,14 @@ export class ProfileService {
     return this.httpClient.post(this.base_path + 'update/companies', companies, {headers: this.buildHeaders()});
   }
 
-  updateGallery(fileList: any[]){
+  updateMedia(fileList: any[], type: string){
     const formData = new FormData();
     for (let i = 0; i < fileList.length; i++) {
       formData.append('files', fileList[i].file);
     }
+    const params = {type: type};
+    return this.httpClient.post(this.base_path + 'update/media', formData, {reportProgress: true, responseType: 'json', params: params});
 
-    const req = new HttpRequest('POST', environment.base_url + 'protected/profile/update/gallery', formData, {
-      reportProgress: true,
-      responseType: 'json'
-    });
-
-    return this.httpClient.request(req);
-  }
-
-  updatePartner(fileList: any[]){
-    const formData = new FormData();
-    for (let i = 0; i < fileList.length; i++) {
-      formData.append('files', fileList[i].file);
-    }
-
-    const req = new HttpRequest('POST', environment.base_url + 'protected/profile/update/partner', formData, {
-      reportProgress: true,
-      responseType: 'json'
-    });
-
-    return this.httpClient.request(req);
-  }
-
-  updatePresentation(fileList: any[]){
-    const formData = new FormData();
-    for (let i = 0; i < fileList.length; i++) {
-      formData.append('files', fileList[i].file);
-    }
-
-    const req = new HttpRequest('POST', environment.base_url + 'protected/profile/update/presentation', formData, {
-      reportProgress: true,
-      responseType: 'json'
-    });
-
-    return this.httpClient.request(req);
   }
 
 
@@ -113,16 +81,8 @@ export class ProfileService {
     return this.httpClient.get(this.base_path + 'get/companies', {headers: this.buildHeaders()});
   }
 
-  getPresentation(){
-    return this.httpClient.get(this.base_path + 'get/presentation', {headers: this.buildHeaders()});
-  }
-
-  getGallery(){
-    return this.httpClient.get(this.base_path + 'get/gallery', {headers: this.buildHeaders()});
-  }
-
-  getPartner(){
-    return this.httpClient.get(this.base_path + 'get/partner', {headers: this.buildHeaders()});
+  getMedia(type: string){
+    return this.httpClient.get(this.base_path + 'get/media/', {headers: this.buildHeaders(), params: {'type': type}});
   }
 
   getProfileShown(id: string){
