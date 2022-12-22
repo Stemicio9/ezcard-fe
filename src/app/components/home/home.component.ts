@@ -10,6 +10,8 @@ import {PartnerModalComponent} from '../../modal/partner-modal/partner-modal.com
 import {ProfileComponent} from '../profile/profile.component';
 import {ProfileDarkComponent} from '../profile-dark/profile-dark.component';
 import {ChangeImageModalComponent} from '../../modal/change-image-modal/change-image-modal.component';
+import {ProfileService} from "../../services/profile.service";
+import {UtilityService} from "../../services/utility.service";
 
 @Component({
   selector: 'app-home',
@@ -31,7 +33,7 @@ export class HomeComponent implements OnInit {
   // true = light theme, false = dark theme
   theme_style = true;
 
-  constructor(private modalService: NgbModal) {
+  constructor(private modalService: NgbModal, private profileService: ProfileService, private utilityService: UtilityService) {
   }
 
   openGenericModal(content: any) {
@@ -60,7 +62,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.loadProfileImage();
   }
 
   formatDate() {
@@ -78,4 +80,27 @@ export class HomeComponent implements OnInit {
   }
 
 
+  onChange($event: Event, type: string) {
+    //Take file from event and call rest api to upload file
+    let file = ($event.target as HTMLInputElement).files![0];
+    file.arrayBuffer().then((buffer: ArrayBuffer) => {
+      const a = this.utilityService.createImageFromBlob(buffer, file);
+      this.profileService.updateMedia([a], type).subscribe(() => {
+        this.loadProfileImage();
+      })
+    });
+  }
+
+  loadProfileImage() {
+    this.profileService.getMedia('profile').subscribe((res: any) => {
+      if (res.length > 0) {
+        document.getElementById("profileImage")?.setAttribute("src", res[0].url);
+      }
+    });
+    this.profileService.getMedia('cover').subscribe((res: any) => {
+      if (res.length > 0) {
+        document.getElementById("coverImage")?.setAttribute("src", res[0].url);
+      }
+    });
+  }
 }

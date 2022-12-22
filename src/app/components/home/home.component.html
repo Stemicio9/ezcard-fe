@@ -13,7 +13,7 @@
       <img
         type="button"
         class="edit-icon"
-        (click)="placeholderimage.click()"
+        (click)="coverImage.click()"
         src="assets/edit-dark-rounded-icon.png"
       />
     </div>
@@ -28,8 +28,8 @@
         />
       </div>
 
-      <input type="file" hidden #profileimage />
-      <input type="file" hidden #placeholderimage />
+      <input type="file" hidden #coverImage (change)="onChange($event, 'cover')"/>
+      <input type="file" hidden #profileimage (change)="onChange($event, 'profile')"/>
     </div>
 
     <div class="mb-3 d-none d-md-inline-flex flex-row justify-content-center">
@@ -88,11 +88,11 @@
       </div>
     </div>
 
-    <div class="mt-5" style="padding-left: 2rem">
+    <div class="mt-5" style="padding-left: 2rem; display: none">
       <h5>Gestione Account Privato</h5>
     </div>
 
-    <div *ngFor="let voice of titlesSecondSection; index as i">
+    <div *ngFor="let voice of titlesSecondSection; index as i" style="visibility: hidden">
       <div routerLink="{{ this.routerLinkList[i] }}">
         <app-home-row
           [title]="voice"
