@@ -29,7 +29,6 @@ export class ContactsModalComponent implements OnInit {
     // per ora adattiamo i dati allo schifo che già esiste, quindi facciamo il match
     // dei nomi dei social con i nomi contenuti nella lista totalSocial
     this.profileService.getContacts().subscribe((result: any) => {
-      console.log(result);
       if(result != undefined){
         this.fromContactContainerToContact(result);
       }

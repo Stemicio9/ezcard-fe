@@ -1,0 +1,26 @@
+<div class="modal-header" style="background-color: var(--black_ez)">
+  <div>
+    <i class="bi bi-exclamation-triangle-fill title-icon"></i>
+    <span class="section-title text-light" style="padding-left: 1rem"
+    >Attenzione</span
+    >
+  </div>
+
+  <img
+    class="btn-close cancel"
+    type="button"
+    src="../../../assets/cancel-icon-white.png"
+    (click)="closeModal()"
+  />
+</div>
+
+<div class="modal-body border-radius-popup">
+  <div class="mb-2">
+    <span>{{message}}</span>
+  </div>
+  <div style="display: flex; float: right; margin-bottom: 1rem">
+    <button class="btn btn-outline-secondary" style="margin-right: 0.5rem" (click)="closeModal()">Annulla</button>
+    <button class="btn" (click)="disableUser()" style="background-color:var(--black_ez); color: white">Conferma</button>
+
+  </div>
+</div>

@@ -9,6 +9,8 @@ import {StatsComponent} from "./components/stats/stats.component";
 import {ResetPasswordComponent} from "./components/reset-password/reset-password.component";
 import {ProfileDarkComponent} from './components/profile-dark/profile-dark.component';
 import {AuthGuard} from "./guards/auth.guard";
+import {AdministratorComponent} from "./components/administrator/administrator.component";
+import {AdminGuard} from "./guards/admin.guard";
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -16,6 +18,7 @@ const routes: Routes = [
   {path: 'forget-password', component: ForgetPasswordComponent},
   {path: 'reset-password', component: ResetPasswordComponent},
   {path: 'home', component: HomeComponent, data: {title: 'Gestione Account'}, canActivate: [AuthGuard]},
+  {path: 'administrator', component: AdministratorComponent, data: {title: 'Administrator'}, canActivate: [AuthGuard, AdminGuard]},
   {path: 'settings', component: SettingsComponent, data: {title: 'Impostazioni'}, canActivate: [AuthGuard]},
   {path: 'stats', component: StatsComponent, data: {title: 'Statistiche'}, canActivate: [AuthGuard]},
   {path: 'profile', component: ProfileComponent, data: {title: 'Profilo Utente'}},

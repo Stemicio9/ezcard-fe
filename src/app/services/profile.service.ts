@@ -89,4 +89,9 @@ export class ProfileService {
     return this.httpClient.get(this.public_base_path + 'get/profile-shown/'+ id, {headers: this.buildHeaders()});
   }
 
+  changeUserStatus(id: string) {
+    return this.httpClient.get(this.base_path + 'change-user-status/' + id, {headers: this.buildHeaders()});
+  }
+
+
 }

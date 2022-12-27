@@ -18,17 +18,23 @@ export class LoginComponent implements OnInit {
     private storageService: StorageService,
     private authService: AuthService,
     private router: Router
-  ) {}
+  ) {
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   login() {
-    const { email, password } = this.form;
+    const {email, password} = this.form;
 
     this.authService.authenticateUser(email, password).subscribe(
       (body: any) => {
         this.storageService.saveTokenInStorage(body.headers.get("X-Auth"));
-        this.router.navigate(['home']);
+        if (this.storageService.isAdmin()) {
+          this.router.navigate(["administrator"]);
+        } else {
+          this.router.navigate(['home']);
+        }
       },
       (error) => {
         console.log(error);

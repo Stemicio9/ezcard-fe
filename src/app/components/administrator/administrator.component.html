@@ -1,0 +1,33 @@
+<div class="container-fluid" style="margin-top: 2rem">
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead class="thead-light">
+      <tr>
+        <th scope="col">Username</th>
+        <th scope="col">Email</th>
+        <th scope="col">Ruoli</th>
+        <th scope="col">Attivo</th>
+        <th scope="col"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let u of users">
+        <td>{{u.username}}</td>
+        <td>{{u.email}}</td>
+        <td style="text-overflow: ellipsis">{{u.role_string}}</td>
+        <td>
+          <i *ngIf="u.enabled" class="bi bi-check-circle-fill enable-icon"></i>
+          <i *ngIf="!u.enabled" class="bi bi-x-circle-fill disable-icon"></i>
+        <td>
+          <i class="bi bi-qr-code action-icon" (click)="action()"></i>
+          <i class="bi bi-pencil-square action-icon" (click)="modifyUser(u)"></i>
+          <i *ngIf="u.enabled" class="bi bi-dash-circle action-icon" (click)="disableUser(u)"></i>
+          <i *ngIf="!u.enabled" class="bi bi-plus-circle action-icon" (click)="disableUser(u)"></i>
+        </td>
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+</div>

@@ -1,0 +1,40 @@
+.title-icon {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.cancel {
+  width: 18px;
+  height: 18px;
+}
+
+span {
+  color: var(--black_ez);
+}
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+
+.save-label-contact {
+  padding-left: 3.4rem;
+  padding-right: 3.4rem;
+}
+
+.save-button-contact {
+  border-radius: 24px;
+  background-color: var(--black_ez)
+}
+
+.save-button-contact:active {
+  border-radius: 24px;
+  background-color: var(--black_ez)
+
+}
+
+.form-check-input:checked{
+  background-color: var(--black_ez);
+  border-color: var(--black_ez);
+}

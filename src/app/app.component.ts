@@ -44,7 +44,7 @@ export class AppComponent implements OnInit {
     this.showHeader =
       val.url.includes('home') ||
       val.url.includes('settings') ||
-
+      val.url.includes('administrator') ||
       val.url.includes('stats');
     this.showHomeIcon =
       val.url.includes('settings') ||

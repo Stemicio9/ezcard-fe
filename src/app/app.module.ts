@@ -42,6 +42,9 @@ import {
   ProfileContainerGalleryComponent
 } from './components/profile-container-gallery/profile-container-gallery.component';
 import { ProfileContainerPartnerComponent } from './components/profile-container-partner/profile-container-partner.component';
+import { AdministratorComponent } from './components/administrator/administrator.component';
+import { DisableUserModalComponent } from './modal/disable-user-modal/disable-user-modal.component';
+import { ModifyUserModalComponent } from './modal/modify-user-modal/modify-user-modal.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +72,9 @@ import { ProfileContainerPartnerComponent } from './components/profile-container
     ProfileContainerPresentationComponent,
     ProfileContainerGalleryComponent,
     ProfileContainerPartnerComponent,
+    AdministratorComponent,
+    DisableUserModalComponent,
+    ModifyUserModalComponent,
   ],
   imports: [
     BrowserAnimationsModule,
