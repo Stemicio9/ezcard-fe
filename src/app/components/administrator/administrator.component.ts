@@ -4,6 +4,9 @@ import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {DisableUserModalComponent} from "../../modal/disable-user-modal/disable-user-modal.component";
 import {ProfileService} from "../../services/profile.service";
 import {ModifyUserModalComponent} from "../../modal/modify-user-modal/modify-user-modal.component";
+import {StorageService} from "../../services/storage.service";
+import {CreateUserModalComponent} from "../../modal/create-user-modal/create-user-modal.component";
+import {QrcodeGeneratorModalComponent} from "../../modal/qrcode-generator-modal/qrcode-generator-modal.component";
 
 @Component({
   selector: 'app-administrator',
@@ -14,10 +17,13 @@ export class AdministratorComponent implements OnInit {
 
   users: any = [];
 
-  constructor(private auth: AuthService, private profileService: ProfileService, private modalService: NgbModal) {
+  currentUsername = '';
+
+  constructor(private auth: AuthService, private storageService: StorageService, private profileService: ProfileService, private modalService: NgbModal) {
   }
 
   ngOnInit(): void {
+    this.currentUsername = this.storageService.extractUsernameFromToken();
     this.loadUsers();
   }
 
@@ -27,14 +33,10 @@ export class AdministratorComponent implements OnInit {
       for (let i = 0; i < user.authorities.length; i++) {
         a.push(user.authorities[i].name === 'ROLE_ADMIN' ? 'ADMIN' : 'USER');
       }
+      a = a.sort();
       user.role_string = a.join(', ');
     });
   }
-
-  action() {
-    console.log("action");
-  }
-
   loadUsers() {
     this.auth.listAllUsers().subscribe((res) => {
       this.users = res.data;
@@ -70,5 +72,27 @@ export class AdministratorComponent implements OnInit {
       });
     });
 
+  }
+
+  createUser() {
+    let a = this.modalService.open(CreateUserModalComponent, {
+      size: 'md',
+      centered: true,
+      ariaLabelledBy: 'modal-basic-title',
+    });
+    a.componentInstance.passEntry.subscribe((userEmitted: any) => {
+      this.auth.createUser(userEmitted).subscribe(() => {
+        this.loadUsers();
+      });
+    });
+  }
+
+  showQrCodeProfile(u: any) {
+    let a = this.modalService.open(QrcodeGeneratorModalComponent, {
+      size: 'sm',
+      centered: true,
+      ariaLabelledBy: 'modal-basic-title',
+    });
+    a.componentInstance.data = u;
   }
 }

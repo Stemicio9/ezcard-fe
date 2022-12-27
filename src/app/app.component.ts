@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
 
   showHeader = false;
   showHomeIcon = false;
+  showLogoutIcon = false;
   pageTitle = '';
   loading: boolean = false;
 
@@ -48,7 +49,10 @@ export class AppComponent implements OnInit {
       val.url.includes('stats');
     this.showHomeIcon =
       val.url.includes('settings') ||
-      val.url.includes('stats')
+      val.url.includes('stats');
+    this.showLogoutIcon =
+      val.url.includes('home') ||
+      val.url.includes('administrator');
 
   }
 

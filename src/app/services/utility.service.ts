@@ -24,9 +24,13 @@ export class UtilityService {
     return subject.asObservable();
   }
 
+  createSanitizedImageFromBlob(image: ArrayBuffer, imageType: string) {
+    return this.sanitize('data:image/' + imageType + ';base64, ' + this._arrayBufferToBase64(image));
+  }
+
   createImageFromBlob(image: ArrayBuffer, file: File) {
     let imageType = file.name.includes("png") ? "png" : "jpeg";
-    let link = this.sanitize('data:image/' + imageType + ';base64, ' + this._arrayBufferToBase64(image));
+    let link = this.createSanitizedImageFromBlob(image, imageType);
     return {name: file.name, type: file.type, size: file.size, link: link, file:file};
   }
 

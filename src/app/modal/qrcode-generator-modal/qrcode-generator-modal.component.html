@@ -1,0 +1,21 @@
+<div class="modal-header" style="background-color: var(--black_ez)">
+  <div>
+    <i class="bi bi-qr-code title-icon"></i>
+    <span class="section-title text-light" style="padding-left: 1rem"
+    >QrCode</span
+    >
+  </div>
+
+  <img
+    class="btn-close cancel"
+    type="button"
+    src="../../../assets/cancel-icon-white.png"
+    (click)="closeModal()"
+  />
+</div>
+
+<div class="modal-body border-radius-popup">
+  <div class="mb-2">
+    <img [src]="qrCodeImage" width="256" height="256">
+  </div>
+</div>

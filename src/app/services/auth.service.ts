@@ -30,5 +30,12 @@ export class AuthService {
     return this._http.post<any>(this.base_path + 'protected/update-admin', user);
   }
 
+  createUser(user: any) {
+    return this._http.post<any>(this.base_path + 'protected/create-user', user);
+  }
 
+  generateQRCode(username: any): Observable<any> {
+    let a = {responseType: 'arraybuffer' as 'json'};
+    return this._http.get<any>(this.base_path + 'protected/qrcode/' + username, a);
+  }
 }

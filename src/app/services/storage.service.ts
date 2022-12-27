@@ -24,6 +24,16 @@ export class StorageService {
     return localStorage.getItem('token') != null;
   }
 
+  extractUsernameFromToken(){
+    const helper = new JwtHelperService();
+    const token = this.getTokenFromStorage();
+    if(token != null) {
+      const decodedToken = helper.decodeToken(token);
+      return decodedToken.sub;
+    }
+    return '';
+  }
+
   extractRoleFromToken(){
     const helper = new JwtHelperService();
     const token = this.getTokenFromStorage();

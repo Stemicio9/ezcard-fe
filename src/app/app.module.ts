@@ -45,6 +45,8 @@ import { ProfileContainerPartnerComponent } from './components/profile-container
 import { AdministratorComponent } from './components/administrator/administrator.component';
 import { DisableUserModalComponent } from './modal/disable-user-modal/disable-user-modal.component';
 import { ModifyUserModalComponent } from './modal/modify-user-modal/modify-user-modal.component';
+import { CreateUserModalComponent } from './modal/create-user-modal/create-user-modal.component';
+import { QrcodeGeneratorModalComponent } from './modal/qrcode-generator-modal/qrcode-generator-modal.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +77,8 @@ import { ModifyUserModalComponent } from './modal/modify-user-modal/modify-user-
     AdministratorComponent,
     DisableUserModalComponent,
     ModifyUserModalComponent,
+    CreateUserModalComponent,
+    QrcodeGeneratorModalComponent,
   ],
   imports: [
     BrowserAnimationsModule,

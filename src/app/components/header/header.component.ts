@@ -8,9 +8,15 @@ import {Component, Input, OnInit} from '@angular/core';
 export class HeaderComponent implements OnInit {
   @Input('showHeader') showHeader = false;
   @Input('showHomeIcon') showHomeIcon = false;
+  @Input('showLogoutIcon') showLogoutIcon = false;
   @Input('pageTitle') pageTitle = '';
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  logout() {
+    localStorage.removeItem('token');
+    window.location.href = '/';
+  }
 }
