@@ -47,6 +47,7 @@ import { DisableUserModalComponent } from './modal/disable-user-modal/disable-us
 import { ModifyUserModalComponent } from './modal/modify-user-modal/modify-user-modal.component';
 import { CreateUserModalComponent } from './modal/create-user-modal/create-user-modal.component';
 import { QrcodeGeneratorModalComponent } from './modal/qrcode-generator-modal/qrcode-generator-modal.component';
+import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -94,6 +95,7 @@ import { QrcodeGeneratorModalComponent } from './modal/qrcode-generator-modal/qr
   ],
   providers: [
     NgbDateParserFormatterExtProvider,
+    {provide: LocationStrategy, useClass: HashLocationStrategy},
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptor, multi: true }
   ],

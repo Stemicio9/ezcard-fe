@@ -22,15 +22,15 @@
         <td>{{u.email}}</td>
         <td style="text-overflow: ellipsis">{{u.role_string}}</td>
         <td>
-          <i *ngIf="u.enabled" class="bi bi-check-circle-fill enable-icon"></i>
-          <i *ngIf="!u.enabled" class="bi bi-x-circle-fill disable-icon"></i>
+          <img *ngIf="u.enabled" src="assets/correct.png" width="25" height="25" style="cursor: pointer"/>
+          <img *ngIf="!u.enabled" src="assets/remove.png" width="25" height="25" style="cursor: pointer"/>
         <td>
-          <i class="bi bi-qr-code action-icon" (click)="showQrCodeProfile(u)"></i>
-          <i class="bi bi-pencil-square action-icon" (click)="modifyUser(u)"></i>
-          <i *ngIf="u.username != currentUsername && u.enabled" class="bi bi-dash-circle action-icon"
-             (click)="disableUser(u)"></i>
-          <i *ngIf="u.username != currentUsername && !u.enabled" class="bi bi-plus-circle action-icon"
-             (click)="disableUser(u)"></i>
+          <img src="assets/qr-code.png" width="25" height="25" (click)="showQrCodeProfile(u)" style="cursor: pointer"/>
+          <img src="assets/edit-dark-icon.png" width="25" height="25" (click)="modifyUser(u)" style="cursor: pointer"/>
+          <!--<i class="bi bi-qr-code action-icon" (click)="showQrCodeProfile(u)"></i>-->
+          <!--<i class="bi bi-pencil-square action-icon" (click)="modifyUser(u)"></i>-->
+          <img *ngIf="u.username != currentUsername && u.enabled" src="assets/delete.png" width="25" height="25" (click)="disableUser(u)" style="cursor: pointer"/>
+          <img *ngIf="u.username != currentUsername && !u.enabled" src="assets/add.png" width="25" height="25" (click)="disableUser(u)" style="cursor: pointer"/>
         </td>
       </tr>
       </tbody>

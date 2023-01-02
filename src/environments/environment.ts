@@ -5,9 +5,9 @@
 export const environment = {
   production: false,
 // base_url: 'http://192.168.1.114:8080/'
-   base_url: 'http://192.168.1.99:8080/',
-//   base_url: 'http://192.168.1.99:8081/resource-server',
-   token_url: 'http://192.168.1.99:8083/',
+   // base_url: 'http://192.168.1.99:8080/',
+  //base_url: 'http://195.231.85.62:8888/' //aruba server IP
+  base_url: 'http://localhost:8080/'
 
  //  base_url: 'http://192.168.1.47:8080/'
 };

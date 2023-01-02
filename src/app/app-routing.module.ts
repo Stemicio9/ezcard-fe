@@ -23,10 +23,11 @@ const routes: Routes = [
   {path: 'stats', component: StatsComponent, data: {title: 'Statistiche'}, canActivate: [AuthGuard]},
   {path: 'profile', component: ProfileComponent, data: {title: 'Profilo Utente'}},
   {path: 'profile-dark', component: ProfileDarkComponent, data: {title: 'Profilo Utente Dark'}},
+  {path: '**', redirectTo: 'login'}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})],
+  imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload', useHash: true})],
   exports: [RouterModule],
 })
 export class AppRoutingModule {
