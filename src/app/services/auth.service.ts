@@ -38,4 +38,8 @@ export class AuthService {
     let a = {responseType: 'arraybuffer' as 'json'};
     return this._http.get<any>(this.base_path + 'protected/qrcode/' + username, a);
   }
+
+  retrieveProfileLink(username:any): Observable<any> {
+    return this._http.get<any>(this.base_path + 'protected/profile-link/' + username, {responseType: 'text' as 'json'});
+  }
 }

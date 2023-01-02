@@ -89,7 +89,7 @@ export class AdministratorComponent implements OnInit {
 
   showQrCodeProfile(u: any) {
     let a = this.modalService.open(QrcodeGeneratorModalComponent, {
-      size: 'sm',
+      size: 'md',
       centered: true,
       ariaLabelledBy: 'modal-basic-title',
     });

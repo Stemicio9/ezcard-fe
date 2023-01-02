@@ -13,12 +13,16 @@ export class QrcodeGeneratorModalComponent implements OnInit {
   @Input() public data: any;
 
   public qrCodeImage: any;
+  public link: string = '';
 
   constructor(private modalService: NgbModal, private authService: AuthService, private utilityService: UtilityService) { }
 
   ngOnInit(): void {
     this.authService.generateQRCode(this.data.username).subscribe((res) => {
       this.qrCodeImage = this.utilityService.createSanitizedImageFromBlob(res, 'png');
+      this.authService.retrieveProfileLink(this.data.username).subscribe((r) => {
+        this.link = r;
+      });
     });
   }
 

@@ -1,6 +1,6 @@
 <div class="modal-header" style="background-color: var(--black_ez)">
   <div>
-    <i class="bi bi-qr-code title-icon"></i>
+    <img src="assets/qr-code-light.png" width="25" height="25"/>
     <span class="section-title text-light" style="padding-left: 1rem"
     >QrCode</span
     >
@@ -15,7 +15,10 @@
 </div>
 
 <div class="modal-body border-radius-popup">
-  <div class="mb-2">
-    <img [src]="qrCodeImage" width="256" height="256">
+  <div class="mb-2 d-flex justify-content-center flex-wrap">
+    <img [src]="qrCodeImage" width="256" height="256" style="margin-bottom: 1rem">
+    <a [href]="link" target="_blank">
+      <span>{{link}}</span>
+    </a>
   </div>
 </div>
