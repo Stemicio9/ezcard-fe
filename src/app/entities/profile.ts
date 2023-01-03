@@ -8,6 +8,8 @@ export class Profile {
   id: string;
   username: string;
   profileContainer: ProfileContainer;
+  profileImage: MediaContainer;
+  coverImage: MediaContainer;
   socials: SocialContainer[];
   contacts: ContactContainer[];
   companies: CompanyContainer[];
@@ -19,6 +21,8 @@ export class Profile {
     this.id = '';
     this.username = '';
     this.profileContainer = new ProfileContainer();
+    this.profileImage = new MediaContainer('', '', '', '');
+    this.coverImage = new MediaContainer('', '', '', '');
     this.socials = [];
     this.contacts = [];
     this.companies = [];

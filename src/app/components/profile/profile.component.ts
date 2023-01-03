@@ -5,6 +5,7 @@ import {ProfileService} from 'src/app/services/profile.service';
 import {socialMapLightTheme} from "../../utils/social-map";
 import {contactMapLightTheme} from "../../utils/contact-map";
 import {ContactContainer} from "../../entities/contact-container";
+import {VCard, VCardEncoding, VCardFormatter} from "ngx-vcard";
 
 @Component({
   selector: 'app-profile',
@@ -18,6 +19,10 @@ export class ProfileComponent implements OnInit {
   showProfile = false;
   ezCardWebsiteLink = "https://www.ezcard.it";
 
+  public vCard: VCard = {};
+  public vCardEncoding: typeof VCardEncoding = VCardEncoding;
+  public vCardString: string = VCardFormatter.getVCardAsString(this.vCard);
+
   constructor(private activatedRoute: ActivatedRoute, private profileService: ProfileService) {
   }
 
@@ -28,6 +33,7 @@ export class ProfileComponent implements OnInit {
         (data: any) => {
           this.profile = data;
           this.showProfile = true;
+          this.buildVCard();
         }, (error) => {
           console.log(error);
         });
@@ -62,4 +68,26 @@ export class ProfileComponent implements OnInit {
     }
 
   }
+
+  private buildVCard() {
+    this.vCard = {
+      kind: 'individual',
+      formattedName: {
+        firstNames: this.profile.profileContainer.firstName,
+        lastNames: this.profile.profileContainer.lastName
+      },
+      photo: this.profile.profileImage != null ? this.profile.profileImage.link : "",
+      name: {
+        lastNames: this.profile.profileContainer.lastName,
+        firstNames: this.profile.profileContainer.firstName
+      },
+      organization: this.profile.companies.length > 0 ? this.profile.companies[0].companyName : "",
+      title: this.profile.profileContainer.role,
+      telephone: this.profile.contacts.filter(c => c.name === "Telefono").map(c => {return {value: c.value ?? "", param: {type: 'cell'}}}),
+      email: this.profile.contacts.filter(c => c.name === "Email").map(c => {return {value: c.value ?? "", param: {type: 'work'}}}),
+      note: this.profile.profileContainer.description
+    };
+    this.vCardString = VCardFormatter.getVCardAsString(this.vCard);
+  }
+
 }
