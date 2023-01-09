@@ -35,6 +35,6 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            cd /root/dist_angular
+            cd /root/dist_angular/ezcard-fe
             docker cp ./ f5e624abce86:/var/www/html
             docker restart nginx_ezcard
