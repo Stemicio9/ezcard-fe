@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
   titlesSecondSection: string[] = ['Statistiche', 'Impostazioni', 'Profilo utente', 'Profilo utente dark']
   descriptionsFirstSection: string[] = ['Nome, Compagnia, ecc.', 'Linkedin, Facebook, Instagram', 'Telefono, Mail, Sito web', 'Sito web, Telefono, Indirizzo', 'Carica i tuoi file', 'Carica i tuoi progetti', 'Carica i tuoi partner'];
   descriptionsSecondSection: string[] = ['Visite, Click, ecc.', 'Email, Lingua, ecc.'];
-  imageLinksFirstSection: string[] = ["assets/user-dark-rounded-icon.png", "assets/social-dark-rounded-icon.png", "assets/contacts-dark-rounded-icon.png", "assets/company-dark-rounded-icon.png", "assets/presentation-dark-rounded-icon.png", "assets/gallery-dark-rounded-icon.png", "assets/partner-dark-rounded-icon.png"];
+  imageLinksFirstSection: string[] = ["/assets/user-dark-rounded-icon.png", "/assets/social-dark-rounded-icon.png", "/assets/contacts-dark-rounded-icon.png", "assets/company-dark-rounded-icon.png", "assets/presentation-dark-rounded-icon.png", "assets/gallery-dark-rounded-icon.png", "assets/partner-dark-rounded-icon.png"];
   imageLinksSecondSection: string[] = ["assets/stats-dark-rounded-icon.png", "assets/settings-dark-rounded-icon.png", "assets/user-dark-rounded-icon.png", "assets/user-dark-rounded-icon.png"];
   modalList: any[] = [ProfileModalComponent, SocialModalComponent, ContactsModalComponent, CompanyModalComponent, PresentationModalComponent, GalleryModalComponent, PartnerModalComponent, ProfileComponent, ProfileDarkComponent];
   routerLinkList: string[] = ['/stats', '/settings', '/profile/:id', '/profile-dark/:id'];

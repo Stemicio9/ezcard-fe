@@ -97,7 +97,7 @@ import {NgxVcardModule} from "ngx-vcard";
   ],
   providers: [
     NgbDateParserFormatterExtProvider,
-    {provide: LocationStrategy, useClass: HashLocationStrategy},
+    // {provide: LocationStrategy, useClass: HashLocationStrategy},
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptor, multi: true }
   ],

@@ -17,9 +17,9 @@ export class ContactsModalComponent implements OnInit {
   ];
 
   dropdownContact: Contact[] = [
-    new Contact('', 'assets/phone-dark-rounded-icon.png', 'Telefono'),
-    new Contact('', 'assets/email-dark-rounded-icon.png', 'Email'),
-    new Contact('', 'assets/internet-dark-rounded-icon.png', 'SitoWeb'),
+    new Contact('', '/assets/phone-dark-rounded-icon.png', 'Telefono'),
+    new Contact('', '/assets/email-dark-rounded-icon.png', 'Email'),
+    new Contact('', '/assets/internet-dark-rounded-icon.png', 'SitoWeb'),
   ];
 
 

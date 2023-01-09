@@ -19,14 +19,14 @@ export class CompanyModalComponent implements OnInit {
 
   defaultSocialDropdown(){
     return [
-      new Social('Instagram', 'assets/instagram-dark-rounded-icon.png', 'Instagram'),
-      new Social('YouTube', 'assets/youtube-dark-rounded-icon.png', 'YouTube'),
-      new Social('Twitter', 'assets/twitter-dark-rounded-icon.png', 'Twitter'),
-      new Social('Pinterest', 'assets/pinterest-dark-rounded-icon.png', 'Pinterest'),
-      new Social('Behance', 'assets/behance-dark-rounded-icon.png', 'Behance'),
-      new Social('Whatsapp', 'assets/whatsapp-dark-rounded-icon.png', 'Whatsapp'),
-      new Social('Facebook', 'assets/facebook-dark-rounded-icon.png', 'Facebook'),
-      new Social('TikTok', 'assets/tiktok-dark-rounded-icon.png', 'TikTok'),
+      new Social('Instagram', '/assets/instagram-dark-rounded-icon.png', 'Instagram'),
+      new Social('YouTube', '/assets/youtube-dark-rounded-icon.png', 'YouTube'),
+      new Social('Twitter', '/assets/twitter-dark-rounded-icon.png', 'Twitter'),
+      new Social('Pinterest', '/assets/pinterest-dark-rounded-icon.png', 'Pinterest'),
+      new Social('Behance', '/assets/behance-dark-rounded-icon.png', 'Behance'),
+      new Social('Whatsapp', '/assets/whatsapp-dark-rounded-icon.png', 'Whatsapp'),
+      new Social('Facebook', '/assets/facebook-dark-rounded-icon.png', 'Facebook'),
+      new Social('TikTok', '/assets/tiktok-dark-rounded-icon.png', 'TikTok'),
       new Social('Linkedin', 'assets/linkedin-dark-rounded-icon.png', 'Linkedin'),
     ];
    }

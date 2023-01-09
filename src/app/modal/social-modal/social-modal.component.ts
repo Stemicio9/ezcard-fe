@@ -12,15 +12,15 @@ export class SocialModalComponent implements OnInit {
 
 
   totalSocial: Social[] = [
-    new Social('', 'assets/whatsapp-dark-rounded-icon.png', 'Whatsapp'),
-    new Social('', 'assets/facebook-dark-rounded-icon.png', 'Facebook'),
-    new Social('', 'assets/tiktok-dark-rounded-icon.png', 'TikTok'),
-    new Social('', 'assets/linkedin-dark-rounded-icon.png', 'Linkedin'),
-    new Social('', 'assets/instagram-dark-rounded-icon.png', 'Instagram'),
-    new Social('', 'assets/youtube-dark-rounded-icon.png', 'YouTube'),
-    new Social('', 'assets/twitter-dark-rounded-icon.png', 'Twitter'),
-    new Social('', 'assets/pinterest-dark-rounded-icon.png', 'Pinterest'),
-    new Social('', 'assets/behance-dark-rounded-icon.png', 'Behance'),
+    new Social('', '/assets/whatsapp-dark-rounded-icon.png', 'Whatsapp'),
+    new Social('', '/assets/facebook-dark-rounded-icon.png', 'Facebook'),
+    new Social('', '/assets/tiktok-dark-rounded-icon.png', 'TikTok'),
+    new Social('', '/assets/linkedin-dark-rounded-icon.png', 'Linkedin'),
+    new Social('', '/assets/instagram-dark-rounded-icon.png', 'Instagram'),
+    new Social('', '/assets/youtube-dark-rounded-icon.png', 'YouTube'),
+    new Social('', '/assets/twitter-dark-rounded-icon.png', 'Twitter'),
+    new Social('', '/assets/pinterest-dark-rounded-icon.png', 'Pinterest'),
+    new Social('', '/assets/behance-dark-rounded-icon.png', 'Behance'),
   ];
 
   userSocial: Social[] = [];

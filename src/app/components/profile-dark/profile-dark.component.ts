@@ -25,54 +25,54 @@ export class ProfileDarkComponent implements OnInit {
   slidesStore = [
     {
       id: 'id1',
-      src: 'assets/white-logo.png',
+      src: '/assets/white-logo.png',
       alt: 'alt',
       title: ''
     },
     {
       id: 'id2',
-      src: 'assets/white-logo.png',
+      src: '/assets/white-logo.png',
       alt: 'alt',
       title: ''
     },
     {
       id: 'id3',
-      src: 'assets/white-logo.png',
+      src: '/assets/white-logo.png',
       alt: 'alt',
       title: ''
     },
     {
       id: 'id4',
-      src: 'assets/white-logo.png',
+      src: '/assets/white-logo.png',
       alt: 'alt',
       title: ''
     },
     {
       id: 'id5',
-      src: 'assets/white-logo.png',
+      src: '/assets/white-logo.png',
       alt: 'alt',
       title: ''
     },
     {
       id: 'id6',
-      src: 'assets/white-logo.png',
+      src: '/assets/white-logo.png',
       alt: 'alt',
       title: ''
     },
     {
       id: 'id6',
-      src: 'assets/white-logo.png',
+      src: '/assets/white-logo.png',
       alt: 'alt',
       title: ''
     },
     {
       id: 'id7',
-      src: 'assets/white-logo.png',
+      src: '/assets/white-logo.png',
       alt: 'alt',
       title: ''
     },{
       id: 'id8',
-      src: 'assets/white-logo.png',
+      src: '/assets/white-logo.png',
       alt: 'alt',
       title: ''
     },

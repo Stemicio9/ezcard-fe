@@ -22,13 +22,13 @@
         <td>{{u.email}}</td>
         <td style="text-overflow: ellipsis">{{u.role_string}}</td>
         <td>
-          <img *ngIf="u.enabled" src="assets/correct.png" width="25" height="25" class="action-icon"/>
-          <img *ngIf="!u.enabled" src="assets/remove.png" width="25" height="25" class="action-icon"/>
+          <img *ngIf="u.enabled" src="/assets/correct.png" width="25" height="25" class="action-icon"/>
+          <img *ngIf="!u.enabled" src="/assets/remove.png" width="25" height="25" class="action-icon"/>
         <td>
-          <img src="assets/qr-code.png" width="25" height="25" (click)="showQrCodeProfile(u)" class="action-icon"/>
-          <img src="assets/edit-dark-icon.png" width="25" height="25" (click)="modifyUser(u)" class="action-icon"/>
-          <img *ngIf="u.username != currentUsername && u.enabled" src="assets/delete.png" width="25" height="25" (click)="disableUser(u)" class="action-icon"/>
-          <img *ngIf="u.username != currentUsername && !u.enabled" src="assets/add.png" width="25" height="25" (click)="disableUser(u)" class="action-icon"/>
+          <img src="/assets/qr-code.png" width="25" height="25" (click)="showQrCodeProfile(u)" class="action-icon"/>
+          <img src="/assets/edit-dark-icon.png" width="25" height="25" (click)="modifyUser(u)" class="action-icon"/>
+          <img *ngIf="u.username != currentUsername && u.enabled" src="/assets/delete.png" width="25" height="25" (click)="disableUser(u)" class="action-icon"/>
+          <img *ngIf="u.username != currentUsername && !u.enabled" src="/assets/add.png" width="25" height="25" (click)="disableUser(u)" class="action-icon"/>
         </td>
       </tr>
       </tbody>
