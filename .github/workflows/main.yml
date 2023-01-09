@@ -26,3 +26,15 @@ jobs:
 
       - name: Move build to server with rsync
         run: rsync -avz -e "ssh -p ${{ secrets.SSH_PORT }}" ./dist/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/root/dist_angular
+
+      - name: Move data inside Nginx Container
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            cd /root/dist_angular
+            docker cp ./ f5e624abce86:/var/www/html
+            docker restart nginx_ezcard
