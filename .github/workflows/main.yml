@@ -21,14 +21,14 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           known_hosts: unnecessary
 
-      - name: Adding Known Hosts Through SSH Action
-        uses: appleboy/ssh-action@master
+      - name: Adding Known Hosts
+        uses: appleboy/ssh-action@v0.1.7
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.SSH_PORT }}
-          script: ssh-keyscan -p ${{ secrets.SSH_PORT_V }} -H ${{ secrets.SSH_HOST_V }}  >> ~/.ssh/known_hosts
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: ssh-keyscan -p ${{ secrets.SSH_PORT }} -H ${{ secrets.SSH_HOST }}  >> ~/.ssh/known_hosts
 
       - name: Move build to server with rsync
-        run: rsync -avz -e "ssh -p ${{ secrets.SSH_PORT_V }}" ./dist/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST_V }}:/root/dist_angular
+        run: rsync -avz -e "ssh -p ${{ secrets.SSH_PORT }}" ./dist/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/root/dist_angular
