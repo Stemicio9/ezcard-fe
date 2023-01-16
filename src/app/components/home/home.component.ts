@@ -12,6 +12,7 @@ import {ProfileDarkComponent} from '../profile-dark/profile-dark.component';
 import {ChangeImageModalComponent} from '../../modal/change-image-modal/change-image-modal.component';
 import {ProfileService} from "../../services/profile.service";
 import {UtilityService} from "../../services/utility.service";
+import {environment} from "../../../environments/environment";
 
 @Component({
   selector: 'app-home',
@@ -32,6 +33,8 @@ export class HomeComponent implements OnInit {
 
   // true = light theme, false = dark theme
   theme_style = true;
+
+  assistenzaLink = environment.assistenzaLink;
 
   constructor(private modalService: NgbModal, private profileService: ProfileService, private utilityService: UtilityService) {
   }
