@@ -44,6 +44,10 @@ export class PartnerModalComponent implements OnInit {
     this.allFiles.splice(i, 1);
   }
 
+  choosedFiles(event: any) {
+    this.droppedFiles(event.target.files);
+  }
+
   closeModal() {
     this.modalService.dismissAll();
   }

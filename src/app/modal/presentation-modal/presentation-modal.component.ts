@@ -48,6 +48,11 @@ export class PresentationModalComponent implements OnInit {
     this.modalService.dismissAll();
   }
 
+  choosedFiles(event: any) {
+    this.droppedFiles(event.target.files);
+  }
+
+
   droppedFiles(droppedFiles: any): void {
     const filesAmount = droppedFiles.length;
 

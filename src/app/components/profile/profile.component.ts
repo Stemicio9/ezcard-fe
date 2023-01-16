@@ -6,6 +6,7 @@ import {socialMapLightTheme} from "../../utils/social-map";
 import {contactMapLightTheme} from "../../utils/contact-map";
 import {ContactContainer} from "../../entities/contact-container";
 import {VCard, VCardEncoding, VCardFormatter} from "ngx-vcard";
+import {UtilityService} from "../../services/utility.service";
 
 @Component({
   selector: 'app-profile',
@@ -19,14 +20,18 @@ export class ProfileComponent implements OnInit {
   showProfile = false;
   ezCardWebsiteLink = "https://www.ezcard.it";
 
+  imageProfileUrl: string = "/assets/avatar-image.png";
+  imageCoverUrl: string = "/assets/placeholder-image.png";
+
   public vCard: VCard = {};
   public vCardEncoding: typeof VCardEncoding = VCardEncoding;
   public vCardString: string = VCardFormatter.getVCardAsString(this.vCard);
 
-  constructor(private activatedRoute: ActivatedRoute, private profileService: ProfileService) {
+  constructor(private activatedRoute: ActivatedRoute, private profileService: ProfileService, private utilityService: UtilityService) {
   }
 
   ngOnInit(): void {
+    this.loadProfileImage();
     this.username = this.activatedRoute.snapshot.queryParamMap.get("id");
     if (this.username != null) {
       this.profileService.getProfileShown(this.username).subscribe(
@@ -66,7 +71,28 @@ export class ProfileComponent implements OnInit {
       default:
         return "";
     }
+  }
 
+  loadProfileImage() {
+    this.profileService.getMedia('profile').subscribe((res: any) => {
+
+      if (res.length > 0) {
+        this.utilityService.downloadAndInsert(res[0]).subscribe((value: any) => {
+
+          // document.getElementById("profileImage")?.setAttribute("src", value.link);
+          this.imageProfileUrl = value.link;
+        });
+      }
+    });
+    this.profileService.getMedia('cover').subscribe((res: any) => {
+      if (res.length > 0) {
+        //document.getElementById("coverImage")?.setAttribute("src", res[0].url);
+        this.utilityService.downloadAndInsert(res[0]).subscribe((value: any) => {
+          this.imageCoverUrl = value.link;
+        });
+
+      }
+    });
   }
 
   private buildVCard() {
