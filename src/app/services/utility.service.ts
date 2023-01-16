@@ -44,7 +44,7 @@ export class UtilityService {
     return window.btoa(binary);
   }
 
-  private sanitize(url: string) {
+  sanitize(url: string) {
     return this.sanitizer.bypassSecurityTrustUrl(url);
   }
 

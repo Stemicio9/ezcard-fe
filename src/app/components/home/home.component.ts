@@ -36,6 +36,9 @@ export class HomeComponent implements OnInit {
 
   assistenzaLink = environment.assistenzaLink;
 
+  imageProfileUrl: string = "/assets/avatar-image.png";
+  imageCoverUrl: string = "/assets/placeholder-image.png";
+
   constructor(private modalService: NgbModal, private profileService: ProfileService, private utilityService: UtilityService) {
   }
 
@@ -94,15 +97,25 @@ export class HomeComponent implements OnInit {
     });
   }
 
+
   loadProfileImage() {
     this.profileService.getMedia('profile').subscribe((res: any) => {
+
       if (res.length > 0) {
-        document.getElementById("profileImage")?.setAttribute("src", res[0].url);
+        this.utilityService.downloadAndInsert(res[0]).subscribe((value: any) => {
+
+         // document.getElementById("profileImage")?.setAttribute("src", value.link);
+          this.imageProfileUrl = value.link;
+        });
       }
     });
     this.profileService.getMedia('cover').subscribe((res: any) => {
       if (res.length > 0) {
-        document.getElementById("coverImage")?.setAttribute("src", res[0].url);
+        //document.getElementById("coverImage")?.setAttribute("src", res[0].url);
+        this.utilityService.downloadAndInsert(res[0]).subscribe((value: any) => {
+          this.imageCoverUrl = value.link;
+        });
+
       }
     });
   }

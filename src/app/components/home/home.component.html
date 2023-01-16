@@ -5,8 +5,9 @@
   <div class="d-md-flex d-none col-md-4 d-flex flex-column">
     <div class="box">
       <img
+        style="object-fit: cover;"
         class="card-img-top"
-        src="/assets/placeholder-image.png"
+        [src]=imageCoverUrl
         alt="Card image cap"
       />
 
@@ -19,17 +20,17 @@
     </div>
 
     <div class="card-body text-center">
-      <img class="rounded-image" src="/assets/avatar-image.png"/>
+        <img style="object-fit: cover; height: 225px; width: 225px;" class="rounded-image" [src]=imageProfileUrl/>
       <div>
         <img
           class="edit-icon-profile"
           src="/assets/edit-dark-rounded-icon.png"
-          (click)="profileimage.click()"
+          (click)="profileImage.click()"
         />
       </div>
 
-      <input type="file" hidden #coverImage (change)="onChange($event, 'cover')"/>
-      <input type="file" hidden #profileimage (change)="onChange($event, 'profile')"/>
+      <input type="file" hidden id="coverImage" #coverImage (change)="onChange($event, 'cover')"/>
+      <input type="file" hidden id="profileImage" #profileImage (change)="onChange($event, 'profile')"/>
     </div>
 
     <div class="mb-3 d-none d-md-inline-flex flex-row justify-content-center">
