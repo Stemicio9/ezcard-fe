@@ -1,68 +1,70 @@
-<div class="center">
+<div class="center" style="position: relative; top: 25%">
   <div class="row justify-content-center mb-4">
     <img class="logo-center" src="./assets/black-logo.png" alt=""/>
   </div>
 
   <div class="row justify-content-center">
-    <div class="card rounded-card">
-      <div class="container">
-        <div class="row justify-content-center align-items-center">
-          <form class="form">
-            <div class="col-md-12">
-              <div class="form-group mt-3">
-                <label for="email" class="text-light">Email</label>
-                <input
-                  style="border-radius: 0.15rem"
-                  type="text"
-                  name="email"
-                  id="email"
-                  class="form-control"
-                  [(ngModel)]="form.email"
-                  required
-                  #username="ngModel"
-                />
-              </div>
-              <div class="form-group mt-3">
-                <label for="password" class="text-light">Password</label>
-                <input
-                  style="border-radius: 0.15rem"
-                  type="password"
-                  name="password"
-                  [(ngModel)]="form.password"
-                  #password="ngModel"
-                  required
-                  id="password"
-                  class="form-control"
-                />
-              </div>
-
-<!--              <div class="form-group form-check mt-3">-->
-<!--                <input-->
-<!--                  id="rememberMe"-->
-<!--                  type="checkbox"-->
-<!--                  class="form-check-input"-->
-<!--                />-->
-<!--                <label class="form-check-label text-light"-->
-<!--                >Mantieni accesso</label-->
-<!--                >-->
-<!--              </div>-->
-
-              <div class="row mt-3 mb-3">
-                <div class="d-flex flex-row-reverse">
+    <div class="col-11 col-sm-9 col-md-6 col-lg-4">
+      <div class="card rounded-card">
+        <div class="container">
+          <div class="row justify-content-center align-items-center">
+            <form class="form">
+              <div class="col-md-12">
+                <div class="form-group mt-3">
+                  <label for="email" class="text-light">Email</label>
                   <input
-                    type="submit"
-                    name="LOGIN"
-                    class="btn btn-md text-light m-2 login-button"
-                    value="LOGIN"
-                    (click)="login()"
+                    style="border-radius: 0.15rem"
+                    type="text"
+                    name="email"
+                    id="email"
+                    class="form-control"
+                    [(ngModel)]="form.email"
+                    required
+                    #username="ngModel"
                   />
-                  <a routerLink="/forget-password" class="m-3 text-light"
-                  >Password dimenticata?</a
-                  >
+                </div>
+                <div class="form-group mt-3">
+                  <label for="password" class="text-light">Password</label>
+                  <input
+                    style="border-radius: 0.15rem"
+                    type="password"
+                    name="password"
+                    [(ngModel)]="form.password"
+                    #password="ngModel"
+                    required
+                    id="password"
+                    class="form-control"
+                  />
+                </div>
+
+                <!--              <div class="form-group form-check mt-3">-->
+                <!--                <input-->
+                <!--                  id="rememberMe"-->
+                <!--                  type="checkbox"-->
+                <!--                  class="form-check-input"-->
+                <!--                />-->
+                <!--                <label class="form-check-label text-light"-->
+                <!--                >Mantieni accesso</label-->
+                <!--                >-->
+                <!--              </div>-->
+
+                <div class="row mt-3 mb-3">
+                  <div class="d-flex flex-row-reverse">
+                    <input
+                      type="submit"
+                      name="LOGIN"
+                      class="btn btn-md text-light m-2 login-button"
+                      value="LOGIN"
+                      (click)="login()"
+                    />
+                    <a routerLink="/forget-password" class="m-3 text-light"
+                    >Password dimenticata?</a
+                    >
+                  </div>
                 </div>
               </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
     </div>
