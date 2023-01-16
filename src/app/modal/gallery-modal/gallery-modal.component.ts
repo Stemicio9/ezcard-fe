@@ -45,8 +45,15 @@ export class GalleryModalComponent implements OnInit {
     this.modalService.dismissAll();
   }
 
+
+  choosedFiles(event: any) {
+    this.droppedFiles(event.target.files);
+  }
+
   droppedFiles(droppedFiles: any): void {
     const filesAmount = droppedFiles.length;
+
+    console.log(droppedFiles);
 
     for (let i = 0; i < filesAmount; i++) {
       const file = droppedFiles[i];
@@ -78,5 +85,7 @@ export class GalleryModalComponent implements OnInit {
       }
     );
   }
+
+
 
 }
