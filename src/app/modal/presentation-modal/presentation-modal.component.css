@@ -36,3 +36,9 @@ span {
   background-color: var(--black_ez)
 
 }
+
+.table-wrapper {
+  max-height: 200px;
+  overflow: auto;
+  display: block;
+}
