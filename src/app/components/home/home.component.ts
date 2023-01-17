@@ -65,9 +65,9 @@ export class HomeComponent implements OnInit {
 
     a.componentInstance.imageChanged.subscribe((res:any) => {
       this.onChange(res.event, res.profile);
+      a.close();
     });
 
-    a.close();
 
   }
 
