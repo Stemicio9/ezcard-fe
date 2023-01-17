@@ -38,6 +38,7 @@ export class HomeComponent implements OnInit {
 
   imageProfileUrl: string = "/assets/avatar-image.png";
   imageCoverUrl: string = "/assets/placeholder-image.png";
+  changeImage = ChangeImageModalComponent;
 
   constructor(private modalService: NgbModal, private profileService: ProfileService, private utilityService: UtilityService) {
   }
@@ -55,7 +56,21 @@ export class HomeComponent implements OnInit {
     );
   }
 
-  changeImage = ChangeImageModalComponent;
+  openImageModal(content: any) {
+    const a = this.modalService.open(content, {
+      size: 'lg',
+      centered: true,
+      ariaLabelledBy: 'modal-basic-title'
+    });
+
+    a.componentInstance.imageChanged.subscribe((res:any) => {
+      this.onChange(res.event, res.profile);
+    });
+
+    a.close();
+
+  }
+
 
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
