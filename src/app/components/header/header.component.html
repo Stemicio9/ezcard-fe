@@ -23,9 +23,15 @@
     </div>
     <div *ngIf="this.showLogoutIcon" class="d-md-inline mr-md-5 mr-1">
       <a class="navbar-brand">
-        <img src="/assets/logout.png" width="25" height="25" (click)="logout()" style="cursor: pointer"/>
+        <img src="/assets/logout.png" width="25" height="25" (click)="open()" style="cursor: pointer"/>
       </a>
     </div>
   </nav>
 </div>
+
+<app-generic-modal #genericModal (newConfirmationEvent)="getConfirmationValue($event)" [modalStyle]="modalStyle"
+                    [modalTitle]="modalTitle"
+                    [modalBody]="modalBody"
+                    [modalButtonColor]="modalButtonColor">
+</app-generic-modal>
 

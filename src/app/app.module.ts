@@ -49,6 +49,7 @@ import { CreateUserModalComponent } from './modal/create-user-modal/create-user-
 import { QrcodeGeneratorModalComponent } from './modal/qrcode-generator-modal/qrcode-generator-modal.component';
 import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 import {NgxVcardModule} from "ngx-vcard";
+import { GenericModalComponent } from './modal/generic-modal/generic-modal.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +82,7 @@ import {NgxVcardModule} from "ngx-vcard";
     ModifyUserModalComponent,
     CreateUserModalComponent,
     QrcodeGeneratorModalComponent,
+    GenericModalComponent,
   ],
   imports: [
     BrowserAnimationsModule,

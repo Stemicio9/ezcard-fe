@@ -16,6 +16,10 @@ export class ContactsModalComponent implements OnInit {
   totalContact: Contact[] = [
   ];
 
+  regexPhone = new RegExp("^[0-9]{9,11}$");
+  regexEmail = new RegExp("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$");
+  regexUrl = new RegExp("^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$");
+
   dropdownContact: Contact[] = [
     new Contact('', '/assets/phone-dark-rounded-icon.png', 'Telefono'),
     new Contact('', '/assets/email-dark-rounded-icon.png', 'Email'),
@@ -40,7 +44,6 @@ export class ContactsModalComponent implements OnInit {
       this.modalService.dismissAll();
     }, error => {
       // GESTIRE UN EVENTUALE ERRORE DI UPLOAD
-      console.log(error);
       this.modalService.dismissAll();
     });
     this.modalService.dismissAll();
@@ -67,7 +70,6 @@ export class ContactsModalComponent implements OnInit {
 
   fromContactContainerToContact(socialResult: any[]){
     for(let element of socialResult){
-      console.log(element);
       this.totalContact.push(new Contact(element.value, this.calculateIconPath(element.name), element.name));
     }
   }
@@ -92,5 +94,26 @@ export class ContactsModalComponent implements OnInit {
     }
     return element.name;
   }
+
+  validateString(element: Contact) {
+    if(element.name == undefined){
+      return false;
+    }
+    if(element.name.length == 0){
+      return false;
+    }
+    switch (element.placeholder) {
+      case "Telefono":
+        return this.regexPhone.test(element.name);
+      case "Email":
+        return this.regexEmail.test(element.name);
+      case "SitoWeb":
+        return this.regexUrl.test(element.name);
+      default:
+        return false;
+    }
+  }
+
+
 
 }

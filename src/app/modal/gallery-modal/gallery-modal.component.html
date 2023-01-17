@@ -54,7 +54,7 @@
             <!--<td>{{f.size}} Bytes</td>-->
             <td>{{f.type}}</td>
 
-            <td><button class="btn btn-danger" (click)="removeFile(i)">Rimuovi</button></td>
+            <td><button class="btn btn-danger" (click)="open(i)">Rimuovi</button></td>
           </tr>
           <tr class="text-center" *ngIf="allFiles.length === 0">
             <td colspan="4"><strong>Nessun file caricato</strong></td>
@@ -73,3 +73,9 @@
   </div>
 
 </div>
+
+<app-generic-modal #genericModal (newConfirmationEvent)="getConfirmationValue($event)" [modalStyle]="modalStyle"
+                   [modalTitle]="modalTitle"
+                   [modalBody]="modalBody"
+                   [modalButtonColor]="modalButtonColor">
+</app-generic-modal>

@@ -1,0 +1,35 @@
+<ng-template #genericModal let-c="close" let-d="dismiss">
+  <div class="modal-header {{ modalStyle }}">
+    <h5 class="modal-title" id="modal-title">
+      {{ modalTitle }}
+    </h5>
+
+    <img
+      class="btn-close cancel"
+      type="button"
+      src="/assets/cancel-icon.png"
+      (click)="d('Cross click')"
+    />
+  </div>
+  <div class="modal-body">
+    <p>
+      {{ modalBody }}
+    </p>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-outline-secondary"
+      (click)="d('Cross click')"
+    >
+      Annulla
+    </button>
+    <button
+      type="button"
+      class="btn {{ modalButtonColor }}"
+      (click)="c('Save click')"
+    >
+      OK
+    </button>
+  </div>
+</ng-template>

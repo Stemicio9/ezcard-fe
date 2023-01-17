@@ -1,8 +1,9 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {ProfileService} from "../../services/profile.service";
 import {MediaContainer} from "../../entities/media-container";
 import {UtilityService} from "../../services/utility.service";
+import {GenericModalComponent} from "../generic-modal/generic-modal.component";
 
 @Component({
   selector: 'app-presentation-modal',
@@ -13,10 +14,19 @@ export class PresentationModalComponent implements OnInit {
 
   @Input() public data: any;
 
+  @ViewChild('genericModal') private modalComponent!: GenericModalComponent;
+
+  modalStyle: string = 'modal-style-danger ';
+  modalTitle: string = 'Attenzione';
+  modalBody: string = 'Vuoi davvero eliminare il file?';
+  modalButtonColor: string = 'btn-danger';
+
   allFiles: any[] = [];
   filesNotInCharge: File[] = [];
   mediaContainerList: MediaContainer[] = [];
   threshold = 14;
+
+  clickedIndex = -1;
 
   constructor(private modalService: NgbModal, private profileService: ProfileService, private utilityService: UtilityService) {
   }
@@ -84,6 +94,22 @@ export class PresentationModalComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  async openModal() {
+    return await this.modalComponent.open();
+  }
+
+  getConfirmationValue(value: any) {
+    if (value == 'Save click') {
+      this.removeFile(this.clickedIndex);
+      this.clickedIndex = -1;
+    }
+  }
+
+  open(index: number) {
+    this.clickedIndex = index;
+    this.openModal().then(r => {});
   }
 
 }

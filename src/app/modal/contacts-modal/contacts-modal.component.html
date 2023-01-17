@@ -1,8 +1,8 @@
 <div class="modal-header" style="background-color: var(--black_ez)">
   <div>
-    <img class="icon-size" src="/assets/contacts-white-rounded-icon.png" />
+    <img class="icon-size" src="/assets/contacts-white-rounded-icon.png"/>
     <span class="section-title text-light" style="padding-left: 1rem"
-      >Contatti</span
+    >Contatti</span
     >
   </div>
 
@@ -41,7 +41,14 @@
             />
           </div>
         </div>
+        <div>
+          <span *ngIf="!validateString(element)">
+            <span *ngIf="element.placeholder==='Telefono'" class="text-danger">Inserisci un telefono valido</span>
+            <span *ngIf="element.placeholder==='Email'" class="text-danger">Inserisci una email valida</span>
+            <span *ngIf="element.placeholder==='SitoWeb'" class="text-danger">Inserisci un sito web valido</span>
+          </span>
         </div>
+      </div>
     </div>
 
     <div *ngIf="totalContact.length == 0">INSERISCI UN CONTATTO</div>
