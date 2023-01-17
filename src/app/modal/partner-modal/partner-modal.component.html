@@ -39,7 +39,7 @@
         <tr>
           <th scope="col">#</th>
           <th scope="col">Nome del file</th>
-          <th scope="col">Dimensione</th>
+          <!--<th scope="col">Dimensione</th>-->
           <th scope="col">Tipo</th>
           <th scope="col">Azioni</th>
         </tr>
@@ -51,7 +51,7 @@
             <img [src]="f.link" width="20" height="20"/>
           </th>
           <td>{{f.name}}</td>
-          <td>{{f.size}} Bytes</td>
+          <!--<td>{{f.size}} Bytes</td>-->
           <td>{{f.type}}</td>
 
           <td><button class="btn btn-danger" (click)="removeFile(i)">Rimuovi</button></td>
