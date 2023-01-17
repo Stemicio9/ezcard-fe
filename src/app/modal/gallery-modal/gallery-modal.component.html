@@ -19,9 +19,9 @@
   <div class="container text-center mt-2" style="margin-bottom: 3rem;">
     <!-- Apply DropZone Directive -->
     <div type="button" class="dropzone" DropZone (click)="inputClick.click()" (onFileDropped)="droppedFiles($event)">
-      <input #inputClick type="file" hidden multiple (change)="choosedFiles($event)" />
+      <input #inputClick type="file" hidden multiple (change)="choosedFiles($event)" accept="image/png, image/jpeg" />
       <div class="text-center">
-        <span class="note needsclick">Trascina qui i tuoi file.</span>
+        <span class="note needsclick">Trascina qui o clicca per aggiungere i tuoi file.</span>
       </div>
       <div class="text-center">
         <span class="note needsclick">Puoi caricare fino ad un massimo di 15 file.</span>
@@ -50,7 +50,7 @@
             <th scope="row">
               <img [src]="f.link" width="20" height="20"/>
             </th>
-            <td>{{f.name}}</td>
+            <td class="text-truncate" style="max-width: 100px">{{f.name}}</td>
             <!--<td>{{f.size}} Bytes</td>-->
             <td>{{f.type}}</td>
 

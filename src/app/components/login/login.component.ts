@@ -14,17 +14,22 @@ export class LoginComponent implements OnInit {
     password: null,
   };
 
+  showErrorCredentials = false;
+
   constructor(
     private storageService: StorageService,
     private authService: AuthService,
     private router: Router
   ) {
+
+
   }
 
   ngOnInit(): void {
   }
 
   login() {
+    this.showErrorCredentials = false;
     const {email, password} = this.form;
 
     this.authService.authenticateUser(email, password).subscribe(
@@ -37,6 +42,7 @@ export class LoginComponent implements OnInit {
         }
       },
       (error) => {
+        this.showErrorCredentials = true;
         console.log(error);
       }
     );
