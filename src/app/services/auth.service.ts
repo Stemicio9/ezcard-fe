@@ -42,4 +42,19 @@ export class AuthService {
   retrieveProfileLink(username:any): Observable<any> {
     return this._http.get<any>(this.base_path + 'protected/profile-link/' + username, {responseType: 'text' as 'json'});
   }
+
+  forgotPassword(email: string): Observable<any> {
+    const body = {
+      "email": email
+    };
+    return this._http.post<any>(this.base_path + 'public/forgot-password/', body);
+  }
+
+  resetPassword(password: string, token: string): Observable<any> {
+    const body = {
+      "password": password,
+      "token": token
+    };
+    return this._http.post<any>(this.base_path + 'public/reset-password', body);
+  }
 }

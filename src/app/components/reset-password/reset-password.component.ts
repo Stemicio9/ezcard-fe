@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {StorageService} from "../../services/storage.service";
 import {AuthService} from "../../services/auth.service";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
@@ -16,17 +16,19 @@ export class ResetPasswordComponent implements OnInit {
   };
   disableButton = true;
 
+  token: string = '';
+
   confirmPasswordClass = 'form-control';
   newPassword = new FormControl(null, [
     (c: AbstractControl) => Validators.required(c),
     Validators.pattern(
-      /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*#?&^_-]).{8,}/
+      /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/
     ),
   ]);
   confirmPassword = new FormControl(null, [
     (c: AbstractControl) => Validators.required(c),
     Validators.pattern(
-      /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*#?&^_-]).{8,}/
+      /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/
     ),
   ]);
 
@@ -44,8 +46,10 @@ export class ResetPasswordComponent implements OnInit {
     private storageService: StorageService,
     private authService: AuthService,
     private router: Router,
+    private activatedRoute: ActivatedRoute,
     private formBuilder: FormBuilder
   ) {
+    this.token = this.activatedRoute.snapshot.queryParamMap.get("token") ?? '';
   }
 
   ngOnInit(): void {
@@ -55,7 +59,10 @@ export class ResetPasswordComponent implements OnInit {
     if (!this.resetPasswordForm?.valid) {
       return;
     } else {
-      this.router.navigate(['home']);
+      this.authService.resetPassword(this.form.password, this.token).subscribe(
+        (data) => {
+          this.router.navigate(['home']);
+        });
     }
 
     /*const { email, password } = this.form;
