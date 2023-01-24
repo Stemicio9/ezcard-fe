@@ -11,13 +11,22 @@ export class UtilityService {
 
   constructor(private httpClient: HttpClient, private sanitizer: DomSanitizer) { }
 
-  downloadFileFromUrl(url: string) {
-    return this.httpClient.post(environment.base_url + "protected/profile/get/file", {"link": url}, {responseType: 'arraybuffer'});
+  downloadFileFromUrl(call_url:string, url: string) {
+    return this.httpClient.post(call_url, {"link": url}, {responseType: 'arraybuffer'});
   }
 
   downloadAndInsert(element: any): Observable<any> {
     const subject = new Subject<any>;
-    this.downloadFileFromUrl(element.link).subscribe(result => {
+    this.downloadFileFromUrl(environment.base_url + "protected/profile/get/file", element.link).subscribe(result => {
+      const file = new File([result], element.name, {type: element.type});
+      subject.next(this.createImageFromBlob(result, file));
+    });
+    return subject.asObservable();
+  }
+
+  downloadAndInsertPublic(element: any): Observable<any> {
+    const subject = new Subject<any>;
+    this.downloadFileFromUrl(environment.base_url + "public/profile/get/file", element.link).subscribe(result => {
       const file = new File([result], element.name, {type: element.type});
       subject.next(this.createImageFromBlob(result, file));
     });

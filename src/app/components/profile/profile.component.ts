@@ -31,12 +31,12 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loadProfileImage();
     this.username = this.activatedRoute.snapshot.queryParamMap.get("id");
     if (this.username != null) {
       this.profileService.getProfileShown(this.username).subscribe(
         (data: any) => {
           this.profile = data;
-          this.loadProfileImage();
           this.showProfile = true;
           this.buildVCard();
         }, (error) => {
@@ -77,7 +77,7 @@ export class ProfileComponent implements OnInit {
     this.profileService.getMediaSecond('profile', this.profile.id).subscribe((res: any) => {
 
       if (res.length > 0) {
-        this.utilityService.downloadAndInsert(res[0]).subscribe((value: any) => {
+        this.utilityService.downloadAndInsertPublic(res[0]).subscribe((value: any) => {
 
           // document.getElementById("profileImage")?.setAttribute("src", value.link);
           this.imageProfileUrl = value.link;
@@ -87,7 +87,7 @@ export class ProfileComponent implements OnInit {
     this.profileService.getMediaSecond('cover', this.profile.id).subscribe((res: any) => {
       if (res.length > 0) {
         //document.getElementById("coverImage")?.setAttribute("src", res[0].url);
-        this.utilityService.downloadAndInsert(res[0]).subscribe((value: any) => {
+        this.utilityService.downloadAndInsertPublic(res[0]).subscribe((value: any) => {
           this.imageCoverUrl = value.link;
         });
 
