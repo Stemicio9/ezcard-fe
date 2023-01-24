@@ -85,6 +85,10 @@ export class ProfileService {
     return this.httpClient.get(this.base_path + 'get/media/', {headers: this.buildHeaders(), params: {'type': type}});
   }
 
+  getMediaSecond(type: string, id: string){
+    return this.httpClient.get(this.public_base_path + 'get/media/', {headers: this.buildHeaders(), params: {'id':id, 'type': type}});
+  }
+
   getProfileShown(id: string){
     return this.httpClient.get(this.public_base_path + 'get/profile-shown/'+ id, {headers: this.buildHeaders()});
   }

@@ -74,7 +74,7 @@ export class ProfileComponent implements OnInit {
   }
 
   loadProfileImage() {
-    this.profileService.getMedia('profile').subscribe((res: any) => {
+    this.profileService.getMediaSecond('profile', this.profile.id).subscribe((res: any) => {
 
       if (res.length > 0) {
         this.utilityService.downloadAndInsert(res[0]).subscribe((value: any) => {
@@ -84,7 +84,7 @@ export class ProfileComponent implements OnInit {
         });
       }
     });
-    this.profileService.getMedia('cover').subscribe((res: any) => {
+    this.profileService.getMediaSecond('cover', this.profile.id).subscribe((res: any) => {
       if (res.length > 0) {
         //document.getElementById("coverImage")?.setAttribute("src", res[0].url);
         this.utilityService.downloadAndInsert(res[0]).subscribe((value: any) => {
