@@ -46,7 +46,7 @@ export class ProfileContainerPartnerComponent implements OnInit {
 
   ngOnInit(): void {
     for (const element of this.partnerArray) {
-      this.utilityService.downloadAndInsert(element).subscribe((value: any) => {
+      this.utilityService.downloadAndInsertPublic(element).subscribe((value: any) => {
         this.allFiles.push(value);
       });
     }
