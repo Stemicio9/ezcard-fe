@@ -89,39 +89,9 @@
           <app-profile-container-gallery [galleryArray]="profile.gallery"></app-profile-container-gallery>
         </div>
 
-        <div class="mt-5 mb-3">
-          <span class="card-subtitle mb-5">PARTNER</span>
+        <div *ngIf="profile.partner.length > 0">
+          <app-profile-container-partner [partnerArray]="profile.partner"></app-profile-container-partner>
         </div>
-
-        <ngb-carousel #ngcarousel>
-          <ng-template ngbSlide id="one-partner">
-            <div class="picsum-img-wrapper">
-              <img
-                class="image-carousel"
-                src="assets/black-logo.png"
-                alt="Slide 1"
-              />
-            </div>
-          </ng-template>
-          <ng-template ngbSlide id="two-partner">
-            <div class="picsum-img-wrapper">
-              <img
-                class="image-carousel"
-                src="assets/black-logo.png"
-                alt="Slide 2"
-              />
-            </div>
-          </ng-template>
-          <ng-template ngbSlide id="three-partner">
-            <div class="picsum-img-wrapper">
-              <img
-                class="image-carousel"
-                src="assets/black-logo.png"
-                alt="Slide 3"
-              />
-            </div>
-          </ng-template>
-        </ngb-carousel>
 
         <hr class="mt-5"/>
 

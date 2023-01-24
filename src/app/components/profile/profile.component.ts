@@ -31,12 +31,12 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loadProfileImage();
     this.username = this.activatedRoute.snapshot.queryParamMap.get("id");
     if (this.username != null) {
       this.profileService.getProfileShown(this.username).subscribe(
         (data: any) => {
           this.profile = data;
+          this.loadProfileImage();
           this.showProfile = true;
           this.buildVCard();
         }, (error) => {
