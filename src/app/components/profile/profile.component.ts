@@ -37,6 +37,8 @@ export class ProfileComponent implements OnInit {
       this.profileService.getProfileShown(this.username).subscribe(
         (data: any) => {
           this.profile = data;
+          this.imageCoverUrl = this.profile.coverImage.link;
+          this.imageProfileUrl = this.profile.profileImage.link;
           this.showProfile = true;
           this.buildVCard();
         }, (error) => {
