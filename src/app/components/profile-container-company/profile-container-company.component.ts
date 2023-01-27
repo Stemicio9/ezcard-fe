@@ -32,9 +32,24 @@ export class ProfileContainerCompanyComponent implements OnInit {
       case "Email":
         return "mailto:" + value;
       case "SitoWeb":
-        return "https://" + value;
+        return this.autoAddProtocol(value);
       default:
         return "";
     }
   }
+
+  getLocation = (href: string) => {
+    const parser = document.createElement("a");
+    parser.href = href;
+    return parser;
+  };
+
+  autoAddProtocol = (href: string) => {
+    let hrefCopy = href;
+    const parser = this.getLocation(href);
+    if (parser.protocol !== 'http:') {
+      hrefCopy = 'http://' + href;
+    }
+    return hrefCopy;
+  };
 }

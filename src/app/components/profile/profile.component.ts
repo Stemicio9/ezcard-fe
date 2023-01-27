@@ -67,11 +67,27 @@ export class ProfileComponent implements OnInit {
       case "Email":
         return "mailto:" + c.value;
       case "SitoWeb":
-        return "https://" + c.value;
+        return this.autoAddProtocol(c.value!);
+        //return "https://" + c.value;
       default:
         return "";
     }
   }
+
+  getLocation = (href: string) => {
+    const parser = document.createElement("a");
+    parser.href = href;
+    return parser;
+  };
+
+  autoAddProtocol = (href: string) => {
+    let hrefCopy = href;
+    const parser = this.getLocation(href);
+    if (parser.protocol !== 'http:') {
+      hrefCopy = 'http://' + href;
+    }
+    return hrefCopy;
+  };
 
   loadProfileImage() {
     this.profileService.getMediaSecond('profile', this.profile.id).subscribe((res: any) => {
