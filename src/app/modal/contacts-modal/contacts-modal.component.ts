@@ -104,7 +104,8 @@ export class ContactsModalComponent implements OnInit {
     }
     switch (element.placeholder) {
       case "Telefono":
-        return this.regexPhone.test(element.name);
+        return true;
+        //return this.regexPhone.test(element.name);
       case "Email":
         return this.regexEmail.test(element.name);
       case "SitoWeb":

@@ -14,6 +14,8 @@ export class CreateUserModalComponent implements OnInit {
   adminRole: boolean = false;
   userRole: boolean = false;
 
+  giftedValue: boolean = false;
+
   constructor(private modalService: NgbModal) {
   }
 
@@ -26,6 +28,7 @@ export class CreateUserModalComponent implements OnInit {
 
   save() {
     this.data.authorities = this.manageUserRoles();
+    this.data.gifted = this.giftedValue;
     if (this.data.authorities.length > 0) {
       this.passEntry.emit(this.data);
       this.closeModal();

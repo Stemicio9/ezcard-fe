@@ -66,8 +66,8 @@ export class ProfileComponent implements OnInit {
         return "tel:" + c.value;
       case "Email":
         return "mailto:" + c.value;
-      case "Sito web":
-        return c.value;
+      case "SitoWeb":
+        return "https://" + c.value;
       default:
         return "";
     }
@@ -109,8 +109,12 @@ export class ProfileComponent implements OnInit {
       },
       organization: this.profile.companies.length > 0 ? this.profile.companies[0].companyName : "",
       title: this.profile.profileContainer.role,
-      telephone: this.profile.contacts.filter(c => c.name === "Telefono").map(c => {return {value: c.value ?? "", param: {type: 'cell'}}}),
-      email: this.profile.contacts.filter(c => c.name === "Email").map(c => {return {value: c.value ?? "", param: {type: 'work'}}}),
+      telephone: this.profile.contacts.filter(c => c.name === "Telefono").map(c => {
+        return {value: c.value ?? "", param: {type: 'cell'}}
+      }),
+      email: this.profile.contacts.filter(c => c.name === "Email").map(c => {
+        return {value: c.value ?? "", param: {type: 'work'}}
+      }),
       note: this.profile.profileContainer.description
     };
     this.vCardString = VCardFormatter.getVCardAsString(this.vCard);

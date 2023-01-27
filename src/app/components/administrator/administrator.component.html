@@ -1,8 +1,21 @@
 <div class="container-fluid" style="margin-top: 1rem">
   <div class="row">
+    <div style="display: flex;">
+      <h2>Utenti Totali Iscritti:</h2>
+      <h2 style="margin-left: 1rem; margin-right: 3rem;">{{users.length}}</h2>
+      <h2>Utenti Admin Iscritti:</h2>
+      <h2 style="margin-left: 1rem; margin-right: 3rem;">{{userCount(true)}}</h2>
+      <h2>Utenti User Iscritti:</h2>
+      <h2 style="margin-left: 1rem;">{{userCount(false)}}</h2>
+    </div>
+  </div>
+
+  <div class="row">
     <div style="display: flex; justify-content: space-between">
-      <h3>Lista utenti</h3>
-      <button class="btn" style="background-color:var(--black_ez); color: white" (click)="createUser()">Aggiungi Utente</button>
+      <h3></h3>
+      <button class="btn" style="background-color:var(--black_ez); color: white" (click)="createUser()">Aggiungi
+        Utente
+      </button>
     </div>
   </div>
   <div class="table-responsive">
@@ -12,6 +25,7 @@
         <th scope="col">Username</th>
         <th scope="col">Email</th>
         <th scope="col">Ruoli</th>
+        <th scope="col">Gifted</th>
         <th scope="col">Attivo</th>
         <th scope="col"></th>
       </tr>
@@ -22,13 +36,20 @@
         <td>{{u.email}}</td>
         <td style="text-overflow: ellipsis">{{u.role_string}}</td>
         <td>
+          <img *ngIf="u.gifted" src="/assets/correct.png" width="25" height="25" class="action-icon"/>
+          <img *ngIf="!u.gifted" src="/assets/remove.png" width="25" height="25" class="action-icon"/>
+        </td>
+        <td>
           <img *ngIf="u.enabled" src="/assets/correct.png" width="25" height="25" class="action-icon"/>
           <img *ngIf="!u.enabled" src="/assets/remove.png" width="25" height="25" class="action-icon"/>
+        </td>
         <td>
           <img src="/assets/qr-code.png" width="25" height="25" (click)="showQrCodeProfile(u)" class="action-icon"/>
           <img src="/assets/edit-dark-icon.png" width="25" height="25" (click)="modifyUser(u)" class="action-icon"/>
-          <img *ngIf="u.username != currentUsername && u.enabled" src="/assets/delete.png" width="25" height="25" (click)="disableUser(u)" class="action-icon"/>
-          <img *ngIf="u.username != currentUsername && !u.enabled" src="/assets/add.png" width="25" height="25" (click)="disableUser(u)" class="action-icon"/>
+          <img *ngIf="u.username != currentUsername && u.enabled" src="/assets/delete.png" width="25" height="25"
+               (click)="disableUser(u)" class="action-icon"/>
+          <img *ngIf="u.username != currentUsername && !u.enabled" src="/assets/add.png" width="25" height="25"
+               (click)="disableUser(u)" class="action-icon"/>
         </td>
       </tr>
       </tbody>

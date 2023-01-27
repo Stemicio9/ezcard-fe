@@ -28,7 +28,8 @@
             <img class="icon-size" src="/assets/qrcode-dark-rounded-icon.png"/>
           </div>
         </div>
-        <h5 class="card-title mt-2"><b>{{profile.profileContainer.firstName + " " + profile.profileContainer.lastName}}</b>
+        <h5 class="card-title mt-2">
+          <b>{{profile.profileContainer.firstName + " " + profile.profileContainer.lastName}}</b>
         </h5>
         <span class="card-subtitle">{{profile.profileContainer.role}}</span>
 
@@ -82,7 +83,8 @@
         </div>
 
         <div *ngIf="profile.presentation.length > 0">
-          <app-profile-container-presentation [presentationArray]="profile.presentation"></app-profile-container-presentation>
+          <app-profile-container-presentation
+            [presentationArray]="profile.presentation"></app-profile-container-presentation>
         </div>
 
         <div *ngIf="profile.gallery.length > 0">
@@ -170,8 +172,8 @@
             <span class="card-subtitle">CONTATTI</span>
 
             <div class="card card-contact mt-3 mb-5">
-              <div class="no-divider" *ngFor="let c of profile.contacts; index as j">
-                <a [href]="formatHref(c)">
+              <div class="no-divider" *ngFor="let c of profile.contacts">
+                <a [href]="formatHref(c)" target="_blank">
                 <span>
                   <img
                     class="icon-card"

@@ -95,4 +95,21 @@ export class AdministratorComponent implements OnInit {
     });
     a.componentInstance.data = u;
   }
+
+  userCount(isAdmin: boolean) {
+    let x = 0;
+    if(isAdmin){
+      x = this.users.filter((user: any) => this.checkRole(user.authorities, 'ROLE_ADMIN')).length;
+    }else{
+      x = this.users.filter((user: any) => this.checkRole(user.authorities, 'ROLE_USER')).length;
+    }
+    return x;
+  }
+
+  checkRole(authorities: any[], role: string) {
+    for(let i = 0; i < authorities.length; i++){
+      if (authorities[i].name === role) return true;
+    }
+    return false;
+  }
 }

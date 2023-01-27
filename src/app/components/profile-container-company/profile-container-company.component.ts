@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {CompanyContainer} from "../../entities/company-container";
 import {socialMapLightTheme} from "../../utils/social-map";
+import {ContactContainer} from "../../entities/contact-container";
 
 @Component({
   selector: 'app-profile-container-company',
@@ -10,7 +11,9 @@ import {socialMapLightTheme} from "../../utils/social-map";
 export class ProfileContainerCompanyComponent implements OnInit {
 
   @Input() companyArray: CompanyContainer[] = [];
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
@@ -20,5 +23,18 @@ export class ProfileContainerCompanyComponent implements OnInit {
       return socialMapLightTheme[value];
     }
     return "";
+  }
+
+  formatHref(name: string, value: string) {
+    switch (name) {
+      case "Telefono":
+        return "tel:" + value;
+      case "Email":
+        return "mailto:" + value;
+      case "SitoWeb":
+        return "https://" + value;
+      default:
+        return "";
+    }
   }
 }
