@@ -47,8 +47,8 @@ export class ProfileContainerCompanyComponent implements OnInit {
   autoAddProtocol = (href: string) => {
     let hrefCopy = href;
     const parser = this.getLocation(href);
-    if (parser.protocol !== 'http:') {
-      hrefCopy = 'http://' + href;
+    if (parser.protocol !== 'https:') {
+      hrefCopy = 'https://' + href;
     }
     return hrefCopy;
   };
