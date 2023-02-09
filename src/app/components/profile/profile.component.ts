@@ -20,6 +20,8 @@ export class ProfileComponent implements OnInit {
   showProfile = false;
   ezCardWebsiteLink = "https://www.ezcard.it";
 
+  actualFELink = "http://195.231.85.62:5555/profile?id=";
+
   imageProfileUrl: string = "/assets/avatar-image.png";
   imageCoverUrl: string = "/assets/placeholder-image.png";
 
@@ -68,7 +70,7 @@ export class ProfileComponent implements OnInit {
         return "mailto:" + c.value;
       case "SitoWeb":
         return this.autoAddProtocol(c.value!);
-        //return "https://" + c.value;
+      //return "https://" + c.value;
       default:
         return "";
     }
@@ -131,7 +133,11 @@ export class ProfileComponent implements OnInit {
       email: this.profile.contacts.filter(c => c.name === "Email").map(c => {
         return {value: c.value ?? "", param: {type: 'work'}}
       }),
-      note: this.profile.profileContainer.description
+      workEmail: this.profile.companies.length > 0 ? this.profile.companies.map(c => {
+        return c.email
+      }) : [],
+      note: this.profile.profileContainer.description,
+      url: this.actualFELink + this.username
     };
     this.vCardString = VCardFormatter.getVCardAsString(this.vCard);
   }
