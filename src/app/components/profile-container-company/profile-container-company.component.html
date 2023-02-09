@@ -2,22 +2,45 @@
   <span class="card-subtitle">{{company.companyName}}</span>
 
   <div class="card card-contact mt-3 mb-5">
-  <span><img class="icon-card" src="assets/piva-dark-icon.png"/>{{company.vatNumber}}</span>
-    <hr/>
-    <span><img class="icon-card" src="assets/position-dark-icon.png"/>{{company.address}}</span>
-    <hr/>
-    <span><img class="icon-card" src="assets/phone-dark-icon.png"/><a [href]="formatHref('Telefono', company.phoneNumber)" style="cursor:pointer;">{{company.phoneNumber}}</a></span>
-    <hr/>
-    <span><img class="icon-card" src="assets/email-dark-icon.png"/><a [href]="formatHref('Email', company.email)" style="cursor:pointer;">{{company.email}}</a></span>
-    <hr/>
-    <span><img class="icon-card" src="assets/internet-dark-icon.png"/><a [href]="formatHref('SitoWeb', company.website)" target="_blank">{{company.website}}</a></span>
-    <hr/>
-    <span><img class="icon-card" src="assets/sdicode-dark-icon.png"/>{{company.codeSDI}}</span>
-    <hr/>
-    <span><img class="icon-card" src="assets/pec-dark-icon.png"/><a [href]="formatHref('Email', company.pec)" style="cursor:pointer;">{{company.pec}}</a></span>
+    <div *ngIf="company.vatNumber !== ''">
+      <span><img class="icon-card" src="assets/piva-dark-icon.png"/>{{company.vatNumber}}</span>
+      <hr/>
+    </div>
+    <div *ngIf="company.address !== ''">
+      <span><img class="icon-card" src="assets/position-dark-icon.png"/>{{company.address}}</span>
+      <hr/>
+    </div>
+    <div *ngIf="company.phoneNumber !== ''">
+      <span><img class="icon-card" src="assets/phone-dark-icon.png"/><a
+        [href]="formatHref('Telefono', company.phoneNumber)" style="cursor:pointer;">{{company.phoneNumber}}</a></span>
+      <hr/>
+    </div>
+    <div *ngIf="company.email !== ''">
+      <span>
+        <img class="icon-card" src="assets/email-dark-icon.png"/>
+        <a [href]="formatHref('Email', company.email)" style="cursor:pointer;">{{company.email}}</a>
+      </span>
+      <hr/>
+    </div>
+    <div *ngIf="company.website !== ''">
+      <span><img class="icon-card" src="assets/internet-dark-icon.png"/><a
+        [href]="formatHref('SitoWeb', company.website)"
+        target="_blank">{{company.website}}</a></span>
+      <hr/>
+    </div>
+    <div *ngIf="company.codeSDI !== ''">
+      <span><img class="icon-card" src="assets/sdicode-dark-icon.png"/>{{company.codeSDI}}</span>
+      <hr/>
+    </div>
+    <div *ngIf="company.pec !== ''">
+      <span>
+        <img class="icon-card" src="assets/pec-dark-icon.png"/>
+        <a [href]="formatHref('Email', company.pec)" style="cursor:pointer;">{{company.pec}}</a>
+      </span>
+      <hr/>
+    </div>
 
     <div *ngIf="company.socials.length > 0">
-      <hr/>
       <div class="row" style="text-align: center">
         <div class="col-2" *ngFor="let s of company.socials; index as i">
           <a [href]=s.value>
